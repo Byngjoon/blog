@@ -8,7 +8,8 @@ theme = 'PaperMod'
 [params]
   ShowReadingTime = true
   ShowCodeCopyButtons = true
-
+  math = true
+  
 [markup]
   [markup.goldmark]
     [markup.goldmark.renderer]
