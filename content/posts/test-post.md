@@ -2,8 +2,9 @@
 date = '2025-05-10T23:30:30+09:00'
 draft = false
 title = 'Test Post'
-tag = ["hugo", "test"]
-category = ["test"]
+tags = ["hugo", "test"]
+categories = ["test"]
+math = true
 +++
 
 테스트 포스트입니다.
