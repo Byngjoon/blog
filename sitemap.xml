@@ -2,10 +2,25 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
+    <loc>https://Byngjoon.github.io/blog/categories/</loc>
+    <lastmod>2025-05-10T23:30:30+09:00</lastmod>
+  </url><url>
+    <loc>https://Byngjoon.github.io/blog/tags/hugo/</loc>
+    <lastmod>2025-05-10T23:30:30+09:00</lastmod>
+  </url><url>
     <loc>https://Byngjoon.github.io/blog/</loc>
     <lastmod>2025-05-10T23:30:30+09:00</lastmod>
   </url><url>
     <loc>https://Byngjoon.github.io/blog/posts/</loc>
+    <lastmod>2025-05-10T23:30:30+09:00</lastmod>
+  </url><url>
+    <loc>https://Byngjoon.github.io/blog/tags/</loc>
+    <lastmod>2025-05-10T23:30:30+09:00</lastmod>
+  </url><url>
+    <loc>https://Byngjoon.github.io/blog/categories/test/</loc>
+    <lastmod>2025-05-10T23:30:30+09:00</lastmod>
+  </url><url>
+    <loc>https://Byngjoon.github.io/blog/tags/test/</loc>
     <lastmod>2025-05-10T23:30:30+09:00</lastmod>
   </url><url>
     <loc>https://Byngjoon.github.io/blog/posts/test-post/</loc>
@@ -13,9 +28,5 @@
   </url><url>
     <loc>https://Byngjoon.github.io/blog/posts/hello-world/</loc>
     <lastmod>2025-05-09T21:23:46+09:00</lastmod>
-  </url><url>
-    <loc>https://Byngjoon.github.io/blog/categories/</loc>
-  </url><url>
-    <loc>https://Byngjoon.github.io/blog/tags/</loc>
   </url>
 </urlset>

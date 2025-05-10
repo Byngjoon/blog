@@ -6,6 +6,21 @@
     <description>Recent content in Tags on Hyungtae</description>
     <generator>Hugo -- 0.147.2</generator>
     <language>ko-kr</language>
+    <lastBuildDate>Sat, 10 May 2025 23:30:30 +0900</lastBuildDate>
     <atom:link href="https://Byngjoon.github.io/blog/tags/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Hugo</title>
+      <link>https://Byngjoon.github.io/blog/tags/hugo/</link>
+      <pubDate>Sat, 10 May 2025 23:30:30 +0900</pubDate>
+      <guid>https://Byngjoon.github.io/blog/tags/hugo/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Test</title>
+      <link>https://Byngjoon.github.io/blog/tags/test/</link>
+      <pubDate>Sat, 10 May 2025 23:30:30 +0900</pubDate>
+      <guid>https://Byngjoon.github.io/blog/tags/test/</guid>
+      <description></description>
+    </item>
   </channel>
 </rss>
