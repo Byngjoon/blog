@@ -1,12 +1,12 @@
----
-date: 2025-05-14T19:25:49+09:00
-title: "[Data Structures] [00] Introduction to Data Structures"
-description: "The preface and table of contents for Data Structures series"
-categories: ["Computer Science/Algorithms & Data Structures"]
-tags: ["Data Structures"]
-math: true
-draft: false
----
++++
+date = 2025-05-14T19:25:49+09:00
+title = "[Data Structures] [00] Introduction to Data Structures"
+description = "The preface and table of contents for Data Structures series"
+categories = ["Computer Science/Algorithms & Data Structures"]
+tags = ["Data Structures"]
+math = true
+draft = false
++++
 
 # What is Data Structures about?
 
