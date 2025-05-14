@@ -1,1 +1,26 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml"><url><loc>https://Byngjoon.github.io/blog/categories/</loc></url><url><loc>https://Byngjoon.github.io/blog/</loc></url><url><loc>https://Byngjoon.github.io/blog/tags/</loc></url></urlset>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+  xmlns:xhtml="http://www.w3.org/1999/xhtml">
+  <url>
+    <loc>https://Byngjoon.github.io/blog/</loc>
+    <lastmod>2025-05-14T22:50:51+09:00</lastmod>
+  </url><url>
+    <loc>https://Byngjoon.github.io/blog/posts/</loc>
+    <lastmod>2025-05-14T22:50:51+09:00</lastmod>
+  </url><url>
+    <loc>https://Byngjoon.github.io/blog/posts/data-structures-00/</loc>
+    <lastmod>2025-05-14T19:25:49+09:00</lastmod>
+  </url><url>
+    <loc>https://Byngjoon.github.io/blog/categories/</loc>
+    <lastmod>2025-05-14T19:25:49+09:00</lastmod>
+  </url><url>
+    <loc>https://Byngjoon.github.io/blog/categories/computer-science/algorithms--data-structures/</loc>
+    <lastmod>2025-05-14T19:25:49+09:00</lastmod>
+  </url><url>
+    <loc>https://Byngjoon.github.io/blog/tags/data-structures/</loc>
+    <lastmod>2025-05-14T19:25:49+09:00</lastmod>
+  </url><url>
+    <loc>https://Byngjoon.github.io/blog/tags/</loc>
+    <lastmod>2025-05-14T19:25:49+09:00</lastmod>
+  </url>
+</urlset>

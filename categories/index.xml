@@ -1,1 +1,19 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/"><channel><title>Categories on Hyungtae</title><link>https://Byngjoon.github.io/blog/categories/</link><description>Recent content in Categories on Hyungtae</description><generator>Hugo -- 0.147.2</generator><language>ko-kr</language><atom:link href="https://Byngjoon.github.io/blog/categories/index.xml" rel="self" type="application/rss+xml"/></channel></rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Categories on Hyungtae</title>
+    <link>https://Byngjoon.github.io/blog/categories/</link>
+    <description>Recent content in Categories on Hyungtae</description>
+    <generator>Hugo -- 0.147.2</generator>
+    <language>ko-kr</language>
+    <lastBuildDate>Wed, 14 May 2025 19:25:49 +0900</lastBuildDate>
+    <atom:link href="https://Byngjoon.github.io/blog/categories/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Computer Science/Algorithms &amp; Data Structures</title>
+      <link>https://Byngjoon.github.io/blog/categories/computer-science/algorithms--data-structures/</link>
+      <pubDate>Wed, 14 May 2025 19:25:49 +0900</pubDate>
+      <guid>https://Byngjoon.github.io/blog/categories/computer-science/algorithms--data-structures/</guid>
+      <description></description>
+    </item>
+  </channel>
+</rss>
