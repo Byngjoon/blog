@@ -1,0 +1,21 @@
+# Hugo build output
+/public/
+
+# Hugo cache and stats
+/resources/
+hugo_stats.json
+
+# macOS system files
+.DS_Store
+**/.DS_Store
+
+# Editor settings
+.vscode/
+.idea/
+
+# Node.js dependencies
+node_modules/
+
+# Optional: deploy artifacts
+.publish/
+

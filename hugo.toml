@@ -1,0 +1,35 @@
+baseURL = 'https://Byngjoon.github.io/blog/'
+languageCode = 'ko-kr'
+title = 'Hyungtae'
+theme = 'PaperMod'
+[pagination]
+  pagerSize = 10
+
+[params]
+  ShowReadingTime = true
+  ShowCodeCopyButtons = true
+  math = true
+
+[params.assets]
+  customCSS = ["css/custom.css"]
+
+[markup]
+  [markup.goldmark]
+    [markup.goldmark.renderer]
+      unsafe = true
+
+[taxonomies]
+  category = "categories"
+  tag = "tags"
+
+[[menu.main]]
+  identifier = "categories"
+  name = "Categories"
+  url = "/categories/"
+  weight = 2
+
+[[menu.main]]
+  identifier = "tags"
+  name = "Tags"
+  url = "/tags/"
+  weight = 3
