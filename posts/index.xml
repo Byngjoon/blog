@@ -4,16 +4,16 @@
     <title>Posts on Hyungtae</title>
     <link>https://Byngjoon.github.io/blog/posts/</link>
     <description>Recent content in Posts on Hyungtae</description>
-    <generator>Hugo -- 0.147.2</generator>
+    <generator>Hugo -- 0.147.3</generator>
     <language>ko-kr</language>
-    <lastBuildDate>Wed, 14 May 2025 19:25:49 +0900</lastBuildDate>
+    <lastBuildDate>Sat, 17 May 2025 07:20:49 +0900</lastBuildDate>
     <atom:link href="https://Byngjoon.github.io/blog/posts/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>[Data Structures] [00] Introduction to Data Structures</title>
       <link>https://Byngjoon.github.io/blog/posts/data-structures-00/</link>
-      <pubDate>Wed, 14 May 2025 19:25:49 +0900</pubDate>
+      <pubDate>Sat, 17 May 2025 07:20:49 +0900</pubDate>
       <guid>https://Byngjoon.github.io/blog/posts/data-structures-00/</guid>
-      <description>The preface and table of contents for Data Structures series</description>
+      <description>The preface and core concepts of Data Structures series</description>
     </item>
   </channel>
 </rss>

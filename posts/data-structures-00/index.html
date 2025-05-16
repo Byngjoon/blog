@@ -7,7 +7,7 @@
 <meta name="robots" content="index, follow">
 <title>[Data Structures] [00] Introduction to Data Structures | Hyungtae</title>
 <meta name="keywords" content="Data Structures">
-<meta name="description" content="The preface and table of contents for Data Structures series">
+<meta name="description" content="The preface and core concepts of Data Structures series">
 <meta name="author" content="">
 <link rel="canonical" href="https://Byngjoon.github.io/blog/posts/data-structures-00/">
 <link crossorigin="anonymous" href="/blog/assets/css/stylesheet.f49d66caae9ea0fd43f21f29e71a8d3e284517ed770f2aa86fa012953ad3c9ef.css" integrity="sha256-9J1myq6eoP1D8h8p5xqNPihFF&#43;13Dyqob6ASlTrTye8=" rel="preload stylesheet" as="style">
@@ -73,16 +73,16 @@
 <meta property="og:url" content="https://Byngjoon.github.io/blog/posts/data-structures-00/">
   <meta property="og:site_name" content="Hyungtae">
   <meta property="og:title" content="[Data Structures] [00] Introduction to Data Structures">
-  <meta property="og:description" content="The preface and table of contents for Data Structures series">
+  <meta property="og:description" content="The preface and core concepts of Data Structures series">
   <meta property="og:locale" content="ko-kr">
   <meta property="og:type" content="article">
     <meta property="article:section" content="posts">
-    <meta property="article:published_time" content="2025-05-14T19:25:49+09:00">
-    <meta property="article:modified_time" content="2025-05-14T19:25:49+09:00">
+    <meta property="article:published_time" content="2025-05-17T07:20:49+09:00">
+    <meta property="article:modified_time" content="2025-05-17T07:20:49+09:00">
     <meta property="article:tag" content="Data Structures">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="[Data Structures] [00] Introduction to Data Structures">
-<meta name="twitter:description" content="The preface and table of contents for Data Structures series">
+<meta name="twitter:description" content="The preface and core concepts of Data Structures series">
 
 
 <script type="application/ld+json">
@@ -111,15 +111,15 @@
   "@type": "BlogPosting",
   "headline": "[Data Structures] [00] Introduction to Data Structures",
   "name": "[Data Structures] [00] Introduction to Data Structures",
-  "description": "The preface and table of contents for Data Structures series",
+  "description": "The preface and core concepts of Data Structures series",
   "keywords": [
     "Data Structures"
   ],
-  "articleBody": "What is Data Structures about? Data Structures is the study of how to organize, store, and manage data efficiently in a computer system.\nIt focuses on designing ways to:\nStore data (structure) How to structure data (Arrays, Linked Lists, Trees, Graphs, Hash Tables, etc.)\nAccess and modify data (operations) How to insert, delete, search, sort, and traverse data\nOptimize performance (time \u0026 space complexity) Measuring performance using time \u0026 space complexity (Big-O notation) Choosing the right data structure for different problems (e.g., using stacks for undo history)\nWhy we learn Data Structures? To solve computational problems efficiently.\nContents Introduction Data Type ",
-  "wordCount" : "101",
+  "articleBody": "Contents Data Structures Data Type vs Data Structure Abstract Data Type What is Data Structures about? Data Structures is the study of how to organize, store, and manage data efficiently in a computer system.\nIt focuses on designing ways to:\nStore data (structure) How to structure data (Arrays, Linked Lists, Trees, Graphs, Hash Tables, etc.)\nAccess and modify data (operations) How to insert, delete, search, sort, and traverse data\nOptimize performance (time \u0026 space complexity) Measuring performance using time \u0026 space complexity (Big-O notation) Choosing the right data structure for different problems (e.g., using stacks for undo history)\nClassification of Data Structures 1. By Structural Form Type Description Examples Linear Structure Data elements are arranged sequentially Array, Linked List, Stack, Queue Non-linear Structure Data elements have hierarchical(계층적인) or graph-like relationships Tree, Graph, Heap Hash-based Structure Data is accessed via keys and hash functions Hash Table, Hash Map, Hash Set 2. By Storage Method Type Description Examples Sequential Storage Data is stored in contiguous memory Array, Static Queue Linked Storage Nodes are connected via pointers Linked List, Tree, Graph Indexed Storage Access is based on key/index positions Hash Table, Skip List, B-Tree 3. By Access Method Type Description Examples Random Access Direct access using index/key Array, Hash Table Sequential Access Access data in order, one by one Linked List, Queue Hierarchical Access Access through parent-child relationships Tree, Heap Unstructured Access Access based on arbitrary connections Graph Why Do We Learn Data Structures? To solve problems efficiently and reliably.\nEven with a good algorithm, choosing the wrong data structure can waste time and memory resources.\nProblem Scenario Recommended Data Structure Fast search Hash Map Frequent insertions/removals Linked List Undo feature Stack Ordered access Array, List Data Type vs Data Structure Data Type: Defines the form and allowed operations for a single piece of data.\nint: Represents a single integer value; supports arithmetic(산술) operations like addition, subtraction, etc. char: Represents a single character; supports character encoding operations (e.g., ASCII manipulation) Data Structure: Organizes, stores, accesses, and manages a collection of data.\nArray: Stores elements in contiguous(인접한) memory locations Linked List: Connects nodes using pointers to form a linear structure Aspect Data Type Data Structure Purpose Define the kind of a single value Organize and manage a group of related values Examples int, float, char, etc. Array, Stack, Queue, Linked List, etc. Unit A single value A collection of values Focus The data itself The relationship and operations among data What is an Abstract Data Type (ADT)? An Abstract Data Type (ADT) defines a logical model (object) and a set of operations for handling data, while hiding the internal implementation details(구현 상세).\nWe can see what it does (interface). We cannot see how it works (implementation). Therefore, users can use an ADT without knowing its internal mechanism. ADT Must Define Two Components Component Description Object The type of data being handled (e.g., integers, a set of characters, etc.) Collection of Operations The set of valid actions to perform on the data (insert, delete, search, etc.) Examples of ADTs 1. Stack ADT Component Description Object A collection of ordered elements (e.g., integers, characters, etc.) Operations push(x), pop(), peek(), isEmpty(), … Characteristics Follows LIFO (Last-In, First-Out) principle; the most recently added element is removed first The stack can be implemented using an array or a linked list,\nbut the user only needs to know the interface, not the implementation.\n2. Queue ADT Component Description Object A linear collection representing a waiting line Operations enqueue(x), dequeue(), front(), isEmpty(), … Characteristics Follows FIFO (First-In, First-Out) principle; the earliest added element is removed first 3. List ADT Component Description Object A sequence of elements with index-based access Operations insert(i, x), delete(i), get(i), find(x), … Characteristics Supports indexed access; can be implemented with arrays or linked structures ADT vs Data Structure Aspect ADT (Abstract Data Type) Data Structure Perspective Conceptual interface (what it does) Concrete implementation (how it works) Examples Stack, Queue, List Array, Linked List, Tree, Hash Table Focus What operations are supported How those operations are implemented efficiently Purpose Provide a simple and clear interface to users Optimize performance through implementation choices Why Do We Use ADTs? Abstraction\nUsers can use data structures without knowing internal details.\nModularity (Flexibility)\nIf the ADT interface remains the same, the internal implementation can be changed without affecting user code.\nReusability\nADT-based designs can be reused in various problem domains with minimal modification.\nData Protection\nThe internal state is hidden, so users cannot tamper with it directly, ensuring consistency and integrity.\nIn summary:\nAn ADT defines what data and operations are available, not how they are performed.\nThis separation allows for clean, maintainable, and flexible software design.\n",
+  "wordCount" : "775",
   "inLanguage": "en",
-  "datePublished": "2025-05-14T19:25:49+09:00",
-  "dateModified": "2025-05-14T19:25:49+09:00",
+  "datePublished": "2025-05-17T07:20:49+09:00",
+  "dateModified": "2025-05-17T07:20:49+09:00",
   "mainEntityOfPage": {
     "@type": "WebPage",
     "@id": "https://Byngjoon.github.io/blog/posts/data-structures-00/"
@@ -198,14 +198,22 @@
       [Data Structures] [00] Introduction to Data Structures
     </h1>
     <div class="post-description">
-      The preface and table of contents for Data Structures series
+      The preface and core concepts of Data Structures series
     </div>
-    <div class="post-meta"><span title='2025-05-14 19:25:49 +0900 KST'>May 14, 2025</span>&nbsp;·&nbsp;1 min
+    <div class="post-meta"><span title='2025-05-17 07:20:49 +0900 KST'>May 17, 2025</span>&nbsp;·&nbsp;4 min
 
 </div>
   </header> 
-  <div class="post-content"><h1 id="what-is-data-structures-about">What is Data Structures about?<a hidden class="anchor" aria-hidden="true" href="#what-is-data-structures-about">#</a></h1>
+  <div class="post-content"><h1 id="contents">Contents<a hidden class="anchor" aria-hidden="true" href="#contents">#</a></h1>
+<ol>
+<li><a href="#what-is-data-structures-about">Data Structures</a></li>
+<li><a href="#data-type-vs-data-structure">Data Type vs Data Structure</a></li>
+<li><a href="#what-is-an-abstract-data-type-adt">Abstract Data Type</a></li>
+</ol>
+<hr>
+<h1 id="what-is-data-structures-about">What is Data Structures about?<a hidden class="anchor" aria-hidden="true" href="#what-is-data-structures-about">#</a></h1>
 <p>Data Structures is the study of how to organize, store, and manage data <strong>efficiently</strong> in a computer system.</p>
+<hr>
 <p>It focuses on designing ways to:</p>
 <ol>
 <li>
@@ -222,14 +230,332 @@ Measuring performance using time &amp; space complexity (Big-O notation)
 Choosing the right data structure for different problems (e.g., using stacks for undo history)</p>
 </li>
 </ol>
-<h1 id="why-we-learn-data-structures">Why we learn Data Structures?<a hidden class="anchor" aria-hidden="true" href="#why-we-learn-data-structures">#</a></h1>
-<p>To solve computational problems <strong>efficiently</strong>.</p>
-<h1 id="contents">Contents<a hidden class="anchor" aria-hidden="true" href="#contents">#</a></h1>
-<ol start="0">
-<li>Introduction</li>
-<li>Data Type</li>
-<li></li>
+<hr>
+<h2 id="classification-of-data-structures">Classification of Data Structures<a hidden class="anchor" aria-hidden="true" href="#classification-of-data-structures">#</a></h2>
+<h3 id="1-by-structural-form">1. By Structural Form<a hidden class="anchor" aria-hidden="true" href="#1-by-structural-form">#</a></h3>
+<table>
+  <thead>
+      <tr>
+          <th>Type</th>
+          <th>Description</th>
+          <th>Examples</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td><strong>Linear Structure</strong></td>
+          <td>Data elements are arranged sequentially</td>
+          <td>Array, Linked List, Stack, Queue</td>
+      </tr>
+      <tr>
+          <td><strong>Non-linear Structure</strong></td>
+          <td>Data elements have hierarchical(계층적인) or graph-like relationships</td>
+          <td>Tree, Graph, Heap</td>
+      </tr>
+      <tr>
+          <td><strong>Hash-based Structure</strong></td>
+          <td>Data is accessed via keys and hash functions</td>
+          <td>Hash Table, Hash Map, Hash Set</td>
+      </tr>
+  </tbody>
+</table>
+<hr>
+<h3 id="2-by-storage-method">2. By Storage Method<a hidden class="anchor" aria-hidden="true" href="#2-by-storage-method">#</a></h3>
+<table>
+  <thead>
+      <tr>
+          <th>Type</th>
+          <th>Description</th>
+          <th>Examples</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td><strong>Sequential Storage</strong></td>
+          <td>Data is stored in contiguous memory</td>
+          <td>Array, Static Queue</td>
+      </tr>
+      <tr>
+          <td><strong>Linked Storage</strong></td>
+          <td>Nodes are connected via pointers</td>
+          <td>Linked List, Tree, Graph</td>
+      </tr>
+      <tr>
+          <td><strong>Indexed Storage</strong></td>
+          <td>Access is based on key/index positions</td>
+          <td>Hash Table, Skip List, B-Tree</td>
+      </tr>
+  </tbody>
+</table>
+<hr>
+<h3 id="3-by-access-method">3. By Access Method<a hidden class="anchor" aria-hidden="true" href="#3-by-access-method">#</a></h3>
+<table>
+  <thead>
+      <tr>
+          <th>Type</th>
+          <th>Description</th>
+          <th>Examples</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td><strong>Random Access</strong></td>
+          <td>Direct access using index/key</td>
+          <td>Array, Hash Table</td>
+      </tr>
+      <tr>
+          <td><strong>Sequential Access</strong></td>
+          <td>Access data in order, one by one</td>
+          <td>Linked List, Queue</td>
+      </tr>
+      <tr>
+          <td><strong>Hierarchical Access</strong></td>
+          <td>Access through parent-child relationships</td>
+          <td>Tree, Heap</td>
+      </tr>
+      <tr>
+          <td><strong>Unstructured Access</strong></td>
+          <td>Access based on arbitrary connections</td>
+          <td>Graph</td>
+      </tr>
+  </tbody>
+</table>
+<hr>
+<h1 id="why-do-we-learn-data-structures">Why Do We Learn Data Structures?<a hidden class="anchor" aria-hidden="true" href="#why-do-we-learn-data-structures">#</a></h1>
+<p>To solve problems <strong>efficiently</strong> and <strong>reliably</strong>.</p>
+<p>Even with a good algorithm, choosing the wrong data structure can waste <strong>time</strong> and <strong>memory resources</strong>.</p>
+<hr>
+<table>
+  <thead>
+      <tr>
+          <th>Problem Scenario</th>
+          <th>Recommended Data Structure</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>Fast search</td>
+          <td>Hash Map</td>
+      </tr>
+      <tr>
+          <td>Frequent insertions/removals</td>
+          <td>Linked List</td>
+      </tr>
+      <tr>
+          <td>Undo feature</td>
+          <td>Stack</td>
+      </tr>
+      <tr>
+          <td>Ordered access</td>
+          <td>Array, List</td>
+      </tr>
+  </tbody>
+</table>
+<hr>
+<h1 id="data-type-vs-data-structure">Data Type vs Data Structure<a hidden class="anchor" aria-hidden="true" href="#data-type-vs-data-structure">#</a></h1>
+<p><strong>Data Type</strong>: Defines the form and allowed operations for a single piece of data.</p>
+<ul>
+<li><code>int</code>: Represents a single integer value; supports arithmetic(산술) operations like addition, subtraction, etc.</li>
+<li><code>char</code>: Represents a single character; supports character encoding operations (e.g., ASCII manipulation)</li>
+</ul>
+<p><strong>Data Structure</strong>: Organizes, stores, accesses, and manages a <strong>collection of data</strong>.</p>
+<ul>
+<li><code>Array</code>: Stores elements in contiguous(인접한) memory locations</li>
+<li><code>Linked List</code>: Connects nodes using pointers to form a linear structure</li>
+</ul>
+<table>
+  <thead>
+      <tr>
+          <th>Aspect</th>
+          <th>Data Type</th>
+          <th>Data Structure</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>Purpose</td>
+          <td>Define the kind of a single value</td>
+          <td>Organize and manage a group of related values</td>
+      </tr>
+      <tr>
+          <td>Examples</td>
+          <td><code>int</code>, <code>float</code>, <code>char</code>, etc.</td>
+          <td><code>Array</code>, <code>Stack</code>, <code>Queue</code>, <code>Linked List</code>, etc.</td>
+      </tr>
+      <tr>
+          <td>Unit</td>
+          <td>A single value</td>
+          <td>A collection of values</td>
+      </tr>
+      <tr>
+          <td>Focus</td>
+          <td>The data itself</td>
+          <td>The relationship and operations among data</td>
+      </tr>
+  </tbody>
+</table>
+<hr>
+<h1 id="what-is-an-abstract-data-type-adt">What is an Abstract Data Type (ADT)?<a hidden class="anchor" aria-hidden="true" href="#what-is-an-abstract-data-type-adt">#</a></h1>
+<p>An <strong>Abstract Data Type (ADT)</strong> defines a logical model (object) and a set of operations for handling data, while hiding the internal implementation details(구현 상세).</p>
+<ul>
+<li>We can see <strong>what it does</strong> (interface).</li>
+<li>We cannot see <strong>how it works</strong> (implementation).</li>
+<li>Therefore, users can use an ADT <strong>without knowing its internal mechanism</strong>.</li>
+</ul>
+<hr>
+<h2 id="adt-must-define-two-components">ADT Must Define Two Components<a hidden class="anchor" aria-hidden="true" href="#adt-must-define-two-components">#</a></h2>
+<table>
+  <thead>
+      <tr>
+          <th>Component</th>
+          <th>Description</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td><strong>Object</strong></td>
+          <td>The type of data being handled (e.g., integers, a set of characters, etc.)</td>
+      </tr>
+      <tr>
+          <td><strong>Collection of Operations</strong></td>
+          <td>The set of valid actions to perform on the data (insert, delete, search, etc.)</td>
+      </tr>
+  </tbody>
+</table>
+<hr>
+<h3 id="examples-of-adts">Examples of ADTs<a hidden class="anchor" aria-hidden="true" href="#examples-of-adts">#</a></h3>
+<h4 id="1-stack-adt">1. Stack ADT<a hidden class="anchor" aria-hidden="true" href="#1-stack-adt">#</a></h4>
+<table>
+  <thead>
+      <tr>
+          <th>Component</th>
+          <th>Description</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td><strong>Object</strong></td>
+          <td>A collection of ordered elements (e.g., integers, characters, etc.)</td>
+      </tr>
+      <tr>
+          <td><strong>Operations</strong></td>
+          <td><code>push(x)</code>, <code>pop()</code>, <code>peek()</code>, <code>isEmpty()</code>, &hellip;</td>
+      </tr>
+      <tr>
+          <td><strong>Characteristics</strong></td>
+          <td>Follows <strong>LIFO (Last-In, First-Out)</strong> principle; the most recently added element is removed first</td>
+      </tr>
+  </tbody>
+</table>
+<blockquote>
+<p>The stack can be implemented using an <strong>array</strong> or a <strong>linked list</strong>,<br>
+but the user only needs to know the <strong>interface</strong>, not the implementation.</p></blockquote>
+<hr>
+<h4 id="2-queue-adt">2. Queue ADT<a hidden class="anchor" aria-hidden="true" href="#2-queue-adt">#</a></h4>
+<table>
+  <thead>
+      <tr>
+          <th>Component</th>
+          <th>Description</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td><strong>Object</strong></td>
+          <td>A linear collection representing a waiting line</td>
+      </tr>
+      <tr>
+          <td><strong>Operations</strong></td>
+          <td><code>enqueue(x)</code>, <code>dequeue()</code>, <code>front()</code>, <code>isEmpty()</code>, &hellip;</td>
+      </tr>
+      <tr>
+          <td><strong>Characteristics</strong></td>
+          <td>Follows <strong>FIFO (First-In, First-Out)</strong> principle; the earliest added element is removed first</td>
+      </tr>
+  </tbody>
+</table>
+<hr>
+<h4 id="3-list-adt">3. List ADT<a hidden class="anchor" aria-hidden="true" href="#3-list-adt">#</a></h4>
+<table>
+  <thead>
+      <tr>
+          <th>Component</th>
+          <th>Description</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td><strong>Object</strong></td>
+          <td>A sequence of elements with index-based access</td>
+      </tr>
+      <tr>
+          <td><strong>Operations</strong></td>
+          <td><code>insert(i, x)</code>, <code>delete(i)</code>, <code>get(i)</code>, <code>find(x)</code>, &hellip;</td>
+      </tr>
+      <tr>
+          <td><strong>Characteristics</strong></td>
+          <td>Supports <strong>indexed access</strong>; can be implemented with arrays or linked structures</td>
+      </tr>
+  </tbody>
+</table>
+<hr>
+<h2 id="adt-vs-data-structure">ADT vs Data Structure<a hidden class="anchor" aria-hidden="true" href="#adt-vs-data-structure">#</a></h2>
+<table>
+  <thead>
+      <tr>
+          <th>Aspect</th>
+          <th>ADT (Abstract Data Type)</th>
+          <th>Data Structure</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>Perspective</td>
+          <td>Conceptual interface (what it does)</td>
+          <td>Concrete implementation (how it works)</td>
+      </tr>
+      <tr>
+          <td>Examples</td>
+          <td>Stack, Queue, List</td>
+          <td>Array, Linked List, Tree, Hash Table</td>
+      </tr>
+      <tr>
+          <td>Focus</td>
+          <td>What operations are supported</td>
+          <td>How those operations are implemented efficiently</td>
+      </tr>
+      <tr>
+          <td>Purpose</td>
+          <td>Provide a simple and clear interface to users</td>
+          <td>Optimize performance through implementation choices</td>
+      </tr>
+  </tbody>
+</table>
+<hr>
+<h2 id="why-do-we-use-adts">Why Do We Use ADTs?<a hidden class="anchor" aria-hidden="true" href="#why-do-we-use-adts">#</a></h2>
+<ol>
+<li>
+<p><strong>Abstraction</strong><br>
+Users can use data structures without knowing internal details.</p>
+</li>
+<li>
+<p><strong>Modularity (Flexibility)</strong><br>
+If the ADT interface remains the same, the internal implementation can be changed without affecting user code.</p>
+</li>
+<li>
+<p><strong>Reusability</strong><br>
+ADT-based designs can be reused in various problem domains with minimal modification.</p>
+</li>
+<li>
+<p><strong>Data Protection</strong><br>
+The internal state is hidden, so users cannot tamper with it directly, ensuring consistency and integrity.</p>
+</li>
 </ol>
+<hr>
+<blockquote>
+<p><strong>In summary</strong>:<br>
+An ADT defines <strong>what</strong> data and operations are available, not <strong>how</strong> they are performed.<br>
+This separation allows for clean, maintainable, and flexible software design.</p></blockquote>
 
 
   </div>
