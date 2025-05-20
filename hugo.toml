@@ -9,6 +9,9 @@ theme = 'PaperMod'
   ShowReadingTime = true
   ShowCodeCopyButtons = true
   math = true
+  ShowToc = true
+  TocOpen = false
+  TocSide = "right"
 
 [params.assets]
   customCSS = ["css/custom.css"]

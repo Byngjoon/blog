@@ -1,20 +1,29 @@
 +++
-date = 2025-05-17T07:20:49+09:00
-title = "[Data Structures] [00] Introduction to Data Structures"
+date = '2025-05-17T07:20:49+09:00'
+title = '[Data Structures] [00] Introduction to Data Structures'
 description = "The preface and core concepts of Data Structures series"
 categories = ["Computer Science/Algorithms & Data Structures"]
+slug = "introduction-to-data-structures"
 tags = ["Data Structures"]
 math = true
 draft = false
 +++
-# Contents
-1. [Data Structures](#what-is-data-structures-about)
-2. [Data Type vs Data Structure](#data-type-vs-data-structure)
-3. [Abstract Data Type](#what-is-an-abstract-data-type-adt)
+
+# Chapter 00: Introduction to Data Structures
+
+> **Outline:** This chapter provides a foundational overview of what data structures are, how they differ from data types, and why Abstract Data Types (ADTs) are essential. It also introduces basic C language concepts that are prerequisites(사전에 필요한) for understanding and implementing data structures.
 
 ---
 
-# What is Data Structures about?
+## Contents
+1. [What is Data Structures about?](#section-01-what-is-data-structures-about)
+2. [Data Type vs Data Structure](#section-02-data-type-vs-data-structure)
+3. [What is an Abstract Data Type (ADT)?](#section-03-what-is-an-abstract-data-type-adt)
+4. [C Language Essentials for Data Structures](#section-04-c-language-essentials-for-data-structures)
+
+---
+
+## Section 01. What is Data Structures about?
 
 Data Structures is the study of how to organize, store, and manage data **efficiently** in a computer system.
 
@@ -34,9 +43,9 @@ It focuses on designing ways to:
 
 ---
 
-## Classification of Data Structures
+### Classification of Data Structures
 
-### 1. By Structural Form
+#### 1. By Structural Form
 
 | Type               | Description                           | Examples                        |
 |--------------------|---------------------------------------|----------------------------------|
@@ -46,7 +55,7 @@ It focuses on designing ways to:
 
 ---
 
-### 2. By Storage Method
+#### 2. By Storage Method
 
 | Type                    | Description                              | Examples                      |
 |-------------------------|------------------------------------------|-------------------------------|
@@ -56,7 +65,7 @@ It focuses on designing ways to:
 
 ---
 
-### 3. By Access Method
+#### 3. By Access Method
 
 | Type                     | Description                              | Examples                       |
 |--------------------------|------------------------------------------|--------------------------------|
@@ -67,7 +76,7 @@ It focuses on designing ways to:
 
 ---
 
-# Why Do We Learn Data Structures?
+### Why Do We Learn Data Structures?
 
 To solve problems **efficiently** and **reliably**.
 
@@ -84,7 +93,7 @@ Even with a good algorithm, choosing the wrong data structure can waste **time**
 
 ---
 
-# Data Type vs Data Structure
+## Section 02. Data Type vs Data Structure
 
 **Data Type**: Defines the form and allowed operations for a single piece of data.  
 - `int`: Represents a single integer value; supports arithmetic(산술) operations like addition, subtraction, etc.  
@@ -103,7 +112,7 @@ Even with a good algorithm, choosing the wrong data structure can waste **time**
 
 ---
 
-# What is an Abstract Data Type (ADT)?
+## Section 03. What is an Abstract Data Type (ADT)?
 
 An **Abstract Data Type (ADT)** defines a logical model (object) and a set of operations for handling data, while hiding the internal implementation details(구현 상세).
 
@@ -113,7 +122,7 @@ An **Abstract Data Type (ADT)** defines a logical model (object) and a set of op
 
 ---
 
-## ADT Must Define Two Components
+### ADT Must Define Two Components
 
 | Component              | Description                                                                 |
 |------------------------|----------------------------------------------------------------------------|
@@ -122,9 +131,9 @@ An **Abstract Data Type (ADT)** defines a logical model (object) and a set of op
 
 ---
 
-### Examples of ADTs
+#### Examples of ADTs
 
-#### 1. Stack ADT
+##### 1. Stack ADT
 
 | Component       | Description                                                                 |
 |----------------|-----------------------------------------------------------------------------|
@@ -137,7 +146,7 @@ An **Abstract Data Type (ADT)** defines a logical model (object) and a set of op
 
 ---
 
-#### 2. Queue ADT
+##### 2. Queue ADT
 
 | Component       | Description                                                                 |
 |----------------|-----------------------------------------------------------------------------|
@@ -147,7 +156,7 @@ An **Abstract Data Type (ADT)** defines a logical model (object) and a set of op
 
 ---
 
-#### 3. List ADT
+##### 3. List ADT
 
 | Component       | Description                                                                 |
 |----------------|-----------------------------------------------------------------------------|
@@ -157,7 +166,7 @@ An **Abstract Data Type (ADT)** defines a logical model (object) and a set of op
 
 ---
 
-## ADT vs Data Structure
+### ADT vs Data Structure
 
 | Aspect    | ADT (Abstract Data Type)                        | Data Structure                                 |
 |-----------|--------------------------------------------------|------------------------------------------------|
@@ -168,7 +177,7 @@ An **Abstract Data Type (ADT)** defines a logical model (object) and a set of op
 
 ---
 
-## Why Do We Use ADTs?
+### Why Do We Use ADTs?
 
 1. **Abstraction**  
    Users can use data structures without knowing internal details.
@@ -187,3 +196,186 @@ An **Abstract Data Type (ADT)** defines a logical model (object) and a set of op
 > **In summary**:  
 > An ADT defines **what** data and operations are available, not **how** they are performed.  
 > This separation allows for clean, maintainable, and flexible software design.
+
+---
+
+## Section 04. C Language Essentials for Data Structures
+
+We will implement data structures using the C programming language.  
+To do this effectively, we need to understand three core concepts:
+
+- [What is a **struct** type in C?](#what-is-struct-type-in-c)
+- [How do we use **pointers** in C?](#how-do-we-use-pointers-in-c)
+- [How do we perform **dynamic memory allocation** in C?](#how-do-we-perform-dynamic-memory-allocation-in-c)
+---
+
+### What is `struct` type in C?
+
+A `struct` (short for **structure**) in C is a **user-defined data type** that allows you to group variables of **different types** under a single name.
+
+Unlike arrays, which access elements by index, a `struct` uses **named fields** to access its internal data.  
+To access these fields, you use the **dot operator (`.`)**.
+
+#### Example:
+
+```c
+struct Node {        // 'Node' is the struct type name
+    int data;        // field
+    struct Node* next; // field
+};
+
+struct Node node1;
+node1.data = 10;     // Accessing the 'data' field using the dot operator
+```
+---
+
+#### Memory Allocation of 'struct' Type
+
+- A `struct` is stored in a **contiguous block of memory**, and its fields are laid out **in the order they are declared**.
+- However, the **total memory size** of a `struct` may be **larger than the sum of its fields’ sizes** due to:
+    - **Padding**: extra space inserted between fields
+    - **Alignment rules**: used to optimize memory access performance on most architectures
+    - You can check the actual memory allocated for a struct using sizeof(struct) in C.
+  
+These rules ensure that each field starts at a memory address aligned to its size (e.g., `int` on 4-byte boundaries, `double` on 8-byte boundaries).
+
+##### Example:
+
+```c
+struct studentInfo {
+    char name[10];
+    int age;
+    double gpa;
+};
+```
+| Field       | Type         | Size (bytes) | Memory Offset | Notes                                     |
+|-------------|--------------|--------------|----------------|-------------------------------------------|
+| `name`      | `char[10]`   | 10           | 0–9            | Starts at offset 0                        |
+| **padding** | —            | 2            | 10–11          | To align `int` to a 4-byte boundary       |
+| `age`       | `int`        | 4            | 12–15          | 4-byte aligned                            |
+| `gpa`       | `double`     | 8            | 16–23          | 8-byte aligned                            |
+| **total**   | —            | **24 bytes** | —              | `sizeof(struct studentInfo) == 24`        |
+
+---
+
+### 'typedef' in C
+
+- `typedef` is used to assign a custom alias(별칭) to an existing type.
+- It helps simplify complex type names and improve code readability, especially with `struct`.
+
+#### Example
+
+```c
+// typedef <type definition> <alias>
+typedef struct Node {          // 'Node' is the struct tag
+    int data;
+    struct Node* next;
+} Node;                        // 'Node' is now a type alias
+
+typedef struct {
+    char name[10];
+    int age;
+    double gpa;
+} studentInfo;                 // Anonymous struct with alias 'studentInfo'
+
+Node node1;
+studentInfo s1;
+```
+>In this example:
+>`Node` can now be used like a built-in type to declare variables
+>`studentInfo` represents a structure without an explicit tag name
+
+---
+### How Do We Use Pointers in C?
+
+A **pointer** is a variable that stores the **memory address** of another variable.
+
+#### Basic Pointer Example
+
+```c
+int a = 10;
+int *p;     // Declare a pointer to an int
+p = &a;     // '&' (address-of operator): gets the address of variable 'a'
+*p = 11;    // '*' (dereference operator): access or modify the value pointed to by 'p'
+```
+
+#### Type-Specific Pointer Examples
+
+```c
+double *pf;   // pf points to a double variable
+char *pc;     // pc points to a char variable
+double **ppf; // ppf is a pointer to a pointer to a double
+char *ppc[];  // ppc is an array of pointers to char (e.g., array of strings)
+```
+
+> Pointer arithmetic depends on the size of the data type.  
+> For example, `pf + 1` increases the address by `sizeof(double)` (typically 8 bytes),  
+> while `pc + 1` increases by `sizeof(char)` (1 byte).
+
+---
+
+#### Special Types of Pointers
+
+| Type           | Description |
+|----------------|-------------|
+| **NULL Pointer** | A pointer that doesn't point to any valid memory location (used for safety checks) |
+| **`void *` Pointer (Generic Pointer)** | A pointer that can hold the address of any data type. It cannot be directly dereferenced without type casting, but can be automatically cast during assignment. |
+
+```c
+void *vp;
+int x = 5;
+vp = &x;        // okay: implicit cast to void*
+printf("%d", *(int *)vp);  // must cast back to correct type to dereference
+```
+
+---
+
+#### Summary
+
+- `*` is used to declare a pointer and to dereference it.
+- `&` gives the address of a variable.
+- Pointers are powerful tools in C, essential for dynamic memory, arrays, structs, and efficient data structures.
+
+---
+
+### How Do We Perform Dynamic Memory Allocation in C?
+
+**Dynamic memory allocation** means allocating memory **during the execution** of a program (at runtime), rather than at compile time.
+
+- Memory is allocated **as needed**, and can be **released** once no longer required.
+- This enables **efficient memory usage**, especially for data structures with variable size (e.g., linked lists, trees, etc.).
+
+---
+
+#### Basic Example
+
+```c
+#include <stdlib.h>
+
+int *p;
+p = (int *)malloc(sizeof(int)); // malloc returns void*, so explicit type casting is needed in C
+if (p != NULL) {
+    *p = 10; // assigning value to dynamically allocated memory
+}
+
+free(p); // Always free allocated memory after use to prevent memory leaks
+```
+
+---
+
+#### Key Functions in `stdlib.h`
+
+| Function | Purpose |
+|----------|---------|
+| `malloc(size)` | Allocates uninitialized memory of `size` bytes |
+| `calloc(n, size)` | Allocates memory for `n` elements and initializes all to zero |
+| `realloc(ptr, new_size)` | Resizes previously allocated memory block |
+| `free(ptr)` | Frees the memory previously allocated by `malloc`, `calloc`, or `realloc` |
+
+---
+
+#### Notes
+
+- Always check if `malloc()` or `calloc()` returns `NULL` (allocation failed).
+- Memory leaks can occur if `free()` is forgotten.
+- Memory allocated with `malloc()` remains until manually freed.
