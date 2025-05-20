@@ -2,7 +2,16 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>https://Byngjoon.github.io/blog/posts/data-structures-00/</loc>
+    <loc>https://Byngjoon.github.io/blog/posts/guide/</loc>
+    <lastmod>2025-05-17T22:37:59+09:00</lastmod>
+  </url><url>
+    <loc>https://Byngjoon.github.io/blog/</loc>
+    <lastmod>2025-05-19T03:31:15+09:00</lastmod>
+  </url><url>
+    <loc>https://Byngjoon.github.io/blog/posts/</loc>
+    <lastmod>2025-05-19T03:31:15+09:00</lastmod>
+  </url><url>
+    <loc>https://Byngjoon.github.io/blog/posts/introduction-to-data-structures/</loc>
     <lastmod>2025-05-17T07:20:49+09:00</lastmod>
   </url><url>
     <loc>https://Byngjoon.github.io/blog/categories/</loc>
@@ -12,12 +21,6 @@
     <lastmod>2025-05-17T07:20:49+09:00</lastmod>
   </url><url>
     <loc>https://Byngjoon.github.io/blog/tags/data-structures/</loc>
-    <lastmod>2025-05-17T07:20:49+09:00</lastmod>
-  </url><url>
-    <loc>https://Byngjoon.github.io/blog/</loc>
-    <lastmod>2025-05-17T07:20:49+09:00</lastmod>
-  </url><url>
-    <loc>https://Byngjoon.github.io/blog/posts/</loc>
     <lastmod>2025-05-17T07:20:49+09:00</lastmod>
   </url><url>
     <loc>https://Byngjoon.github.io/blog/tags/</loc>

@@ -1,24 +1,24 @@
 <!DOCTYPE html>
 <html lang="en" dir="auto">
 
-<head><script src="/blog/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=blog/livereload" data-no-instant defer></script><meta charset="utf-8">
+<head><meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<meta name="robots" content="noindex, nofollow">
+<meta name="robots" content="index, follow">
 <title>[Data Structures] [00] Introduction to Data Structures | Hyungtae</title>
 <meta name="keywords" content="Data Structures">
 <meta name="description" content="The preface and core concepts of Data Structures series">
 <meta name="author" content="">
-<link rel="canonical" href="http://localhost:1313/blog/posts/data-structures-00/">
+<link rel="canonical" href="https://Byngjoon.github.io/blog/posts/introduction-to-data-structures/">
 <link crossorigin="anonymous" href="/blog/assets/css/stylesheet.f49d66caae9ea0fd43f21f29e71a8d3e284517ed770f2aa86fa012953ad3c9ef.css" integrity="sha256-9J1myq6eoP1D8h8p5xqNPihFF&#43;13Dyqob6ASlTrTye8=" rel="preload stylesheet" as="style">
-<link rel="icon" href="http://localhost:1313/blog/favicon.ico">
-<link rel="icon" type="image/png" sizes="16x16" href="http://localhost:1313/blog/favicon-16x16.png">
-<link rel="icon" type="image/png" sizes="32x32" href="http://localhost:1313/blog/favicon-32x32.png">
-<link rel="apple-touch-icon" href="http://localhost:1313/blog/apple-touch-icon.png">
-<link rel="mask-icon" href="http://localhost:1313/blog/safari-pinned-tab.svg">
+<link rel="icon" href="https://Byngjoon.github.io/blog/favicon.ico">
+<link rel="icon" type="image/png" sizes="16x16" href="https://Byngjoon.github.io/blog/favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="https://Byngjoon.github.io/blog/favicon-32x32.png">
+<link rel="apple-touch-icon" href="https://Byngjoon.github.io/blog/apple-touch-icon.png">
+<link rel="mask-icon" href="https://Byngjoon.github.io/blog/safari-pinned-tab.svg">
 <meta name="theme-color" content="#2e2e33">
 <meta name="msapplication-TileColor" content="#2e2e33">
-<link rel="alternate" hreflang="en" href="http://localhost:1313/blog/posts/data-structures-00/">
+<link rel="alternate" hreflang="en" href="https://Byngjoon.github.io/blog/posts/introduction-to-data-structures/">
 <noscript>
     <style>
         #theme-toggle,
@@ -70,7 +70,70 @@
   };
 </script>
 
+<meta property="og:url" content="https://Byngjoon.github.io/blog/posts/introduction-to-data-structures/">
+  <meta property="og:site_name" content="Hyungtae">
+  <meta property="og:title" content="[Data Structures] [00] Introduction to Data Structures">
+  <meta property="og:description" content="The preface and core concepts of Data Structures series">
+  <meta property="og:locale" content="ko-kr">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="posts">
+    <meta property="article:published_time" content="2025-05-17T07:20:49+09:00">
+    <meta property="article:modified_time" content="2025-05-17T07:20:49+09:00">
+    <meta property="article:tag" content="Data Structures">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="[Data Structures] [00] Introduction to Data Structures">
+<meta name="twitter:description" content="The preface and core concepts of Data Structures series">
 
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position":  1 ,
+      "name": "Posts",
+      "item": "https://Byngjoon.github.io/blog/posts/"
+    }, 
+    {
+      "@type": "ListItem",
+      "position":  2 ,
+      "name": "[Data Structures] [00] Introduction to Data Structures",
+      "item": "https://Byngjoon.github.io/blog/posts/introduction-to-data-structures/"
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "[Data Structures] [00] Introduction to Data Structures",
+  "name": "[Data Structures] [00] Introduction to Data Structures",
+  "description": "The preface and core concepts of Data Structures series",
+  "keywords": [
+    "Data Structures"
+  ],
+  "articleBody": "Chapter 00: Introduction to Data Structures Outline: This chapter provides a foundational overview of what data structures are, how they differ from data types, and why Abstract Data Types (ADTs) are essential. It also introduces basic C language concepts that are prerequisites(사전에 필요한) for understanding and implementing data structures.\nContents What is Data Structures about? Data Type vs Data Structure What is an Abstract Data Type (ADT)? C Language Essentials for Data Structures Section 01. What is Data Structures about? Data Structures is the study of how to organize, store, and manage data efficiently in a computer system.\nIt focuses on designing ways to:\nStore data (structure) How to structure data (Arrays, Linked Lists, Trees, Graphs, Hash Tables, etc.)\nAccess and modify data (operations) How to insert, delete, search, sort, and traverse data\nOptimize performance (time \u0026 space complexity) Measuring performance using time \u0026 space complexity (Big-O notation) Choosing the right data structure for different problems (e.g., using stacks for undo history)\nClassification of Data Structures 1. By Structural Form Type Description Examples Linear Structure Data elements are arranged sequentially Array, Linked List, Stack, Queue Non-linear Structure Data elements have hierarchical(계층적인) or graph-like relationships Tree, Graph, Heap Hash-based Structure Data is accessed via keys and hash functions Hash Table, Hash Map, Hash Set 2. By Storage Method Type Description Examples Sequential Storage Data is stored in contiguous memory Array, Static Queue Linked Storage Nodes are connected via pointers Linked List, Tree, Graph Indexed Storage Access is based on key/index positions Hash Table, Skip List, B-Tree 3. By Access Method Type Description Examples Random Access Direct access using index/key Array, Hash Table Sequential Access Access data in order, one by one Linked List, Queue Hierarchical Access Access through parent-child relationships Tree, Heap Unstructured Access Access based on arbitrary connections Graph Why Do We Learn Data Structures? To solve problems efficiently and reliably.\nEven with a good algorithm, choosing the wrong data structure can waste time and memory resources.\nProblem Scenario Recommended Data Structure Fast search Hash Map Frequent insertions/removals Linked List Undo feature Stack Ordered access Array, List Section 02. Data Type vs Data Structure Data Type: Defines the form and allowed operations for a single piece of data.\nint: Represents a single integer value; supports arithmetic(산술) operations like addition, subtraction, etc. char: Represents a single character; supports character encoding operations (e.g., ASCII manipulation) Data Structure: Organizes, stores, accesses, and manages a collection of data.\nArray: Stores elements in contiguous(인접한) memory locations Linked List: Connects nodes using pointers to form a linear structure Aspect Data Type Data Structure Purpose Define the kind of a single value Organize and manage a group of related values Examples int, float, char, etc. Array, Stack, Queue, Linked List, etc. Unit A single value A collection of values Focus The data itself The relationship and operations among data Section 03. What is an Abstract Data Type (ADT)? An Abstract Data Type (ADT) defines a logical model (object) and a set of operations for handling data, while hiding the internal implementation details(구현 상세).\nWe can see what it does (interface). We cannot see how it works (implementation). Therefore, users can use an ADT without knowing its internal mechanism. ADT Must Define Two Components Component Description Object The type of data being handled (e.g., integers, a set of characters, etc.) Collection of Operations The set of valid actions to perform on the data (insert, delete, search, etc.) Examples of ADTs 1. Stack ADT Component Description Object A collection of ordered elements (e.g., integers, characters, etc.) Operations push(x), pop(), peek(), isEmpty(), … Characteristics Follows LIFO (Last-In, First-Out) principle; the most recently added element is removed first The stack can be implemented using an array or a linked list,\nbut the user only needs to know the interface, not the implementation.\n2. Queue ADT Component Description Object A linear collection representing a waiting line Operations enqueue(x), dequeue(), front(), isEmpty(), … Characteristics Follows FIFO (First-In, First-Out) principle; the earliest added element is removed first 3. List ADT Component Description Object A sequence of elements with index-based access Operations insert(i, x), delete(i), get(i), find(x), … Characteristics Supports indexed access; can be implemented with arrays or linked structures ADT vs Data Structure Aspect ADT (Abstract Data Type) Data Structure Perspective Conceptual interface (what it does) Concrete implementation (how it works) Examples Stack, Queue, List Array, Linked List, Tree, Hash Table Focus What operations are supported How those operations are implemented efficiently Purpose Provide a simple and clear interface to users Optimize performance through implementation choices Why Do We Use ADTs? Abstraction\nUsers can use data structures without knowing internal details.\nModularity (Flexibility)\nIf the ADT interface remains the same, the internal implementation can be changed without affecting user code.\nReusability\nADT-based designs can be reused in various problem domains with minimal modification.\nData Protection\nThe internal state is hidden, so users cannot tamper with it directly, ensuring consistency and integrity.\nIn summary:\nAn ADT defines what data and operations are available, not how they are performed.\nThis separation allows for clean, maintainable, and flexible software design.\nSection 04. C Language Essentials for Data Structures We will implement data structures using the C programming language.\nTo do this effectively, we need to understand three core concepts:\nWhat is a struct type in C? How do we use pointers in C? How do we perform dynamic memory allocation in C? What is struct type in C? A struct (short for structure) in C is a user-defined data type that allows you to group variables of different types under a single name.\nUnlike arrays, which access elements by index, a struct uses named fields to access its internal data.\nTo access these fields, you use the dot operator (.).\nExample: struct Node { // 'Node' is the struct type name int data; // field struct Node* next; // field }; struct Node node1; node1.data = 10; // Accessing the 'data' field using the dot operator Memory Allocation of ‘struct’ Type A struct is stored in a contiguous block of memory, and its fields are laid out in the order they are declared. However, the total memory size of a struct may be larger than the sum of its fields’ sizes due to: Padding: extra space inserted between fields Alignment rules: used to optimize memory access performance on most architectures You can check the actual memory allocated for a struct using sizeof(struct) in C. These rules ensure that each field starts at a memory address aligned to its size (e.g., int on 4-byte boundaries, double on 8-byte boundaries).\nExample: struct studentInfo { char name[10]; int age; double gpa; }; Field Type Size (bytes) Memory Offset Notes name char[10] 10 0–9 Starts at offset 0 padding — 2 10–11 To align int to a 4-byte boundary age int 4 12–15 4-byte aligned gpa double 8 16–23 8-byte aligned total — 24 bytes — sizeof(struct studentInfo) == 24 ’typedef’ in C typedef is used to assign a custom alias(별칭) to an existing type. It helps simplify complex type names and improve code readability, especially with struct. Example // typedef typedef struct Node { // 'Node' is the struct tag int data; struct Node* next; } Node; // 'Node' is now a type alias typedef struct { char name[10]; int age; double gpa; } studentInfo; // Anonymous struct with alias 'studentInfo' Node node1; studentInfo s1; In this example: Node can now be used like a built-in type to declare variables studentInfo represents a structure without an explicit tag name\nHow Do We Use Pointers in C? A pointer is a variable that stores the memory address of another variable.\nBasic Pointer Example int a = 10; int *p; // Declare a pointer to an int p = \u0026a; // '\u0026' (address-of operator): gets the address of variable 'a' *p = 11; // '*' (dereference operator): access or modify the value pointed to by 'p' Type-Specific Pointer Examples double *pf; // pf points to a double variable char *pc; // pc points to a char variable double **ppf; // ppf is a pointer to a pointer to a double char *ppc[]; // ppc is an array of pointers to char (e.g., array of strings) Pointer arithmetic depends on the size of the data type.\nFor example, pf + 1 increases the address by sizeof(double) (typically 8 bytes),\nwhile pc + 1 increases by sizeof(char) (1 byte).\nSpecial Types of Pointers Type Description NULL Pointer A pointer that doesn’t point to any valid memory location (used for safety checks) void * Pointer (Generic Pointer) A pointer that can hold the address of any data type. It cannot be directly dereferenced without type casting, but can be automatically cast during assignment. void *vp; int x = 5; vp = \u0026x; // okay: implicit cast to void* printf(\"%d\", *(int *)vp); // must cast back to correct type to dereference Summary * is used to declare a pointer and to dereference it. \u0026 gives the address of a variable. Pointers are powerful tools in C, essential for dynamic memory, arrays, structs, and efficient data structures. How Do We Perform Dynamic Memory Allocation in C? Dynamic memory allocation means allocating memory during the execution of a program (at runtime), rather than at compile time.\nMemory is allocated as needed, and can be released once no longer required. This enables efficient memory usage, especially for data structures with variable size (e.g., linked lists, trees, etc.). Basic Example #include int *p; p = (int *)malloc(sizeof(int)); // malloc returns void*, so explicit type casting is needed in C if (p != NULL) { *p = 10; // assigning value to dynamically allocated memory } free(p); // Always free allocated memory after use to prevent memory leaks Key Functions in stdlib.h Function Purpose malloc(size) Allocates uninitialized memory of size bytes calloc(n, size) Allocates memory for n elements and initializes all to zero realloc(ptr, new_size) Resizes previously allocated memory block free(ptr) Frees the memory previously allocated by malloc, calloc, or realloc Notes Always check if malloc() or calloc() returns NULL (allocation failed). Memory leaks can occur if free() is forgotten. Memory allocated with malloc() remains until manually freed. ",
+  "wordCount" : "1691",
+  "inLanguage": "en",
+  "datePublished": "2025-05-17T07:20:49+09:00",
+  "dateModified": "2025-05-17T07:20:49+09:00",
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://Byngjoon.github.io/blog/posts/introduction-to-data-structures/"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Hyungtae",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://Byngjoon.github.io/blog/favicon.ico"
+    }
+  }
+}
+</script>
 </head>
 
 <body class="" id="top">
@@ -88,7 +151,7 @@
 <header class="header">
     <nav class="nav">
         <div class="logo">
-            <a href="http://localhost:1313/blog/" accesskey="h" title="Hyungtae (Alt + H)">Hyungtae</a>
+            <a href="https://Byngjoon.github.io/blog/" accesskey="h" title="Hyungtae (Alt + H)">Hyungtae</a>
             <div class="logo-switches">
                 <button id="theme-toggle" accesskey="t" title="(Alt + T)" aria-label="Toggle theme">
                     <svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
@@ -114,12 +177,12 @@
         </div>
         <ul id="menu">
             <li>
-                <a href="http://localhost:1313/blog/categories/" title="Categories">
+                <a href="https://Byngjoon.github.io/blog/categories/" title="Categories">
                     <span>Categories</span>
                 </a>
             </li>
             <li>
-                <a href="http://localhost:1313/blog/tags/" title="Tags">
+                <a href="https://Byngjoon.github.io/blog/tags/" title="Tags">
                     <span>Tags</span>
                 </a>
             </li>
@@ -148,7 +211,12 @@
 
         <div class="inner"><ul>
                 <li>
-                    <a href="#what-is-data-structures-about" aria-label="What is Data Structures about?">What is Data Structures about?</a><ul>
+                    <a href="#chapter-00-introduction-to-data-structures" aria-label="Chapter 00: Introduction to Data Structures">Chapter 00: Introduction to Data Structures</a><ul>
+                        
+                <li>
+                    <a href="#contents" aria-label="Contents">Contents</a></li>
+                <li>
+                    <a href="#section-01-what-is-data-structures-about" aria-label="Section 01. What is Data Structures about?">Section 01. What is Data Structures about?</a><ul>
                         
                 <li>
                     <a href="#classification-of-data-structures" aria-label="Classification of Data Structures">Classification of Data Structures</a><ul>
@@ -159,14 +227,14 @@
                     <a href="#2-by-storage-method" aria-label="2. By Storage Method">2. By Storage Method</a></li>
                 <li>
                     <a href="#3-by-access-method" aria-label="3. By Access Method">3. By Access Method</a></li></ul>
-                </li></ul>
                 </li>
                 <li>
-                    <a href="#why-do-we-learn-data-structures" aria-label="Why Do We Learn Data Structures?">Why Do We Learn Data Structures?</a></li>
+                    <a href="#why-do-we-learn-data-structures" aria-label="Why Do We Learn Data Structures?">Why Do We Learn Data Structures?</a></li></ul>
+                </li>
                 <li>
-                    <a href="#data-type-vs-data-structure" aria-label="Data Type vs Data Structure">Data Type vs Data Structure</a></li>
+                    <a href="#section-02-data-type-vs-data-structure" aria-label="Section 02. Data Type vs Data Structure">Section 02. Data Type vs Data Structure</a></li>
                 <li>
-                    <a href="#what-is-an-abstract-data-type-adt" aria-label="What is an Abstract Data Type (ADT)?">What is an Abstract Data Type (ADT)?</a><ul>
+                    <a href="#section-03-what-is-an-abstract-data-type-adt" aria-label="Section 03. What is an Abstract Data Type (ADT)?">Section 03. What is an Abstract Data Type (ADT)?</a><ul>
                         
                 <li>
                     <a href="#adt-must-define-two-components" aria-label="ADT Must Define Two Components">ADT Must Define Two Components</a><ul>
@@ -188,39 +256,35 @@
                     <a href="#why-do-we-use-adts" aria-label="Why Do We Use ADTs?">Why Do We Use ADTs?</a></li></ul>
                 </li>
                 <li>
-                    <a href="#c-language-essentials-for-data-structures" aria-label="C Language Essentials for Data Structures">C Language Essentials for Data Structures</a><ul>
+                    <a href="#section-04-c-language-essentials-for-data-structures" aria-label="Section 04. C Language Essentials for Data Structures">Section 04. C Language Essentials for Data Structures</a><ul>
                         
                 <li>
                     <a href="#what-is-struct-type-in-c" aria-label="What is struct type in C?">What is struct type in C?</a><ul>
-                        <ul>
                         
                 <li>
-                    <a href="#example" aria-label="Example:">Example:</a></li></ul>
-                    
+                    <a href="#example" aria-label="Example:">Example:</a></li>
                 <li>
                     <a href="#memory-allocation-of-struct-type" aria-label="Memory Allocation of &lsquo;struct&rsquo; Type">Memory Allocation of &lsquo;struct&rsquo; Type</a><ul>
                         
                 <li>
                     <a href="#example-1" aria-label="Example:">Example:</a></li></ul>
+                </li></ul>
                 </li>
                 <li>
                     <a href="#typedef-in-c" aria-label="&rsquo;typedef&rsquo; in C">&rsquo;typedef&rsquo; in C</a><ul>
                         
                 <li>
                     <a href="#example-2" aria-label="Example">Example</a></li></ul>
-                </li></ul>
                 </li>
                 <li>
                     <a href="#how-do-we-use-pointers-in-c" aria-label="How Do We Use Pointers in C?">How Do We Use Pointers in C?</a><ul>
-                        <ul>
                         
                 <li>
                     <a href="#basic-pointer-example" aria-label="Basic Pointer Example">Basic Pointer Example</a></li>
                 <li>
                     <a href="#type-specific-pointer-examples" aria-label="Type-Specific Pointer Examples">Type-Specific Pointer Examples</a></li>
                 <li>
-                    <a href="#special-types-of-pointers" aria-label="Special Types of Pointers">Special Types of Pointers</a></li></ul>
-                    
+                    <a href="#special-types-of-pointers" aria-label="Special Types of Pointers">Special Types of Pointers</a></li>
                 <li>
                     <a href="#summary" aria-label="Summary">Summary</a></li></ul>
                 </li>
@@ -239,20 +303,25 @@
             </ul>
             </li>
             </ul>
+            </li>
+            </ul>
         </div>
     </details>
 </div>
 
-  <div class="post-content"><!--
-# Contents
-1. [Data Structures](#what-is-data-structures-about)
-2. [Data Type vs Data Structure](#data-type-vs-data-structure)
-3. [Abstract Data Type](#what-is-an-abstract-data-type-adt)
-4. [C Language Essentials for Data Structures](#c-language-essentials-for-data-structures)
-
----
--->
-<h1 id="what-is-data-structures-about">What is Data Structures about?<a hidden class="anchor" aria-hidden="true" href="#what-is-data-structures-about">#</a></h1>
+  <div class="post-content"><h1 id="chapter-00-introduction-to-data-structures">Chapter 00: Introduction to Data Structures<a hidden class="anchor" aria-hidden="true" href="#chapter-00-introduction-to-data-structures">#</a></h1>
+<blockquote>
+<p><strong>Outline:</strong> This chapter provides a foundational overview of what data structures are, how they differ from data types, and why Abstract Data Types (ADTs) are essential. It also introduces basic C language concepts that are prerequisites(사전에 필요한) for understanding and implementing data structures.</p></blockquote>
+<hr>
+<h2 id="contents">Contents<a hidden class="anchor" aria-hidden="true" href="#contents">#</a></h2>
+<ol>
+<li><a href="#section-01-what-is-data-structures-about">What is Data Structures about?</a></li>
+<li><a href="#section-02-data-type-vs-data-structure">Data Type vs Data Structure</a></li>
+<li><a href="#section-03-what-is-an-abstract-data-type-adt">What is an Abstract Data Type (ADT)?</a></li>
+<li><a href="#section-04-c-language-essentials-for-data-structures">C Language Essentials for Data Structures</a></li>
+</ol>
+<hr>
+<h2 id="section-01-what-is-data-structures-about">Section 01. What is Data Structures about?<a hidden class="anchor" aria-hidden="true" href="#section-01-what-is-data-structures-about">#</a></h2>
 <p>Data Structures is the study of how to organize, store, and manage data <strong>efficiently</strong> in a computer system.</p>
 <hr>
 <p>It focuses on designing ways to:</p>
@@ -272,8 +341,8 @@ Choosing the right data structure for different problems (e.g., using stacks for
 </li>
 </ol>
 <hr>
-<h2 id="classification-of-data-structures">Classification of Data Structures<a hidden class="anchor" aria-hidden="true" href="#classification-of-data-structures">#</a></h2>
-<h3 id="1-by-structural-form">1. By Structural Form<a hidden class="anchor" aria-hidden="true" href="#1-by-structural-form">#</a></h3>
+<h3 id="classification-of-data-structures">Classification of Data Structures<a hidden class="anchor" aria-hidden="true" href="#classification-of-data-structures">#</a></h3>
+<h4 id="1-by-structural-form">1. By Structural Form<a hidden class="anchor" aria-hidden="true" href="#1-by-structural-form">#</a></h4>
 <table>
   <thead>
       <tr>
@@ -301,7 +370,7 @@ Choosing the right data structure for different problems (e.g., using stacks for
   </tbody>
 </table>
 <hr>
-<h3 id="2-by-storage-method">2. By Storage Method<a hidden class="anchor" aria-hidden="true" href="#2-by-storage-method">#</a></h3>
+<h4 id="2-by-storage-method">2. By Storage Method<a hidden class="anchor" aria-hidden="true" href="#2-by-storage-method">#</a></h4>
 <table>
   <thead>
       <tr>
@@ -329,7 +398,7 @@ Choosing the right data structure for different problems (e.g., using stacks for
   </tbody>
 </table>
 <hr>
-<h3 id="3-by-access-method">3. By Access Method<a hidden class="anchor" aria-hidden="true" href="#3-by-access-method">#</a></h3>
+<h4 id="3-by-access-method">3. By Access Method<a hidden class="anchor" aria-hidden="true" href="#3-by-access-method">#</a></h4>
 <table>
   <thead>
       <tr>
@@ -362,7 +431,7 @@ Choosing the right data structure for different problems (e.g., using stacks for
   </tbody>
 </table>
 <hr>
-<h1 id="why-do-we-learn-data-structures">Why Do We Learn Data Structures?<a hidden class="anchor" aria-hidden="true" href="#why-do-we-learn-data-structures">#</a></h1>
+<h3 id="why-do-we-learn-data-structures">Why Do We Learn Data Structures?<a hidden class="anchor" aria-hidden="true" href="#why-do-we-learn-data-structures">#</a></h3>
 <p>To solve problems <strong>efficiently</strong> and <strong>reliably</strong>.</p>
 <p>Even with a good algorithm, choosing the wrong data structure can waste <strong>time</strong> and <strong>memory resources</strong>.</p>
 <hr>
@@ -393,7 +462,7 @@ Choosing the right data structure for different problems (e.g., using stacks for
   </tbody>
 </table>
 <hr>
-<h1 id="data-type-vs-data-structure">Data Type vs Data Structure<a hidden class="anchor" aria-hidden="true" href="#data-type-vs-data-structure">#</a></h1>
+<h2 id="section-02-data-type-vs-data-structure">Section 02. Data Type vs Data Structure<a hidden class="anchor" aria-hidden="true" href="#section-02-data-type-vs-data-structure">#</a></h2>
 <p><strong>Data Type</strong>: Defines the form and allowed operations for a single piece of data.</p>
 <ul>
 <li><code>int</code>: Represents a single integer value; supports arithmetic(산술) operations like addition, subtraction, etc.</li>
@@ -436,7 +505,7 @@ Choosing the right data structure for different problems (e.g., using stacks for
   </tbody>
 </table>
 <hr>
-<h1 id="what-is-an-abstract-data-type-adt">What is an Abstract Data Type (ADT)?<a hidden class="anchor" aria-hidden="true" href="#what-is-an-abstract-data-type-adt">#</a></h1>
+<h2 id="section-03-what-is-an-abstract-data-type-adt">Section 03. What is an Abstract Data Type (ADT)?<a hidden class="anchor" aria-hidden="true" href="#section-03-what-is-an-abstract-data-type-adt">#</a></h2>
 <p>An <strong>Abstract Data Type (ADT)</strong> defines a logical model (object) and a set of operations for handling data, while hiding the internal implementation details(구현 상세).</p>
 <ul>
 <li>We can see <strong>what it does</strong> (interface).</li>
@@ -444,7 +513,7 @@ Choosing the right data structure for different problems (e.g., using stacks for
 <li>Therefore, users can use an ADT <strong>without knowing its internal mechanism</strong>.</li>
 </ul>
 <hr>
-<h2 id="adt-must-define-two-components">ADT Must Define Two Components<a hidden class="anchor" aria-hidden="true" href="#adt-must-define-two-components">#</a></h2>
+<h3 id="adt-must-define-two-components">ADT Must Define Two Components<a hidden class="anchor" aria-hidden="true" href="#adt-must-define-two-components">#</a></h3>
 <table>
   <thead>
       <tr>
@@ -464,8 +533,8 @@ Choosing the right data structure for different problems (e.g., using stacks for
   </tbody>
 </table>
 <hr>
-<h3 id="examples-of-adts">Examples of ADTs<a hidden class="anchor" aria-hidden="true" href="#examples-of-adts">#</a></h3>
-<h4 id="1-stack-adt">1. Stack ADT<a hidden class="anchor" aria-hidden="true" href="#1-stack-adt">#</a></h4>
+<h4 id="examples-of-adts">Examples of ADTs<a hidden class="anchor" aria-hidden="true" href="#examples-of-adts">#</a></h4>
+<h5 id="1-stack-adt">1. Stack ADT<a hidden class="anchor" aria-hidden="true" href="#1-stack-adt">#</a></h5>
 <table>
   <thead>
       <tr>
@@ -492,7 +561,7 @@ Choosing the right data structure for different problems (e.g., using stacks for
 <p>The stack can be implemented using an <strong>array</strong> or a <strong>linked list</strong>,<br>
 but the user only needs to know the <strong>interface</strong>, not the implementation.</p></blockquote>
 <hr>
-<h4 id="2-queue-adt">2. Queue ADT<a hidden class="anchor" aria-hidden="true" href="#2-queue-adt">#</a></h4>
+<h5 id="2-queue-adt">2. Queue ADT<a hidden class="anchor" aria-hidden="true" href="#2-queue-adt">#</a></h5>
 <table>
   <thead>
       <tr>
@@ -516,7 +585,7 @@ but the user only needs to know the <strong>interface</strong>, not the implemen
   </tbody>
 </table>
 <hr>
-<h4 id="3-list-adt">3. List ADT<a hidden class="anchor" aria-hidden="true" href="#3-list-adt">#</a></h4>
+<h5 id="3-list-adt">3. List ADT<a hidden class="anchor" aria-hidden="true" href="#3-list-adt">#</a></h5>
 <table>
   <thead>
       <tr>
@@ -540,7 +609,7 @@ but the user only needs to know the <strong>interface</strong>, not the implemen
   </tbody>
 </table>
 <hr>
-<h2 id="adt-vs-data-structure">ADT vs Data Structure<a hidden class="anchor" aria-hidden="true" href="#adt-vs-data-structure">#</a></h2>
+<h3 id="adt-vs-data-structure">ADT vs Data Structure<a hidden class="anchor" aria-hidden="true" href="#adt-vs-data-structure">#</a></h3>
 <table>
   <thead>
       <tr>
@@ -573,7 +642,7 @@ but the user only needs to know the <strong>interface</strong>, not the implemen
   </tbody>
 </table>
 <hr>
-<h2 id="why-do-we-use-adts">Why Do We Use ADTs?<a hidden class="anchor" aria-hidden="true" href="#why-do-we-use-adts">#</a></h2>
+<h3 id="why-do-we-use-adts">Why Do We Use ADTs?<a hidden class="anchor" aria-hidden="true" href="#why-do-we-use-adts">#</a></h3>
 <ol>
 <li>
 <p><strong>Abstraction</strong><br>
@@ -598,7 +667,7 @@ The internal state is hidden, so users cannot tamper with it directly, ensuring 
 An ADT defines <strong>what</strong> data and operations are available, not <strong>how</strong> they are performed.<br>
 This separation allows for clean, maintainable, and flexible software design.</p></blockquote>
 <hr>
-<h1 id="c-language-essentials-for-data-structures">C Language Essentials for Data Structures<a hidden class="anchor" aria-hidden="true" href="#c-language-essentials-for-data-structures">#</a></h1>
+<h2 id="section-04-c-language-essentials-for-data-structures">Section 04. C Language Essentials for Data Structures<a hidden class="anchor" aria-hidden="true" href="#section-04-c-language-essentials-for-data-structures">#</a></h2>
 <p>We will implement data structures using the C programming language.<br>
 To do this effectively, we need to understand three core concepts:</p>
 <ul>
@@ -607,7 +676,7 @@ To do this effectively, we need to understand three core concepts:</p>
 <li><a href="#how-do-we-perform-dynamic-memory-allocation-in-c">How do we perform <strong>dynamic memory allocation</strong> in C?</a></li>
 </ul>
 <hr>
-<h2 id="what-is-struct-type-in-c">What is <code>struct</code> type in C?<a hidden class="anchor" aria-hidden="true" href="#what-is-struct-type-in-c">#</a></h2>
+<h3 id="what-is-struct-type-in-c">What is <code>struct</code> type in C?<a hidden class="anchor" aria-hidden="true" href="#what-is-struct-type-in-c">#</a></h3>
 <p>A <code>struct</code> (short for <strong>structure</strong>) in C is a <strong>user-defined data type</strong> that allows you to group variables of <strong>different types</strong> under a single name.</p>
 <p>Unlike arrays, which access elements by index, a <code>struct</code> uses <strong>named fields</strong> to access its internal data.<br>
 To access these fields, you use the <strong>dot operator (<code>.</code>)</strong>.</p>
@@ -620,7 +689,7 @@ To access these fields, you use the <strong>dot operator (<code>.</code>)</stron
 </span></span><span style="display:flex;"><span><span style="color:#66d9ef">struct</span> Node node1;
 </span></span><span style="display:flex;"><span>node1.data <span style="color:#f92672">=</span> <span style="color:#ae81ff">10</span>;     <span style="color:#75715e">// Accessing the &#39;data&#39; field using the dot operator
 </span></span></span></code></pre></div><hr>
-<h3 id="memory-allocation-of-struct-type">Memory Allocation of &lsquo;struct&rsquo; Type<a hidden class="anchor" aria-hidden="true" href="#memory-allocation-of-struct-type">#</a></h3>
+<h4 id="memory-allocation-of-struct-type">Memory Allocation of &lsquo;struct&rsquo; Type<a hidden class="anchor" aria-hidden="true" href="#memory-allocation-of-struct-type">#</a></h4>
 <ul>
 <li>A <code>struct</code> is stored in a <strong>contiguous block of memory</strong>, and its fields are laid out <strong>in the order they are declared</strong>.</li>
 <li>However, the <strong>total memory size</strong> of a <code>struct</code> may be <strong>larger than the sum of its fields’ sizes</strong> due to:
@@ -632,7 +701,7 @@ To access these fields, you use the <strong>dot operator (<code>.</code>)</stron
 </li>
 </ul>
 <p>These rules ensure that each field starts at a memory address aligned to its size (e.g., <code>int</code> on 4-byte boundaries, <code>double</code> on 8-byte boundaries).</p>
-<h4 id="example-1">Example:<a hidden class="anchor" aria-hidden="true" href="#example-1">#</a></h4>
+<h5 id="example-1">Example:<a hidden class="anchor" aria-hidden="true" href="#example-1">#</a></h5>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c" data-lang="c"><span style="display:flex;"><span><span style="color:#66d9ef">struct</span> studentInfo {
 </span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">char</span> name[<span style="color:#ae81ff">10</span>];
 </span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">int</span> age;
@@ -712,7 +781,7 @@ To access these fields, you use the <strong>dot operator (<code>.</code>)</stron
 <code>Node</code> can now be used like a built-in type to declare variables
 <code>studentInfo</code> represents a structure without an explicit tag name</p></blockquote>
 <hr>
-<h2 id="how-do-we-use-pointers-in-c">How Do We Use Pointers in C?<a hidden class="anchor" aria-hidden="true" href="#how-do-we-use-pointers-in-c">#</a></h2>
+<h3 id="how-do-we-use-pointers-in-c">How Do We Use Pointers in C?<a hidden class="anchor" aria-hidden="true" href="#how-do-we-use-pointers-in-c">#</a></h3>
 <p>A <strong>pointer</strong> is a variable that stores the <strong>memory address</strong> of another variable.</p>
 <h4 id="basic-pointer-example">Basic Pointer Example<a hidden class="anchor" aria-hidden="true" href="#basic-pointer-example">#</a></h4>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c" data-lang="c"><span style="display:flex;"><span><span style="color:#66d9ef">int</span> a <span style="color:#f92672">=</span> <span style="color:#ae81ff">10</span>;
@@ -753,21 +822,21 @@ while <code>pc + 1</code> increases by <code>sizeof(char)</code> (1 byte).</p></
 </span></span><span style="display:flex;"><span>vp <span style="color:#f92672">=</span> <span style="color:#f92672">&amp;</span>x;        <span style="color:#75715e">// okay: implicit cast to void*
 </span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#a6e22e">printf</span>(<span style="color:#e6db74">&#34;%d&#34;</span>, <span style="color:#f92672">*</span>(<span style="color:#66d9ef">int</span> <span style="color:#f92672">*</span>)vp);  <span style="color:#75715e">// must cast back to correct type to dereference
 </span></span></span></code></pre></div><hr>
-<h3 id="summary">Summary<a hidden class="anchor" aria-hidden="true" href="#summary">#</a></h3>
+<h4 id="summary">Summary<a hidden class="anchor" aria-hidden="true" href="#summary">#</a></h4>
 <ul>
 <li><code>*</code> is used to declare a pointer and to dereference it.</li>
 <li><code>&amp;</code> gives the address of a variable.</li>
 <li>Pointers are powerful tools in C, essential for dynamic memory, arrays, structs, and efficient data structures.</li>
 </ul>
 <hr>
-<h2 id="how-do-we-perform-dynamic-memory-allocation-in-c">How Do We Perform Dynamic Memory Allocation in C?<a hidden class="anchor" aria-hidden="true" href="#how-do-we-perform-dynamic-memory-allocation-in-c">#</a></h2>
+<h3 id="how-do-we-perform-dynamic-memory-allocation-in-c">How Do We Perform Dynamic Memory Allocation in C?<a hidden class="anchor" aria-hidden="true" href="#how-do-we-perform-dynamic-memory-allocation-in-c">#</a></h3>
 <p><strong>Dynamic memory allocation</strong> means allocating memory <strong>during the execution</strong> of a program (at runtime), rather than at compile time.</p>
 <ul>
 <li>Memory is allocated <strong>as needed</strong>, and can be <strong>released</strong> once no longer required.</li>
 <li>This enables <strong>efficient memory usage</strong>, especially for data structures with variable size (e.g., linked lists, trees, etc.).</li>
 </ul>
 <hr>
-<h3 id="basic-example">Basic Example<a hidden class="anchor" aria-hidden="true" href="#basic-example">#</a></h3>
+<h4 id="basic-example">Basic Example<a hidden class="anchor" aria-hidden="true" href="#basic-example">#</a></h4>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c" data-lang="c"><span style="display:flex;"><span><span style="color:#75715e">#include</span> <span style="color:#75715e">&lt;stdlib.h&gt;</span><span style="color:#75715e">
 </span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>
 </span></span><span style="display:flex;"><span><span style="color:#66d9ef">int</span> <span style="color:#f92672">*</span>p;
@@ -778,7 +847,7 @@ while <code>pc + 1</code> increases by <code>sizeof(char)</code> (1 byte).</p></
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span><span style="color:#a6e22e">free</span>(p); <span style="color:#75715e">// Always free allocated memory after use to prevent memory leaks
 </span></span></span></code></pre></div><hr>
-<h3 id="key-functions-in-stdlibh">Key Functions in <code>stdlib.h</code><a hidden class="anchor" aria-hidden="true" href="#key-functions-in-stdlibh">#</a></h3>
+<h4 id="key-functions-in-stdlibh">Key Functions in <code>stdlib.h</code><a hidden class="anchor" aria-hidden="true" href="#key-functions-in-stdlibh">#</a></h4>
 <table>
   <thead>
       <tr>
@@ -806,7 +875,7 @@ while <code>pc + 1</code> increases by <code>sizeof(char)</code> (1 byte).</p></
   </tbody>
 </table>
 <hr>
-<h3 id="notes">Notes<a hidden class="anchor" aria-hidden="true" href="#notes">#</a></h3>
+<h4 id="notes">Notes<a hidden class="anchor" aria-hidden="true" href="#notes">#</a></h4>
 <ul>
 <li>Always check if <code>malloc()</code> or <code>calloc()</code> returns <code>NULL</code> (allocation failed).</li>
 <li>Memory leaks can occur if <code>free()</code> is forgotten.</li>
@@ -818,14 +887,14 @@ while <code>pc + 1</code> increases by <code>sizeof(char)</code> (1 byte).</p></
 
   <footer class="post-footer">
     <ul class="post-tags">
-      <li><a href="http://localhost:1313/blog/tags/data-structures/">Data Structures</a></li>
+      <li><a href="https://Byngjoon.github.io/blog/tags/data-structures/">Data Structures</a></li>
     </ul>
   </footer>
 </article>
     </main>
     
 <footer class="footer">
-        <span>&copy; 2025 <a href="http://localhost:1313/blog/">Hyungtae</a></span> · 
+        <span>&copy; 2025 <a href="https://Byngjoon.github.io/blog/">Hyungtae</a></span> · 
 
     <span>
         Powered by

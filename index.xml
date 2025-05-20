@@ -6,13 +6,53 @@
     <description>Recent content on Hyungtae</description>
     <generator>Hugo -- 0.147.3</generator>
     <language>ko-kr</language>
-    <lastBuildDate>Sat, 17 May 2025 07:20:49 +0900</lastBuildDate>
+    <lastBuildDate>Sat, 17 May 2025 22:37:59 +0900</lastBuildDate>
     <atom:link href="https://Byngjoon.github.io/blog/index.xml" rel="self" type="application/rss+xml" />
     <item>
+      <title>Guide</title>
+      <link>https://Byngjoon.github.io/blog/posts/guide/</link>
+      <pubDate>Sat, 17 May 2025 22:37:59 +0900</pubDate>
+      <guid>https://Byngjoon.github.io/blog/posts/guide/</guid>
+      <description>&lt;h1 id=&#34;computing-field-overview&#34;&gt;Computing Field Overview&lt;/h1&gt;
+&lt;h2 id=&#34;-computer-science-cs&#34;&gt;■ Computer Science (CS)&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Theoretical Computer Science&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Computation Theory (Turing Machines, Automata)&lt;/li&gt;
+&lt;li&gt;Complexity Theory (P vs NP, Time/Space Complexity)&lt;/li&gt;
+&lt;li&gt;Formal Languages &amp;amp; Compiler Theory&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Algorithms &amp;amp; Data Structures&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Data Structures (Lists, Stacks, Queues, Trees, Graphs, Hash Tables)&lt;/li&gt;
+&lt;li&gt;Algorithms (Sorting, Searching, Shortest Path, Dynamic Programming)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Programming Languages&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Language Design &amp;amp; Syntax Theory&lt;/li&gt;
+&lt;li&gt;Interpreter, Compiler, Virtual Machine Implementation&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Artificial Intelligence &amp;amp; Machine Learning (AI / ML)&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Deep Learning, Reinforcement Learning, Natural Language Processing&lt;/li&gt;
+&lt;li&gt;Computer Vision, Recommendation Systems&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Software Engineering&lt;/strong&gt;&lt;/p&gt;</description>
+    </item>
+    <item>
       <title>[Data Structures] [00] Introduction to Data Structures</title>
-      <link>https://Byngjoon.github.io/blog/posts/data-structures-00/</link>
+      <link>https://Byngjoon.github.io/blog/posts/introduction-to-data-structures/</link>
       <pubDate>Sat, 17 May 2025 07:20:49 +0900</pubDate>
-      <guid>https://Byngjoon.github.io/blog/posts/data-structures-00/</guid>
+      <guid>https://Byngjoon.github.io/blog/posts/introduction-to-data-structures/</guid>
       <description>The preface and core concepts of Data Structures series</description>
     </item>
   </channel>
