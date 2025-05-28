@@ -1,0 +1,1375 @@
+<!DOCTYPE html>
+<html lang="en" dir="auto">
+
+<head><meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="robots" content="index, follow">
+<title>[Web Programming] [00] Introduction to Web Programming | Hyungtae</title>
+<meta name="keywords" content="FrontEnd, Backend">
+<meta name="description" content="The history of web and core concepts of web programming.">
+<meta name="author" content="">
+<link rel="canonical" href="https://Byngjoon.github.io/blog/posts/introduction-to-web-programming/">
+<link crossorigin="anonymous" href="/blog/assets/css/stylesheet.f49d66caae9ea0fd43f21f29e71a8d3e284517ed770f2aa86fa012953ad3c9ef.css" integrity="sha256-9J1myq6eoP1D8h8p5xqNPihFF&#43;13Dyqob6ASlTrTye8=" rel="preload stylesheet" as="style">
+<link rel="icon" href="https://Byngjoon.github.io/blog/favicon.ico">
+<link rel="icon" type="image/png" sizes="16x16" href="https://Byngjoon.github.io/blog/favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="https://Byngjoon.github.io/blog/favicon-32x32.png">
+<link rel="apple-touch-icon" href="https://Byngjoon.github.io/blog/apple-touch-icon.png">
+<link rel="mask-icon" href="https://Byngjoon.github.io/blog/safari-pinned-tab.svg">
+<meta name="theme-color" content="#2e2e33">
+<meta name="msapplication-TileColor" content="#2e2e33">
+<link rel="alternate" hreflang="en" href="https://Byngjoon.github.io/blog/posts/introduction-to-web-programming/">
+<noscript>
+    <style>
+        #theme-toggle,
+        .top-link {
+            display: none;
+        }
+
+    </style>
+    <style>
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --theme: rgb(29, 30, 32);
+                --entry: rgb(46, 46, 51);
+                --primary: rgb(218, 218, 219);
+                --secondary: rgb(155, 156, 157);
+                --tertiary: rgb(65, 66, 68);
+                --content: rgb(196, 196, 197);
+                --code-block-bg: rgb(46, 46, 51);
+                --code-bg: rgb(55, 56, 62);
+                --border: rgb(51, 51, 51);
+            }
+
+            .list {
+                background: var(--theme);
+            }
+
+            .list:not(.dark)::-webkit-scrollbar-track {
+                background: 0 0;
+            }
+
+            .list:not(.dark)::-webkit-scrollbar-thumb {
+                border-color: var(--theme);
+            }
+        }
+
+    </style>
+</noscript>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"></script>
+<script>
+  window.onload = function () {
+    renderMathInElement(document.body, {
+      delimiters: [
+        { left: "$$", right: "$$", display: true },
+        { left: "$", right: "$", display: false }
+      ]
+    });
+  };
+</script>
+
+<meta property="og:url" content="https://Byngjoon.github.io/blog/posts/introduction-to-web-programming/">
+  <meta property="og:site_name" content="Hyungtae">
+  <meta property="og:title" content="[Web Programming] [00] Introduction to Web Programming">
+  <meta property="og:description" content="The history of web and core concepts of web programming.">
+  <meta property="og:locale" content="ko-kr">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="posts">
+    <meta property="article:published_time" content="2025-05-21T17:15:36+09:00">
+    <meta property="article:modified_time" content="2025-05-21T17:15:36+09:00">
+    <meta property="article:tag" content="Frontend">
+    <meta property="article:tag" content="Backend">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="[Web Programming] [00] Introduction to Web Programming">
+<meta name="twitter:description" content="The history of web and core concepts of web programming.">
+
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position":  1 ,
+      "name": "Posts",
+      "item": "https://Byngjoon.github.io/blog/posts/"
+    }, 
+    {
+      "@type": "ListItem",
+      "position":  2 ,
+      "name": "[Web Programming] [00] Introduction to Web Programming",
+      "item": "https://Byngjoon.github.io/blog/posts/introduction-to-web-programming/"
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "[Web Programming] [00] Introduction to Web Programming",
+  "name": "[Web Programming] [00] Introduction to Web Programming",
+  "description": "The history of web and core concepts of web programming.",
+  "keywords": [
+    "FrontEnd", "Backend"
+  ],
+  "articleBody": "Chapter 00. Introduction to Web Programming Outline: This chapter provides an overview of the World Wide Web, its evolution, and the core technologies that make it work, such as HTML, URL, and HTTP. It also explains the role of the W3C, the difference between the Web and the Internet, and how browsers, servers, and developers interact within the web ecosystem.\nContents 0.1. What is the World Wide Web (WWW)? 0.2. A Brief History of the Web (Web 1.0 → Web 3.0) 0.3. What is the W3C? 0.4. Core Technologies of the Web 0.5. Web Architecture 0.6. What is a Web Browser? 0.7. Web Development Workflow 0.8. Domain \u0026 Hosting Basics (Optional) Section 0.1. What is the World Wide Web (WWW)? 1. Definition The World Wide Web (WWW) — often simply called “the Web” — is a global information system based on hypertext that allows users to access and navigate resources over the Internet using a web browser.\nIt is a service that runs on top of the Internet. It is a system of interlinked HTML documents accessed via web browsers using the HTTP protocol. In simple terms: everything you view in your web browser (like websites) exists on the World Wide Web.\n2. Key Components The Web relies on three foundational technologies:\nComponent Description HTML Defines the structure and content of web pages (HyperText Markup Language) URL Specifies the address of resources on the Web (Uniform Resource Locator) HTTP Protocol used for communication between browsers and servers (HyperText Transfer Protocol) 3. Key Characteristics Hypertext-based: Resources are interconnected through hyperlinks. Distributed system: Web content is hosted across servers around the world. Standardized: Organizations like W3C (World Wide Web Consortium) define and maintain web standards. 4. WWW vs Internet The Internet is the infrastructure (network of connected computers). It provides the physical and technical infrastructure that allows devices to communicate and exchange data. It includes cables, routers, satellites, wireless signals, and protocols like IP and TCP. The Web is a service that runs on top of the Internet to share information using browsers. Examples of Internet-based services include email, cloud storage, online games, and VoIP. Key Differences Aspect Internet World Wide Web Definition Global network infrastructure Information-sharing system on top of the Internet Function Transfers all types of data Displays and navigates HTML documents Components Routers, cables, IP, TCP, etc. HTML, HTTP, URL, browsers Examples Email, FTP, Cloud storage, VoIP Websites, blogs, web applications Analogy:\nInternet = Roads and highways WWW = Cars traveling on those roads 5. Simple Example If the Internet is the entire subway system,\nthen the WWW is just one of the lines — used to transport information (webpages).\nSection 0.2. A Brief History of the Web 1. The Birth of the Web In 1989, Tim Berners-Lee at CERN proposed a hypertext-based system for sharing information. In 1991, the first website was launched: info.cern.ch 2. The Three Generations of the Web Web 1.0 – The Static Web (1990s ~ early 2000s) Mostly read-only content. Static HTML pages with minimal interaction. Users are passive consumers. Examples: early company websites, basic portals. Web 2.0 – The Social Web (2000s ~ 2020) Read and write capabilities for users. Interactive sites with blogs, comments, and social media. Technologies: JavaScript, AJAX, REST APIs. Examples: YouTube, Facebook, Wikipedia. Web 3.0 – The Semantic/Decentralized Web (2020 ~ ) AI-driven and decentralized web services. Focuses on data ownership, meaning, and smart contracts. Technologies: Blockchain, Semantic Web (RDF, OWL). Examples: Ethereum, DApps, MetaMask. 3. Summary of the Evolution Feature Web 1.0 Web 2.0 Web 3.0 Structure Static Dynamic Semantic / Decentralized Users Consumers Producers + Consumers Data Owners / Autonomous Users Technologies HTML, HTTP, URL JS, AJAX, REST API Blockchain, AI, RDF Examples Yahoo, Geocities YouTube, Instagram MetaMask, DApps 4. Conceptual Flow Web 1.0 Web 2.0 Web 3.0 Information Sharing User Participation Decentralized \u0026 Meaningful Data Section 0.3. What is the W3C? 1. Definition The W3C (World Wide Web Consortium) is the main international organization responsible for developing and maintaining web standards.\nIt was founded in 1994 by Tim Berners-Lee, the inventor of the Web.\nW3C ensures that all browsers and websites follow consistent rules so the Web functions reliably across platforms.\n2. Purpose Standardization of core web technologies (HTML, CSS, XML, DOM, etc.) Ensuring accessibility for all users, including people with disabilities Supporting the long-term growth and openness of the Web Promoting cross-browser compatibility and interoperability 3. Major Activities Publishing official web standards (W3C Recommendations) Managing working groups in areas like HTML, CSS, Accessibility, Web Security Providing validation tools (e.g., HTML/CSS validators) Encouraging open, royalty-free web technologies Examples HTML5 was co-developed by W3C and WHATWG\nCSS3 is maintained by W3C’s CSS Working Group\n4. Why Web Standards Matter Ensure consistent behavior of web pages across different browsers and devices Enable developers to build with predictable, reliable outcomes Prevent proprietary control by maintaining open and neutral standards Section 0.4. Core Technologies of the Web Overview The Web relies on three core technologies that form its foundation:\nHTML – HyperText Markup Language URL – Uniform Resource Locator HTTP – HyperText Transfer Protocol 1. HTML – Structure of Web Pages HTML is a markup language used to define the structure and content of a web page. It uses tags to mark elements like text, images, links, tables, and more. Example: Welcome!\nrepresents a paragraph.\nWeb browsers read HTML and render it for the user. More explanations \u003e HTMl\n2. URL – Addressing System A URL specifies the location of a resource on the Web. It tells the browser where to find an HTML document, image, or other file. Example format: https://www.example.com:443/path/to/page.html?query=keyword#section1\nURL components: Component Description https Protocol (with encryption) www.example.com Domain name :443 Port number (optional) /path/to/page.html Path to resource ?query=keyword Query parameters #section1 Fragment identifier 3. HTTP – Communication Protocol HTTP is the foundational protocol used for communication between clients (e.g., web browsers) and web servers on the World Wide Web. It defines how requests are sent and how responses are returned. HTTPS = HTTP + SSL/TLS encryption\nCommon HTTP methods: Method Description GET Retrieve a resource (e.g., load a page) POST Submit data to the server (e.g., form) PUT Update a resource entirely PATCH Update part of a resource DELETE Remove a resource HEAD Request only the headers (no body) Example of a Request GET /index.html HTTP/1.1 Host: www.example.com User-Agent: Chrome/117.0 Accept: text/html Example of a Response HTTP/1.1 200 OK Content-Type: text/html Content-Length: 1234 \u003chtml\u003e \u003cbody\u003eHello, world!\u003c/body\u003e \u003c/html\u003e HTTP status codes: Code Status Text Meaning 200 OK Request succeeded 201 Created Resource successfully created 204 No Content Request succeeded, no content returned 301 Moved Permanently Resource moved to a new permanent URI 302 Found Resource temporarily moved 304 Not Modified Cached version is still valid 400 Bad Request Malformed or invalid request 401 Unauthorized Authentication required 403 Forbidden Access to the resource is denied 404 Not Found Resource not found 405 Method Not Allowed HTTP method not supported for this resource 500 Internal Server Error Generic server error 502 Bad Gateway Invalid response from an upstream server 503 Service Unavailable Server temporarily overloaded or down 504 Gateway Timeout Upstream server failed to respond in time Section 0.5. Web Architecture (Client / Server / Network) 1. Basic Components The Web operates on a three-part architecture involving:\nClient\nThe user’s web browser or application Requests web content and renders HTML, CSS, and JavaScript Server\nA remote machine that receives requests and sends back data Often built using technologies like Node.js, Python, PHP, Java, etc. Network\nThe communication channel between client and server Operates over protocols like HTTP and TCP/IP 2. How the Web Works (Request–Response Flow) Step 01: User enters URL into the browser Step 02: Browser resolves domain to an IP address via DNS Step 03: Browser send an HTTP request to server (e.g., GET) Step 04: Web server processes the request and sends a response with HTML/CSS/JS Step 05: Browser renders HTML, CSS, JavaScript Step 06: Web page is displayed to the user Step Description URL Input e.g., https://example.com DNS Resolution Converts domain name to IP address HTTP Request Example: GET /index.html HTTP/1.1 Server Response Returns HTML, CSS, JS, status code Rendering Build DOM, apply CSS, run JS Final Output Web page is displayed on screen Rendering Process Inside the Browser (Critical Rendering Path)\nHTML → DOM Tree CSS → CSSOM Tree DOM + CSSOM → Render Tree Layout → Paint → Composite → Visual Display 3. Client vs Server: Role Comparison Role Client (Browser/App) Server (Web Server) Location Local device Remote machine Responsibilities Send requests, render content, handle UI Process logic, respond with data, host files Examples Chrome, Safari, Mobile App Node.js, Apache, Nginx, Flask, Django, etc. 4. Communication Layers (TCP/IP Stack) Web communication typically follows the TCP/IP 4-layer model:\nThe TCP/IP model (Transmission Control Protocol / Internet Protocol) is a standardized framework that describes how data is transmitted across computer networks.\nApplication Layer (Layer 4) Closest to the user and application software. Provides services like web browsing, file transfer, and email. Common protocols: HTTP, HTTPS, FTP, DNS, SMTP Transport Layer (Layer 3) Provides end-to-end communication and data flow control. Key protocols: TCP (Transmission Control Protocol): Reliable, ordered delivery UDP (User Datagram Protocol): Fast, connectionless delivery Handles port numbers, error checking, and retransmissions. Internet Layer (Layer 2) Manages logical addressing and routing between networks. Uses IP addresses to find destination devices. Handles packet delivery, fragmentation, and reassembly. Protocols: IP, ICMP, ARP Network Access Layer (Layer 1) Also known as: Link Layer or Data Link Layer Handles the physical transmission of data over a network. Responsible for hardware addressing (MAC addresses) and data framing. Common technologies: Ethernet, Wi-Fi, PPP Section 0.6. What is a Web Browser? 1. Definition A web browser is a software application that enables users to access, retrieve(가져오다), and interact with information on the World Wide Web.\n2. Key Functions Function Description URL Requesting Sends an HTTP request based on the URL the user enters Page Rendering Displays HTML, CSS, and JavaScript content visually JavaScript Execution Handles interactivity and dynamic behavior Caching \u0026 Cookies Stores files and user data for faster access Developer Tools Helps with debugging and inspecting the DOM, network, console, etc. 3. Main Components of a Browser Component Role User Interface Address bar, tabs, buttons, etc. Browser Engine Coordinates between the UI and rendering engine Rendering Engine Parses HTML/CSS and paints the page (e.g., Blink, WebKit) JavaScript Engine Executes JavaScript code (e.g., V8, SpiderMonkey) Networking Handles HTTP requests and responses Data Storage Manages cache, cookies, localStorage, sessionStorage 4. Popular Browsers \u0026 Their Engines Browser Rendering Engine JavaScript Engine Chrome Blink V8 Safari WebKit JavaScriptCore Firefox Gecko SpiderMonkey 5. Why It Matters A frontend developer must understand how browsers work to build reliable web apps. Helps with fixing cross-browser issues and handling inconsistent feature support. Performance and user experience can vary greatly depending on how a browser renders content. Section 0.7. Web Development Workflow Web development is more than just writing HTML—it involves a full cycle of planning, coding, testing, deploying, and maintaining a project.\n1. Typical Workflow Steps Step Description Planning Define layout, features, and user flow Development Build structure (HTML), style (CSS), and interactivity (JS) Testing Check browser compatibility, responsiveness, performance Deployment Publish to a live server (e.g., GitHub Pages, Netlify) Maintenance Bug fixes, updates, improvements based on feedback 2. Essential Tools Tool/Environment Purpose VS Code Code editor with extensions and Git support Browser DevTools Inspect HTML/CSS, debug JS, monitor network Git \u0026 GitHub Version control and collaboration Terminal / CLI Command-line tasks like building and serving Live Server Local preview with auto-reload 3. Sample Folder Structure my-project/ ├── index.html ├── css/ │ └── styles.css ├── js/ │ └── main.js ├── images/ │ └── logo.png ├── README.md └── .gitignore\n4. Simple Deployment Options Static Site Hosting:\nGitHub Pages Netlify Vercel Dynamic Hosting Platforms:\nFirebase, Render, AWS, Heroku 5. Developer Checklist Use semantic HTML structure Write modular, responsive CSS Check for JavaScript console errors Test accessibility and performance (e.g., Lighthouse) Use clear Git commit messages Section 0.8. Domain \u0026 Hosting Basics (Optional) 1. What is a Domain? A domain is the human-readable address of a website. Example: In https://www.google.com, the domain is google.com. Domains are translated into actual server IP addresses using the DNS (Domain Name System). google.com → 142.250.206.206\n2. What is Hosting? Hosting is the service of storing and serving your website files (HTML, CSS, JS) on a web server. The server is always connected to the Internet and responds to browser requests. Think of domain as an address, and hosting as the physical house.\n3. How Domain \u0026 Hosting Work Together User types a domain in the browser (e.g., www.example.com) DNS resolves the domain to an IP address HTTP request is sent to the corresponding server Server responds with HTML/CSS/JS → Web page is rendered 4. Free Domain/Hosting Options Platform Domain Style Hosting Available Features GitHub Pages username.github.io O Free static site hosting Netlify *.netlify.app O Fast deployment, CI/CD support Vercel *.vercel.app O Great for Next.js, static hosting Firebase *.web.app, *.firebaseapp.com O Supports static and dynamic sites 5. Paid Domain \u0026 Hosting Options Domain registrars: GoDaddy, Google Domains, Namecheap Hosting providers: AWS, Heroku, Render, Kinsta Useful for portfolios, blogs, and business websites 6. Basic Setup Workflow Purchase or register a domain (or get a free subdomain) Upload your site to a hosting platform Configure DNS settings (e.g., A record, CNAME) to link domain with hosting ",
+  "wordCount" : "2227",
+  "inLanguage": "en",
+  "datePublished": "2025-05-21T17:15:36+09:00",
+  "dateModified": "2025-05-21T17:15:36+09:00",
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://Byngjoon.github.io/blog/posts/introduction-to-web-programming/"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Hyungtae",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://Byngjoon.github.io/blog/favicon.ico"
+    }
+  }
+}
+</script>
+</head>
+
+<body class="" id="top">
+<script>
+    if (localStorage.getItem("pref-theme") === "dark") {
+        document.body.classList.add('dark');
+    } else if (localStorage.getItem("pref-theme") === "light") {
+        document.body.classList.remove('dark')
+    } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+        document.body.classList.add('dark');
+    }
+
+</script>
+
+<header class="header">
+    <nav class="nav">
+        <div class="logo">
+            <a href="https://Byngjoon.github.io/blog/" accesskey="h" title="Hyungtae (Alt + H)">Hyungtae</a>
+            <div class="logo-switches">
+                <button id="theme-toggle" accesskey="t" title="(Alt + T)" aria-label="Toggle theme">
+                    <svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                    </svg>
+                    <svg id="sun" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="5"></circle>
+                        <line x1="12" y1="1" x2="12" y2="3"></line>
+                        <line x1="12" y1="21" x2="12" y2="23"></line>
+                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                        <line x1="1" y1="12" x2="3" y2="12"></line>
+                        <line x1="21" y1="12" x2="23" y2="12"></line>
+                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                    </svg>
+                </button>
+            </div>
+        </div>
+        <ul id="menu">
+            <li>
+                <a href="https://Byngjoon.github.io/blog/categories/" title="Categories">
+                    <span>Categories</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://Byngjoon.github.io/blog/tags/" title="Tags">
+                    <span>Tags</span>
+                </a>
+            </li>
+        </ul>
+    </nav>
+</header>
+<main class="main">
+
+<article class="post-single">
+  <header class="post-header">
+    
+    <h1 class="post-title entry-hint-parent">
+      [Web Programming] [00] Introduction to Web Programming
+    </h1>
+    <div class="post-description">
+      The history of web and core concepts of web programming.
+    </div>
+    <div class="post-meta"><span title='2025-05-21 17:15:36 +0900 KST'>May 21, 2025</span>&nbsp;·&nbsp;11 min
+
+</div>
+  </header> <div class="toc">
+    <details >
+        <summary accesskey="c" title="(Alt + C)">
+            <span class="details">Table of Contents</span>
+        </summary>
+
+        <div class="inner"><ul>
+                <li>
+                    <a href="#chapter-00-introduction-to-web-programming" aria-label="Chapter 00. Introduction to Web Programming">Chapter 00. Introduction to Web Programming</a><ul>
+                        
+                <li>
+                    <a href="#contents" aria-label="Contents">Contents</a></li>
+                <li>
+                    <a href="#section-01-what-is-the-world-wide-web-www" aria-label="Section 0.1. What is the World Wide Web (WWW)?">Section 0.1. What is the World Wide Web (WWW)?</a><ul>
+                        
+                <li>
+                    <a href="#1-definition" aria-label="1. Definition">1. Definition</a></li>
+                <li>
+                    <a href="#2-key-components" aria-label="2. Key Components">2. Key Components</a></li>
+                <li>
+                    <a href="#3-key-characteristics" aria-label="3. Key Characteristics">3. Key Characteristics</a></li>
+                <li>
+                    <a href="#4-www-vs-internet" aria-label="4. WWW vs Internet">4. WWW vs Internet</a><ul>
+                        
+                <li>
+                    <a href="#key-differences" aria-label="Key Differences">Key Differences</a></li></ul>
+                </li>
+                <li>
+                    <a href="#5-simple-example" aria-label="5. Simple Example">5. Simple Example</a></li></ul>
+                </li>
+                <li>
+                    <a href="#section-02-a-brief-history-of-the-web" aria-label="Section 0.2. A Brief History of the Web">Section 0.2. A Brief History of the Web</a><ul>
+                        
+                <li>
+                    <a href="#1-the-birth-of-the-web" aria-label="1. The Birth of the Web">1. The Birth of the Web</a></li>
+                <li>
+                    <a href="#2-the-three-generations-of-the-web" aria-label="2. The Three Generations of the Web">2. The Three Generations of the Web</a><ul>
+                        
+                <li>
+                    <a href="#web-10--the-static-web-1990s--early-2000s" aria-label="Web 1.0 – The Static Web (1990s ~ early 2000s)">Web 1.0 – The Static Web (1990s ~ early 2000s)</a></li>
+                <li>
+                    <a href="#web-20--the-social-web-2000s--2020" aria-label="Web 2.0 – The Social Web (2000s ~ 2020)">Web 2.0 – The Social Web (2000s ~ 2020)</a></li>
+                <li>
+                    <a href="#web-30--the-semanticdecentralized-web-2020--" aria-label="Web 3.0 – The Semantic/Decentralized Web (2020 ~ )">Web 3.0 – The Semantic/Decentralized Web (2020 ~ )</a></li></ul>
+                </li>
+                <li>
+                    <a href="#3-summary-of-the-evolution" aria-label="3. Summary of the Evolution">3. Summary of the Evolution</a></li>
+                <li>
+                    <a href="#4-conceptual-flow" aria-label="4. Conceptual Flow">4. Conceptual Flow</a></li></ul>
+                </li>
+                <li>
+                    <a href="#section-03-what-is-the-w3c" aria-label="Section 0.3. What is the W3C?">Section 0.3. What is the W3C?</a><ul>
+                        
+                <li>
+                    <a href="#1-definition-1" aria-label="1. Definition">1. Definition</a></li>
+                <li>
+                    <a href="#2-purpose" aria-label="2. Purpose">2. Purpose</a></li>
+                <li>
+                    <a href="#3-major-activities" aria-label="3. Major Activities">3. Major Activities</a></li>
+                <li>
+                    <a href="#4-why-web-standards-matter" aria-label="4. Why Web Standards Matter">4. Why Web Standards Matter</a></li></ul>
+                </li>
+                <li>
+                    <a href="#section-04-core-technologies-of-the-web" aria-label="Section 0.4. Core Technologies of the Web">Section 0.4. Core Technologies of the Web</a><ul>
+                        
+                <li>
+                    <a href="#overview" aria-label="Overview">Overview</a></li>
+                <li>
+                    <a href="#1-html--structure-of-web-pages" aria-label="1. HTML – Structure of Web Pages">1. HTML – Structure of Web Pages</a></li>
+                <li>
+                    <a href="#2-url--addressing-system" aria-label="2. URL – Addressing System">2. URL – Addressing System</a></li>
+                <li>
+                    <a href="#3-http--communication-protocol" aria-label="3. HTTP – Communication Protocol">3. HTTP – Communication Protocol</a></li></ul>
+                </li>
+                <li>
+                    <a href="#section-05-web-architecture-client--server--network" aria-label="Section 0.5. Web Architecture (Client / Server / Network)">Section 0.5. Web Architecture (Client / Server / Network)</a><ul>
+                        
+                <li>
+                    <a href="#1-basic-components" aria-label="1. Basic Components">1. Basic Components</a></li>
+                <li>
+                    <a href="#2-how-the-web-works-requestresponse-flow" aria-label="2. How the Web Works (Request–Response Flow)">2. How the Web Works (Request–Response Flow)</a></li>
+                <li>
+                    <a href="#3-client-vs-server-role-comparison" aria-label="3. Client vs Server: Role Comparison">3. Client vs Server: Role Comparison</a></li>
+                <li>
+                    <a href="#4-communication-layers-tcpip-stack" aria-label="4. Communication Layers (TCP/IP Stack)">4. Communication Layers (TCP/IP Stack)</a></li></ul>
+                </li>
+                <li>
+                    <a href="#section-06-what-is-a-web-browser" aria-label="Section 0.6. What is a Web Browser?">Section 0.6. What is a Web Browser?</a><ul>
+                        
+                <li>
+                    <a href="#1-definition-2" aria-label="1. Definition">1. Definition</a></li>
+                <li>
+                    <a href="#2-key-functions" aria-label="2. Key Functions">2. Key Functions</a></li>
+                <li>
+                    <a href="#3-main-components-of-a-browser" aria-label="3. Main Components of a Browser">3. Main Components of a Browser</a></li>
+                <li>
+                    <a href="#4-popular-browsers--their-engines" aria-label="4. Popular Browsers &amp; Their Engines">4. Popular Browsers &amp; Their Engines</a></li>
+                <li>
+                    <a href="#5-why-it-matters" aria-label="5. Why It Matters">5. Why It Matters</a></li></ul>
+                </li>
+                <li>
+                    <a href="#section-07-web-development-workflow" aria-label="Section 0.7. Web Development Workflow">Section 0.7. Web Development Workflow</a><ul>
+                        
+                <li>
+                    <a href="#1-typical-workflow-steps" aria-label="1. Typical Workflow Steps">1. Typical Workflow Steps</a></li>
+                <li>
+                    <a href="#2-essential-tools" aria-label="2. Essential Tools">2. Essential Tools</a></li>
+                <li>
+                    <a href="#3-sample-folder-structure" aria-label="3. Sample Folder Structure">3. Sample Folder Structure</a></li>
+                <li>
+                    <a href="#4-simple-deployment-options" aria-label="4. Simple Deployment Options">4. Simple Deployment Options</a></li>
+                <li>
+                    <a href="#5-developer-checklist" aria-label="5. Developer Checklist">5. Developer Checklist</a></li></ul>
+                </li>
+                <li>
+                    <a href="#section-08-domain--hosting-basics-optional" aria-label="Section 0.8. Domain &amp; Hosting Basics (Optional)">Section 0.8. Domain &amp; Hosting Basics (Optional)</a><ul>
+                        
+                <li>
+                    <a href="#1-what-is-a-domain" aria-label="1. What is a Domain?">1. What is a Domain?</a></li>
+                <li>
+                    <a href="#2-what-is-hosting" aria-label="2. What is Hosting?">2. What is Hosting?</a></li>
+                <li>
+                    <a href="#3-how-domain--hosting-work-together" aria-label="3. How Domain &amp; Hosting Work Together">3. How Domain &amp; Hosting Work Together</a></li>
+                <li>
+                    <a href="#4-free-domainhosting-options" aria-label="4. Free Domain/Hosting Options">4. Free Domain/Hosting Options</a></li>
+                <li>
+                    <a href="#5-paid-domain--hosting-options" aria-label="5. Paid Domain &amp; Hosting Options">5. Paid Domain &amp; Hosting Options</a></li>
+                <li>
+                    <a href="#6-basic-setup-workflow" aria-label="6. Basic Setup Workflow">6. Basic Setup Workflow</a>
+                </li>
+            </ul>
+            </li>
+            </ul>
+            </li>
+            </ul>
+        </div>
+    </details>
+</div>
+
+  <div class="post-content"><h1 id="chapter-00-introduction-to-web-programming">Chapter 00. Introduction to Web Programming<a hidden class="anchor" aria-hidden="true" href="#chapter-00-introduction-to-web-programming">#</a></h1>
+<blockquote>
+<p><strong>Outline:</strong> This chapter provides an overview of the World Wide Web, its evolution, and the core technologies that make it work, such as HTML, URL, and HTTP.
+It also explains the role of the W3C, the difference between the Web and the Internet, and how browsers, servers, and developers interact within the web ecosystem.</p></blockquote>
+<hr>
+<h2 id="contents">Contents<a hidden class="anchor" aria-hidden="true" href="#contents">#</a></h2>
+<ul>
+<li><a href="#section-01-what-is-the-world-wide-web-www">0.1. What is the World Wide Web (WWW)?</a></li>
+<li><a href="#section-02-a-brief-history-of-the-web">0.2. A Brief History of the Web (Web 1.0 → Web 3.0)</a></li>
+<li><a href="#section-03-what-is-the-w3c">0.3. What is the W3C?</a></li>
+<li><a href="#section-04-core-technologies-of-the-web">0.4. Core Technologies of the Web</a></li>
+<li><a href="#section-05-web-architecture-client--server--network">0.5. Web Architecture</a></li>
+<li><a href="#section-06-what-is-a-web-browser">0.6. What is a Web Browser?</a></li>
+<li><a href="#section-07-web-development-workflow">0.7. Web Development Workflow</a></li>
+<li><a href="#section-08-domain--hosting-basics-optional">0.8. Domain &amp; Hosting Basics <em>(Optional)</em></a></li>
+</ul>
+<hr>
+<h2 id="section-01-what-is-the-world-wide-web-www">Section 0.1. What is the World Wide Web (WWW)?<a hidden class="anchor" aria-hidden="true" href="#section-01-what-is-the-world-wide-web-www">#</a></h2>
+<h3 id="1-definition">1. Definition<a hidden class="anchor" aria-hidden="true" href="#1-definition">#</a></h3>
+<p>The <strong>World Wide Web (WWW)</strong> — often simply called <strong>&ldquo;the Web&rdquo;</strong> — is a global information system based on <strong>hypertext</strong> that allows users to access and navigate resources over the <strong>Internet</strong> using a <strong>web browser</strong>.</p>
+<ul>
+<li>It is a <strong>service that runs on top of the Internet</strong>.</li>
+<li>It is a system of interlinked <strong>HTML documents</strong> accessed via web browsers using the <strong>HTTP protocol</strong>.</li>
+</ul>
+<blockquote>
+<p>In simple terms: everything you view in your web browser (like websites) exists on the World Wide Web.</p></blockquote>
+<hr>
+<h3 id="2-key-components">2. Key Components<a hidden class="anchor" aria-hidden="true" href="#2-key-components">#</a></h3>
+<p>The Web relies on three foundational technologies:</p>
+<table>
+  <thead>
+      <tr>
+          <th>Component</th>
+          <th>Description</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td><strong>HTML</strong></td>
+          <td>Defines the structure and content of web pages (HyperText Markup Language)</td>
+      </tr>
+      <tr>
+          <td><strong>URL</strong></td>
+          <td>Specifies the address of resources on the Web (Uniform Resource Locator)</td>
+      </tr>
+      <tr>
+          <td><strong>HTTP</strong></td>
+          <td>Protocol used for communication between browsers and servers (HyperText Transfer Protocol)</td>
+      </tr>
+  </tbody>
+</table>
+<hr>
+<h3 id="3-key-characteristics">3. Key Characteristics<a hidden class="anchor" aria-hidden="true" href="#3-key-characteristics">#</a></h3>
+<ul>
+<li><strong>Hypertext-based</strong>: Resources are interconnected through hyperlinks.</li>
+<li><strong>Distributed system</strong>: Web content is hosted across servers around the world.</li>
+<li><strong>Standardized</strong>: Organizations like <strong>W3C</strong> (World Wide Web Consortium) define and maintain web standards.</li>
+</ul>
+<hr>
+<h3 id="4-www-vs-internet">4. WWW vs Internet<a hidden class="anchor" aria-hidden="true" href="#4-www-vs-internet">#</a></h3>
+<ul>
+<li>The <strong>Internet</strong> is the <strong>infrastructure</strong> (network of connected computers).
+<ul>
+<li>It provides the physical and technical infrastructure that allows devices to communicate and exchange data.</li>
+<li>It includes cables, routers, satellites, wireless signals, and protocols like IP and TCP.</li>
+</ul>
+</li>
+<li>The <strong>Web</strong> is a <strong>service</strong> that runs on top of the Internet to share information using browsers.
+<ul>
+<li>Examples of Internet-based services include email, cloud storage, online games, and VoIP.</li>
+</ul>
+</li>
+</ul>
+<h4 id="key-differences">Key Differences<a hidden class="anchor" aria-hidden="true" href="#key-differences">#</a></h4>
+<table>
+  <thead>
+      <tr>
+          <th>Aspect</th>
+          <th>Internet</th>
+          <th>World Wide Web</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>Definition</td>
+          <td>Global network infrastructure</td>
+          <td>Information-sharing system on top of the Internet</td>
+      </tr>
+      <tr>
+          <td>Function</td>
+          <td>Transfers all types of data</td>
+          <td>Displays and navigates HTML documents</td>
+      </tr>
+      <tr>
+          <td>Components</td>
+          <td>Routers, cables, IP, TCP, etc.</td>
+          <td>HTML, HTTP, URL, browsers</td>
+      </tr>
+      <tr>
+          <td>Examples</td>
+          <td>Email, FTP, Cloud storage, VoIP</td>
+          <td>Websites, blogs, web applications</td>
+      </tr>
+  </tbody>
+</table>
+<p><strong>Analogy:</strong></p>
+<ul>
+<li>Internet = Roads and highways</li>
+<li>WWW      = Cars traveling on those roads</li>
+</ul>
+<hr>
+<h3 id="5-simple-example">5. Simple Example<a hidden class="anchor" aria-hidden="true" href="#5-simple-example">#</a></h3>
+<p>If the <strong>Internet</strong> is the entire subway system,<br>
+then the <strong>WWW</strong> is just one of the lines — used to transport information (webpages).</p>
+<hr>
+<h2 id="section-02-a-brief-history-of-the-web">Section 0.2. A Brief History of the Web<a hidden class="anchor" aria-hidden="true" href="#section-02-a-brief-history-of-the-web">#</a></h2>
+<h3 id="1-the-birth-of-the-web">1. The Birth of the Web<a hidden class="anchor" aria-hidden="true" href="#1-the-birth-of-the-web">#</a></h3>
+<ul>
+<li>In <strong>1989</strong>, <strong>Tim Berners-Lee</strong> at <strong>CERN</strong> proposed a hypertext-based system for sharing information.</li>
+<li>In <strong>1991</strong>, the <strong>first website</strong> was launched: <a href="http://info.cern.ch">info.cern.ch</a></li>
+</ul>
+<hr>
+<h3 id="2-the-three-generations-of-the-web">2. The Three Generations of the Web<a hidden class="anchor" aria-hidden="true" href="#2-the-three-generations-of-the-web">#</a></h3>
+<h4 id="web-10--the-static-web-1990s--early-2000s">Web 1.0 – The Static Web (1990s ~ early 2000s)<a hidden class="anchor" aria-hidden="true" href="#web-10--the-static-web-1990s--early-2000s">#</a></h4>
+<ul>
+<li>Mostly <strong>read-only</strong> content.</li>
+<li>Static HTML pages with minimal interaction.</li>
+<li>Users are passive consumers.</li>
+<li>Examples: early company websites, basic portals.</li>
+</ul>
+<h4 id="web-20--the-social-web-2000s--2020">Web 2.0 – The Social Web (2000s ~ 2020)<a hidden class="anchor" aria-hidden="true" href="#web-20--the-social-web-2000s--2020">#</a></h4>
+<ul>
+<li><strong>Read and write</strong> capabilities for users.</li>
+<li>Interactive sites with blogs, comments, and social media.</li>
+<li>Technologies: JavaScript, AJAX, REST APIs.</li>
+<li>Examples: YouTube, Facebook, Wikipedia.</li>
+</ul>
+<h4 id="web-30--the-semanticdecentralized-web-2020--">Web 3.0 – The Semantic/Decentralized Web (2020 ~ )<a hidden class="anchor" aria-hidden="true" href="#web-30--the-semanticdecentralized-web-2020--">#</a></h4>
+<ul>
+<li>AI-driven and <strong>decentralized</strong> web services.</li>
+<li>Focuses on <strong>data ownership</strong>, meaning, and smart contracts.</li>
+<li>Technologies: Blockchain, Semantic Web (RDF, OWL).</li>
+<li>Examples: Ethereum, DApps, MetaMask.</li>
+</ul>
+<hr>
+<h3 id="3-summary-of-the-evolution">3. Summary of the Evolution<a hidden class="anchor" aria-hidden="true" href="#3-summary-of-the-evolution">#</a></h3>
+<table>
+  <thead>
+      <tr>
+          <th>Feature</th>
+          <th>Web 1.0</th>
+          <th>Web 2.0</th>
+          <th>Web 3.0</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>Structure</td>
+          <td>Static</td>
+          <td>Dynamic</td>
+          <td>Semantic / Decentralized</td>
+      </tr>
+      <tr>
+          <td>Users</td>
+          <td>Consumers</td>
+          <td>Producers + Consumers</td>
+          <td>Data Owners / Autonomous Users</td>
+      </tr>
+      <tr>
+          <td>Technologies</td>
+          <td>HTML, HTTP, URL</td>
+          <td>JS, AJAX, REST API</td>
+          <td>Blockchain, AI, RDF</td>
+      </tr>
+      <tr>
+          <td>Examples</td>
+          <td>Yahoo, Geocities</td>
+          <td>YouTube, Instagram</td>
+          <td>MetaMask, DApps</td>
+      </tr>
+  </tbody>
+</table>
+<hr>
+<h3 id="4-conceptual-flow">4. Conceptual Flow<a hidden class="anchor" aria-hidden="true" href="#4-conceptual-flow">#</a></h3>
+<table>
+  <thead>
+      <tr>
+          <th>Web 1.0</th>
+          <th>Web 2.0</th>
+          <th>Web 3.0</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>Information Sharing</td>
+          <td>User Participation</td>
+          <td>Decentralized &amp; Meaningful Data</td>
+      </tr>
+  </tbody>
+</table>
+<hr>
+<h2 id="section-03-what-is-the-w3c">Section 0.3. What is the W3C?<a hidden class="anchor" aria-hidden="true" href="#section-03-what-is-the-w3c">#</a></h2>
+<h3 id="1-definition-1">1. Definition<a hidden class="anchor" aria-hidden="true" href="#1-definition-1">#</a></h3>
+<p>The <strong>W3C (World Wide Web Consortium)</strong> is the main international organization responsible for developing and maintaining web standards.<br>
+It was founded in <strong>1994</strong> by <strong>Tim Berners-Lee</strong>, the inventor of the Web.</p>
+<blockquote>
+<p>W3C ensures that all browsers and websites follow consistent rules so the Web functions reliably across platforms.</p></blockquote>
+<hr>
+<h3 id="2-purpose">2. Purpose<a hidden class="anchor" aria-hidden="true" href="#2-purpose">#</a></h3>
+<ul>
+<li>Standardization of core web technologies (HTML, CSS, XML, DOM, etc.)</li>
+<li>Ensuring accessibility for all users, including people with disabilities</li>
+<li>Supporting the long-term growth and openness of the Web</li>
+<li>Promoting cross-browser compatibility and interoperability</li>
+</ul>
+<hr>
+<h3 id="3-major-activities">3. Major Activities<a hidden class="anchor" aria-hidden="true" href="#3-major-activities">#</a></h3>
+<ul>
+<li>Publishing official web standards (W3C Recommendations)</li>
+<li>Managing working groups in areas like HTML, CSS, Accessibility, Web Security</li>
+<li>Providing validation tools (e.g., HTML/CSS validators)</li>
+<li>Encouraging open, royalty-free web technologies</li>
+</ul>
+<blockquote>
+<p>Examples
+<strong>HTML5</strong> was co-developed by W3C and WHATWG<br>
+<strong>CSS3</strong> is maintained by W3C&rsquo;s CSS Working Group</p></blockquote>
+<hr>
+<h3 id="4-why-web-standards-matter">4. Why Web Standards Matter<a hidden class="anchor" aria-hidden="true" href="#4-why-web-standards-matter">#</a></h3>
+<ul>
+<li>Ensure consistent behavior of web pages across different browsers and devices</li>
+<li>Enable developers to build with predictable, reliable outcomes</li>
+<li>Prevent proprietary control by maintaining open and neutral standards</li>
+</ul>
+<hr>
+<h2 id="section-04-core-technologies-of-the-web">Section 0.4. Core Technologies of the Web<a hidden class="anchor" aria-hidden="true" href="#section-04-core-technologies-of-the-web">#</a></h2>
+<h3 id="overview">Overview<a hidden class="anchor" aria-hidden="true" href="#overview">#</a></h3>
+<p>The Web relies on three core technologies that form its foundation:</p>
+<ol>
+<li><strong>HTML</strong> – HyperText Markup Language</li>
+<li><strong>URL</strong> – Uniform Resource Locator</li>
+<li><strong>HTTP</strong> – HyperText Transfer Protocol</li>
+</ol>
+<hr>
+<h3 id="1-html--structure-of-web-pages">1. HTML – Structure of Web Pages<a hidden class="anchor" aria-hidden="true" href="#1-html--structure-of-web-pages">#</a></h3>
+<ul>
+<li>HTML is a markup language used to define the <strong>structure and content</strong> of a web page.</li>
+<li>It uses <strong>tags</strong> to mark elements like text, images, links, tables, and more.</li>
+</ul>
+<blockquote>
+<p>Example: <code>&lt;p&gt;Welcome!&lt;/p&gt;</code> represents a paragraph.</p></blockquote>
+<ul>
+<li>Web browsers read HTML and <strong>render</strong> it for the user.</li>
+</ul>
+<blockquote>
+<p>More explanations &gt; <a href="/blog/posts/html/">HTMl</a></p></blockquote>
+<hr>
+<h3 id="2-url--addressing-system">2. URL – Addressing System<a hidden class="anchor" aria-hidden="true" href="#2-url--addressing-system">#</a></h3>
+<ul>
+<li>A <strong>URL</strong> specifies the <strong>location</strong> of a resource on the Web.</li>
+<li>It tells the browser where to find an HTML document, image, or other file.</li>
+</ul>
+<blockquote>
+<p>Example format: <code>https://www.example.com:443/path/to/page.html?query=keyword#section1</code></p></blockquote>
+<ul>
+<li>URL components:</li>
+</ul>
+<table>
+  <thead>
+      <tr>
+          <th>Component</th>
+          <th>Description</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td><code>https</code></td>
+          <td>Protocol (with encryption)</td>
+      </tr>
+      <tr>
+          <td><code>www.example.com</code></td>
+          <td>Domain name</td>
+      </tr>
+      <tr>
+          <td><code>:443</code></td>
+          <td>Port number (optional)</td>
+      </tr>
+      <tr>
+          <td><code>/path/to/page.html</code></td>
+          <td>Path to resource</td>
+      </tr>
+      <tr>
+          <td><code>?query=keyword</code></td>
+          <td>Query parameters</td>
+      </tr>
+      <tr>
+          <td><code>#section1</code></td>
+          <td>Fragment identifier</td>
+      </tr>
+  </tbody>
+</table>
+<hr>
+<h3 id="3-http--communication-protocol">3. HTTP – Communication Protocol<a hidden class="anchor" aria-hidden="true" href="#3-http--communication-protocol">#</a></h3>
+<ul>
+<li>HTTP is the foundational protocol used for communication between <strong>clients (e.g., web browsers)</strong> and <strong>web servers</strong> on the World Wide Web.</li>
+<li>It defines how requests are sent and how responses are returned.</li>
+</ul>
+<blockquote>
+<p>HTTPS = HTTP + SSL/TLS encryption</p></blockquote>
+<hr>
+<ul>
+<li>Common HTTP methods:
+<table>
+  <thead>
+      <tr>
+          <th>Method</th>
+          <th>Description</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td><code>GET</code></td>
+          <td>Retrieve a resource (e.g., load a page)</td>
+      </tr>
+      <tr>
+          <td><code>POST</code></td>
+          <td>Submit data to the server (e.g., form)</td>
+      </tr>
+      <tr>
+          <td><code>PUT</code></td>
+          <td>Update a resource entirely</td>
+      </tr>
+      <tr>
+          <td><code>PATCH</code></td>
+          <td>Update part of a resource</td>
+      </tr>
+      <tr>
+          <td><code>DELETE</code></td>
+          <td>Remove a resource</td>
+      </tr>
+      <tr>
+          <td><code>HEAD</code></td>
+          <td>Request only the headers (no body)</td>
+      </tr>
+  </tbody>
+</table>
+</li>
+</ul>
+<hr>
+<ul>
+<li>Example of a Request</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-http" data-lang="http"><span style="display:flex;"><span><span style="color:#a6e22e">GET</span> /index.html <span style="color:#66d9ef">HTTP</span><span style="color:#f92672">/</span><span style="color:#ae81ff">1.1</span>
+</span></span><span style="display:flex;"><span>Host<span style="color:#f92672">:</span> <span style="color:#ae81ff">www.example.com</span>
+</span></span><span style="display:flex;"><span>User-Agent<span style="color:#f92672">:</span> <span style="color:#ae81ff">Chrome/117.0</span>
+</span></span><span style="display:flex;"><span>Accept<span style="color:#f92672">:</span> <span style="color:#ae81ff">text/html</span>
+</span></span></code></pre></div><ul>
+<li>Example of a Response</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-http" data-lang="http"><span style="display:flex;"><span><span style="color:#66d9ef">HTTP</span><span style="color:#f92672">/</span><span style="color:#ae81ff">1.1</span> <span style="color:#ae81ff">200</span> <span style="color:#a6e22e">OK</span>
+</span></span><span style="display:flex;"><span>Content-Type<span style="color:#f92672">:</span> <span style="color:#ae81ff">text/html</span>
+</span></span><span style="display:flex;"><span>Content-Length<span style="color:#f92672">:</span> <span style="color:#ae81ff">1234</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>&lt;<span style="color:#f92672">html</span>&gt;
+</span></span><span style="display:flex;"><span>  &lt;<span style="color:#f92672">body</span>&gt;Hello, world!&lt;/<span style="color:#f92672">body</span>&gt;
+</span></span><span style="display:flex;"><span>&lt;/<span style="color:#f92672">html</span>&gt;
+</span></span></code></pre></div><hr>
+<ul>
+<li>HTTP status codes:</li>
+</ul>
+<table>
+  <thead>
+      <tr>
+          <th>Code</th>
+          <th>Status Text</th>
+          <th>Meaning</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>200</td>
+          <td>OK</td>
+          <td>Request succeeded</td>
+      </tr>
+      <tr>
+          <td>201</td>
+          <td>Created</td>
+          <td>Resource successfully created</td>
+      </tr>
+      <tr>
+          <td>204</td>
+          <td>No Content</td>
+          <td>Request succeeded, no content returned</td>
+      </tr>
+      <tr>
+          <td>301</td>
+          <td>Moved Permanently</td>
+          <td>Resource moved to a new permanent URI</td>
+      </tr>
+      <tr>
+          <td>302</td>
+          <td>Found</td>
+          <td>Resource temporarily moved</td>
+      </tr>
+      <tr>
+          <td>304</td>
+          <td>Not Modified</td>
+          <td>Cached version is still valid</td>
+      </tr>
+      <tr>
+          <td>400</td>
+          <td>Bad Request</td>
+          <td>Malformed or invalid request</td>
+      </tr>
+      <tr>
+          <td>401</td>
+          <td>Unauthorized</td>
+          <td>Authentication required</td>
+      </tr>
+      <tr>
+          <td>403</td>
+          <td>Forbidden</td>
+          <td>Access to the resource is denied</td>
+      </tr>
+      <tr>
+          <td>404</td>
+          <td>Not Found</td>
+          <td>Resource not found</td>
+      </tr>
+      <tr>
+          <td>405</td>
+          <td>Method Not Allowed</td>
+          <td>HTTP method not supported for this resource</td>
+      </tr>
+      <tr>
+          <td>500</td>
+          <td>Internal Server Error</td>
+          <td>Generic server error</td>
+      </tr>
+      <tr>
+          <td>502</td>
+          <td>Bad Gateway</td>
+          <td>Invalid response from an upstream server</td>
+      </tr>
+      <tr>
+          <td>503</td>
+          <td>Service Unavailable</td>
+          <td>Server temporarily overloaded or down</td>
+      </tr>
+      <tr>
+          <td>504</td>
+          <td>Gateway Timeout</td>
+          <td>Upstream server failed to respond in time</td>
+      </tr>
+  </tbody>
+</table>
+<hr>
+<h2 id="section-05-web-architecture-client--server--network">Section 0.5. Web Architecture (Client / Server / Network)<a hidden class="anchor" aria-hidden="true" href="#section-05-web-architecture-client--server--network">#</a></h2>
+<h3 id="1-basic-components">1. Basic Components<a hidden class="anchor" aria-hidden="true" href="#1-basic-components">#</a></h3>
+<p>The Web operates on a three-part architecture involving:</p>
+<ol>
+<li>
+<p><strong>Client</strong></p>
+<ul>
+<li>The user&rsquo;s <strong>web browser or application</strong></li>
+<li>Requests web content and <strong>renders</strong> HTML, CSS, and JavaScript</li>
+</ul>
+</li>
+<li>
+<p><strong>Server</strong></p>
+<ul>
+<li>A <strong>remote machine</strong> that receives requests and sends back data</li>
+<li>Often built using technologies like Node.js, Python, PHP, Java, etc.</li>
+</ul>
+</li>
+<li>
+<p><strong>Network</strong></p>
+<ul>
+<li>The <strong>communication channel</strong> between client and server</li>
+<li>Operates over protocols like <strong>HTTP</strong> and <strong>TCP/IP</strong></li>
+</ul>
+</li>
+</ol>
+<hr>
+<h3 id="2-how-the-web-works-requestresponse-flow">2. How the Web Works (Request–Response Flow)<a hidden class="anchor" aria-hidden="true" href="#2-how-the-web-works-requestresponse-flow">#</a></h3>
+<ul>
+<li>Step 01: User enters URL into the browser</li>
+<li>Step 02: Browser resolves domain to an IP address via DNS</li>
+<li>Step 03: Browser send an HTTP request to server (e.g., GET)</li>
+<li>Step 04: Web server processes the request and sends a response with HTML/CSS/JS</li>
+<li>Step 05: Browser renders HTML, CSS, JavaScript</li>
+<li>Step 06: Web page is displayed to the user</li>
+</ul>
+<table>
+  <thead>
+      <tr>
+          <th>Step</th>
+          <th>Description</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td><strong>URL Input</strong></td>
+          <td>e.g., <code>https://example.com</code></td>
+      </tr>
+      <tr>
+          <td><strong>DNS Resolution</strong></td>
+          <td>Converts domain name to IP address</td>
+      </tr>
+      <tr>
+          <td><strong>HTTP Request</strong></td>
+          <td>Example: <code>GET /index.html HTTP/1.1</code></td>
+      </tr>
+      <tr>
+          <td><strong>Server Response</strong></td>
+          <td>Returns HTML, CSS, JS, status code</td>
+      </tr>
+      <tr>
+          <td><strong>Rendering</strong></td>
+          <td>Build DOM, apply CSS, run JS</td>
+      </tr>
+      <tr>
+          <td><strong>Final Output</strong></td>
+          <td>Web page is displayed on screen</td>
+      </tr>
+  </tbody>
+</table>
+<blockquote>
+<p>Rendering Process Inside the Browser (<strong>Critical Rendering Path</strong>)</p>
+<ol>
+<li><strong>HTML</strong> → DOM Tree</li>
+<li><strong>CSS</strong> → CSSOM Tree</li>
+<li><strong>DOM + CSSOM</strong> → Render Tree</li>
+<li>Layout → Paint → Composite → Visual Display</li>
+</ol></blockquote>
+<hr>
+<h3 id="3-client-vs-server-role-comparison">3. Client vs Server: Role Comparison<a hidden class="anchor" aria-hidden="true" href="#3-client-vs-server-role-comparison">#</a></h3>
+<table>
+  <thead>
+      <tr>
+          <th>Role</th>
+          <th>Client (Browser/App)</th>
+          <th>Server (Web Server)</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>Location</td>
+          <td>Local device</td>
+          <td>Remote machine</td>
+      </tr>
+      <tr>
+          <td>Responsibilities</td>
+          <td>Send requests, render content, handle UI</td>
+          <td>Process logic, respond with data, host files</td>
+      </tr>
+      <tr>
+          <td>Examples</td>
+          <td>Chrome, Safari, Mobile App</td>
+          <td>Node.js, Apache, Nginx, Flask, Django, etc.</td>
+      </tr>
+  </tbody>
+</table>
+<hr>
+<h3 id="4-communication-layers-tcpip-stack">4. Communication Layers (TCP/IP Stack)<a hidden class="anchor" aria-hidden="true" href="#4-communication-layers-tcpip-stack">#</a></h3>
+<p>Web communication typically follows the <strong>TCP/IP 4-layer model</strong>:</p>
+<blockquote>
+<p>The <strong>TCP/IP model</strong> (Transmission Control Protocol / Internet Protocol) is a standardized framework that describes how data is transmitted across computer networks.</p></blockquote>
+<ul>
+<li><strong>Application Layer</strong> (Layer 4)
+<ul>
+<li>Closest to the <strong>user and application software</strong>.</li>
+<li>Provides services like <strong>web browsing</strong>, <strong>file transfer</strong>, and <strong>email</strong>.</li>
+<li>Common protocols: <strong>HTTP</strong>, <strong>HTTPS</strong>, <strong>FTP</strong>, <strong>DNS</strong>, <strong>SMTP</strong></li>
+</ul>
+</li>
+<li><strong>Transport Layer</strong> (Layer 3)
+<ul>
+<li>Provides <strong>end-to-end communication</strong> and data flow control.</li>
+<li>Key protocols:
+<ul>
+<li><strong>TCP</strong> (Transmission Control Protocol): Reliable, ordered delivery</li>
+<li><strong>UDP</strong> (User Datagram Protocol): Fast, connectionless delivery</li>
+</ul>
+</li>
+<li>Handles <strong>port numbers</strong>, <strong>error checking</strong>, and <strong>retransmissions</strong>.</li>
+</ul>
+</li>
+<li><strong>Internet Layer</strong> (Layer 2)
+<ul>
+<li>Manages <strong>logical addressing</strong> and <strong>routing</strong> between networks.</li>
+<li>Uses <strong>IP addresses</strong> to find destination devices.</li>
+<li>Handles <strong>packet delivery</strong>, <strong>fragmentation</strong>, and <strong>reassembly</strong>.</li>
+<li>Protocols: <strong>IP</strong>, <strong>ICMP</strong>, <strong>ARP</strong></li>
+</ul>
+</li>
+<li><strong>Network Access Layer</strong> (Layer 1)
+<ul>
+<li>Also known as: <strong>Link Layer</strong> or <strong>Data Link Layer</strong></li>
+<li>Handles the <strong>physical transmission</strong> of data over a network.</li>
+<li>Responsible for <strong>hardware addressing (MAC addresses)</strong> and data framing.</li>
+<li>Common technologies: <strong>Ethernet</strong>, <strong>Wi-Fi</strong>, <strong>PPP</strong></li>
+</ul>
+</li>
+</ul>
+<hr>
+<h2 id="section-06-what-is-a-web-browser">Section 0.6. What is a Web Browser?<a hidden class="anchor" aria-hidden="true" href="#section-06-what-is-a-web-browser">#</a></h2>
+<h3 id="1-definition-2">1. Definition<a hidden class="anchor" aria-hidden="true" href="#1-definition-2">#</a></h3>
+<p>A <strong>web browser</strong> is a <strong>software application</strong> that enables users to access, retrieve(가져오다), and interact with information on the <strong>World Wide Web</strong>.</p>
+<hr>
+<h3 id="2-key-functions">2. Key Functions<a hidden class="anchor" aria-hidden="true" href="#2-key-functions">#</a></h3>
+<table>
+  <thead>
+      <tr>
+          <th>Function</th>
+          <th>Description</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td><strong>URL Requesting</strong></td>
+          <td>Sends an HTTP request based on the URL the user enters</td>
+      </tr>
+      <tr>
+          <td><strong>Page Rendering</strong></td>
+          <td>Displays HTML, CSS, and JavaScript content visually</td>
+      </tr>
+      <tr>
+          <td><strong>JavaScript Execution</strong></td>
+          <td>Handles interactivity and dynamic behavior</td>
+      </tr>
+      <tr>
+          <td><strong>Caching &amp; Cookies</strong></td>
+          <td>Stores files and user data for faster access</td>
+      </tr>
+      <tr>
+          <td><strong>Developer Tools</strong></td>
+          <td>Helps with debugging and inspecting the DOM, network, console, etc.</td>
+      </tr>
+  </tbody>
+</table>
+<hr>
+<h3 id="3-main-components-of-a-browser">3. Main Components of a Browser<a hidden class="anchor" aria-hidden="true" href="#3-main-components-of-a-browser">#</a></h3>
+<table>
+  <thead>
+      <tr>
+          <th>Component</th>
+          <th>Role</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td><strong>User Interface</strong></td>
+          <td>Address bar, tabs, buttons, etc.</td>
+      </tr>
+      <tr>
+          <td><strong>Browser Engine</strong></td>
+          <td>Coordinates between the UI and rendering engine</td>
+      </tr>
+      <tr>
+          <td><strong>Rendering Engine</strong></td>
+          <td>Parses HTML/CSS and paints the page (e.g., Blink, WebKit)</td>
+      </tr>
+      <tr>
+          <td><strong>JavaScript Engine</strong></td>
+          <td>Executes JavaScript code (e.g., V8, SpiderMonkey)</td>
+      </tr>
+      <tr>
+          <td><strong>Networking</strong></td>
+          <td>Handles HTTP requests and responses</td>
+      </tr>
+      <tr>
+          <td><strong>Data Storage</strong></td>
+          <td>Manages cache, cookies, localStorage, sessionStorage</td>
+      </tr>
+  </tbody>
+</table>
+<hr>
+<h3 id="4-popular-browsers--their-engines">4. Popular Browsers &amp; Their Engines<a hidden class="anchor" aria-hidden="true" href="#4-popular-browsers--their-engines">#</a></h3>
+<table>
+  <thead>
+      <tr>
+          <th>Browser</th>
+          <th>Rendering Engine</th>
+          <th>JavaScript Engine</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>Chrome</td>
+          <td>Blink</td>
+          <td>V8</td>
+      </tr>
+      <tr>
+          <td>Safari</td>
+          <td>WebKit</td>
+          <td>JavaScriptCore</td>
+      </tr>
+      <tr>
+          <td>Firefox</td>
+          <td>Gecko</td>
+          <td>SpiderMonkey</td>
+      </tr>
+  </tbody>
+</table>
+<hr>
+<h3 id="5-why-it-matters">5. Why It Matters<a hidden class="anchor" aria-hidden="true" href="#5-why-it-matters">#</a></h3>
+<ul>
+<li>A <strong>frontend developer</strong> must understand how browsers work to build reliable web apps.</li>
+<li>Helps with fixing <strong>cross-browser issues</strong> and handling <strong>inconsistent feature support</strong>.</li>
+<li>Performance and user experience can vary greatly depending on how a browser renders content.</li>
+</ul>
+<hr>
+<h2 id="section-07-web-development-workflow">Section 0.7. Web Development Workflow<a hidden class="anchor" aria-hidden="true" href="#section-07-web-development-workflow">#</a></h2>
+<blockquote>
+<p>Web development is more than just writing HTML—it involves a full cycle of planning, coding, testing, deploying, and maintaining a project.</p></blockquote>
+<hr>
+<h3 id="1-typical-workflow-steps">1. Typical Workflow Steps<a hidden class="anchor" aria-hidden="true" href="#1-typical-workflow-steps">#</a></h3>
+<table>
+  <thead>
+      <tr>
+          <th>Step</th>
+          <th>Description</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td><strong>Planning</strong></td>
+          <td>Define layout, features, and user flow</td>
+      </tr>
+      <tr>
+          <td><strong>Development</strong></td>
+          <td>Build structure (HTML), style (CSS), and interactivity (JS)</td>
+      </tr>
+      <tr>
+          <td><strong>Testing</strong></td>
+          <td>Check browser compatibility, responsiveness, performance</td>
+      </tr>
+      <tr>
+          <td><strong>Deployment</strong></td>
+          <td>Publish to a live server (e.g., GitHub Pages, Netlify)</td>
+      </tr>
+      <tr>
+          <td><strong>Maintenance</strong></td>
+          <td>Bug fixes, updates, improvements based on feedback</td>
+      </tr>
+  </tbody>
+</table>
+<hr>
+<h3 id="2-essential-tools">2. Essential Tools<a hidden class="anchor" aria-hidden="true" href="#2-essential-tools">#</a></h3>
+<table>
+  <thead>
+      <tr>
+          <th>Tool/Environment</th>
+          <th>Purpose</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td><strong>VS Code</strong></td>
+          <td>Code editor with extensions and Git support</td>
+      </tr>
+      <tr>
+          <td><strong>Browser DevTools</strong></td>
+          <td>Inspect HTML/CSS, debug JS, monitor network</td>
+      </tr>
+      <tr>
+          <td><strong>Git &amp; GitHub</strong></td>
+          <td>Version control and collaboration</td>
+      </tr>
+      <tr>
+          <td><strong>Terminal / CLI</strong></td>
+          <td>Command-line tasks like building and serving</td>
+      </tr>
+      <tr>
+          <td><strong>Live Server</strong></td>
+          <td>Local preview with auto-reload</td>
+      </tr>
+  </tbody>
+</table>
+<hr>
+<h3 id="3-sample-folder-structure">3. Sample Folder Structure<a hidden class="anchor" aria-hidden="true" href="#3-sample-folder-structure">#</a></h3>
+<p>my-project/
+├── index.html
+├── css/
+│   └── styles.css
+├── js/
+│   └── main.js
+├── images/
+│   └── logo.png
+├── README.md
+└── .gitignore</p>
+<hr>
+<h3 id="4-simple-deployment-options">4. Simple Deployment Options<a hidden class="anchor" aria-hidden="true" href="#4-simple-deployment-options">#</a></h3>
+<ul>
+<li>
+<p><strong>Static Site Hosting</strong>:</p>
+<ul>
+<li>GitHub Pages</li>
+<li>Netlify</li>
+<li>Vercel</li>
+</ul>
+</li>
+<li>
+<p><strong>Dynamic Hosting Platforms</strong>:</p>
+<ul>
+<li>Firebase, Render, AWS, Heroku</li>
+</ul>
+</li>
+</ul>
+<hr>
+<h3 id="5-developer-checklist">5. Developer Checklist<a hidden class="anchor" aria-hidden="true" href="#5-developer-checklist">#</a></h3>
+<ul>
+<li><input disabled="" type="checkbox"> Use semantic HTML structure</li>
+<li><input disabled="" type="checkbox"> Write modular, responsive CSS</li>
+<li><input disabled="" type="checkbox"> Check for JavaScript console errors</li>
+<li><input disabled="" type="checkbox"> Test accessibility and performance (e.g., Lighthouse)</li>
+<li><input disabled="" type="checkbox"> Use clear Git commit messages</li>
+</ul>
+<hr>
+<h2 id="section-08-domain--hosting-basics-optional">Section 0.8. Domain &amp; Hosting Basics (Optional)<a hidden class="anchor" aria-hidden="true" href="#section-08-domain--hosting-basics-optional">#</a></h2>
+<h3 id="1-what-is-a-domain">1. What is a Domain?<a hidden class="anchor" aria-hidden="true" href="#1-what-is-a-domain">#</a></h3>
+<ul>
+<li>A <strong>domain</strong> is the human-readable address of a website.</li>
+<li>Example: In <code>https://www.google.com</code>, the domain is <code>google.com</code>.</li>
+<li>Domains are translated into actual server <strong>IP addresses</strong> using the <strong>DNS (Domain Name System)</strong>.</li>
+</ul>
+<blockquote>
+<p><code>google.com</code> → <code>142.250.206.206</code></p></blockquote>
+<hr>
+<h3 id="2-what-is-hosting">2. What is Hosting?<a hidden class="anchor" aria-hidden="true" href="#2-what-is-hosting">#</a></h3>
+<ul>
+<li><strong>Hosting</strong> is the service of storing and serving your website files (HTML, CSS, JS) on a <strong>web server</strong>.</li>
+<li>The server is always connected to the Internet and responds to browser requests.</li>
+</ul>
+<blockquote>
+<p>Think of <strong>domain as an address</strong>, and <strong>hosting as the physical house</strong>.</p></blockquote>
+<hr>
+<h3 id="3-how-domain--hosting-work-together">3. How Domain &amp; Hosting Work Together<a hidden class="anchor" aria-hidden="true" href="#3-how-domain--hosting-work-together">#</a></h3>
+<ol>
+<li>User types a domain in the browser (e.g., <a href="https://www.example.com">www.example.com</a>)</li>
+<li>DNS resolves the domain to an IP address</li>
+<li>HTTP request is sent to the corresponding server</li>
+<li>Server responds with HTML/CSS/JS → Web page is rendered</li>
+</ol>
+<hr>
+<h3 id="4-free-domainhosting-options">4. Free Domain/Hosting Options<a hidden class="anchor" aria-hidden="true" href="#4-free-domainhosting-options">#</a></h3>
+<table>
+  <thead>
+      <tr>
+          <th>Platform</th>
+          <th>Domain Style</th>
+          <th style="text-align: center">Hosting Available</th>
+          <th>Features</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>GitHub Pages</td>
+          <td><code>username.github.io</code></td>
+          <td style="text-align: center">O</td>
+          <td>Free static site hosting</td>
+      </tr>
+      <tr>
+          <td>Netlify</td>
+          <td><code>*.netlify.app</code></td>
+          <td style="text-align: center">O</td>
+          <td>Fast deployment, CI/CD support</td>
+      </tr>
+      <tr>
+          <td>Vercel</td>
+          <td><code>*.vercel.app</code></td>
+          <td style="text-align: center">O</td>
+          <td>Great for Next.js, static hosting</td>
+      </tr>
+      <tr>
+          <td>Firebase</td>
+          <td><code>*.web.app</code>, <code>*.firebaseapp.com</code></td>
+          <td style="text-align: center">O</td>
+          <td>Supports static and dynamic sites</td>
+      </tr>
+  </tbody>
+</table>
+<hr>
+<h3 id="5-paid-domain--hosting-options">5. Paid Domain &amp; Hosting Options<a hidden class="anchor" aria-hidden="true" href="#5-paid-domain--hosting-options">#</a></h3>
+<ul>
+<li><strong>Domain registrars</strong>: GoDaddy, Google Domains, Namecheap</li>
+<li><strong>Hosting providers</strong>: AWS, Heroku, Render, Kinsta</li>
+<li>Useful for portfolios, blogs, and business websites</li>
+</ul>
+<hr>
+<h3 id="6-basic-setup-workflow">6. Basic Setup Workflow<a hidden class="anchor" aria-hidden="true" href="#6-basic-setup-workflow">#</a></h3>
+<ol>
+<li>Purchase or register a domain (or get a free subdomain)</li>
+<li>Upload your site to a hosting platform</li>
+<li>Configure DNS settings (e.g., A record, CNAME) to link domain with hosting</li>
+</ol>
+<hr>
+
+
+  </div>
+
+  <footer class="post-footer">
+    <ul class="post-tags">
+      <li><a href="https://Byngjoon.github.io/blog/tags/frontend/">Frontend</a></li>
+      <li><a href="https://Byngjoon.github.io/blog/tags/backend/">Backend</a></li>
+    </ul>
+  </footer>
+</article>
+    </main>
+    
+<footer class="footer">
+        <span>&copy; 2025 <a href="https://Byngjoon.github.io/blog/">Hyungtae</a></span> · 
+
+    <span>
+        Powered by
+        <a href="https://gohugo.io/" rel="noopener noreferrer" target="_blank">Hugo</a> &
+        <a href="https://github.com/adityatelange/hugo-PaperMod/" rel="noopener" target="_blank">PaperMod</a>
+    </span>
+</footer>
+<a href="#top" aria-label="go to top" title="Go to Top (Alt + G)" class="top-link" id="top-link" accesskey="g">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 6" fill="currentColor">
+        <path d="M12 6H0l6-6z" />
+    </svg>
+</a>
+
+<script>
+    let menu = document.getElementById('menu')
+    if (menu) {
+        menu.scrollLeft = localStorage.getItem("menu-scroll-position");
+        menu.onscroll = function () {
+            localStorage.setItem("menu-scroll-position", menu.scrollLeft);
+        }
+    }
+
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener("click", function (e) {
+            e.preventDefault();
+            var id = this.getAttribute("href").substr(1);
+            if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView({
+                    behavior: "smooth"
+                });
+            } else {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView();
+            }
+            if (id === "top") {
+                history.replaceState(null, null, " ");
+            } else {
+                history.pushState(null, null, `#${id}`);
+            }
+        });
+    });
+
+</script>
+<script>
+    var mybutton = document.getElementById("top-link");
+    window.onscroll = function () {
+        if (document.body.scrollTop > 800 || document.documentElement.scrollTop > 800) {
+            mybutton.style.visibility = "visible";
+            mybutton.style.opacity = "1";
+        } else {
+            mybutton.style.visibility = "hidden";
+            mybutton.style.opacity = "0";
+        }
+    };
+
+</script>
+<script>
+    document.getElementById("theme-toggle").addEventListener("click", () => {
+        if (document.body.className.includes("dark")) {
+            document.body.classList.remove('dark');
+            localStorage.setItem("pref-theme", 'light');
+        } else {
+            document.body.classList.add('dark');
+            localStorage.setItem("pref-theme", 'dark');
+        }
+    })
+
+</script>
+<script>
+    document.querySelectorAll('pre > code').forEach((codeblock) => {
+        const container = codeblock.parentNode.parentNode;
+
+        const copybutton = document.createElement('button');
+        copybutton.classList.add('copy-code');
+        copybutton.innerHTML = 'copy';
+
+        function copyingDone() {
+            copybutton.innerHTML = 'copied!';
+            setTimeout(() => {
+                copybutton.innerHTML = 'copy';
+            }, 2000);
+        }
+
+        copybutton.addEventListener('click', (cb) => {
+            if ('clipboard' in navigator) {
+                navigator.clipboard.writeText(codeblock.textContent);
+                copyingDone();
+                return;
+            }
+
+            const range = document.createRange();
+            range.selectNodeContents(codeblock);
+            const selection = window.getSelection();
+            selection.removeAllRanges();
+            selection.addRange(range);
+            try {
+                document.execCommand('copy');
+                copyingDone();
+            } catch (e) { };
+            selection.removeRange(range);
+        });
+
+        if (container.classList.contains("highlight")) {
+            container.appendChild(copybutton);
+        } else if (container.parentNode.firstChild == container) {
+            
+        } else if (codeblock.parentNode.parentNode.parentNode.parentNode.parentNode.nodeName == "TABLE") {
+            
+            codeblock.parentNode.parentNode.parentNode.parentNode.parentNode.appendChild(copybutton);
+        } else {
+            
+            codeblock.parentNode.appendChild(copybutton);
+        }
+    });
+</script>
+</body>
+
+</html>
