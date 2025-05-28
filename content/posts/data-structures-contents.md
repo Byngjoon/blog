@@ -7,19 +7,19 @@ tags = ["Data Structures"]
 math = true
 draft = true
 +++
-# Data Structures: Study Outline with C Language Implementation
+# Data Structures Study Outline with C Language Implementation
 
-## Chapter 00. [Introduction to Data Structures]({{< relref "posts/data-structures-00.md" >}})
-- What is Data Structures about?
-- Data Type vs Data Structure
-- Learn about Abstract Data Types (ADT)
-- C Language Essentials for Data Structures
+## [Chapter 00. Introduction to Data Structures]({{< relref "posts/data-structures-00.md" >}})
+### Section 0.1. What is Data Structures about?
+### Section 0.2. Data Type vs Data Structure
+### Section 0.3. Learn about Abstract Data Types (ADT)
+### Section 0.4. C Language Essentials for Data Structures
 
 Chapter 01. Arrays & Strings
 	•	Learn how arrays store elements in contiguous memory
 	•	Understand array operations: indexing, insertion, deletion
 	•	Explore strings as character arrays and string manipulation techniques
-## Chapter 01. Array ADT
+## Chapter 01. [Array Abstract Data Type (ADT)]({{< relref "posts/data-structures-01.md" >}})
 - Array basics (1D, 2D)/ One-dimensional and multidimensional arrays
 - Memory layout of arrays
 - String as null-terminated char array

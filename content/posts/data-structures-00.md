@@ -3,27 +3,27 @@ date = '2025-05-17T07:20:49+09:00'
 title = '[Data Structures] [00] Introduction to Data Structures'
 description = "The preface and core concepts of Data Structures series"
 categories = ["Computer Science/Algorithms & Data Structures"]
-slug = "introduction-to-data-structures"
 tags = ["Data Structures"]
+slug = "introduction-to-data-structures"
 math = true
 draft = false
 +++
 
-# Chapter 00: Introduction to Data Structures
+# Chapter 00. Introduction to Data Structures
 
 > **Outline:** This chapter provides a foundational overview of what data structures are, how they differ from data types, and why Abstract Data Types (ADTs) are essential. It also introduces basic C language concepts that are prerequisites(사전에 필요한) for understanding and implementing data structures.
 
 ---
 
 ## Contents
-1. [What is Data Structures about?](#section-01-what-is-data-structures-about)
-2. [Data Type vs Data Structure](#section-02-data-type-vs-data-structure)
-3. [What is an Abstract Data Type (ADT)?](#section-03-what-is-an-abstract-data-type-adt)
-4. [C Language Essentials for Data Structures](#section-04-c-language-essentials-for-data-structures)
+- [0.1. What is Data Structures about?](#section-01-what-is-data-structures-about)
+- [0.2. Data Type vs Data Structure](#section-02-data-type-vs-data-structure)
+- [0.3. What is an Abstract Data Type (ADT)?](#section-03-what-is-an-abstract-data-type-adt)
+- [0.4. C Language Essentials for Data Structures](#section-04-c-language-essentials-for-data-structures)
 
 ---
 
-## Section 01. What is Data Structures about?
+## Section 0.1. What is Data Structures about?
 
 Data Structures is the study of how to organize, store, and manage data **efficiently** in a computer system.
 
@@ -93,7 +93,7 @@ Even with a good algorithm, choosing the wrong data structure can waste **time**
 
 ---
 
-## Section 02. Data Type vs Data Structure
+## Section 0.2. Data Type vs Data Structure
 
 **Data Type**: Defines the form and allowed operations for a single piece of data.  
 - `int`: Represents a single integer value; supports arithmetic(산술) operations like addition, subtraction, etc.  
@@ -112,7 +112,7 @@ Even with a good algorithm, choosing the wrong data structure can waste **time**
 
 ---
 
-## Section 03. What is an Abstract Data Type (ADT)?
+## Section 0.3. What is an Abstract Data Type (ADT)?
 
 An **Abstract Data Type (ADT)** defines a logical model (object) and a set of operations for handling data, while hiding the internal implementation details(구현 상세).
 
@@ -199,7 +199,7 @@ An **Abstract Data Type (ADT)** defines a logical model (object) and a set of op
 
 ---
 
-## Section 04. C Language Essentials for Data Structures
+## Section 0.4. C Language Essentials for Data Structures
 
 We will implement data structures using the C programming language.  
 To do this effectively, we need to understand three core concepts:

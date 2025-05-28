@@ -1,6 +1,6 @@
 +++
 date = '2025-05-17T07:27:31+09:00'
-title = '[Data Structures] [01] Array ADT'
+title = '[Data Structures] [01] Array Abstract Data Type (ADT)'
 description = "Understanding the Array Abstract Data Type in Data Structures"
 categories = ["Computer Science/Algorithms & Data Structures"]
 tags = ["Data Structures"]
@@ -9,7 +9,7 @@ math = true
 draft = true
 +++
 
-# Chapter 01: Array Abstract Data Type (Array ADT)
+# Chapter 01. Array Abstract Data Type (ADT)
 
 > **Outline:** This chapter introduces the logical concept of the Array ADT and connects it to concrete implementations in C. It covers the concepts of arrays, memory layout, pointer relationships, and discusses the limitations of arrays that motivate the use of linked lists.
 
@@ -17,17 +17,17 @@ draft = true
 
 ## 📑 Contents
 
-1. [Array Abstract Data Type (ADT)](#array-abstract-data-type-adt)
-2. [What is an Array in C?](#what-is-an-array-in-c)
-3. [One-dimensional Arrays](#one-dimensional-arrays)
-4. [Memory Layout of Arrays](#memory-layout-of-arrays)
-5. [Array vs Pointer](#array-vs-pointer)
-6. [Multidimensional (Nested) Arrays](#multidimensional-nested-arrays)
-7. [Limitations of Arrays and Motivation for Linked Lists](#limitations-of-arrays-and-motivation-for-linked-lists)
+- [1.1. Array Abstract Data Type (ADT)](#array-abstract-data-type-adt)
+- [1.2. What is an Array in C?](#what-is-an-array-in-c)
+- [1.3. One-dimensional Arrays](#one-dimensional-arrays)
+- [1.4. Memory Layout of Arrays](#memory-layout-of-arrays)
+- [1.5. Array vs Pointer](#array-vs-pointer)
+- [1.6. Multidimensional (Nested) Arrays](#multidimensional-nested-arrays)
+- [1.7. Limitations of Arrays and Motivation for Linked Lists](#limitations-of-arrays-and-motivation-for-linked-lists)
 
 ---
 
-## Section 01. Array Abstract Data Type (ADT)
+## Section 1.1. Array Abstract Data Type (ADT)
 An **Array ADT** is a collection of ordered pairs **⟨index, value⟩**, where each index maps to a corresponding value.
 **Logical model** of data that allows indexed access to a sequence of elements.
 
@@ -42,7 +42,7 @@ An **Array ADT** is a collection of ordered pairs **⟨index, value⟩**, where 
 
 ---
 
-## Section 02. What is an Array in C?
+## Section 1.02. What is an Array in C?
 An **array in C** is a **fixed-size** collection of elements of the **same data type**, stored in **contiguous block** of memory. It allows **indexed access** to each element using square brackets `[]`.
 
 ---
@@ -115,7 +115,7 @@ printf("%d", scores[1]);           // access value
 
 ---
 
-## Section 03. One-dimensional Arrays
+## Section 1.03. One-dimensional Arrays
 
 * Store linear sequences of elements
 * Typical operations: traverse, update, sum, search
