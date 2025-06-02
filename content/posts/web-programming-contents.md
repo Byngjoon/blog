@@ -7,6 +7,7 @@ tags = [""]
 slug = ""
 math = true
 draft = true
+toc = false
 +++
 
 # Web Programming Study Outline
@@ -35,22 +36,22 @@ draft = true
 
 ---
 
-## Chapter 01. Frontend - HTML
+## Chapter 01. [Frontend - HTML]({{< relref "posts/web-programming-01.md" >}})
 
-### Section 1.01: What is HTML?
-### Section 1.02: What is a Markup Language?
-### Section 1.03: Core Concepts of HTML
+### Section 1.1. What is HTML?
+### Section 1.2. What is a Markup Language?
+### Section 1.3. Core Concepts of HTML
 - Tags, Elements, Attributes
-### Section 1.04: Basic HTML Document Structure
+### Section 1.4. Basic HTML Document Structure
 - `<!DOCTYPE>`, `<html>`, `<head>`, `<body>`
-### Section 1.05: Common HTML Tags
+### Section 1.5. Common HTML Tags
 - Text, Lists, Links, Images, Tables, etc.
-### Section 1.06: Forms and Input Elements
-### Section 1.07: Semantic HTML Tags
+### Section 1.6. Forms and Input Elements
+### Section 1.7. Semantic HTML Tags
 - `<header>`, `<footer>`, `<nav>`, `<main>`, `<section>`, `<article>`
-### Section 1.08: HTML Entities & Special Characters
-### Section 1.09: HTML Accessibility (ARIA Basics)
-### Section 1.10: SEO and HTML Structure *(Optional)*
+### Section 1.8. HTML Entities & Special Characters
+### Section 1.9. HTML Accessibility (ARIA Basics)
+### Section 1.10. SEO and HTML Structure *(Optional)*
 
 ---
 
