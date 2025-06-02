@@ -1,0 +1,1261 @@
+<!DOCTYPE html>
+<html lang="en" dir="auto">
+
+<head><meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="robots" content="index, follow">
+<title>[Web Programming] [01] Frontend - HTML Part 01 | Hyungtae</title>
+<meta name="keywords" content="Frontend">
+<meta name="description" content="Learn about HTML5">
+<meta name="author" content="">
+<link rel="canonical" href="https://Byngjoon.github.io/blog/posts/html-part-01/">
+<link crossorigin="anonymous" href="/blog/assets/css/stylesheet.f49d66caae9ea0fd43f21f29e71a8d3e284517ed770f2aa86fa012953ad3c9ef.css" integrity="sha256-9J1myq6eoP1D8h8p5xqNPihFF&#43;13Dyqob6ASlTrTye8=" rel="preload stylesheet" as="style">
+<link rel="icon" href="https://Byngjoon.github.io/blog/favicon.ico">
+<link rel="icon" type="image/png" sizes="16x16" href="https://Byngjoon.github.io/blog/favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="https://Byngjoon.github.io/blog/favicon-32x32.png">
+<link rel="apple-touch-icon" href="https://Byngjoon.github.io/blog/apple-touch-icon.png">
+<link rel="mask-icon" href="https://Byngjoon.github.io/blog/safari-pinned-tab.svg">
+<meta name="theme-color" content="#2e2e33">
+<meta name="msapplication-TileColor" content="#2e2e33">
+<link rel="alternate" hreflang="en" href="https://Byngjoon.github.io/blog/posts/html-part-01/">
+<noscript>
+    <style>
+        #theme-toggle,
+        .top-link {
+            display: none;
+        }
+
+    </style>
+    <style>
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --theme: rgb(29, 30, 32);
+                --entry: rgb(46, 46, 51);
+                --primary: rgb(218, 218, 219);
+                --secondary: rgb(155, 156, 157);
+                --tertiary: rgb(65, 66, 68);
+                --content: rgb(196, 196, 197);
+                --code-block-bg: rgb(46, 46, 51);
+                --code-bg: rgb(55, 56, 62);
+                --border: rgb(51, 51, 51);
+            }
+
+            .list {
+                background: var(--theme);
+            }
+
+            .list:not(.dark)::-webkit-scrollbar-track {
+                background: 0 0;
+            }
+
+            .list:not(.dark)::-webkit-scrollbar-thumb {
+                border-color: var(--theme);
+            }
+        }
+
+    </style>
+</noscript>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"></script>
+<script>
+  window.onload = function () {
+    renderMathInElement(document.body, {
+      delimiters: [
+        { left: "$$", right: "$$", display: true },
+        { left: "$", right: "$", display: false }
+      ]
+    });
+  };
+</script>
+
+<meta property="og:url" content="https://Byngjoon.github.io/blog/posts/html-part-01/">
+  <meta property="og:site_name" content="Hyungtae">
+  <meta property="og:title" content="[Web Programming] [01] Frontend - HTML Part 01">
+  <meta property="og:description" content="Learn about HTML5">
+  <meta property="og:locale" content="ko-kr">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="posts">
+    <meta property="article:published_time" content="2025-05-22T14:19:11+09:00">
+    <meta property="article:modified_time" content="2025-05-22T14:19:11+09:00">
+    <meta property="article:tag" content="Frontend">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="[Web Programming] [01] Frontend - HTML Part 01">
+<meta name="twitter:description" content="Learn about HTML5">
+
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position":  1 ,
+      "name": "Posts",
+      "item": "https://Byngjoon.github.io/blog/posts/"
+    }, 
+    {
+      "@type": "ListItem",
+      "position":  2 ,
+      "name": "[Web Programming] [01] Frontend - HTML Part 01",
+      "item": "https://Byngjoon.github.io/blog/posts/html-part-01/"
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "[Web Programming] [01] Frontend - HTML Part 01",
+  "name": "[Web Programming] [01] Frontend - HTML Part 01",
+  "description": "Learn about HTML5",
+  "keywords": [
+    "Frontend"
+  ],
+  "articleBody": "Chapter 01. Frontend – HTML (Part 01) Outline: Introduction to the foundational language of the web. This chapter covers the structure, syntax, and semantics of HTML, the language used to build the backbone of every website. In this part, we describe core concepts, basic structure, and commonly used tags of HTML5.\nContents 1.1. What is HTML 1.2. What is a Markup Language 1.3. Core Concepts of HTML 1.4. Basic HTML Document Structure 1.5. Common HTML Tags 1.6. Forms and Input Elements 1.7. Semantic HTML Tags 1.8. HTML Entities \u0026 Special Characters 1.9. HTML Accessibility (ARIA Basics) 1.10. SEO and HTML Structure (Optional) Section 1.1. What is HTML? 1. Definition HTML (HyperText Markup Language) is the standard markup language used to define the structure of web pages.\nEvery website you see in a browser starts with HTML.\n2. Not a Programming Language HTML is not a programming language; it’s a markup language. It doesn’t have logic features like loops or conditionals. Its main purpose is to describe content structure and meaning, not behavior. 3. Key Features Feature Description Structure Defines the layout of the page (header, body, etc.) Tag-based Syntax Uses tags like , , , etc. Hypertext Support Enables linking between pages using Human/Machine Readable Easy for browsers and developers to interpret 4. Role of HTML Expresses content structure and meaning (headings, paragraphs, lists, images, links) Acts as the foundation for CSS and JavaScript Important for web accessibility and SEO (search engine optimization) 5. Basic Example \u003c!DOCTYPE html\u003e \u003chtml\u003e \u003chead\u003e \u003ctitle\u003eExample Page\u003c/title\u003e \u003c/head\u003e \u003cbody\u003e \u003ch1\u003eHello, world!\u003c/h1\u003e \u003cp\u003eThis is example page for HTML.\u003c/p\u003e \u003c/body\u003e \u003c/html\u003e Section 1.2. What is a Markup Language? 1. Definition A markup language is a system for annotating text so that the structure and semantics of the content can be understood and interpreted by computers.\nIt tells the browser what each piece of content means, not just how it looks.\n2. Purpose of a Markup Language Structure: Defines document layout and sections Semantics: Gives meaning to different parts of content Foundation for Rendering: Provides base instructions for how the content should be displayed 3. Example in HTML \u003ch1\u003eMy Blog\u003c/h1\u003e \u003cp\u003eWelcome to my blog!\u003c/p\u003e : Indicates a top-level heading : Defines a paragraph This is how tags are used to “mark up” content with meaning.\n4. Markup Language vs. Programming Language Feature Markup Language Programming Language Main Purpose Define structure \u0026 meaning Control logic \u0026 behavior Examples HTML, XML, Markdown Python, JavaScript, C Logic or Flow Control Not possible Fully supported 5. Other Common Markup Languages HTML – Builds structure of web pages XML – Represents structured data Markdown – Lightweight syntax for formatting text LaTeX – Used for typesetting scientific documents Section 1.3. Core Concepts of HTML 1. Tag A tag is a keyword enclosed in angle brackets (\u003c \u003e) that defines the type or role of content. Most tags come in pairs: an opening tag and a closing tag. \u003cp\u003eHello, world!\u003c/p\u003e is the opening tag, and is the closing tag. Some tags are self-closing, like or . These do not require a closing tag. 2. Attribute An attribute provides additional information about an element. It appears inside the opening tag and uses the format name=\"value\". \u003cimg src=\"logo.png\" alt=\"Company Logo\"\u003e src: specifies the image source path. alt: provides alternative text if the image fails to load. 3. Content Content is the part between the opening and closing tags of an element. It can be plain text or nested HTML elements, and is what users actually see in the browser. \u003ch1\u003eWelcome\u003c/h1\u003e Welcome: is the content of the element. 4. Element An element consists of the entire HTML unit: Opening tag Attributes (optional) Content (optional) Closing tag \u003ctagname attribute1 = \"value1\" attribute2 = \"value2\"\u003econtent\u003c/tagname\u003e \u003ca href=\"https://example.com\"\u003eVisit\u003c/a\u003e This is a full element: is the opening tag href=\"https://example.com\" is the attribute Visit is the content is the closing tag Summary Table Concept Description Example Tag Symbol that defines the element type , , Attribute Key-value pair that adds info to a tag href=\"...\", src=\"...\", alt=\"...\" Content What is displayed between tags Hello, Link, Welcome Element Full HTML unit including tag(s) and content Hello\n, Link Section 1.4. Basic HTML Document Structure 1. Overview Every HTML page starts with a standard document structure that browsers can recognize and render properly.\nThis structure includes essential tags like \u003c!DOCTYPE\u003e, , , and .\n2. Basic Structure Template \u003c!DOCTYPE html\u003e \u003chtml lang=\"en\"\u003e \u003chead\u003e \u003cmeta charset=\"UTF-8\" /\u003e \u003ctitle\u003ePage Title\u003c/title\u003e \u003c/head\u003e \u003cbody\u003e \u003ch1\u003eHello, world!\u003c/h1\u003e \u003cp\u003eThis is a paragraph.\u003c/p\u003e \u003c/body\u003e \u003c/html\u003e 3. Explanation of Each Part Part Purpose \u003c!DOCTYPE html\u003e Declares the document as HTML5 Root element of the page Metadata (not visible): title, charset, styles, scripts, etc. Visible content shown in the browser \u003c/code\u003e\u003c/td\u003e \u003ctd\u003ePage title shown in the browser tab\u003c/td\u003e \u003c/tr\u003e \u003ctr\u003e \u003ctd\u003e\u003ccode\u003e\u003cmeta charset=\"\"\u003e\u003c/code\u003e\u003c/td\u003e \u003ctd\u003eDeclares character encoding (e.g., UTF-8 for Unicode support)\u003c/td\u003e \u003c/tr\u003e \u003c/tbody\u003e \u003c/table\u003e \u003chr\u003e \u003ch3 id=\"4-notes\"\u003e4. Notes\u003c/h3\u003e \u003cul\u003e \u003cli\u003eOnly \u003cstrong\u003eone \u003ccode\u003e\u003chtml\u003e\u003c/code\u003e, \u003ccode\u003e\u003chead\u003e\u003c/code\u003e, and \u003ccode\u003e\u003cbody\u003e\u003c/code\u003e\u003c/strong\u003e tag should appear per document.\u003c/li\u003e \u003cli\u003eThe \u003ccode\u003elang\u003c/code\u003e attribute in \u003ccode\u003e\u003chtml\u003e\u003c/code\u003e improves accessibility and SEO.\u003c/li\u003e \u003cli\u003eWithout \u003ccode\u003e\u003c!DOCTYPE html\u003e\u003c/code\u003e, browsers may enter \u003cstrong\u003equirks mode\u003c/strong\u003e (inconsistent rendering).\u003c/li\u003e \u003cli\u003e\u003cstrong\u003eQuirks Mode\u003c/strong\u003e is a non-standard rendering mode. In this mode, the browser does \u003cstrong\u003enot follow modern HTML and CSS standards\u003c/strong\u003e.\u003c/li\u003e \u003cli\u003e\u003ccode\u003e\u003c!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.01 Transitional//EN\"\"http://www.w3.org/TR/html4/loose.dtd\"\u003e\u003c/code\u003e declares the document as HTML 4.01, instead of HTML5.\u003c/li\u003e \u003c/ul\u003e \u003chr\u003e \u003ch2 id=\"section-15-common-html-tags\"\u003eSection 1.5. Common HTML Tags\u003c/h2\u003e \u003ch3 id=\"1-text-tags\"\u003e1. Text Tags\u003c/h3\u003e \u003ctable\u003e \u003cthead\u003e \u003ctr\u003e \u003cth\u003eTag\u003c/th\u003e \u003cth\u003eDescription\u003c/th\u003e \u003cth\u003eExample\u003c/th\u003e \u003c/tr\u003e \u003c/thead\u003e \u003ctbody\u003e \u003ctr\u003e \u003ctd\u003e\u003ccode\u003e\u003ch1\u003e\u003c/code\u003e~\u003ccode\u003e\u003ch6\u003e\u003c/code\u003e\u003c/td\u003e \u003ctd\u003eHeadings from largest (\u003ccode\u003e\u003ch1\u003e\u003c/code\u003e) to smallest (\u003ccode\u003e\u003ch6\u003e\u003c/code\u003e)\u003c/td\u003e \u003ctd\u003e\u003ccode\u003e\u003ch2\u003eSubheading\u003c/h2\u003e\u003c/code\u003e\u003c/td\u003e \u003c/tr\u003e \u003ctr\u003e \u003ctd\u003e\u003ccode\u003e\u003cp\u003e\u003c/code\u003e\u003c/td\u003e \u003ctd\u003eParagraph (block of text)\u003c/td\u003e \u003ctd\u003e\u003ccode\u003e\u003cp\u003eThis is a paragraph.\n\u003c/code\u003e\u003c/td\u003e \u003c/tr\u003e \u003ctr\u003e \u003ctd\u003e\u003ccode\u003e\n\u003c/code\u003e\u003c/td\u003e \u003ctd\u003eLine break (new line)\u003c/td\u003e \u003ctd\u003e\u003ccode\u003eLine 1\nLine 2\u003c/code\u003e\u003c/td\u003e \u003c/tr\u003e \u003ctr\u003e \u003ctd\u003e\u003ccode\u003e\u003chr\u003e\u003c/code\u003e\u003c/td\u003e \u003ctd\u003eHorizontal rule (divider line)\u003c/td\u003e \u003ctd\u003e\u003ccode\u003e\u003chr\u003e\u003c/code\u003e\u003c/td\u003e \u003c/tr\u003e \u003ctr\u003e \u003ctd\u003e\u003ccode\u003e\u003cpre\u003e\u003c/code\u003e\u003c/td\u003e \u003ctd\u003ePreformatted text (preserves spaces, line breaks)\u003c/td\u003e \u003ctd\u003e\u003ccode\u003e\u003cpre\u003e line 1\\n line 2\u003c/pre\u003e\u003c/code\u003e\u003c/td\u003e \u003c/tr\u003e \u003ctr\u003e \u003ctd\u003e\u003ccode\u003e\u003ccode\u003e\u003c/code\u003e\u003c/td\u003e \u003ctd\u003eInline code snippet\u003c/td\u003e \u003ctd\u003e\u003ccode\u003e\u003ccode\u003eprint()\u003c/code\u003e\u003c/code\u003e\u003c/td\u003e \u003c/tr\u003e \u003ctr\u003e \u003ctd\u003e\u003ccode\u003e\u003ckbd\u003e\u003c/code\u003e\u003c/td\u003e \u003ctd\u003eKeyboard input\u003c/td\u003e \u003ctd\u003e\u003ccode\u003e\u003ckbd\u003eCtrl + C\u003c/kbd\u003e\u003c/code\u003e\u003c/td\u003e \u003c/tr\u003e \u003ctr\u003e \u003ctd\u003e\u003ccode\u003e\u003csamp\u003e\u003c/code\u003e\u003c/td\u003e \u003ctd\u003eSample output (usually from a program)\u003c/td\u003e \u003ctd\u003e\u003ccode\u003e\u003csamp\u003e404 Not Found\u003c/samp\u003e\u003c/code\u003e\u003c/td\u003e \u003c/tr\u003e \u003ctr\u003e \u003ctd\u003e\u003ccode\u003e\u003cvar\u003e\u003c/code\u003e\u003c/td\u003e \u003ctd\u003eVariable name (usually italic)\u003c/td\u003e \u003ctd\u003e\u003ccode\u003e\u003cvar\u003ex\u003c/var\u003e = 10\u003c/code\u003e\u003c/td\u003e \u003c/tr\u003e \u003c/tbody\u003e \u003c/table\u003e \u003chr\u003e \u003ch4 id=\"notes\"\u003eNotes\u003c/h4\u003e \u003cul\u003e \u003cli\u003eUse heading tags (\u003ccode\u003e\u003ch1\u003e\u003c/code\u003e~\u003ccode\u003e\u003ch6\u003e\u003c/code\u003e) for structured titles and subtitles.\u003c/li\u003e \u003cli\u003e\u003ccode\u003e\u003cpre\u003e\u003c/code\u003e keeps original spacing and line breaks—often used with \u003ccode\u003e\u003ccode\u003e\u003c/code\u003e.\u003c/li\u003e \u003cli\u003e\u003ccode\u003e\u003ckbd\u003e\u003c/code\u003e, \u003ccode\u003e\u003csamp\u003e\u003c/code\u003e, and \u003ccode\u003e\u003cvar\u003e\u003c/code\u003e are useful in technical or educational content.\u003c/li\u003e \u003c/ul\u003e \u003chr\u003e \u003ch3 id=\"2-formatting-tags\"\u003e2. Formatting Tags\u003c/h3\u003e \u003ctable\u003e \u003cthead\u003e \u003ctr\u003e \u003cth\u003eTag\u003c/th\u003e \u003cth\u003eDescription\u003c/th\u003e \u003cth\u003eExample\u003c/th\u003e \u003c/tr\u003e \u003c/thead\u003e \u003ctbody\u003e \u003ctr\u003e \u003ctd\u003e\u003ccode\u003e\u003cstrong\u003e\u003c/code\u003e\u003c/td\u003e \u003ctd\u003eImportant/strong emphasis (usually bold)\u003c/td\u003e \u003ctd\u003e\u003ccode\u003e\u003cstrong\u003eImportant\u003c/strong\u003e\u003c/code\u003e\u003c/td\u003e \u003c/tr\u003e \u003ctr\u003e \u003ctd\u003e\u003ccode\u003e\u003cem\u003e\u003c/code\u003e\u003c/td\u003e \u003ctd\u003eEmphasized text (usually italic)\u003c/td\u003e \u003ctd\u003e\u003ccode\u003e\u003cem\u003eNote\u003c/em\u003e\u003c/code\u003e\u003c/td\u003e \u003c/tr\u003e \u003ctr\u003e \u003ctd\u003e\u003ccode\u003e\u003cmark\u003e\u003c/code\u003e\u003c/td\u003e \u003ctd\u003eHighlighted or marked text\u003c/td\u003e \u003ctd\u003e\u003ccode\u003e\u003cmark\u003eHighlight\u003c/mark\u003e\u003c/code\u003e\u003c/td\u003e \u003c/tr\u003e \u003ctr\u003e \u003ctd\u003e\u003ccode\u003e\u003csmall\u003e\u003c/code\u003e\u003c/td\u003e \u003ctd\u003eSmaller-sized text\u003c/td\u003e \u003ctd\u003e\u003ccode\u003e\u003csmall\u003eFootnote\u003c/small\u003e\u003c/code\u003e\u003c/td\u003e \u003c/tr\u003e \u003ctr\u003e \u003ctd\u003e\u003ccode\u003e\u003cdel\u003e\u003c/code\u003e\u003c/td\u003e \u003ctd\u003eDeleted text (strikethrough)\u003c/td\u003e \u003ctd\u003e\u003ccode\u003e\u003cdel\u003eRemoved\u003c/del\u003e\u003c/code\u003e\u003c/td\u003e \u003c/tr\u003e \u003ctr\u003e \u003ctd\u003e\u003ccode\u003e\u003cins\u003e\u003c/code\u003e\u003c/td\u003e \u003ctd\u003eInserted text (usually underlined)\u003c/td\u003e \u003ctd\u003e\u003ccode\u003e\u003cins\u003eNew\u003c/ins\u003e\u003c/code\u003e\u003c/td\u003e \u003c/tr\u003e \u003ctr\u003e \u003ctd\u003e\u003ccode\u003e\u003cb\u003e\u003c/code\u003e\u003c/td\u003e \u003ctd\u003eBold text without semantic meaning\u003c/td\u003e \u003ctd\u003e\u003ccode\u003e\u003cb\u003eBold\u003c/b\u003e\u003c/code\u003e\u003c/td\u003e \u003c/tr\u003e \u003ctr\u003e \u003ctd\u003e\u003ccode\u003e\u003ci\u003e\u003c/code\u003e\u003c/td\u003e \u003ctd\u003eItalic text without semantic meaning\u003c/td\u003e \u003ctd\u003e\u003ccode\u003e\u003ci\u003eItalic\u003c/i\u003e\u003c/code\u003e\u003c/td\u003e \u003c/tr\u003e \u003ctr\u003e \u003ctd\u003e\u003ccode\u003e\u003cu\u003e\u003c/code\u003e\u003c/td\u003e \u003ctd\u003eUnderlined text\u003c/td\u003e \u003ctd\u003e\u003ccode\u003e\u003cu\u003eUnderline\u003c/u\u003e\u003c/code\u003e\u003c/td\u003e \u003c/tr\u003e \u003ctr\u003e \u003ctd\u003e\u003ccode\u003e\u003csup\u003e\u003c/code\u003e\u003c/td\u003e \u003ctd\u003eSuperscript (above baseline)\u003c/td\u003e \u003ctd\u003e\u003ccode\u003ex\u003csup\u003e2\u003c/sup\u003e\u003c/code\u003e → x²\u003c/td\u003e \u003c/tr\u003e \u003ctr\u003e \u003ctd\u003e\u003ccode\u003e\u003csub\u003e\u003c/code\u003e\u003c/td\u003e \u003ctd\u003eSubscript (below baseline)\u003c/td\u003e \u003ctd\u003e\u003ccode\u003eH\u003csub\u003e2\u003c/sub\u003eO\u003c/code\u003e → H₂O\u003c/td\u003e \u003c/tr\u003e \u003ctr\u003e \u003ctd\u003e\u003ccode\u003e\u003cabbr\u003e\u003c/code\u003e\u003c/td\u003e \u003ctd\u003eAbbreviation with tooltip\u003c/td\u003e \u003ctd\u003e\u003ccode\u003e\u003cabbr title=\"HyperText Markup Language\"\u003eHTML\u003c/abbr\u003e\u003c/code\u003e\u003c/td\u003e \u003c/tr\u003e \u003ctr\u003e \u003ctd\u003e\u003ccode\u003e\u003ccite\u003e\u003c/code\u003e\u003c/td\u003e \u003ctd\u003eCitation of a source (book, article, etc.)\u003c/td\u003e \u003ctd\u003e\u003ccode\u003e\u003ccite\u003eThe Republic\u003c/cite\u003e\u003c/code\u003e\u003c/td\u003e \u003c/tr\u003e \u003ctr\u003e \u003ctd\u003e\u003ccode\u003e\u003cq\u003e\u003c/code\u003e\u003c/td\u003e \u003ctd\u003eShort inline quotation\u003c/td\u003e \u003ctd\u003e\u003ccode\u003e\u003cq\u003eThis is quoted\u003c/q\u003e\u003c/code\u003e\u003c/td\u003e \u003c/tr\u003e \u003ctr\u003e \u003ctd\u003e\u003ccode\u003e\u003cblockquote\u003e\u003c/code\u003e\u003c/td\u003e \u003ctd\u003eBlock-level quotation\u003c/td\u003e \u003ctd\u003e\u003ccode\u003e\u003cblockquote\u003eThis is a block quote\u003c/blockquote\u003e\u003c/code\u003e\u003c/td\u003e \u003c/tr\u003e \u003c/tbody\u003e \u003c/table\u003e \u003chr\u003e \u003ch4 id=\"notes-1\"\u003eNotes\u003c/h4\u003e \u003cul\u003e \u003cli\u003e\u003ccode\u003e\u003cstrong\u003e\u003c/code\u003e and \u003ccode\u003e\u003cem\u003e\u003c/code\u003e carry semantic meaning and should be used for accessibility.\u003c/li\u003e \u003cli\u003e\u003ccode\u003e\u003cb\u003e\u003c/code\u003e and \u003ccode\u003e\u003ci\u003e\u003c/code\u003e are purely visual and less preferred in semantic HTML.\u003c/li\u003e \u003cli\u003e\u003ccode\u003e\u003cabbr\u003e\u003c/code\u003e is useful for accessibility and UX with screen readers.\u003c/li\u003e \u003c/ul\u003e \u003chr\u003e \u003ch3 id=\"3-list-tags\"\u003e3. List Tags\u003c/h3\u003e \u003ctable\u003e \u003cthead\u003e \u003ctr\u003e \u003cth\u003eTag\u003c/th\u003e \u003cth\u003eDescription\u003c/th\u003e \u003cth\u003eExample\u003c/th\u003e \u003c/tr\u003e \u003c/thead\u003e \u003ctbody\u003e \u003ctr\u003e \u003ctd\u003e\u003ccode\u003e\u003cul\u003e\u003c/code\u003e\u003c/td\u003e \u003ctd\u003eUnordered list (bulleted)\u003c/td\u003e \u003ctd\u003e\u003ccode\u003e\u003cul\u003e\u003cli\u003eItem\u003c/li\u003e\u003c/ul\u003e\u003c/code\u003e\u003c/td\u003e \u003c/tr\u003e \u003ctr\u003e \u003ctd\u003e\u003ccode\u003e\u003col\u003e\u003c/code\u003e\u003c/td\u003e \u003ctd\u003eOrdered list (numbered)\u003c/td\u003e \u003ctd\u003e\u003ccode\u003e\u003col\u003e\u003cli\u003eItem\u003c/li\u003e\u003c/ol\u003e\u003c/code\u003e\u003c/td\u003e \u003c/tr\u003e \u003ctr\u003e \u003ctd\u003e\u003ccode\u003e\u003cli\u003e\u003c/code\u003e\u003c/td\u003e \u003ctd\u003eList item\u003c/td\u003e \u003ctd\u003e\u003ccode\u003e\u003cli\u003eItem\u003c/li\u003e\u003c/code\u003e\u003c/td\u003e \u003c/tr\u003e \u003ctr\u003e \u003ctd\u003e\u003ccode\u003e\u003cdl\u003e\u003c/code\u003e\u003c/td\u003e \u003ctd\u003eDescription list (term + description)\u003c/td\u003e \u003ctd\u003e\u003ccode\u003e\u003cdl\u003e\u003cdt\u003eHTML\u003c/dt\u003e\u003cdd\u003eMarkup\u003c/dd\u003e\u003c/dl\u003e\u003c/code\u003e\u003c/td\u003e \u003c/tr\u003e \u003ctr\u003e \u003ctd\u003e\u003ccode\u003e\u003cdt\u003e\u003c/code\u003e\u003c/td\u003e \u003ctd\u003eTerm in description list\u003c/td\u003e \u003ctd\u003e\u003ccode\u003e\u003cdt\u003eHTML\u003c/dt\u003e\u003c/code\u003e\u003c/td\u003e \u003c/tr\u003e \u003ctr\u003e \u003ctd\u003e\u003ccode\u003e\u003cdd\u003e\u003c/code\u003e\u003c/td\u003e \u003ctd\u003eDefinition in description list\u003c/td\u003e \u003ctd\u003e\u003ccode\u003e\u003cdd\u003eHyperText Markup Language\u003c/dd\u003e\u003c/code\u003e\u003c/td\u003e \u003c/tr\u003e \u003c/tbody\u003e \u003c/table\u003e \u003chr\u003e \u003ch4 id=\"common-attributes-with-list-tags\"\u003eCommon Attributes with List Tags\u003c/h4\u003e \u003ctable\u003e \u003cthead\u003e \u003ctr\u003e \u003cth\u003eTag\u003c/th\u003e \u003cth\u003eAttribute\u003c/th\u003e \u003cth\u003eDescription\u003c/th\u003e \u003cth\u003eExample\u003c/th\u003e \u003c/tr\u003e \u003c/thead\u003e \u003ctbody\u003e \u003ctr\u003e \u003ctd\u003e\u003ccode\u003e\u003col\u003e\u003c/code\u003e\u003c/td\u003e \u003ctd\u003e\u003ccode\u003etype\u003c/code\u003e\u003c/td\u003e \u003ctd\u003eNumbering style: \u003ccode\u003e\"1\"\u003c/code\u003e, \u003ccode\u003e\"a\"\u003c/code\u003e, \u003ccode\u003e\"A\"\u003c/code\u003e, \u003ccode\u003e\"i\"\u003c/code\u003e, \u003ccode\u003e\"I\"\u003c/code\u003e\u003c/td\u003e \u003ctd\u003e\u003ccode\u003e\u003col type=\"A\"\u003e\u003c/code\u003e → A, B, C…\u003c/td\u003e \u003c/tr\u003e \u003ctr\u003e \u003ctd\u003e\u003ccode\u003e\u003col\u003e\u003c/code\u003e\u003c/td\u003e \u003ctd\u003e\u003ccode\u003estart\u003c/code\u003e\u003c/td\u003e \u003ctd\u003eStarting number for ordered list\u003c/td\u003e \u003ctd\u003e\u003ccode\u003e\u003col start=\"5\"\u003e\u003c/code\u003e → 5, 6, 7…\u003c/td\u003e \u003c/tr\u003e \u003ctr\u003e \u003ctd\u003e\u003ccode\u003e\u003cli\u003e\u003c/code\u003e\u003c/td\u003e \u003ctd\u003e\u003ccode\u003evalue\u003c/code\u003e\u003c/td\u003e \u003ctd\u003eCustom numbering value (for \u003ccode\u003e\u003col\u003e\u003c/code\u003e)\u003c/td\u003e \u003ctd\u003e\u003ccode\u003e\u003cli value=\"10\"\u003eItem\u003c/li\u003e\u003c/code\u003e → starts at 10\u003c/td\u003e \u003c/tr\u003e \u003ctr\u003e \u003ctd\u003e\u003ccode\u003e\u003cul\u003e\u003c/code\u003e\u003c/td\u003e \u003ctd\u003e\u003ccode\u003etype\u003c/code\u003e \u003cem\u003e(deprecated)\u003c/em\u003e\u003c/td\u003e \u003ctd\u003eBullet style: \u003ccode\u003e\"disc\"\u003c/code\u003e, \u003ccode\u003e\"circle\"\u003c/code\u003e, \u003ccode\u003e\"square\"\u003c/code\u003e\u003c/td\u003e \u003ctd\u003e\u003ccode\u003e\u003cul type=\"circle\"\u003e\u003c/code\u003e \u003cem\u003e(not recommended)\u003c/em\u003e\u003c/td\u003e \u003c/tr\u003e \u003c/tbody\u003e \u003c/table\u003e \u003chr\u003e \u003ch4 id=\"notes-2\"\u003eNotes\u003c/h4\u003e \u003cul\u003e \u003cli\u003e\u003ccode\u003etype\u003c/code\u003e and \u003ccode\u003estart\u003c/code\u003e are valid only on \u003ccode\u003e\u003col\u003e\u003c/code\u003e.\u003c/li\u003e \u003cli\u003e\u003ccode\u003evalue\u003c/code\u003e on \u003ccode\u003e\u003cli\u003e\u003c/code\u003e allows \u003cstrong\u003enon-sequential\u003c/strong\u003e numbering inside ordered lists.\u003c/li\u003e \u003cli\u003eThe \u003ccode\u003etype\u003c/code\u003e attribute on \u003ccode\u003e\u003cul\u003e\u003c/code\u003e is deprecated in HTML5—use CSS instead:\u003c/li\u003e \u003c/ul\u003e \u003cdiv class=\"highlight\"\u003e\u003cpre tabindex=\"0\" style=\"color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;\"\u003e\u003ccode class=\"language-css\" data-lang=\"css\"\u003e\u003cspan style=\"display:flex;\"\u003e\u003cspan\u003e\u003cspan style=\"color:#f92672\"\u003eul\u003c/span\u003e { \u003c/span\u003e\u003c/span\u003e\u003cspan style=\"display:flex;\"\u003e\u003cspan\u003e \u003cspan style=\"color:#66d9ef\"\u003elist-style-type\u003c/span\u003e: \u003cspan style=\"color:#66d9ef\"\u003esquare\u003c/span\u003e; \u003c/span\u003e\u003c/span\u003e\u003cspan style=\"display:flex;\"\u003e\u003cspan\u003e} \u003c/span\u003e\u003c/span\u003e\u003c/code\u003e\u003c/pre\u003e\u003c/div\u003e\u003chr\u003e \u003ch3 id=\"4-link--image-tags\"\u003e4. Link \u0026 Image Tags\u003c/h3\u003e \u003ctable\u003e \u003cthead\u003e \u003ctr\u003e \u003cth\u003eTag\u003c/th\u003e \u003cth\u003eDescription\u003c/th\u003e \u003cth\u003eExample\u003c/th\u003e \u003c/tr\u003e \u003c/thead\u003e \u003ctbody\u003e \u003ctr\u003e \u003ctd\u003e\u003ccode\u003e\u003ca\u003e\u003c/code\u003e\u003c/td\u003e \u003ctd\u003eHyperlink (anchor element)\u003c/td\u003e \u003ctd\u003e\u003ccode\u003e\u003ca href=\"https://example.com\"\u003eVisit\u003c/a\u003e\u003c/code\u003e\u003c/td\u003e \u003c/tr\u003e \u003ctr\u003e \u003ctd\u003e\u003ccode\u003e\u003cimg\u003e\u003c/code\u003e\u003c/td\u003e \u003ctd\u003eEmbeds an image\u003c/td\u003e \u003ctd\u003e\u003ccode\u003e\u003cimg src=\"img.jpg\" alt=\"description\"\u003e\u003c/code\u003e\u003c/td\u003e \u003c/tr\u003e \u003c/tbody\u003e \u003c/table\u003e \u003chr\u003e \u003ch4 id=\"common-attributes-for-a\"\u003eCommon Attributes for \u003ccode\u003e\u003ca\u003e\u003c/code\u003e\u003c/h4\u003e \u003ctable\u003e \u003cthead\u003e \u003ctr\u003e \u003cth\u003eAttribute\u003c/th\u003e \u003cth\u003eDescription\u003c/th\u003e \u003cth\u003eExample\u003c/th\u003e \u003c/tr\u003e \u003c/thead\u003e \u003ctbody\u003e \u003ctr\u003e \u003ctd\u003e\u003ccode\u003ehref\u003c/code\u003e\u003c/td\u003e \u003ctd\u003eDestination URL\u003c/td\u003e \u003ctd\u003e\u003ccode\u003e\u003ca href=\"https://example.com\"\u003eLink\u003c/a\u003e\u003c/code\u003e\u003c/td\u003e \u003c/tr\u003e \u003ctr\u003e \u003ctd\u003e\u003ccode\u003etarget\u003c/code\u003e\u003c/td\u003e \u003ctd\u003eWhere to open the link: \u003ccode\u003e_blank\u003c/code\u003e, \u003ccode\u003e_self\u003c/code\u003e, \u003ccode\u003e_parent\u003c/code\u003e, \u003ccode\u003e_top\u003c/code\u003e\u003c/td\u003e \u003ctd\u003e\u003ccode\u003e\u003ca target=\"_blank\"\u003e\u003c/code\u003e → open in new tab\u003c/td\u003e \u003c/tr\u003e \u003ctr\u003e \u003ctd\u003e\u003ccode\u003etitle\u003c/code\u003e\u003c/td\u003e \u003ctd\u003eTooltip text on hover\u003c/td\u003e \u003ctd\u003e\u003ccode\u003e\u003ca title=\"Click to visit\"\u003e\u003c/code\u003e\u003c/td\u003e \u003c/tr\u003e \u003ctr\u003e \u003ctd\u003e\u003ccode\u003erel\u003c/code\u003e\u003c/td\u003e \u003ctd\u003eRelationship between current and linked document\u003c/td\u003e \u003ctd\u003e\u003ccode\u003e\u003ca rel=\"noopener noreferrer\"\u003e\u003c/code\u003e\u003c/td\u003e \u003c/tr\u003e \u003ctr\u003e \u003ctd\u003e\u003ccode\u003edownload\u003c/code\u003e\u003c/td\u003e \u003ctd\u003eSuggests the browser to download rather than navigate\u003c/td\u003e \u003ctd\u003e\u003ccode\u003e\u003ca href=\"file.pdf\" download\u003eDownload PDF\u003c/a\u003e\u003c/code\u003e\u003c/td\u003e \u003c/tr\u003e \u003c/tbody\u003e \u003c/table\u003e \u003chr\u003e \u003ch4 id=\"common-attributes-for-img\"\u003eCommon Attributes for \u003ccode\u003e\u003cimg\u003e\u003c/code\u003e\u003c/h4\u003e \u003ctable\u003e \u003cthead\u003e \u003ctr\u003e \u003cth\u003eAttribute\u003c/th\u003e \u003cth\u003eDescription\u003c/th\u003e \u003cth\u003eExample\u003c/th\u003e \u003c/tr\u003e \u003c/thead\u003e \u003ctbody\u003e \u003ctr\u003e \u003ctd\u003e\u003ccode\u003esrc\u003c/code\u003e\u003c/td\u003e \u003ctd\u003ePath or URL to the image file\u003c/td\u003e \u003ctd\u003e\u003ccode\u003e\u003cimg src=\"logo.png\"\u003e\u003c/code\u003e\u003c/td\u003e \u003c/tr\u003e \u003ctr\u003e \u003ctd\u003e\u003ccode\u003ealt\u003c/code\u003e\u003c/td\u003e \u003ctd\u003eAlternative text if the image fails to load (required)\u003c/td\u003e \u003ctd\u003e\u003ccode\u003e\u003cimg alt=\"Company logo\"\u003e\u003c/code\u003e\u003c/td\u003e \u003c/tr\u003e \u003ctr\u003e \u003ctd\u003e\u003ccode\u003etitle\u003c/code\u003e\u003c/td\u003e \u003ctd\u003eTooltip shown on hover\u003c/td\u003e \u003ctd\u003e\u003ccode\u003e\u003cimg title=\"Hover text\"\u003e\u003c/code\u003e\u003c/td\u003e \u003c/tr\u003e \u003ctr\u003e \u003ctd\u003e\u003ccode\u003ewidth\u003c/code\u003e\u003c/td\u003e \u003ctd\u003eImage width in pixels or %\u003c/td\u003e \u003ctd\u003e\u003ccode\u003e\u003cimg width=\"200\"\u003e\u003c/code\u003e\u003c/td\u003e \u003c/tr\u003e \u003ctr\u003e \u003ctd\u003e\u003ccode\u003eheight\u003c/code\u003e\u003c/td\u003e \u003ctd\u003eImage height in pixels or %\u003c/td\u003e \u003ctd\u003e\u003ccode\u003e\u003cimg height=\"150\"\u003e\u003c/code\u003e\u003c/td\u003e \u003c/tr\u003e \u003ctr\u003e \u003ctd\u003e\u003ccode\u003eloading\u003c/code\u003e\u003c/td\u003e \u003ctd\u003eLazy loading setting: \u003ccode\u003e\"lazy\"\u003c/code\u003e or \u003ccode\u003e\"eager\"\u003c/code\u003e\u003c/td\u003e \u003ctd\u003e\u003ccode\u003e\u003cimg loading=\"lazy\"\u003e\u003c/code\u003e\u003c/td\u003e \u003c/tr\u003e \u003c/tbody\u003e \u003c/table\u003e \u003chr\u003e \u003ch4 id=\"notes-3\"\u003eNotes\u003c/h4\u003e \u003cul\u003e \u003cli\u003eAlways provide an \u003ccode\u003ealt\u003c/code\u003e attribute for images for accessibility and SEO.\u003c/li\u003e \u003cli\u003eUse \u003ccode\u003etarget=\"_blank\"\u003c/code\u003e with \u003ccode\u003erel=\"noopener noreferrer\"\u003c/code\u003e for external links to enhance security.\u003c/li\u003e \u003cli\u003eThe \u003ccode\u003edownload\u003c/code\u003e attribute in \u003ccode\u003e\u003ca\u003e\u003c/code\u003e helps with direct file downloads instead of opening them.\u003c/li\u003e \u003c/ul\u003e \u003chr\u003e \u003ch3 id=\"5-table-tags\"\u003e5. Table Tags\u003c/h3\u003e \u003ctable\u003e \u003cthead\u003e \u003ctr\u003e \u003cth\u003eTag\u003c/th\u003e \u003cth\u003eDescription\u003c/th\u003e \u003cth\u003eExample\u003c/th\u003e \u003c/tr\u003e \u003c/thead\u003e \u003ctbody\u003e \u003ctr\u003e \u003ctd\u003e\u003ccode\u003e\u003ctable\u003e\u003c/code\u003e\u003c/td\u003e \u003ctd\u003eTable container\u003c/td\u003e \u003ctd\u003e\u003ccode\u003e\u003ctable\u003e...\u003c/table\u003e\u003c/code\u003e\u003c/td\u003e \u003c/tr\u003e \u003ctr\u003e \u003ctd\u003e\u003ccode\u003e\u003ctr\u003e\u003c/code\u003e\u003c/td\u003e \u003ctd\u003eTable row\u003c/td\u003e \u003ctd\u003e\u003ccode\u003e\u003ctr\u003e...\u003c/tr\u003e\u003c/code\u003e\u003c/td\u003e \u003c/tr\u003e \u003ctr\u003e \u003ctd\u003e\u003ccode\u003e\u003cth\u003e\u003c/code\u003e\u003c/td\u003e \u003ctd\u003eTable header cell\u003c/td\u003e \u003ctd\u003e\u003ccode\u003e\u003cth\u003eHeader\u003c/th\u003e\u003c/code\u003e\u003c/td\u003e \u003c/tr\u003e \u003ctr\u003e \u003ctd\u003e\u003ccode\u003e\u003ctd\u003e\u003c/code\u003e\u003c/td\u003e \u003ctd\u003eTable data cell\u003c/td\u003e \u003ctd\u003e\u003ccode\u003e\u003ctd\u003eData\u003c/td\u003e\u003c/code\u003e\u003c/td\u003e \u003c/tr\u003e \u003ctr\u003e \u003ctd\u003e\u003ccode\u003e\u003cthead\u003e\u003c/code\u003e\u003c/td\u003e \u003ctd\u003eTable header section\u003c/td\u003e \u003ctd\u003e\u003ccode\u003e\u003cthead\u003e...\u003c/thead\u003e\u003c/code\u003e\u003c/td\u003e \u003c/tr\u003e \u003ctr\u003e \u003ctd\u003e\u003ccode\u003e\u003ctbody\u003e\u003c/code\u003e\u003c/td\u003e \u003ctd\u003eTable body section\u003c/td\u003e \u003ctd\u003e\u003ccode\u003e\u003ctbody\u003e...\u003c/tbody\u003e\u003c/code\u003e\u003c/td\u003e \u003c/tr\u003e \u003ctr\u003e \u003ctd\u003e\u003ccode\u003e\u003ctfoot\u003e\u003c/code\u003e\u003c/td\u003e \u003ctd\u003eTable footer section\u003c/td\u003e \u003ctd\u003e\u003ccode\u003e\u003ctfoot\u003e...\u003c/tfoot\u003e\u003c/code\u003e\u003c/td\u003e \u003c/tr\u003e \u003c/tbody\u003e \u003c/table\u003e \u003chr\u003e \u003ch3 id=\"6-other-frequently-used-tags\"\u003e6. Other Frequently Used Tags\u003c/h3\u003e \u003ctable\u003e \u003cthead\u003e \u003ctr\u003e \u003cth\u003eTag\u003c/th\u003e \u003cth\u003eDescription\u003c/th\u003e \u003cth\u003eExample\u003c/th\u003e \u003c/tr\u003e \u003c/thead\u003e \u003ctbody\u003e \u003ctr\u003e \u003ctd\u003e\u003ccode\u003e\u003cdiv\u003e\u003c/code\u003e\u003c/td\u003e \u003ctd\u003eGeneric block-level container\u003c/td\u003e \u003ctd\u003e\u003ccode\u003e\u003cdiv\u003eBlock\u003c/div\u003e\u003c/code\u003e\u003c/td\u003e \u003c/tr\u003e \u003ctr\u003e \u003ctd\u003e\u003ccode\u003e\u003cspan\u003e\u003c/code\u003e\u003c/td\u003e \u003ctd\u003eGeneric inline container\u003c/td\u003e \u003ctd\u003e\u003ccode\u003e\u003cspan\u003eInline\u003c/span\u003e\u003c/code\u003e\u003c/td\u003e \u003c/tr\u003e \u003c/tbody\u003e \u003c/table\u003e \u003chr\u003e \u003ch4 id=\"differences-between-div-and-span\"\u003eDifferences between \u003ccode\u003e\u003cdiv\u003e\u003c/code\u003e and \u003ccode\u003e\u003cspan\u003e\u003c/code\u003e\u003c/h4\u003e \u003ctable\u003e \u003cthead\u003e \u003ctr\u003e \u003cth\u003eFeature\u003c/th\u003e \u003cth\u003e\u003ccode\u003e\u003cdiv\u003e\u003c/code\u003e\u003c/th\u003e \u003cth\u003e\u003ccode\u003e\u003cspan\u003e\u003c/code\u003e\u003c/th\u003e \u003c/tr\u003e \u003c/thead\u003e \u003ctbody\u003e \u003ctr\u003e \u003ctd\u003eDisplay type\u003c/td\u003e \u003ctd\u003eBlock-level\u003c/td\u003e \u003ctd\u003eInline\u003c/td\u003e \u003c/tr\u003e \u003ctr\u003e \u003ctd\u003eDefault behavior\u003c/td\u003e \u003ctd\u003eOccupies full width\u003c/td\u003e \u003ctd\u003eFits content width\u003c/td\u003e \u003c/tr\u003e \u003ctr\u003e \u003ctd\u003eUsage\u003c/td\u003e \u003ctd\u003eGrouping sections or layout\u003c/td\u003e \u003ctd\u003eStyling small inline text pieces\u003c/td\u003e \u003c/tr\u003e \u003ctr\u003e \u003ctd\u003eCommon use cases\u003c/td\u003e \u003ctd\u003eLayouts, containers, wrappers\u003c/td\u003e \u003ctd\u003eStyling words, letters, or phrases\u003c/td\u003e \u003c/tr\u003e \u003c/tbody\u003e \u003c/table\u003e \u003chr\u003e \u003ch4 id=\"common-attributes\"\u003eCommon Attributes\u003c/h4\u003e \u003cp\u003eThese apply to both \u003ccode\u003e\u003cdiv\u003e\u003c/code\u003e and \u003ccode\u003e\u003cspan\u003e\u003c/code\u003e:\n\u003ctable\u003e \u003cthead\u003e \u003ctr\u003e \u003cth\u003eAttribute\u003c/th\u003e \u003cth\u003eDescription\u003c/th\u003e \u003cth\u003eExample\u003c/th\u003e \u003c/tr\u003e \u003c/thead\u003e \u003ctbody\u003e \u003ctr\u003e \u003ctd\u003e\u003ccode\u003eid\u003c/code\u003e\u003c/td\u003e \u003ctd\u003eUnique identifier\u003c/td\u003e \u003ctd\u003e\u003ccode\u003e\u003cdiv id=\"header\"\u003e\u003c/code\u003e\u003c/td\u003e \u003c/tr\u003e \u003ctr\u003e \u003ctd\u003e\u003ccode\u003eclass\u003c/code\u003e\u003c/td\u003e \u003ctd\u003eClass name(s) for CSS or JS\u003c/td\u003e \u003ctd\u003e\u003ccode\u003e\u003cspan class=\"highlight\"\u003e\u003c/code\u003e\u003c/td\u003e \u003c/tr\u003e \u003ctr\u003e \u003ctd\u003e\u003ccode\u003estyle\u003c/code\u003e\u003c/td\u003e \u003ctd\u003eInline CSS styling\u003c/td\u003e \u003ctd\u003e\u003ccode\u003e\u003cdiv style=\"color: red;\"\u003e\u003c/code\u003e\u003c/td\u003e \u003c/tr\u003e \u003ctr\u003e \u003ctd\u003e\u003ccode\u003etitle\u003c/code\u003e\u003c/td\u003e \u003ctd\u003eTooltip shown on hover\u003c/td\u003e \u003ctd\u003e\u003ccode\u003e\u003cspan title=\"tooltip\"\u003e\u003c/code\u003e\u003c/td\u003e \u003c/tr\u003e \u003ctr\u003e \u003ctd\u003e\u003ccode\u003ehidden\u003c/code\u003e\u003c/td\u003e \u003ctd\u003eHides the element from display\u003c/td\u003e \u003ctd\u003e\u003ccode\u003e\u003cdiv hidden\u003eInvisible\u003c/div\u003e\u003c/code\u003e\u003c/td\u003e \u003c/tr\u003e \u003c/tbody\u003e \u003c/table\u003e \u003chr\u003e \u003ch4 id=\"notes-4\"\u003eNotes\u003c/h4\u003e \u003cul\u003e \u003cli\u003e\u003ccode\u003e\u003cdiv\u003e\u003c/code\u003e is often used to create layout sections (e.g., header, footer, sidebar).\u003c/li\u003e \u003cli\u003e\u003ccode\u003e\u003cspan\u003e\u003c/code\u003e is used to apply inline styles or behavior to part of the text.\u003c/li\u003e \u003cli\u003ePrefer using \u003cstrong\u003esemantic HTML tags\u003c/strong\u003e (e.g., \u003ccode\u003e\u003cheader\u003e\u003c/code\u003e, \u003ccode\u003e\u003csection\u003e\u003c/code\u003e, \u003ccode\u003e\u003carticle\u003e\u003c/code\u003e) instead of \u003ccode\u003e\u003cdiv\u003e\u003c/code\u003e when appropriate.\u003c/li\u003e \u003cli\u003eAvoid excessive use of \u003ccode\u003e\u003cdiv\u003e\u003c/code\u003e and \u003ccode\u003e\u003cspan\u003e\u003c/code\u003e without meaningful structure—this leads to “\u003cstrong\u003ediv soup\u003c/strong\u003e”.\u003c/li\u003e \u003cli\u003e\u003ccode\u003e\u003cdiv\u003e\u003c/code\u003e and \u003ccode\u003e\u003cspan\u003e\u003c/code\u003e are non-semantic HTML elements used to group content. They are often styled with CSS to define layout or appearance. If you want to know more, \u003c!--[click here]().--\u003e\u003c/li\u003e \u003c/ul\u003e \u003chr\u003e ",
+  "wordCount" : "1678",
+  "inLanguage": "en",
+  "datePublished": "2025-05-22T14:19:11+09:00",
+  "dateModified": "2025-05-22T14:19:11+09:00",
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://Byngjoon.github.io/blog/posts/html-part-01/"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Hyungtae",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://Byngjoon.github.io/blog/favicon.ico"
+    }
+  }
+}
+</script>
+</head>
+
+<body class="" id="top">
+<script>
+    if (localStorage.getItem("pref-theme") === "dark") {
+        document.body.classList.add('dark');
+    } else if (localStorage.getItem("pref-theme") === "light") {
+        document.body.classList.remove('dark')
+    } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+        document.body.classList.add('dark');
+    }
+
+</script>
+
+<header class="header">
+    <nav class="nav">
+        <div class="logo">
+            <a href="https://Byngjoon.github.io/blog/" accesskey="h" title="Hyungtae (Alt + H)">Hyungtae</a>
+            <div class="logo-switches">
+                <button id="theme-toggle" accesskey="t" title="(Alt + T)" aria-label="Toggle theme">
+                    <svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                    </svg>
+                    <svg id="sun" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="5"></circle>
+                        <line x1="12" y1="1" x2="12" y2="3"></line>
+                        <line x1="12" y1="21" x2="12" y2="23"></line>
+                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                        <line x1="1" y1="12" x2="3" y2="12"></line>
+                        <line x1="21" y1="12" x2="23" y2="12"></line>
+                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                    </svg>
+                </button>
+            </div>
+        </div>
+        <ul id="menu">
+            <li>
+                <a href="https://Byngjoon.github.io/blog/categories/" title="Categories">
+                    <span>Categories</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://Byngjoon.github.io/blog/tags/" title="Tags">
+                    <span>Tags</span>
+                </a>
+            </li>
+        </ul>
+    </nav>
+</header>
+<main class="main">
+
+<article class="post-single">
+  <header class="post-header">
+    
+    <h1 class="post-title entry-hint-parent">
+      [Web Programming] [01] Frontend - HTML Part 01
+    </h1>
+    <div class="post-description">
+      Learn about HTML5
+    </div>
+    <div class="post-meta"><span title='2025-05-22 14:19:11 +0900 KST'>May 22, 2025</span>&nbsp;·&nbsp;8 min
+
+</div>
+  </header> <div class="toc">
+    <details >
+        <summary accesskey="c" title="(Alt + C)">
+            <span class="details">Table of Contents</span>
+        </summary>
+
+        <div class="inner"><ul>
+                <li>
+                    <a href="#chapter-01-frontend--html-part-01" aria-label="Chapter 01. Frontend – HTML (Part 01)">Chapter 01. Frontend – HTML (Part 01)</a><ul>
+                        
+                <li>
+                    <a href="#contents" aria-label="Contents">Contents</a></li>
+                <li>
+                    <a href="#section-11-what-is-html" aria-label="Section 1.1. What is HTML?">Section 1.1. What is HTML?</a><ul>
+                        
+                <li>
+                    <a href="#1-definition" aria-label="1. Definition">1. Definition</a></li>
+                <li>
+                    <a href="#2-not-a-programming-language" aria-label="2. Not a Programming Language">2. Not a Programming Language</a></li>
+                <li>
+                    <a href="#3-key-features" aria-label="3. Key Features">3. Key Features</a></li>
+                <li>
+                    <a href="#4-role-of-html" aria-label="4. Role of HTML">4. Role of HTML</a></li>
+                <li>
+                    <a href="#5-basic-example" aria-label="5. Basic Example">5. Basic Example</a></li></ul>
+                </li>
+                <li>
+                    <a href="#section-12-what-is-a-markup-language" aria-label="Section 1.2. What is a Markup Language?">Section 1.2. What is a Markup Language?</a><ul>
+                        
+                <li>
+                    <a href="#1-definition-1" aria-label="1. Definition">1. Definition</a></li>
+                <li>
+                    <a href="#2-purpose-of-a-markup-language" aria-label="2. Purpose of a Markup Language">2. Purpose of a Markup Language</a></li>
+                <li>
+                    <a href="#3-example-in-html" aria-label="3. Example in HTML">3. Example in HTML</a></li>
+                <li>
+                    <a href="#4-markup-language-vs-programming-language" aria-label="4. Markup Language vs. Programming Language">4. Markup Language vs. Programming Language</a></li>
+                <li>
+                    <a href="#5-other-common-markup-languages" aria-label="5. Other Common Markup Languages">5. Other Common Markup Languages</a></li></ul>
+                </li>
+                <li>
+                    <a href="#section-13-core-concepts-of-html" aria-label="Section 1.3. Core Concepts of HTML">Section 1.3. Core Concepts of HTML</a><ul>
+                        
+                <li>
+                    <a href="#1-tag" aria-label="1. Tag">1. Tag</a></li>
+                <li>
+                    <a href="#2-attribute" aria-label="2. Attribute">2. Attribute</a></li>
+                <li>
+                    <a href="#3-content" aria-label="3. Content">3. Content</a></li>
+                <li>
+                    <a href="#4-element" aria-label="4. Element">4. Element</a></li>
+                <li>
+                    <a href="#summary-table" aria-label="Summary Table">Summary Table</a></li></ul>
+                </li>
+                <li>
+                    <a href="#section-14-basic-html-document-structure" aria-label="Section 1.4. Basic HTML Document Structure">Section 1.4. Basic HTML Document Structure</a><ul>
+                        
+                <li>
+                    <a href="#1-overview" aria-label="1. Overview">1. Overview</a></li>
+                <li>
+                    <a href="#2-basic-structure-template" aria-label="2. Basic Structure Template">2. Basic Structure Template</a></li>
+                <li>
+                    <a href="#3-explanation-of-each-part" aria-label="3. Explanation of Each Part">3. Explanation of Each Part</a></li>
+                <li>
+                    <a href="#4-notes" aria-label="4. Notes">4. Notes</a></li></ul>
+                </li>
+                <li>
+                    <a href="#section-15-common-html-tags" aria-label="Section 1.5. Common HTML Tags">Section 1.5. Common HTML Tags</a><ul>
+                        
+                <li>
+                    <a href="#1-text-tags" aria-label="1. Text Tags">1. Text Tags</a><ul>
+                        
+                <li>
+                    <a href="#notes" aria-label="Notes">Notes</a></li></ul>
+                </li>
+                <li>
+                    <a href="#2-formatting-tags" aria-label="2. Formatting Tags">2. Formatting Tags</a><ul>
+                        
+                <li>
+                    <a href="#notes-1" aria-label="Notes">Notes</a></li></ul>
+                </li>
+                <li>
+                    <a href="#3-list-tags" aria-label="3. List Tags">3. List Tags</a><ul>
+                        
+                <li>
+                    <a href="#common-attributes-with-list-tags" aria-label="Common Attributes with List Tags">Common Attributes with List Tags</a></li>
+                <li>
+                    <a href="#notes-2" aria-label="Notes">Notes</a></li></ul>
+                </li>
+                <li>
+                    <a href="#4-link--image-tags" aria-label="4. Link &amp; Image Tags">4. Link &amp; Image Tags</a><ul>
+                        
+                <li>
+                    <a href="#common-attributes-for-a" aria-label="Common Attributes for &lt;a&gt;">Common Attributes for &lt;a&gt;</a></li>
+                <li>
+                    <a href="#common-attributes-for-img" aria-label="Common Attributes for &lt;img&gt;">Common Attributes for &lt;img&gt;</a></li>
+                <li>
+                    <a href="#notes-3" aria-label="Notes">Notes</a></li></ul>
+                </li>
+                <li>
+                    <a href="#5-table-tags" aria-label="5. Table Tags">5. Table Tags</a></li>
+                <li>
+                    <a href="#6-other-frequently-used-tags" aria-label="6. Other Frequently Used Tags">6. Other Frequently Used Tags</a><ul>
+                        
+                <li>
+                    <a href="#differences-between-div-and-span" aria-label="Differences between &lt;div&gt; and &lt;span&gt;">Differences between &lt;div&gt; and &lt;span&gt;</a></li>
+                <li>
+                    <a href="#common-attributes" aria-label="Common Attributes">Common Attributes</a></li>
+                <li>
+                    <a href="#notes-4" aria-label="Notes">Notes</a>
+                </li>
+            </ul>
+            </li>
+            </ul>
+            </li>
+            </ul>
+            </li>
+            </ul>
+        </div>
+    </details>
+</div>
+
+  <div class="post-content"><h1 id="chapter-01-frontend--html-part-01">Chapter 01. Frontend – HTML (Part 01)<a hidden class="anchor" aria-hidden="true" href="#chapter-01-frontend--html-part-01">#</a></h1>
+<blockquote>
+<p><strong>Outline:</strong> Introduction to the foundational language of the web. This chapter covers the structure, syntax, and semantics of HTML, the language used to build the backbone of every website. In this part, we describe core concepts, basic structure, and commonly used tags of HTML5.</p></blockquote>
+<hr>
+<h2 id="contents">Contents<a hidden class="anchor" aria-hidden="true" href="#contents">#</a></h2>
+<ul>
+<li><a href="#section-11-what-is-html">1.1. What is HTML</a></li>
+<li><a href="#section-12-what-is-a-markup-language">1.2. What is a Markup Language</a></li>
+<li><a href="#section-13-core-concepts-of-html">1.3. Core Concepts of HTML</a></li>
+<li><a href="#section-14-basic-html-document-structure">1.4. Basic HTML Document Structure</a></li>
+<li><a href="#section-15-common-html-tags">1.5. Common HTML Tags</a></li>
+<li><a href="/blog/posts/html-part-02/">1.6. Forms and Input Elements</a></li>
+<li><a href="/blog/posts/html-part-02/">1.7. Semantic HTML Tags</a></li>
+<li><a href="/blog/posts/html-part-02/">1.8. HTML Entities &amp; Special Characters</a></li>
+<li><a href="/blog/posts/html-part-02/">1.9. HTML Accessibility (ARIA Basics)</a></li>
+<li><a href="/blog/posts/html-part-02/">1.10. SEO and HTML Structure <em>(Optional)</em></a></li>
+</ul>
+<hr>
+<h2 id="section-11-what-is-html">Section 1.1. What is HTML?<a hidden class="anchor" aria-hidden="true" href="#section-11-what-is-html">#</a></h2>
+<h3 id="1-definition">1. Definition<a hidden class="anchor" aria-hidden="true" href="#1-definition">#</a></h3>
+<p><strong>HTML (HyperText Markup Language)</strong> is the standard <strong>markup language</strong> used to define the <strong>structure</strong> of web pages.</p>
+<blockquote>
+<p>Every website you see in a browser starts with HTML.</p></blockquote>
+<hr>
+<h3 id="2-not-a-programming-language">2. Not a Programming Language<a hidden class="anchor" aria-hidden="true" href="#2-not-a-programming-language">#</a></h3>
+<ul>
+<li>HTML is <strong>not</strong> a programming language; it&rsquo;s a <strong>markup language</strong>.</li>
+<li>It doesn&rsquo;t have logic features like loops or conditionals.</li>
+<li>Its main purpose is to <strong>describe content structure and meaning</strong>, not behavior.</li>
+</ul>
+<hr>
+<h3 id="3-key-features">3. Key Features<a hidden class="anchor" aria-hidden="true" href="#3-key-features">#</a></h3>
+<table>
+  <thead>
+      <tr>
+          <th>Feature</th>
+          <th>Description</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td><strong>Structure</strong></td>
+          <td>Defines the layout of the page (header, body, etc.)</td>
+      </tr>
+      <tr>
+          <td><strong>Tag-based Syntax</strong></td>
+          <td>Uses tags like <code>&lt;p&gt;</code>, <code>&lt;h1&gt;</code>, <code>&lt;div&gt;</code>, etc.</td>
+      </tr>
+      <tr>
+          <td><strong>Hypertext Support</strong></td>
+          <td>Enables linking between pages using <code>&lt;a&gt;</code></td>
+      </tr>
+      <tr>
+          <td><strong>Human/Machine Readable</strong></td>
+          <td>Easy for browsers and developers to interpret</td>
+      </tr>
+  </tbody>
+</table>
+<hr>
+<h3 id="4-role-of-html">4. Role of HTML<a hidden class="anchor" aria-hidden="true" href="#4-role-of-html">#</a></h3>
+<ul>
+<li>Expresses <strong>content structure and meaning</strong> (headings, paragraphs, lists, images, links)</li>
+<li>Acts as the <strong>foundation for CSS and JavaScript</strong></li>
+<li>Important for <strong>web accessibility</strong> and <strong>SEO (search engine optimization)</strong></li>
+</ul>
+<hr>
+<h3 id="5-basic-example">5. Basic Example<a hidden class="anchor" aria-hidden="true" href="#5-basic-example">#</a></h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-html" data-lang="html"><span style="display:flex;"><span><span style="color:#75715e">&lt;!DOCTYPE html&gt;</span>
+</span></span><span style="display:flex;"><span>&lt;<span style="color:#f92672">html</span>&gt;
+</span></span><span style="display:flex;"><span>  &lt;<span style="color:#f92672">head</span>&gt;
+</span></span><span style="display:flex;"><span>    &lt;<span style="color:#f92672">title</span>&gt;Example Page&lt;/<span style="color:#f92672">title</span>&gt;
+</span></span><span style="display:flex;"><span>  &lt;/<span style="color:#f92672">head</span>&gt;
+</span></span><span style="display:flex;"><span>  &lt;<span style="color:#f92672">body</span>&gt;
+</span></span><span style="display:flex;"><span>    &lt;<span style="color:#f92672">h1</span>&gt;Hello, world!&lt;/<span style="color:#f92672">h1</span>&gt;
+</span></span><span style="display:flex;"><span>    &lt;<span style="color:#f92672">p</span>&gt;This is example page for HTML.&lt;/<span style="color:#f92672">p</span>&gt;
+</span></span><span style="display:flex;"><span>  &lt;/<span style="color:#f92672">body</span>&gt;
+</span></span><span style="display:flex;"><span>&lt;/<span style="color:#f92672">html</span>&gt;
+</span></span></code></pre></div><hr>
+<h2 id="section-12-what-is-a-markup-language">Section 1.2. What is a Markup Language?<a hidden class="anchor" aria-hidden="true" href="#section-12-what-is-a-markup-language">#</a></h2>
+<h3 id="1-definition-1">1. Definition<a hidden class="anchor" aria-hidden="true" href="#1-definition-1">#</a></h3>
+<p>A <strong>markup language</strong> is a system for <strong>annotating text</strong> so that the structure and semantics of the content can be understood and interpreted by computers.</p>
+<blockquote>
+<p>It tells the browser what each piece of content means, not just how it looks.</p></blockquote>
+<hr>
+<h3 id="2-purpose-of-a-markup-language">2. Purpose of a Markup Language<a hidden class="anchor" aria-hidden="true" href="#2-purpose-of-a-markup-language">#</a></h3>
+<ul>
+<li><strong>Structure</strong>: Defines document layout and sections</li>
+<li><strong>Semantics</strong>: Gives meaning to different parts of content</li>
+<li><strong>Foundation for Rendering</strong>: Provides base instructions for how the content should be displayed</li>
+</ul>
+<hr>
+<h3 id="3-example-in-html">3. Example in HTML<a hidden class="anchor" aria-hidden="true" href="#3-example-in-html">#</a></h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-html" data-lang="html"><span style="display:flex;"><span>&lt;<span style="color:#f92672">h1</span>&gt;My Blog&lt;/<span style="color:#f92672">h1</span>&gt;
+</span></span><span style="display:flex;"><span>&lt;<span style="color:#f92672">p</span>&gt;Welcome to my blog!&lt;/<span style="color:#f92672">p</span>&gt;
+</span></span></code></pre></div><blockquote>
+<p><code>&lt;h1&gt;</code>: Indicates a top-level heading
+<code>&lt;p&gt;</code>: Defines a paragraph
+This is how tags are used to “mark up” content with meaning.</p></blockquote>
+<hr>
+<h3 id="4-markup-language-vs-programming-language">4. Markup Language vs. Programming Language<a hidden class="anchor" aria-hidden="true" href="#4-markup-language-vs-programming-language">#</a></h3>
+<table>
+  <thead>
+      <tr>
+          <th>Feature</th>
+          <th>Markup Language</th>
+          <th>Programming Language</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>Main Purpose</td>
+          <td>Define structure &amp; meaning</td>
+          <td>Control logic &amp; behavior</td>
+      </tr>
+      <tr>
+          <td>Examples</td>
+          <td>HTML, XML, Markdown</td>
+          <td>Python, JavaScript, C</td>
+      </tr>
+      <tr>
+          <td>Logic or Flow Control</td>
+          <td>Not possible</td>
+          <td>Fully supported</td>
+      </tr>
+  </tbody>
+</table>
+<hr>
+<h3 id="5-other-common-markup-languages">5. Other Common Markup Languages<a hidden class="anchor" aria-hidden="true" href="#5-other-common-markup-languages">#</a></h3>
+<ul>
+<li>HTML – Builds structure of web pages</li>
+<li>XML – Represents structured data</li>
+<li>Markdown – Lightweight syntax for formatting text</li>
+<li>LaTeX – Used for typesetting scientific documents</li>
+</ul>
+<hr>
+<h2 id="section-13-core-concepts-of-html">Section 1.3. Core Concepts of HTML<a hidden class="anchor" aria-hidden="true" href="#section-13-core-concepts-of-html">#</a></h2>
+<h3 id="1-tag">1. Tag<a hidden class="anchor" aria-hidden="true" href="#1-tag">#</a></h3>
+<ul>
+<li>A <strong>tag</strong> is a keyword enclosed in angle brackets (<code>&lt; &gt;</code>) that defines the type or role of content.</li>
+<li>Most tags come in pairs: an <strong>opening tag</strong> and a <strong>closing tag</strong>.</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-html" data-lang="html"><span style="display:flex;"><span>&lt;<span style="color:#f92672">p</span>&gt;Hello, world!&lt;/<span style="color:#f92672">p</span>&gt;
+</span></span></code></pre></div><ul>
+<li><code>&lt;p&gt;</code> is the opening tag, and <code>&lt;/p&gt;</code> is the closing tag.</li>
+<li>Some tags are self-closing, like <code>&lt;br&gt;</code> or <code>&lt;img&gt;</code>. These do not require a closing tag.</li>
+</ul>
+<hr>
+<h3 id="2-attribute">2. Attribute<a hidden class="anchor" aria-hidden="true" href="#2-attribute">#</a></h3>
+<ul>
+<li>An <strong>attribute</strong> provides additional information about an element.</li>
+<li>It appears inside the opening tag and uses the format <code>name=&quot;value&quot;</code>.</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-html" data-lang="html"><span style="display:flex;"><span>&lt;<span style="color:#f92672">img</span> <span style="color:#a6e22e">src</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;logo.png&#34;</span> <span style="color:#a6e22e">alt</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;Company Logo&#34;</span>&gt;
+</span></span></code></pre></div><ul>
+<li><code>src</code>: specifies the image source path.</li>
+<li><code>alt</code>: provides alternative text if the image fails to load.</li>
+</ul>
+<hr>
+<h3 id="3-content">3. Content<a hidden class="anchor" aria-hidden="true" href="#3-content">#</a></h3>
+<ul>
+<li><strong>Content</strong> is the part between the opening and closing tags of an element.</li>
+<li>It can be plain text or <strong>nested HTML elements</strong>, and is what users actually see in the browser.</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-html" data-lang="html"><span style="display:flex;"><span>&lt;<span style="color:#f92672">h1</span>&gt;Welcome&lt;/<span style="color:#f92672">h1</span>&gt;
+</span></span></code></pre></div><ul>
+<li><code>Welcome</code>: is the content of the <code>&lt;h1&gt;</code> element.</li>
+</ul>
+<hr>
+<h3 id="4-element">4. Element<a hidden class="anchor" aria-hidden="true" href="#4-element">#</a></h3>
+<ul>
+<li>An <strong>element</strong> consists of the entire HTML unit:
+<ul>
+<li>Opening tag</li>
+<li>Attributes (optional)</li>
+<li>Content (optional)</li>
+<li>Closing tag</li>
+</ul>
+</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-html" data-lang="html"><span style="display:flex;"><span>&lt;<span style="color:#f92672">tagname</span> <span style="color:#a6e22e">attribute1 </span><span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;value1&#34;</span> <span style="color:#a6e22e">attribute2 </span><span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;value2&#34;</span>&gt;content&lt;/<span style="color:#f92672">tagname</span>&gt;
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-html" data-lang="html"><span style="display:flex;"><span>&lt;<span style="color:#f92672">a</span> <span style="color:#a6e22e">href</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;https://example.com&#34;</span>&gt;Visit&lt;/<span style="color:#f92672">a</span>&gt;
+</span></span></code></pre></div><ul>
+<li>This is a full <code>&lt;a&gt;</code> element:
+<ul>
+<li><code>&lt;a&gt;</code> is the opening tag</li>
+<li><code>href=&quot;https://example.com&quot;</code> is the attribute</li>
+<li><code>Visit</code> is the content</li>
+<li><code>&lt;/a&gt;</code> is the closing tag</li>
+</ul>
+</li>
+</ul>
+<hr>
+<h3 id="summary-table">Summary Table<a hidden class="anchor" aria-hidden="true" href="#summary-table">#</a></h3>
+<table>
+  <thead>
+      <tr>
+          <th>Concept</th>
+          <th>Description</th>
+          <th>Example</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>Tag</td>
+          <td>Symbol that defines the element type</td>
+          <td><code>&lt;p&gt;</code>, <code>&lt;/p&gt;</code>, <code>&lt;img&gt;</code></td>
+      </tr>
+      <tr>
+          <td>Attribute</td>
+          <td>Key-value pair that adds info to a tag</td>
+          <td><code>href=&quot;...&quot;</code>, <code>src=&quot;...&quot;</code>, <code>alt=&quot;...&quot;</code></td>
+      </tr>
+      <tr>
+          <td>Content</td>
+          <td>What is displayed between tags</td>
+          <td><code>Hello</code>, <code>Link</code>, <code>Welcome</code></td>
+      </tr>
+      <tr>
+          <td>Element</td>
+          <td>Full HTML unit including tag(s) and content</td>
+          <td><code>&lt;p&gt;Hello&lt;/p&gt;</code>, <code>&lt;a href=&quot;#&quot;&gt;Link&lt;/a&gt;</code></td>
+      </tr>
+  </tbody>
+</table>
+<hr>
+<h2 id="section-14-basic-html-document-structure">Section 1.4. Basic HTML Document Structure<a hidden class="anchor" aria-hidden="true" href="#section-14-basic-html-document-structure">#</a></h2>
+<h3 id="1-overview">1. Overview<a hidden class="anchor" aria-hidden="true" href="#1-overview">#</a></h3>
+<p>Every HTML page starts with a <strong>standard document structure</strong> that browsers can recognize and render properly.<br>
+This structure includes essential tags like <code>&lt;!DOCTYPE&gt;</code>, <code>&lt;html&gt;</code>, <code>&lt;head&gt;</code>, and <code>&lt;body&gt;</code>.</p>
+<hr>
+<h3 id="2-basic-structure-template">2. Basic Structure Template<a hidden class="anchor" aria-hidden="true" href="#2-basic-structure-template">#</a></h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-html" data-lang="html"><span style="display:flex;"><span><span style="color:#75715e">&lt;!DOCTYPE html&gt;</span>
+</span></span><span style="display:flex;"><span>&lt;<span style="color:#f92672">html</span> <span style="color:#a6e22e">lang</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;en&#34;</span>&gt;
+</span></span><span style="display:flex;"><span>  &lt;<span style="color:#f92672">head</span>&gt;
+</span></span><span style="display:flex;"><span>    &lt;<span style="color:#f92672">meta</span> <span style="color:#a6e22e">charset</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;UTF-8&#34;</span> /&gt;
+</span></span><span style="display:flex;"><span>    &lt;<span style="color:#f92672">title</span>&gt;Page Title&lt;/<span style="color:#f92672">title</span>&gt;
+</span></span><span style="display:flex;"><span>  &lt;/<span style="color:#f92672">head</span>&gt;
+</span></span><span style="display:flex;"><span>  &lt;<span style="color:#f92672">body</span>&gt;
+</span></span><span style="display:flex;"><span>    &lt;<span style="color:#f92672">h1</span>&gt;Hello, world!&lt;/<span style="color:#f92672">h1</span>&gt;
+</span></span><span style="display:flex;"><span>    &lt;<span style="color:#f92672">p</span>&gt;This is a paragraph.&lt;/<span style="color:#f92672">p</span>&gt;
+</span></span><span style="display:flex;"><span>  &lt;/<span style="color:#f92672">body</span>&gt;
+</span></span><span style="display:flex;"><span>&lt;/<span style="color:#f92672">html</span>&gt;
+</span></span></code></pre></div><hr>
+<h3 id="3-explanation-of-each-part">3. Explanation of Each Part<a hidden class="anchor" aria-hidden="true" href="#3-explanation-of-each-part">#</a></h3>
+<table>
+  <thead>
+      <tr>
+          <th>Part</th>
+          <th>Purpose</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td><code>&lt;!DOCTYPE html&gt;</code></td>
+          <td>Declares the document as HTML5</td>
+      </tr>
+      <tr>
+          <td><code>&lt;html&gt;</code></td>
+          <td>Root element of the page</td>
+      </tr>
+      <tr>
+          <td><code>&lt;head&gt;</code></td>
+          <td>Metadata (not visible): title, charset, styles, scripts, etc.</td>
+      </tr>
+      <tr>
+          <td><code>&lt;body&gt;</code></td>
+          <td>Visible content shown in the browser</td>
+      </tr>
+      <tr>
+          <td><code>&lt;title&gt;</code></td>
+          <td>Page title shown in the browser tab</td>
+      </tr>
+      <tr>
+          <td><code>&lt;meta charset=&quot;&quot;&gt;</code></td>
+          <td>Declares character encoding (e.g., UTF-8 for Unicode support)</td>
+      </tr>
+  </tbody>
+</table>
+<hr>
+<h3 id="4-notes">4. Notes<a hidden class="anchor" aria-hidden="true" href="#4-notes">#</a></h3>
+<ul>
+<li>Only <strong>one <code>&lt;html&gt;</code>, <code>&lt;head&gt;</code>, and <code>&lt;body&gt;</code></strong> tag should appear per document.</li>
+<li>The <code>lang</code> attribute in <code>&lt;html&gt;</code> improves accessibility and SEO.</li>
+<li>Without <code>&lt;!DOCTYPE html&gt;</code>, browsers may enter <strong>quirks mode</strong> (inconsistent rendering).</li>
+<li><strong>Quirks Mode</strong> is a non-standard rendering mode. In this mode, the browser does <strong>not follow modern HTML and CSS standards</strong>.</li>
+<li><code>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.01 Transitional//EN&quot;&quot;http://www.w3.org/TR/html4/loose.dtd&quot;&gt;</code> declares the document as HTML 4.01, instead of HTML5.</li>
+</ul>
+<hr>
+<h2 id="section-15-common-html-tags">Section 1.5. Common HTML Tags<a hidden class="anchor" aria-hidden="true" href="#section-15-common-html-tags">#</a></h2>
+<h3 id="1-text-tags">1. Text Tags<a hidden class="anchor" aria-hidden="true" href="#1-text-tags">#</a></h3>
+<table>
+  <thead>
+      <tr>
+          <th>Tag</th>
+          <th>Description</th>
+          <th>Example</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td><code>&lt;h1&gt;</code>~<code>&lt;h6&gt;</code></td>
+          <td>Headings from largest (<code>&lt;h1&gt;</code>) to smallest (<code>&lt;h6&gt;</code>)</td>
+          <td><code>&lt;h2&gt;Subheading&lt;/h2&gt;</code></td>
+      </tr>
+      <tr>
+          <td><code>&lt;p&gt;</code></td>
+          <td>Paragraph (block of text)</td>
+          <td><code>&lt;p&gt;This is a paragraph.&lt;/p&gt;</code></td>
+      </tr>
+      <tr>
+          <td><code>&lt;br&gt;</code></td>
+          <td>Line break (new line)</td>
+          <td><code>Line 1&lt;br&gt;Line 2</code></td>
+      </tr>
+      <tr>
+          <td><code>&lt;hr&gt;</code></td>
+          <td>Horizontal rule (divider line)</td>
+          <td><code>&lt;hr&gt;</code></td>
+      </tr>
+      <tr>
+          <td><code>&lt;pre&gt;</code></td>
+          <td>Preformatted text (preserves spaces, line breaks)</td>
+          <td><code>&lt;pre&gt;  line 1\n  line 2&lt;/pre&gt;</code></td>
+      </tr>
+      <tr>
+          <td><code>&lt;code&gt;</code></td>
+          <td>Inline code snippet</td>
+          <td><code>&lt;code&gt;print()&lt;/code&gt;</code></td>
+      </tr>
+      <tr>
+          <td><code>&lt;kbd&gt;</code></td>
+          <td>Keyboard input</td>
+          <td><code>&lt;kbd&gt;Ctrl + C&lt;/kbd&gt;</code></td>
+      </tr>
+      <tr>
+          <td><code>&lt;samp&gt;</code></td>
+          <td>Sample output (usually from a program)</td>
+          <td><code>&lt;samp&gt;404 Not Found&lt;/samp&gt;</code></td>
+      </tr>
+      <tr>
+          <td><code>&lt;var&gt;</code></td>
+          <td>Variable name (usually italic)</td>
+          <td><code>&lt;var&gt;x&lt;/var&gt; = 10</code></td>
+      </tr>
+  </tbody>
+</table>
+<hr>
+<h4 id="notes">Notes<a hidden class="anchor" aria-hidden="true" href="#notes">#</a></h4>
+<ul>
+<li>Use heading tags (<code>&lt;h1&gt;</code>~<code>&lt;h6&gt;</code>) for structured titles and subtitles.</li>
+<li><code>&lt;pre&gt;</code> keeps original spacing and line breaks—often used with <code>&lt;code&gt;</code>.</li>
+<li><code>&lt;kbd&gt;</code>, <code>&lt;samp&gt;</code>, and <code>&lt;var&gt;</code> are useful in technical or educational content.</li>
+</ul>
+<hr>
+<h3 id="2-formatting-tags">2. Formatting Tags<a hidden class="anchor" aria-hidden="true" href="#2-formatting-tags">#</a></h3>
+<table>
+  <thead>
+      <tr>
+          <th>Tag</th>
+          <th>Description</th>
+          <th>Example</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td><code>&lt;strong&gt;</code></td>
+          <td>Important/strong emphasis (usually bold)</td>
+          <td><code>&lt;strong&gt;Important&lt;/strong&gt;</code></td>
+      </tr>
+      <tr>
+          <td><code>&lt;em&gt;</code></td>
+          <td>Emphasized text (usually italic)</td>
+          <td><code>&lt;em&gt;Note&lt;/em&gt;</code></td>
+      </tr>
+      <tr>
+          <td><code>&lt;mark&gt;</code></td>
+          <td>Highlighted or marked text</td>
+          <td><code>&lt;mark&gt;Highlight&lt;/mark&gt;</code></td>
+      </tr>
+      <tr>
+          <td><code>&lt;small&gt;</code></td>
+          <td>Smaller-sized text</td>
+          <td><code>&lt;small&gt;Footnote&lt;/small&gt;</code></td>
+      </tr>
+      <tr>
+          <td><code>&lt;del&gt;</code></td>
+          <td>Deleted text (strikethrough)</td>
+          <td><code>&lt;del&gt;Removed&lt;/del&gt;</code></td>
+      </tr>
+      <tr>
+          <td><code>&lt;ins&gt;</code></td>
+          <td>Inserted text (usually underlined)</td>
+          <td><code>&lt;ins&gt;New&lt;/ins&gt;</code></td>
+      </tr>
+      <tr>
+          <td><code>&lt;b&gt;</code></td>
+          <td>Bold text without semantic meaning</td>
+          <td><code>&lt;b&gt;Bold&lt;/b&gt;</code></td>
+      </tr>
+      <tr>
+          <td><code>&lt;i&gt;</code></td>
+          <td>Italic text without semantic meaning</td>
+          <td><code>&lt;i&gt;Italic&lt;/i&gt;</code></td>
+      </tr>
+      <tr>
+          <td><code>&lt;u&gt;</code></td>
+          <td>Underlined text</td>
+          <td><code>&lt;u&gt;Underline&lt;/u&gt;</code></td>
+      </tr>
+      <tr>
+          <td><code>&lt;sup&gt;</code></td>
+          <td>Superscript (above baseline)</td>
+          <td><code>x&lt;sup&gt;2&lt;/sup&gt;</code> → x²</td>
+      </tr>
+      <tr>
+          <td><code>&lt;sub&gt;</code></td>
+          <td>Subscript (below baseline)</td>
+          <td><code>H&lt;sub&gt;2&lt;/sub&gt;O</code> → H₂O</td>
+      </tr>
+      <tr>
+          <td><code>&lt;abbr&gt;</code></td>
+          <td>Abbreviation with tooltip</td>
+          <td><code>&lt;abbr title=&quot;HyperText Markup Language&quot;&gt;HTML&lt;/abbr&gt;</code></td>
+      </tr>
+      <tr>
+          <td><code>&lt;cite&gt;</code></td>
+          <td>Citation of a source (book, article, etc.)</td>
+          <td><code>&lt;cite&gt;The Republic&lt;/cite&gt;</code></td>
+      </tr>
+      <tr>
+          <td><code>&lt;q&gt;</code></td>
+          <td>Short inline quotation</td>
+          <td><code>&lt;q&gt;This is quoted&lt;/q&gt;</code></td>
+      </tr>
+      <tr>
+          <td><code>&lt;blockquote&gt;</code></td>
+          <td>Block-level quotation</td>
+          <td><code>&lt;blockquote&gt;This is a block quote&lt;/blockquote&gt;</code></td>
+      </tr>
+  </tbody>
+</table>
+<hr>
+<h4 id="notes-1">Notes<a hidden class="anchor" aria-hidden="true" href="#notes-1">#</a></h4>
+<ul>
+<li><code>&lt;strong&gt;</code> and <code>&lt;em&gt;</code> carry semantic meaning and should be used for accessibility.</li>
+<li><code>&lt;b&gt;</code> and <code>&lt;i&gt;</code> are purely visual and less preferred in semantic HTML.</li>
+<li><code>&lt;abbr&gt;</code> is useful for accessibility and UX with screen readers.</li>
+</ul>
+<hr>
+<h3 id="3-list-tags">3. List Tags<a hidden class="anchor" aria-hidden="true" href="#3-list-tags">#</a></h3>
+<table>
+  <thead>
+      <tr>
+          <th>Tag</th>
+          <th>Description</th>
+          <th>Example</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td><code>&lt;ul&gt;</code></td>
+          <td>Unordered list (bulleted)</td>
+          <td><code>&lt;ul&gt;&lt;li&gt;Item&lt;/li&gt;&lt;/ul&gt;</code></td>
+      </tr>
+      <tr>
+          <td><code>&lt;ol&gt;</code></td>
+          <td>Ordered list (numbered)</td>
+          <td><code>&lt;ol&gt;&lt;li&gt;Item&lt;/li&gt;&lt;/ol&gt;</code></td>
+      </tr>
+      <tr>
+          <td><code>&lt;li&gt;</code></td>
+          <td>List item</td>
+          <td><code>&lt;li&gt;Item&lt;/li&gt;</code></td>
+      </tr>
+      <tr>
+          <td><code>&lt;dl&gt;</code></td>
+          <td>Description list (term + description)</td>
+          <td><code>&lt;dl&gt;&lt;dt&gt;HTML&lt;/dt&gt;&lt;dd&gt;Markup&lt;/dd&gt;&lt;/dl&gt;</code></td>
+      </tr>
+      <tr>
+          <td><code>&lt;dt&gt;</code></td>
+          <td>Term in description list</td>
+          <td><code>&lt;dt&gt;HTML&lt;/dt&gt;</code></td>
+      </tr>
+      <tr>
+          <td><code>&lt;dd&gt;</code></td>
+          <td>Definition in description list</td>
+          <td><code>&lt;dd&gt;HyperText Markup Language&lt;/dd&gt;</code></td>
+      </tr>
+  </tbody>
+</table>
+<hr>
+<h4 id="common-attributes-with-list-tags">Common Attributes with List Tags<a hidden class="anchor" aria-hidden="true" href="#common-attributes-with-list-tags">#</a></h4>
+<table>
+  <thead>
+      <tr>
+          <th>Tag</th>
+          <th>Attribute</th>
+          <th>Description</th>
+          <th>Example</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td><code>&lt;ol&gt;</code></td>
+          <td><code>type</code></td>
+          <td>Numbering style: <code>&quot;1&quot;</code>, <code>&quot;a&quot;</code>, <code>&quot;A&quot;</code>, <code>&quot;i&quot;</code>, <code>&quot;I&quot;</code></td>
+          <td><code>&lt;ol type=&quot;A&quot;&gt;</code> → A, B, C&hellip;</td>
+      </tr>
+      <tr>
+          <td><code>&lt;ol&gt;</code></td>
+          <td><code>start</code></td>
+          <td>Starting number for ordered list</td>
+          <td><code>&lt;ol start=&quot;5&quot;&gt;</code> → 5, 6, 7&hellip;</td>
+      </tr>
+      <tr>
+          <td><code>&lt;li&gt;</code></td>
+          <td><code>value</code></td>
+          <td>Custom numbering value (for <code>&lt;ol&gt;</code>)</td>
+          <td><code>&lt;li value=&quot;10&quot;&gt;Item&lt;/li&gt;</code> → starts at 10</td>
+      </tr>
+      <tr>
+          <td><code>&lt;ul&gt;</code></td>
+          <td><code>type</code> <em>(deprecated)</em></td>
+          <td>Bullet style: <code>&quot;disc&quot;</code>, <code>&quot;circle&quot;</code>, <code>&quot;square&quot;</code></td>
+          <td><code>&lt;ul type=&quot;circle&quot;&gt;</code> <em>(not recommended)</em></td>
+      </tr>
+  </tbody>
+</table>
+<hr>
+<h4 id="notes-2">Notes<a hidden class="anchor" aria-hidden="true" href="#notes-2">#</a></h4>
+<ul>
+<li><code>type</code> and <code>start</code> are valid only on <code>&lt;ol&gt;</code>.</li>
+<li><code>value</code> on <code>&lt;li&gt;</code> allows <strong>non-sequential</strong> numbering inside ordered lists.</li>
+<li>The <code>type</code> attribute on <code>&lt;ul&gt;</code> is deprecated in HTML5—use CSS instead:</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-css" data-lang="css"><span style="display:flex;"><span><span style="color:#f92672">ul</span> {
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">list-style-type</span>: <span style="color:#66d9ef">square</span>;
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><hr>
+<h3 id="4-link--image-tags">4. Link &amp; Image Tags<a hidden class="anchor" aria-hidden="true" href="#4-link--image-tags">#</a></h3>
+<table>
+  <thead>
+      <tr>
+          <th>Tag</th>
+          <th>Description</th>
+          <th>Example</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td><code>&lt;a&gt;</code></td>
+          <td>Hyperlink (anchor element)</td>
+          <td><code>&lt;a href=&quot;https://example.com&quot;&gt;Visit&lt;/a&gt;</code></td>
+      </tr>
+      <tr>
+          <td><code>&lt;img&gt;</code></td>
+          <td>Embeds an image</td>
+          <td><code>&lt;img src=&quot;img.jpg&quot; alt=&quot;description&quot;&gt;</code></td>
+      </tr>
+  </tbody>
+</table>
+<hr>
+<h4 id="common-attributes-for-a">Common Attributes for <code>&lt;a&gt;</code><a hidden class="anchor" aria-hidden="true" href="#common-attributes-for-a">#</a></h4>
+<table>
+  <thead>
+      <tr>
+          <th>Attribute</th>
+          <th>Description</th>
+          <th>Example</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td><code>href</code></td>
+          <td>Destination URL</td>
+          <td><code>&lt;a href=&quot;https://example.com&quot;&gt;Link&lt;/a&gt;</code></td>
+      </tr>
+      <tr>
+          <td><code>target</code></td>
+          <td>Where to open the link: <code>_blank</code>, <code>_self</code>, <code>_parent</code>, <code>_top</code></td>
+          <td><code>&lt;a target=&quot;_blank&quot;&gt;</code> → open in new tab</td>
+      </tr>
+      <tr>
+          <td><code>title</code></td>
+          <td>Tooltip text on hover</td>
+          <td><code>&lt;a title=&quot;Click to visit&quot;&gt;</code></td>
+      </tr>
+      <tr>
+          <td><code>rel</code></td>
+          <td>Relationship between current and linked document</td>
+          <td><code>&lt;a rel=&quot;noopener noreferrer&quot;&gt;</code></td>
+      </tr>
+      <tr>
+          <td><code>download</code></td>
+          <td>Suggests the browser to download rather than navigate</td>
+          <td><code>&lt;a href=&quot;file.pdf&quot; download&gt;Download PDF&lt;/a&gt;</code></td>
+      </tr>
+  </tbody>
+</table>
+<hr>
+<h4 id="common-attributes-for-img">Common Attributes for <code>&lt;img&gt;</code><a hidden class="anchor" aria-hidden="true" href="#common-attributes-for-img">#</a></h4>
+<table>
+  <thead>
+      <tr>
+          <th>Attribute</th>
+          <th>Description</th>
+          <th>Example</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td><code>src</code></td>
+          <td>Path or URL to the image file</td>
+          <td><code>&lt;img src=&quot;logo.png&quot;&gt;</code></td>
+      </tr>
+      <tr>
+          <td><code>alt</code></td>
+          <td>Alternative text if the image fails to load (required)</td>
+          <td><code>&lt;img alt=&quot;Company logo&quot;&gt;</code></td>
+      </tr>
+      <tr>
+          <td><code>title</code></td>
+          <td>Tooltip shown on hover</td>
+          <td><code>&lt;img title=&quot;Hover text&quot;&gt;</code></td>
+      </tr>
+      <tr>
+          <td><code>width</code></td>
+          <td>Image width in pixels or %</td>
+          <td><code>&lt;img width=&quot;200&quot;&gt;</code></td>
+      </tr>
+      <tr>
+          <td><code>height</code></td>
+          <td>Image height in pixels or %</td>
+          <td><code>&lt;img height=&quot;150&quot;&gt;</code></td>
+      </tr>
+      <tr>
+          <td><code>loading</code></td>
+          <td>Lazy loading setting: <code>&quot;lazy&quot;</code> or <code>&quot;eager&quot;</code></td>
+          <td><code>&lt;img loading=&quot;lazy&quot;&gt;</code></td>
+      </tr>
+  </tbody>
+</table>
+<hr>
+<h4 id="notes-3">Notes<a hidden class="anchor" aria-hidden="true" href="#notes-3">#</a></h4>
+<ul>
+<li>Always provide an <code>alt</code> attribute for images for accessibility and SEO.</li>
+<li>Use <code>target=&quot;_blank&quot;</code> with <code>rel=&quot;noopener noreferrer&quot;</code> for external links to enhance security.</li>
+<li>The <code>download</code> attribute in <code>&lt;a&gt;</code> helps with direct file downloads instead of opening them.</li>
+</ul>
+<hr>
+<h3 id="5-table-tags">5. Table Tags<a hidden class="anchor" aria-hidden="true" href="#5-table-tags">#</a></h3>
+<table>
+  <thead>
+      <tr>
+          <th>Tag</th>
+          <th>Description</th>
+          <th>Example</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td><code>&lt;table&gt;</code></td>
+          <td>Table container</td>
+          <td><code>&lt;table&gt;...&lt;/table&gt;</code></td>
+      </tr>
+      <tr>
+          <td><code>&lt;tr&gt;</code></td>
+          <td>Table row</td>
+          <td><code>&lt;tr&gt;...&lt;/tr&gt;</code></td>
+      </tr>
+      <tr>
+          <td><code>&lt;th&gt;</code></td>
+          <td>Table header cell</td>
+          <td><code>&lt;th&gt;Header&lt;/th&gt;</code></td>
+      </tr>
+      <tr>
+          <td><code>&lt;td&gt;</code></td>
+          <td>Table data cell</td>
+          <td><code>&lt;td&gt;Data&lt;/td&gt;</code></td>
+      </tr>
+      <tr>
+          <td><code>&lt;thead&gt;</code></td>
+          <td>Table header section</td>
+          <td><code>&lt;thead&gt;...&lt;/thead&gt;</code></td>
+      </tr>
+      <tr>
+          <td><code>&lt;tbody&gt;</code></td>
+          <td>Table body section</td>
+          <td><code>&lt;tbody&gt;...&lt;/tbody&gt;</code></td>
+      </tr>
+      <tr>
+          <td><code>&lt;tfoot&gt;</code></td>
+          <td>Table footer section</td>
+          <td><code>&lt;tfoot&gt;...&lt;/tfoot&gt;</code></td>
+      </tr>
+  </tbody>
+</table>
+<hr>
+<h3 id="6-other-frequently-used-tags">6. Other Frequently Used Tags<a hidden class="anchor" aria-hidden="true" href="#6-other-frequently-used-tags">#</a></h3>
+<table>
+  <thead>
+      <tr>
+          <th>Tag</th>
+          <th>Description</th>
+          <th>Example</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td><code>&lt;div&gt;</code></td>
+          <td>Generic block-level container</td>
+          <td><code>&lt;div&gt;Block&lt;/div&gt;</code></td>
+      </tr>
+      <tr>
+          <td><code>&lt;span&gt;</code></td>
+          <td>Generic inline container</td>
+          <td><code>&lt;span&gt;Inline&lt;/span&gt;</code></td>
+      </tr>
+  </tbody>
+</table>
+<hr>
+<h4 id="differences-between-div-and-span">Differences between <code>&lt;div&gt;</code> and <code>&lt;span&gt;</code><a hidden class="anchor" aria-hidden="true" href="#differences-between-div-and-span">#</a></h4>
+<table>
+  <thead>
+      <tr>
+          <th>Feature</th>
+          <th><code>&lt;div&gt;</code></th>
+          <th><code>&lt;span&gt;</code></th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>Display type</td>
+          <td>Block-level</td>
+          <td>Inline</td>
+      </tr>
+      <tr>
+          <td>Default behavior</td>
+          <td>Occupies full width</td>
+          <td>Fits content width</td>
+      </tr>
+      <tr>
+          <td>Usage</td>
+          <td>Grouping sections or layout</td>
+          <td>Styling small inline text pieces</td>
+      </tr>
+      <tr>
+          <td>Common use cases</td>
+          <td>Layouts, containers, wrappers</td>
+          <td>Styling words, letters, or phrases</td>
+      </tr>
+  </tbody>
+</table>
+<hr>
+<h4 id="common-attributes">Common Attributes<a hidden class="anchor" aria-hidden="true" href="#common-attributes">#</a></h4>
+<p>These apply to both <code>&lt;div&gt;</code> and <code>&lt;span&gt;</code>:</p>
+<table>
+  <thead>
+      <tr>
+          <th>Attribute</th>
+          <th>Description</th>
+          <th>Example</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td><code>id</code></td>
+          <td>Unique identifier</td>
+          <td><code>&lt;div id=&quot;header&quot;&gt;</code></td>
+      </tr>
+      <tr>
+          <td><code>class</code></td>
+          <td>Class name(s) for CSS or JS</td>
+          <td><code>&lt;span class=&quot;highlight&quot;&gt;</code></td>
+      </tr>
+      <tr>
+          <td><code>style</code></td>
+          <td>Inline CSS styling</td>
+          <td><code>&lt;div style=&quot;color: red;&quot;&gt;</code></td>
+      </tr>
+      <tr>
+          <td><code>title</code></td>
+          <td>Tooltip shown on hover</td>
+          <td><code>&lt;span title=&quot;tooltip&quot;&gt;</code></td>
+      </tr>
+      <tr>
+          <td><code>hidden</code></td>
+          <td>Hides the element from display</td>
+          <td><code>&lt;div hidden&gt;Invisible&lt;/div&gt;</code></td>
+      </tr>
+  </tbody>
+</table>
+<hr>
+<h4 id="notes-4">Notes<a hidden class="anchor" aria-hidden="true" href="#notes-4">#</a></h4>
+<ul>
+<li><code>&lt;div&gt;</code> is often used to create layout sections (e.g., header, footer, sidebar).</li>
+<li><code>&lt;span&gt;</code> is used to apply inline styles or behavior to part of the text.</li>
+<li>Prefer using <strong>semantic HTML tags</strong> (e.g., <code>&lt;header&gt;</code>, <code>&lt;section&gt;</code>, <code>&lt;article&gt;</code>) instead of <code>&lt;div&gt;</code> when appropriate.</li>
+<li>Avoid excessive use of <code>&lt;div&gt;</code> and <code>&lt;span&gt;</code> without meaningful structure—this leads to &ldquo;<strong>div soup</strong>&rdquo;.</li>
+<li><code>&lt;div&gt;</code> and <code>&lt;span&gt;</code> are non-semantic HTML elements used to group content. They are often styled with CSS to define layout or appearance. If you want to know more, <!--[click here]().--></li>
+</ul>
+<hr>
+
+
+  </div>
+
+  <footer class="post-footer">
+    <ul class="post-tags">
+      <li><a href="https://Byngjoon.github.io/blog/tags/frontend/">Frontend</a></li>
+    </ul>
+  </footer>
+</article>
+    </main>
+    
+<footer class="footer">
+        <span>&copy; 2025 <a href="https://Byngjoon.github.io/blog/">Hyungtae</a></span> · 
+
+    <span>
+        Powered by
+        <a href="https://gohugo.io/" rel="noopener noreferrer" target="_blank">Hugo</a> &
+        <a href="https://github.com/adityatelange/hugo-PaperMod/" rel="noopener" target="_blank">PaperMod</a>
+    </span>
+</footer>
+<a href="#top" aria-label="go to top" title="Go to Top (Alt + G)" class="top-link" id="top-link" accesskey="g">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 6" fill="currentColor">
+        <path d="M12 6H0l6-6z" />
+    </svg>
+</a>
+
+<script>
+    let menu = document.getElementById('menu')
+    if (menu) {
+        menu.scrollLeft = localStorage.getItem("menu-scroll-position");
+        menu.onscroll = function () {
+            localStorage.setItem("menu-scroll-position", menu.scrollLeft);
+        }
+    }
+
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener("click", function (e) {
+            e.preventDefault();
+            var id = this.getAttribute("href").substr(1);
+            if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView({
+                    behavior: "smooth"
+                });
+            } else {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView();
+            }
+            if (id === "top") {
+                history.replaceState(null, null, " ");
+            } else {
+                history.pushState(null, null, `#${id}`);
+            }
+        });
+    });
+
+</script>
+<script>
+    var mybutton = document.getElementById("top-link");
+    window.onscroll = function () {
+        if (document.body.scrollTop > 800 || document.documentElement.scrollTop > 800) {
+            mybutton.style.visibility = "visible";
+            mybutton.style.opacity = "1";
+        } else {
+            mybutton.style.visibility = "hidden";
+            mybutton.style.opacity = "0";
+        }
+    };
+
+</script>
+<script>
+    document.getElementById("theme-toggle").addEventListener("click", () => {
+        if (document.body.className.includes("dark")) {
+            document.body.classList.remove('dark');
+            localStorage.setItem("pref-theme", 'light');
+        } else {
+            document.body.classList.add('dark');
+            localStorage.setItem("pref-theme", 'dark');
+        }
+    })
+
+</script>
+<script>
+    document.querySelectorAll('pre > code').forEach((codeblock) => {
+        const container = codeblock.parentNode.parentNode;
+
+        const copybutton = document.createElement('button');
+        copybutton.classList.add('copy-code');
+        copybutton.innerHTML = 'copy';
+
+        function copyingDone() {
+            copybutton.innerHTML = 'copied!';
+            setTimeout(() => {
+                copybutton.innerHTML = 'copy';
+            }, 2000);
+        }
+
+        copybutton.addEventListener('click', (cb) => {
+            if ('clipboard' in navigator) {
+                navigator.clipboard.writeText(codeblock.textContent);
+                copyingDone();
+                return;
+            }
+
+            const range = document.createRange();
+            range.selectNodeContents(codeblock);
+            const selection = window.getSelection();
+            selection.removeAllRanges();
+            selection.addRange(range);
+            try {
+                document.execCommand('copy');
+                copyingDone();
+            } catch (e) { };
+            selection.removeRange(range);
+        });
+
+        if (container.classList.contains("highlight")) {
+            container.appendChild(copybutton);
+        } else if (container.parentNode.firstChild == container) {
+            
+        } else if (codeblock.parentNode.parentNode.parentNode.parentNode.parentNode.nodeName == "TABLE") {
+            
+            codeblock.parentNode.parentNode.parentNode.parentNode.parentNode.appendChild(copybutton);
+        } else {
+            
+            codeblock.parentNode.appendChild(copybutton);
+        }
+    });
+</script>
+</body>
+
+</html>

@@ -6,23 +6,21 @@
     <description>Recent content in Frontend on Hyungtae</description>
     <generator>Hugo -- 0.147.3</generator>
     <language>ko-kr</language>
-    <lastBuildDate>Thu, 22 May 2025 14:19:11 +0900</lastBuildDate>
+    <lastBuildDate>Thu, 29 May 2025 14:20:15 +0900</lastBuildDate>
     <atom:link href="https://Byngjoon.github.io/blog/tags/frontend/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>[Web Programming] [01] Frontend - HTML</title>
-      <link>https://Byngjoon.github.io/blog/posts/html/</link>
+      <title>[Web Programming] [02] Frontend - HTML Part 02</title>
+      <link>https://Byngjoon.github.io/blog/posts/html-part-02/</link>
+      <pubDate>Thu, 29 May 2025 14:20:15 +0900</pubDate>
+      <guid>https://Byngjoon.github.io/blog/posts/html-part-02/</guid>
+      <description>Learn about HTML5</description>
+    </item>
+    <item>
+      <title>[Web Programming] [01] Frontend - HTML Part 01</title>
+      <link>https://Byngjoon.github.io/blog/posts/html-part-01/</link>
       <pubDate>Thu, 22 May 2025 14:19:11 +0900</pubDate>
-      <guid>https://Byngjoon.github.io/blog/posts/html/</guid>
-      <description>&lt;h1 id=&#34;chapter-01&#34;&gt;Chapter 01.&lt;/h1&gt;
-&lt;blockquote&gt;
-&lt;p&gt;&lt;strong&gt;Outline:&lt;/strong&gt;&lt;/p&gt;&lt;/blockquote&gt;
-&lt;hr&gt;
-&lt;h2 id=&#34;contents&#34;&gt;Contents&lt;/h2&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;&#34;&gt;0.1.&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;hr&gt;
-&lt;h2 id=&#34;section-01&#34;&gt;Section 0.1.&lt;/h2&gt;</description>
+      <guid>https://Byngjoon.github.io/blog/posts/html-part-01/</guid>
+      <description>Learn about HTML5</description>
     </item>
     <item>
       <title>[Web Programming] [00] Introduction to Web Programming</title>

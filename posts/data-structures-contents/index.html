@@ -1,0 +1,738 @@
+<!DOCTYPE html>
+<html lang="en" dir="auto">
+
+<head><meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="robots" content="index, follow">
+<title>[Data Structures] Contents | Hyungtae</title>
+<meta name="keywords" content="Data Structures">
+<meta name="description" content="Data Structures Study Outline with C Language Implementation
+
+Chapter 00. Introduction to Data Structures
+
+Section 0.1. What Is the Study of Data Structures?
+Section 0.2. Data Type vs Data Structure
+Section 0.3. Learn about Abstract Data Types (ADT)
+Section 0.4. Classification of Data Structures
+
+By Structural Form, By Storage Method, By Access Pattern, By Usage Level
+
+
+Section 0.5. C Language Essentials for Data Structures
+
+
+Chapter 01. Array
+
+Section 1.1. Array Abstract Data Type (ADT)
+Section 1.2. What Is an Array in C?
+Section 1.3. Implementing Static Arrays in C
+Section 1.4. Memory Model and Pointer Behavior in Arrays
+Section 1.5. Multidimensional Arrays
+Section 1.6. Dynamic (Resizable) Arrays in C
+Section 1.7. Limitations of Arrays and Why Linked Lists Are Needed
+Section 1.8. Arrays vs Pointers in C (optional)
+
+
+">
+<meta name="author" content="">
+<link rel="canonical" href="https://Byngjoon.github.io/blog/posts/data-structures-contents/">
+<link crossorigin="anonymous" href="/blog/assets/css/stylesheet.f49d66caae9ea0fd43f21f29e71a8d3e284517ed770f2aa86fa012953ad3c9ef.css" integrity="sha256-9J1myq6eoP1D8h8p5xqNPihFF&#43;13Dyqob6ASlTrTye8=" rel="preload stylesheet" as="style">
+<link rel="icon" href="https://Byngjoon.github.io/blog/favicon.ico">
+<link rel="icon" type="image/png" sizes="16x16" href="https://Byngjoon.github.io/blog/favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="https://Byngjoon.github.io/blog/favicon-32x32.png">
+<link rel="apple-touch-icon" href="https://Byngjoon.github.io/blog/apple-touch-icon.png">
+<link rel="mask-icon" href="https://Byngjoon.github.io/blog/safari-pinned-tab.svg">
+<meta name="theme-color" content="#2e2e33">
+<meta name="msapplication-TileColor" content="#2e2e33">
+<link rel="alternate" hreflang="en" href="https://Byngjoon.github.io/blog/posts/data-structures-contents/">
+<noscript>
+    <style>
+        #theme-toggle,
+        .top-link {
+            display: none;
+        }
+
+    </style>
+    <style>
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --theme: rgb(29, 30, 32);
+                --entry: rgb(46, 46, 51);
+                --primary: rgb(218, 218, 219);
+                --secondary: rgb(155, 156, 157);
+                --tertiary: rgb(65, 66, 68);
+                --content: rgb(196, 196, 197);
+                --code-block-bg: rgb(46, 46, 51);
+                --code-bg: rgb(55, 56, 62);
+                --border: rgb(51, 51, 51);
+            }
+
+            .list {
+                background: var(--theme);
+            }
+
+            .list:not(.dark)::-webkit-scrollbar-track {
+                background: 0 0;
+            }
+
+            .list:not(.dark)::-webkit-scrollbar-thumb {
+                border-color: var(--theme);
+            }
+        }
+
+    </style>
+</noscript>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"></script>
+<script>
+  window.onload = function () {
+    renderMathInElement(document.body, {
+      delimiters: [
+        { left: "$$", right: "$$", display: true },
+        { left: "$", right: "$", display: false }
+      ]
+    });
+  };
+</script>
+
+<meta property="og:url" content="https://Byngjoon.github.io/blog/posts/data-structures-contents/">
+  <meta property="og:site_name" content="Hyungtae">
+  <meta property="og:title" content="[Data Structures] Contents">
+  <meta property="og:description" content="Data Structures Study Outline with C Language Implementation Chapter 00. Introduction to Data Structures Section 0.1. What Is the Study of Data Structures? Section 0.2. Data Type vs Data Structure Section 0.3. Learn about Abstract Data Types (ADT) Section 0.4. Classification of Data Structures By Structural Form, By Storage Method, By Access Pattern, By Usage Level Section 0.5. C Language Essentials for Data Structures Chapter 01. Array Section 1.1. Array Abstract Data Type (ADT) Section 1.2. What Is an Array in C? Section 1.3. Implementing Static Arrays in C Section 1.4. Memory Model and Pointer Behavior in Arrays Section 1.5. Multidimensional Arrays Section 1.6. Dynamic (Resizable) Arrays in C Section 1.7. Limitations of Arrays and Why Linked Lists Are Needed Section 1.8. Arrays vs Pointers in C (optional) ">
+  <meta property="og:locale" content="ko-kr">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="posts">
+    <meta property="article:published_time" content="2025-05-17T04:16:57+09:00">
+    <meta property="article:modified_time" content="2025-05-17T04:16:57+09:00">
+    <meta property="article:tag" content="Data Structures">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="[Data Structures] Contents">
+<meta name="twitter:description" content="Data Structures Study Outline with C Language Implementation
+
+Chapter 00. Introduction to Data Structures
+
+Section 0.1. What Is the Study of Data Structures?
+Section 0.2. Data Type vs Data Structure
+Section 0.3. Learn about Abstract Data Types (ADT)
+Section 0.4. Classification of Data Structures
+
+By Structural Form, By Storage Method, By Access Pattern, By Usage Level
+
+
+Section 0.5. C Language Essentials for Data Structures
+
+
+Chapter 01. Array
+
+Section 1.1. Array Abstract Data Type (ADT)
+Section 1.2. What Is an Array in C?
+Section 1.3. Implementing Static Arrays in C
+Section 1.4. Memory Model and Pointer Behavior in Arrays
+Section 1.5. Multidimensional Arrays
+Section 1.6. Dynamic (Resizable) Arrays in C
+Section 1.7. Limitations of Arrays and Why Linked Lists Are Needed
+Section 1.8. Arrays vs Pointers in C (optional)
+
+
+">
+
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position":  1 ,
+      "name": "Posts",
+      "item": "https://Byngjoon.github.io/blog/posts/"
+    }, 
+    {
+      "@type": "ListItem",
+      "position":  2 ,
+      "name": "[Data Structures] Contents",
+      "item": "https://Byngjoon.github.io/blog/posts/data-structures-contents/"
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "[Data Structures] Contents",
+  "name": "[Data Structures] Contents",
+  "description": "Data Structures Study Outline with C Language Implementation Chapter 00. Introduction to Data Structures Section 0.1. What Is the Study of Data Structures? Section 0.2. Data Type vs Data Structure Section 0.3. Learn about Abstract Data Types (ADT) Section 0.4. Classification of Data Structures By Structural Form, By Storage Method, By Access Pattern, By Usage Level Section 0.5. C Language Essentials for Data Structures Chapter 01. Array Section 1.1. Array Abstract Data Type (ADT) Section 1.2. What Is an Array in C? Section 1.3. Implementing Static Arrays in C Section 1.4. Memory Model and Pointer Behavior in Arrays Section 1.5. Multidimensional Arrays Section 1.6. Dynamic (Resizable) Arrays in C Section 1.7. Limitations of Arrays and Why Linked Lists Are Needed Section 1.8. Arrays vs Pointers in C (optional) ",
+  "keywords": [
+    "Data Structures"
+  ],
+  "articleBody": "Data Structures Study Outline with C Language Implementation Chapter 00. Introduction to Data Structures Section 0.1. What Is the Study of Data Structures? Section 0.2. Data Type vs Data Structure Section 0.3. Learn about Abstract Data Types (ADT) Section 0.4. Classification of Data Structures By Structural Form, By Storage Method, By Access Pattern, By Usage Level Section 0.5. C Language Essentials for Data Structures Chapter 01. Array Section 1.1. Array Abstract Data Type (ADT) Section 1.2. What Is an Array in C? Section 1.3. Implementing Static Arrays in C Section 1.4. Memory Model and Pointer Behavior in Arrays Section 1.5. Multidimensional Arrays Section 1.6. Dynamic (Resizable) Arrays in C Section 1.7. Limitations of Arrays and Why Linked Lists Are Needed Section 1.8. Arrays vs Pointers in C (optional) ",
+  "wordCount" : "128",
+  "inLanguage": "en",
+  "datePublished": "2025-05-17T04:16:57+09:00",
+  "dateModified": "2025-05-17T04:16:57+09:00",
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://Byngjoon.github.io/blog/posts/data-structures-contents/"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Hyungtae",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://Byngjoon.github.io/blog/favicon.ico"
+    }
+  }
+}
+</script>
+</head>
+
+<body class="" id="top">
+<script>
+    if (localStorage.getItem("pref-theme") === "dark") {
+        document.body.classList.add('dark');
+    } else if (localStorage.getItem("pref-theme") === "light") {
+        document.body.classList.remove('dark')
+    } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+        document.body.classList.add('dark');
+    }
+
+</script>
+
+<header class="header">
+    <nav class="nav">
+        <div class="logo">
+            <a href="https://Byngjoon.github.io/blog/" accesskey="h" title="Hyungtae (Alt + H)">Hyungtae</a>
+            <div class="logo-switches">
+                <button id="theme-toggle" accesskey="t" title="(Alt + T)" aria-label="Toggle theme">
+                    <svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                    </svg>
+                    <svg id="sun" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="5"></circle>
+                        <line x1="12" y1="1" x2="12" y2="3"></line>
+                        <line x1="12" y1="21" x2="12" y2="23"></line>
+                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                        <line x1="1" y1="12" x2="3" y2="12"></line>
+                        <line x1="21" y1="12" x2="23" y2="12"></line>
+                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                    </svg>
+                </button>
+            </div>
+        </div>
+        <ul id="menu">
+            <li>
+                <a href="https://Byngjoon.github.io/blog/categories/" title="Categories">
+                    <span>Categories</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://Byngjoon.github.io/blog/tags/" title="Tags">
+                    <span>Tags</span>
+                </a>
+            </li>
+        </ul>
+    </nav>
+</header>
+<main class="main">
+
+<article class="post-single">
+  <header class="post-header">
+    
+    <h1 class="post-title entry-hint-parent">
+      [Data Structures] Contents
+    </h1>
+    <div class="post-meta"><span title='2025-05-17 04:16:57 +0900 KST'>May 17, 2025</span>&nbsp;·&nbsp;1 min
+
+</div>
+  </header> <div class="toc">
+    <details >
+        <summary accesskey="c" title="(Alt + C)">
+            <span class="details">Table of Contents</span>
+        </summary>
+
+        <div class="inner"><ul>
+                <li>
+                    <a href="#data-structures-study-outline-with-c-language-implementation" aria-label="Data Structures Study Outline with C Language Implementation">Data Structures Study Outline with C Language Implementation</a><ul>
+                        
+                <li>
+                    <a href="#chapter-00-introduction-to-data-structures" aria-label="Chapter 00. Introduction to Data Structures">Chapter 00. Introduction to Data Structures</a></li>
+                <li>
+                    <a href="#chapter-01-array" aria-label="Chapter 01. Array">Chapter 01. Array</a>
+                </li>
+            </ul>
+            </li>
+            </ul>
+        </div>
+    </details>
+</div>
+
+  <div class="post-content"><h1 id="data-structures-study-outline-with-c-language-implementation">Data Structures Study Outline with C Language Implementation<a hidden class="anchor" aria-hidden="true" href="#data-structures-study-outline-with-c-language-implementation">#</a></h1>
+<hr>
+<h2 id="chapter-00-introduction-to-data-structures">Chapter 00. Introduction to Data Structures<a hidden class="anchor" aria-hidden="true" href="#chapter-00-introduction-to-data-structures">#</a></h2>
+<ul>
+<li>Section 0.1. What Is the Study of Data Structures?</li>
+<li>Section 0.2. Data Type vs Data Structure</li>
+<li>Section 0.3. Learn about Abstract Data Types (ADT)</li>
+<li>Section 0.4. Classification of Data Structures
+<ul>
+<li>By Structural Form, By Storage Method, By Access Pattern, By Usage Level</li>
+</ul>
+</li>
+<li>Section 0.5. C Language Essentials for Data Structures</li>
+</ul>
+<hr>
+<h2 id="chapter-01-array">Chapter 01. Array<a hidden class="anchor" aria-hidden="true" href="#chapter-01-array">#</a></h2>
+<ul>
+<li>Section 1.1. Array Abstract Data Type (ADT)</li>
+<li>Section 1.2. What Is an Array in C?</li>
+<li>Section 1.3. Implementing Static Arrays in C</li>
+<li>Section 1.4. Memory Model and Pointer Behavior in Arrays</li>
+<li>Section 1.5. Multidimensional Arrays</li>
+<li>Section 1.6. Dynamic (Resizable) Arrays in C</li>
+<li>Section 1.7. Limitations of Arrays and Why Linked Lists Are Needed</li>
+<li>Section 1.8. Arrays vs Pointers in C (optional)</li>
+</ul>
+<!--
+
+---
+
+## Chapter 02. Linked List
+- Section 2.1. Singly Linked List
+- Section 2.2. Doubly Linked List
+- Section 2.3. Circular Linked List
+- Section 2.4. Operations and Time Complexity
+
+---
+
+## Chapter 03. Stack
+- Section 3.1. LIFO Principle
+- Section 3.2. Implementation (Array vs Linked List)
+- Section 3.3. Applications of Stack
+- Section 3.4. Time and Space Complexity
+
+---
+
+## Chapter 04. Queue
+- Section 4.1. FIFO Principle
+- Section 4.2. Linear and Circular Queue
+- Section 4.3. Deque (Double-Ended Queue)
+- Section 4.4. Priority Queue
+- Section 4.5. Applications and Complexity
+
+---
+
+## Chapter 05. Recursion
+- Section 5.1. Concept and Stack Relation
+- Section 5.2. Base Case and Recursive Case
+- Section 5.3. Tail Recursion
+- Section 5.4. Recursion vs Iteration
+
+---
+
+## Chapter 06. Tree
+- Section 6.1. Terminology and Properties
+- Section 6.2. Binary Tree and Traversal
+- Section 6.3. Binary Search Tree
+- Section 6.4. Balanced Trees (AVL, Red-Black)
+- Section 6.5. Heap
+
+---
+
+## Chapter 07. Graph
+- Section 7.1. Representation (Matrix vs List)
+- Section 7.2. Traversal (DFS, BFS)
+- Section 7.3. Shortest Paths (Dijkstra)
+- Section 7.4. Minimum Spanning Tree (Kruskal, Prim)
+
+---
+
+## Chapter 08. Hash Table
+- Section 8.1. Hash Functions
+- Section 8.2. Collision Resolution
+- Section 8.3. Hash Maps vs Sets
+- Section 8.4. Applications
+
+---
+
+## Chapter 09. String Algorithms
+- Section 9.1. Memory Representation
+- Section 9.2. Pattern Matching (KMP, Rabin-Karp, Boyer-Moore)
+- Section 9.3. Practical Applications
+
+---
+
+## Chapter 10. Trie
+- Section 10.1. Prefix Tree Concept
+- Section 10.2. Insertion and Search
+- Section 10.3. Use Cases in Auto-completion and Dictionaries
+
+---
+
+## Chapter 11. Segment Tree
+- Section 11.1. Motivation and Structure
+- Section 11.2. Range Query and Update
+- Section 11.3. Complexity Analysis
+
+---
+
+## Chapter 12. Fenwick Tree (Binary Indexed Tree)
+- Section 12.1. Introduction and Comparison with Segment Tree
+- Section 12.2. Prefix Sums
+- Section 12.3. Update and Query Operations
+
+---
+
+## Chapter 13. Union-Find (Disjoint Set)
+- Section 13.1. Union and Find Operations
+- Section 13.2. Path Compression and Union by Rank
+- Section 13.3. Applications (e.g. Kruskal)
+
+---
+
+## Chapter 14. B-Tree and B+ Tree
+- Section 14.1. Structure and Properties
+- Section 14.2. Use in Databases and File Systems
+
+---
+
+## Chapter 15. Complexity Analysis
+- Section 15.1. Big-O, Big-Ω, Big-Θ Notations
+- Section 15.2. Time and Space Comparison Table
+
+---
+
+## Chapter 16. Data Structure Selection Guide
+- Section 16.1. Choosing the Right Structure Based on Use Case
+- Section 16.2. Memory vs Speed Trade-offs
+
+---
+
+
+<!--
+## Chapter 01. Linear Data Structures
+- Section 1.1. Array
+- Section 1.2. Linked List
+  - Section 1.2.1. Singly Linked List
+  - Section 1.2.2. Doubly Linked List
+  - Section 1.2.3. Circular Linked List
+- Section 1.3. Stack
+- Section 1.4. Queue
+  - Section 1.4.1. Linear Queue
+  - Section 1.4.2. Circular Queue
+  - Section 1.4.3. Deque (Double-Ended Queue)
+  - Section 1.4.4. Priority Queue
+
+## Chapter 02. Recursion and Stack Applications
+- Section 2.1. Understanding Recursion
+- Section 2.2. Relation between Recursion and Stack
+- Section 2.3. Space and Time Complexity in Recursion
+
+## Chapter 03. Tree Structures
+- Section 3.1. Basic Terminology and Concepts
+- Section 3.2. Binary Tree and Traversal Techniques
+  - Section 3.2.1. Preorder, Inorder, Postorder, Level-order
+- Section 3.3. Binary Search Tree (BST)
+- Section 3.4. Balanced Binary Trees
+  - Section 3.4.1. AVL Tree
+  - Section 3.4.2. Red-Black Tree
+- Section 3.5. Heap
+
+## Chapter 04. Graph Structures
+- Section 4.1. Definitions and Representations
+  - Section 4.1.1. Adjacency Matrix
+  - Section 4.1.2. Adjacency List
+- Section 4.2. Graph Traversal Algorithms
+  - Section 4.2.1. Depth-First Search (DFS)
+  - Section 4.2.2. Breadth-First Search (BFS)
+- Section 4.3. Weighted Graphs and Shortest Paths
+  - Section 4.3.1. Dijkstra’s Algorithm
+- Section 4.4. Minimum Spanning Tree (MST)
+  - Section 4.4.1. Kruskal’s Algorithm
+  - Section 4.4.2. Prim’s Algorithm
+
+## Chapter 05. Hashing
+- Section 5.1. Hash Tables and Hash Functions
+- Section 5.2. Collision Resolution Techniques
+  - Section 5.2.1. Chaining
+  - Section 5.2.2. Open Addressing
+- Section 5.3. Hash Maps vs Hash Sets
+
+## Chapter 06. String Data Structures
+- Section 6.1. String Representation in Memory
+- Section 6.2. String Matching Algorithms
+  - Section 6.2.1. KMP Algorithm
+  - Section 6.2.2. Rabin-Karp Algorithm
+  - Section 6.2.3. Boyer-Moore Algorithm
+
+## Chapter 07. Advanced Data Structures
+- Section 7.1. Trie (Prefix Tree)
+- Section 7.2. Segment Tree
+- Section 7.3. Fenwick Tree (Binary Indexed Tree)
+- Section 7.4. Union-Find (Disjoint Set)
+- Section 7.5. B-Tree and B+ Tree
+
+## Chapter 08. Complexity Analysis
+- Section 8.1. Big-O, Big-Ω, Big-Θ Notations
+- Section 8.2. Time and Space Complexity of Major Structures
+
+## Chapter 09. Data Structure Selection Guide
+- Section 9.1. Choosing the Right Data Structure
+- Section 9.2. Trade-offs Between Memory and Speed
+-->
+<!--
+Chapter 02. Linked Lists
+	•	Understand node-based storage using pointers
+	•	Explore singly, doubly, and circular linked lists
+	•	Compare linked lists with arrays in terms of performance and use cases
+
+Chapter 03. Stacks and Queues
+	•	Learn the principles of LIFO (Stack) and FIFO (Queue)
+	•	Implement stack and queue using arrays and linked lists
+	•	Understand real-world applications like Undo, BFS, etc.
+
+Chapter 04. Recursion & Call Stack
+	•	Understand how recursion uses the call stack
+	•	Compare iterative and recursive approaches
+	•	Optimize recursive functions and avoid stack overflow
+
+Chapter 05. Trees
+	•	Learn tree terminology (root, leaf, height, etc.)
+	•	Explore binary trees and traversal methods
+	•	Understand binary search trees (BST) and balanced trees
+	•	Study heaps and priority queue implementation
+
+Chapter 06. Hashing
+	•	Learn how hash tables map keys to values
+	•	Understand hash functions and collision resolution techniques
+	•	Apply hash maps in real-world problems
+
+Chapter 07. Graphs
+	•	Explore graph representations: adjacency matrix and list
+	•	Implement DFS and BFS for traversal
+	•	Understand directed/undirected and weighted/unweighted graphs
+	•	Apply graph algorithms: shortest path, topological sort
+
+Chapter 08. Advanced Structures
+	•	Study trie for prefix-based string search
+	•	Learn disjoint set (union-find) and its use in connectivity problems
+	•	Understand segment trees and Fenwick trees for range queries
+	•	Get a glimpse of B-Trees and skip lists
+
+Chapter 09. Complexity & Trade-Offs
+	•	Analyze time and space complexity of data structures
+	•	Learn how to choose the right data structure for a given problem
+	•	Discuss trade-offs between speed, memory, and implementation complexity
+
+Chapter 10. Practice & Implementation
+	•	Implement core data structures in code (C/Python/Java)
+	•	Solve problems on platforms like LeetCode, Baekjoon, etc.
+	•	Practice debugging and test-driven development
+	•	Learn how to recognize and apply structures in real-world scenarios
+
+
+
+- check complexity -> algorithms
+- recursion -> after stack and with call stack
+
+## Chapter 03. Linked Lists
+- Singly Linked List
+- Doubly Linked List
+- Circular Linked List
+- Insertion, Deletion, Traversal
+- Comparison: Linked List vs Array
+
+## Chapter 04. Stacks
+- Stack ADT and use cases
+- Array-based stack implementation
+- Linked list-based stack implementation
+- Stack applications (undo, parentheses checker, etc.)
+
+## Chapter 05. Queues
+- Queue ADT and use cases
+- Linear Queue and Circular Queue
+- Array vs Linked List implementations
+- Deque and Priority Queue (basic)
+
+## Chapter 06. Trees
+- Tree terminology and representation
+- Binary Tree and Traversal (Pre/In/Post-order)
+- Binary Search Tree (BST)
+- Tree applications and recursive implementation
+- Brief intro to AVL/Red-Black Trees
+
+## Chapter 07. Heaps & Priority Queues
+- Max Heap / Min Heap
+- Array representation of heaps
+- Heap sort
+- Priority Queue ADT and its applications
+
+## Chapter 08. Hashing
+- Hash functions and collision handling
+- Open Addressing / Separate Chaining
+- Hash Tables in C
+- Applications (lookup, duplicate detection)
+
+## Chapter 09. Graphs
+- Graph representation (adjacency list/matrix)
+- DFS & BFS (recursive & iterative)
+- Directed/undirected, weighted/unweighted graphs
+- Applications: shortest path (intro), topological sort
+
+## Chapter 10. Advanced Structures
+- Trie (Prefix Tree)
+- Disjoint Set (Union-Find)
+- Segment Tree / Fenwick Tree (optional)
+- Skip List / B-Tree (conceptual overview)
+
+## Chapter 11. Complexity & Design Trade-offs
+- Time and Space Complexity of each structure
+- Choosing the right data structure
+- Trade-offs: speed vs memory vs simplicity
+
+## Chapter 12. Practice & Implementation
+- Coding common structures in C
+- Debugging dynamic memory (Valgrind, etc.)
+- LeetCode / 백준 / 프로그래머스 추천 문제
+- Structuring reusable modules in C
+
+-->
+
+  </div>
+
+  <footer class="post-footer">
+    <ul class="post-tags">
+      <li><a href="https://Byngjoon.github.io/blog/tags/data-structures/">Data Structures</a></li>
+    </ul>
+  </footer>
+</article>
+    </main>
+    
+<footer class="footer">
+        <span>&copy; 2025 <a href="https://Byngjoon.github.io/blog/">Hyungtae</a></span> · 
+
+    <span>
+        Powered by
+        <a href="https://gohugo.io/" rel="noopener noreferrer" target="_blank">Hugo</a> &
+        <a href="https://github.com/adityatelange/hugo-PaperMod/" rel="noopener" target="_blank">PaperMod</a>
+    </span>
+</footer>
+<a href="#top" aria-label="go to top" title="Go to Top (Alt + G)" class="top-link" id="top-link" accesskey="g">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 6" fill="currentColor">
+        <path d="M12 6H0l6-6z" />
+    </svg>
+</a>
+
+<script>
+    let menu = document.getElementById('menu')
+    if (menu) {
+        menu.scrollLeft = localStorage.getItem("menu-scroll-position");
+        menu.onscroll = function () {
+            localStorage.setItem("menu-scroll-position", menu.scrollLeft);
+        }
+    }
+
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener("click", function (e) {
+            e.preventDefault();
+            var id = this.getAttribute("href").substr(1);
+            if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView({
+                    behavior: "smooth"
+                });
+            } else {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView();
+            }
+            if (id === "top") {
+                history.replaceState(null, null, " ");
+            } else {
+                history.pushState(null, null, `#${id}`);
+            }
+        });
+    });
+
+</script>
+<script>
+    var mybutton = document.getElementById("top-link");
+    window.onscroll = function () {
+        if (document.body.scrollTop > 800 || document.documentElement.scrollTop > 800) {
+            mybutton.style.visibility = "visible";
+            mybutton.style.opacity = "1";
+        } else {
+            mybutton.style.visibility = "hidden";
+            mybutton.style.opacity = "0";
+        }
+    };
+
+</script>
+<script>
+    document.getElementById("theme-toggle").addEventListener("click", () => {
+        if (document.body.className.includes("dark")) {
+            document.body.classList.remove('dark');
+            localStorage.setItem("pref-theme", 'light');
+        } else {
+            document.body.classList.add('dark');
+            localStorage.setItem("pref-theme", 'dark');
+        }
+    })
+
+</script>
+<script>
+    document.querySelectorAll('pre > code').forEach((codeblock) => {
+        const container = codeblock.parentNode.parentNode;
+
+        const copybutton = document.createElement('button');
+        copybutton.classList.add('copy-code');
+        copybutton.innerHTML = 'copy';
+
+        function copyingDone() {
+            copybutton.innerHTML = 'copied!';
+            setTimeout(() => {
+                copybutton.innerHTML = 'copy';
+            }, 2000);
+        }
+
+        copybutton.addEventListener('click', (cb) => {
+            if ('clipboard' in navigator) {
+                navigator.clipboard.writeText(codeblock.textContent);
+                copyingDone();
+                return;
+            }
+
+            const range = document.createRange();
+            range.selectNodeContents(codeblock);
+            const selection = window.getSelection();
+            selection.removeAllRanges();
+            selection.addRange(range);
+            try {
+                document.execCommand('copy');
+                copyingDone();
+            } catch (e) { };
+            selection.removeRange(range);
+        });
+
+        if (container.classList.contains("highlight")) {
+            container.appendChild(copybutton);
+        } else if (container.parentNode.firstChild == container) {
+            
+        } else if (codeblock.parentNode.parentNode.parentNode.parentNode.parentNode.nodeName == "TABLE") {
+            
+            codeblock.parentNode.parentNode.parentNode.parentNode.parentNode.appendChild(copybutton);
+        } else {
+            
+            codeblock.parentNode.appendChild(copybutton);
+        }
+    });
+</script>
+</body>
+
+</html>
