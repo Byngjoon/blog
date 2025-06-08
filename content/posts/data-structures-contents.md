@@ -13,7 +13,7 @@ toc = false
 
 ---
 
-## Chapter 00. Introduction to Data Structures
+## Chapter 00. [Introduction to Data Structures]({{< relref "posts/data-structures-00.md" >}})
 - Section 0.1. What Is the Study of Data Structures?
 - Section 0.2. Data Type vs Data Structure
 - Section 0.3. Learn about Abstract Data Types (ADT)
@@ -23,7 +23,7 @@ toc = false
 
 ---
 
-## Chapter 01. Array
+## Chapter 01. [Array ADT and Implementation]({{< relref "posts/data-structures-01.md" >}})
 - Section 1.1. Array Abstract Data Type (ADT)
 - Section 1.2. What Is an Array in C?
 - Section 1.3. Implementing Static Arrays in C
@@ -32,17 +32,21 @@ toc = false
 - Section 1.6. Dynamic (Resizable) Arrays in C
 - Section 1.7. Limitations of Arrays and Why Linked Lists Are Needed
 - Section 1.8. Arrays vs Pointers in C (optional)
+
+---
+
+## Chapter 02. [List ADT and Linked List Implementation]({{< relref "posts/data-structures-02.md" >}})
+- Section 2.1. Linked List Abstract Data Type (ADT)
+- Section 2.2. Singly Linked List
+- Section 2.3. Doubly Linked List
+- Section 2.4. Circular Linked List
+- Section 2.5. Linked List Operations in C
+- Section 2.6. Time and Space Complexity
+- Section 2.7. Array vs Linked List
+- Section 2.8. Common Interview Questions on Linked Lists
+
+---
 <!--
-
----
-
-## Chapter 02. Linked List
-- Section 2.1. Singly Linked List
-- Section 2.2. Doubly Linked List
-- Section 2.3. Circular Linked List
-- Section 2.4. Operations and Time Complexity
-
----
 
 ## Chapter 03. Stack
 - Section 3.1. LIFO Principle
@@ -275,12 +279,6 @@ Chapter 10. Practice & Implementation
 - check complexity -> algorithms
 - recursion -> after stack and with call stack
 
-## Chapter 03. Linked Lists
-- Singly Linked List
-- Doubly Linked List
-- Circular Linked List
-- Insertion, Deletion, Traversal
-- Comparison: Linked List vs Array
 
 ## Chapter 04. Stacks
 - Stack ADT and use cases

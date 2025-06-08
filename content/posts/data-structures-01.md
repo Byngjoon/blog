@@ -1,7 +1,7 @@
 +++
 date = '2025-05-17T07:27:31+09:00'
-title = '[Data Structures] [01] Array Abstract Data Type (ADT)'
-description = "Understanding the Array Abstract Data Type in Data Structures"
+title = '[Data Structures] [01] Array ADT and Implementation'
+description = "Understanding the Array Abstract Data Type in Data Structures and implement in C"
 categories = ["Computer Science/Algorithms & Data Structures"]
 tags = ["Data Structures"]
 slug = "array-adt"
@@ -60,11 +60,10 @@ draft = false
 
 ### 1.1.2. Array ADT Specification
 
-- **Objects**:  
-  A **fixed-size**, **indexed** sequence of elements of the **same type**.
+- **Objects:**  
+    A **fixed-size**, **indexed** sequence of elements of the **same type**.
 
-- **Operations**:
-
+- **Operations:**
     - `create(size)`  
       ::= Creates an array that can hold `size` number of elements.
 
@@ -91,18 +90,18 @@ draft = false
 
 ---
 
-**Summary of Array ADT Operations**
+**Summary of Operations**
 
-| Operation | Signature           | Time Complexity  | Remarks (촌평)                                            |
-|-----------|---------------------|------------------|----------------------------------------------------------|
-| Create    | `create(size)`      | O(1)             | Initializes a fixed-size array                           |
-| Get       | `get(A, i)`         | O(1)             | Returns value at index `i`; constant-time random access  |
-| Set       | `set(A, i, v)`      | O(1)             | Updates value at index `i`                               |
-| Length    | `length(A)`         | O(1)             | Returns current number of elements                       |
-| Traverse  | `traverse(A)`       | O(n)             | Iterates over all elements                               |
-| Search    | `search(A, x)`      | O(n)             | Linear search; may return first matching index           |
-| Insert    | `insert(A, i, x)`   | O(n)             | Requires shifting elements to make space                 |
-| Delete    | `delete(A, i)`      | O(n)             | Requires shifting elements to fill the gap               |
+| Operation           | Time Complexity  | Remarks (촌평)                                            |
+|---------------------|------------------|----------------------------------------------------------|
+| `create(size)`      | O(1)             | Initializes a fixed-size array                           |
+| `get(A, i)`         | O(1)             | Returns value at index `i`; constant-time random access  |
+| `set(A, i, v)`      | O(1)             | Updates value at index `i`                               |
+| `length(A)`         | O(1)             | Returns current number of elements                       |
+| `traverse(A)`       | O(n)             | Iterates over all elements                               |
+| `search(A, x)`      | O(n)             | Linear search; may return first matching index           |
+| `insert(A, i, x)`   | O(n)             | Requires shifting elements to make space                 |
+| `delete(A, i)`      | O(n)             | Requires shifting elements to fill the gap               |
 
 ---
 
@@ -755,6 +754,13 @@ Therefore, you lose the size information unless it’s passed separately.
 
 ---
 
+## Section 1.10. Exercises
+
+### 1.10.1. Polynomail with Array
+
+### 1.10.2. Sparse Matrix with Array
+
+---
 **References**  
 - Kernighan & Ritchie, *The C Programming Language*, 2nd Edition  
 - ISO/IEC 9899:1999 

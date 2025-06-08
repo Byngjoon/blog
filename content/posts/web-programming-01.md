@@ -452,3 +452,5 @@ These apply to both `<div>` and `<span>`:
 - `<div>` and `<span>` are non-semantic HTML elements used to group content. They are often styled with CSS to define layout or appearance. If you want to know more, <!--[click here]().-->
 
 ---
+
+[To the part 02...]({{< relref "posts/web-programming-02.md" >}})
