@@ -6,14 +6,21 @@
     <description>Recent content in Computer Science/Algorithms &amp; Data Structures on Hyungtae</description>
     <generator>Hugo -- 0.147.3</generator>
     <language>ko-kr</language>
-    <lastBuildDate>Sat, 17 May 2025 07:27:31 +0900</lastBuildDate>
+    <lastBuildDate>Mon, 02 Jun 2025 14:32:06 +0900</lastBuildDate>
     <atom:link href="https://Byngjoon.github.io/blog/categories/computer-science/algorithms--data-structures/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>[Data Structures] [01] Array Abstract Data Type (ADT)</title>
+      <title>[Data Structures] [02] List ADT and Linked List Implementation Part 01</title>
+      <link>https://Byngjoon.github.io/blog/posts/linked-list-adt/</link>
+      <pubDate>Mon, 02 Jun 2025 14:32:06 +0900</pubDate>
+      <guid>https://Byngjoon.github.io/blog/posts/linked-list-adt/</guid>
+      <description>Understanding the List Abstract Data Type in Data Structures and Its Implementation Using Linked Lists in C</description>
+    </item>
+    <item>
+      <title>[Data Structures] [01] Array ADT and Implementation</title>
       <link>https://Byngjoon.github.io/blog/posts/array-adt/</link>
       <pubDate>Sat, 17 May 2025 07:27:31 +0900</pubDate>
       <guid>https://Byngjoon.github.io/blog/posts/array-adt/</guid>
-      <description>Understanding the Array Abstract Data Type in Data Structures</description>
+      <description>Understanding the Array Abstract Data Type in Data Structures and implement in C</description>
     </item>
     <item>
       <title>[Data Structures] [00] Introduction to Data Structures</title>
@@ -29,7 +36,7 @@
       <guid>https://Byngjoon.github.io/blog/posts/data-structures-contents/</guid>
       <description>&lt;h1 id=&#34;data-structures-study-outline-with-c-language-implementation&#34;&gt;Data Structures Study Outline with C Language Implementation&lt;/h1&gt;
 &lt;hr&gt;
-&lt;h2 id=&#34;chapter-00-introduction-to-data-structures&#34;&gt;Chapter 00. Introduction to Data Structures&lt;/h2&gt;
+&lt;h2 id=&#34;chapter-00-introduction-to-data-structures&#34;&gt;Chapter 00. &lt;a href=&#34;https://Byngjoon.github.io/blog/posts/introduction-to-data-structures/&#34;&gt;Introduction to Data Structures&lt;/a&gt;&lt;/h2&gt;
 &lt;ul&gt;
 &lt;li&gt;Section 0.1. What Is the Study of Data Structures?&lt;/li&gt;
 &lt;li&gt;Section 0.2. Data Type vs Data Structure&lt;/li&gt;
@@ -42,7 +49,7 @@
 &lt;li&gt;Section 0.5. C Language Essentials for Data Structures&lt;/li&gt;
 &lt;/ul&gt;
 &lt;hr&gt;
-&lt;h2 id=&#34;chapter-01-array&#34;&gt;Chapter 01. Array&lt;/h2&gt;
+&lt;h2 id=&#34;chapter-01-array-adt-and-implementation&#34;&gt;Chapter 01. &lt;a href=&#34;https://Byngjoon.github.io/blog/posts/array-adt/&#34;&gt;Array ADT and Implementation&lt;/a&gt;&lt;/h2&gt;
 &lt;ul&gt;
 &lt;li&gt;Section 1.1. Array Abstract Data Type (ADT)&lt;/li&gt;
 &lt;li&gt;Section 1.2. What Is an Array in C?&lt;/li&gt;
@@ -53,17 +60,20 @@
 &lt;li&gt;Section 1.7. Limitations of Arrays and Why Linked Lists Are Needed&lt;/li&gt;
 &lt;li&gt;Section 1.8. Arrays vs Pointers in C (optional)&lt;/li&gt;
 &lt;/ul&gt;
+&lt;hr&gt;
+&lt;h2 id=&#34;chapter-02-list-adt-and-linked-list-implementation&#34;&gt;Chapter 02. &lt;a href=&#34;https://Byngjoon.github.io/blog/posts/linked-list-adt/&#34;&gt;List ADT and Linked List Implementation&lt;/a&gt;&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;Section 2.1. Linked List Abstract Data Type (ADT)&lt;/li&gt;
+&lt;li&gt;Section 2.2. Singly Linked List&lt;/li&gt;
+&lt;li&gt;Section 2.3. Doubly Linked List&lt;/li&gt;
+&lt;li&gt;Section 2.4. Circular Linked List&lt;/li&gt;
+&lt;li&gt;Section 2.5. Linked List Operations in C&lt;/li&gt;
+&lt;li&gt;Section 2.6. Time and Space Complexity&lt;/li&gt;
+&lt;li&gt;Section 2.7. Array vs Linked List&lt;/li&gt;
+&lt;li&gt;Section 2.8. Common Interview Questions on Linked Lists&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
 &lt;!--
-
----
-
-## Chapter 02. Linked List
-- Section 2.1. Singly Linked List
-- Section 2.2. Doubly Linked List
-- Section 2.3. Circular Linked List
-- Section 2.4. Operations and Time Complexity
-
----
 
 ## Chapter 03. Stack
 - Section 3.1. LIFO Principle
@@ -295,12 +305,6 @@ Chapter 10. Practice &amp; Implementation
 - check complexity -&gt; algorithms
 - recursion -&gt; after stack and with call stack
 
-## Chapter 03. Linked Lists
-- Singly Linked List
-- Doubly Linked List
-- Circular Linked List
-- Insertion, Deletion, Traversal
-- Comparison: Linked List vs Array
 
 ## Chapter 04. Stacks
 - Stack ADT and use cases

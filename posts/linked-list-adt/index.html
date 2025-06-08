@@ -1,0 +1,1270 @@
+<!DOCTYPE html>
+<html lang="en" dir="auto">
+
+<head><meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="robots" content="index, follow">
+<title>[Data Structures] [02] List ADT and Linked List Implementation Part 01 | Hyungtae</title>
+<meta name="keywords" content="Data Structures">
+<meta name="description" content="Understanding the List Abstract Data Type in Data Structures and Its Implementation Using Linked Lists in C">
+<meta name="author" content="">
+<link rel="canonical" href="https://Byngjoon.github.io/blog/posts/linked-list-adt/">
+<link crossorigin="anonymous" href="/blog/assets/css/stylesheet.f49d66caae9ea0fd43f21f29e71a8d3e284517ed770f2aa86fa012953ad3c9ef.css" integrity="sha256-9J1myq6eoP1D8h8p5xqNPihFF&#43;13Dyqob6ASlTrTye8=" rel="preload stylesheet" as="style">
+<link rel="icon" href="https://Byngjoon.github.io/blog/favicon.ico">
+<link rel="icon" type="image/png" sizes="16x16" href="https://Byngjoon.github.io/blog/favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="https://Byngjoon.github.io/blog/favicon-32x32.png">
+<link rel="apple-touch-icon" href="https://Byngjoon.github.io/blog/apple-touch-icon.png">
+<link rel="mask-icon" href="https://Byngjoon.github.io/blog/safari-pinned-tab.svg">
+<meta name="theme-color" content="#2e2e33">
+<meta name="msapplication-TileColor" content="#2e2e33">
+<link rel="alternate" hreflang="en" href="https://Byngjoon.github.io/blog/posts/linked-list-adt/">
+<noscript>
+    <style>
+        #theme-toggle,
+        .top-link {
+            display: none;
+        }
+
+    </style>
+    <style>
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --theme: rgb(29, 30, 32);
+                --entry: rgb(46, 46, 51);
+                --primary: rgb(218, 218, 219);
+                --secondary: rgb(155, 156, 157);
+                --tertiary: rgb(65, 66, 68);
+                --content: rgb(196, 196, 197);
+                --code-block-bg: rgb(46, 46, 51);
+                --code-bg: rgb(55, 56, 62);
+                --border: rgb(51, 51, 51);
+            }
+
+            .list {
+                background: var(--theme);
+            }
+
+            .list:not(.dark)::-webkit-scrollbar-track {
+                background: 0 0;
+            }
+
+            .list:not(.dark)::-webkit-scrollbar-thumb {
+                border-color: var(--theme);
+            }
+        }
+
+    </style>
+</noscript>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"></script>
+<script>
+  window.onload = function () {
+    renderMathInElement(document.body, {
+      delimiters: [
+        { left: "$$", right: "$$", display: true },
+        { left: "$", right: "$", display: false }
+      ]
+    });
+  };
+</script>
+
+<meta property="og:url" content="https://Byngjoon.github.io/blog/posts/linked-list-adt/">
+  <meta property="og:site_name" content="Hyungtae">
+  <meta property="og:title" content="[Data Structures] [02] List ADT and Linked List Implementation Part 01">
+  <meta property="og:description" content="Understanding the List Abstract Data Type in Data Structures and Its Implementation Using Linked Lists in C">
+  <meta property="og:locale" content="ko-kr">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="posts">
+    <meta property="article:published_time" content="2025-06-02T14:32:06+09:00">
+    <meta property="article:modified_time" content="2025-06-02T14:32:06+09:00">
+    <meta property="article:tag" content="Data Structures">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="[Data Structures] [02] List ADT and Linked List Implementation Part 01">
+<meta name="twitter:description" content="Understanding the List Abstract Data Type in Data Structures and Its Implementation Using Linked Lists in C">
+
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position":  1 ,
+      "name": "Posts",
+      "item": "https://Byngjoon.github.io/blog/posts/"
+    }, 
+    {
+      "@type": "ListItem",
+      "position":  2 ,
+      "name": "[Data Structures] [02] List ADT and Linked List Implementation Part 01",
+      "item": "https://Byngjoon.github.io/blog/posts/linked-list-adt/"
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "[Data Structures] [02] List ADT and Linked List Implementation Part 01",
+  "name": "[Data Structures] [02] List ADT and Linked List Implementation Part 01",
+  "description": "Understanding the List Abstract Data Type in Data Structures and Its Implementation Using Linked Lists in C",
+  "keywords": [
+    "Data Structures"
+  ],
+  "articleBody": "Chapter 02. List ADT and Linked List Implementation Outline: We study the abstract List ADT and its implementation using Linked Lists. This includes singly, doubly, and circular linked lists, their operations, and performance trade-offs compared to array-based lists.\nContents 2.1. What Is the List ADT? 2.2. Array ADT vs List ADT 2.3. What Is an Array List? 2.4. What Is a Linked List? 2.5. Is a Linked List an ADT or an Implementation? 2.6. Why Use Linked Lists? 2.7. Singly Linked List 2.8. Doubly Linked List 2.9. Circular Linked List 2.10. Linked List Operations in C 2.11. Time and Space Complexity 2.12. Array-based List vs Linked List 2.13. Common Interview Questions on Linked Lists Section 2.1. What Is the List ADT? 2.1.1. Definition of the List ADT The List Abstract Data Type (ADT) represents a linear, ordered collection of elements, where the position of each element matters.\nIt supports a set of abstract operations such as insertion, deletion, and traversal.\nUnlike stacks or queues, a list allows access and modification at arbitrary positions, not just the front or rear.\nEssential Properties of List ADT\nProperty Description Linear Order Elements have a specific order from first to last Position-based Operations can refer to specific positions (e.g., index) Variable Size Can grow or shrink dynamically 2.1.2. List ADT Specification A List ADT is a linear collection of elements with a finite, ordered sequence.\nEach element has a position, and the list supports both value-based and position-based operations.\nObject:\nLet L be a list of elements ⟨e₀, e₁, ..., eₙ₋₁⟩. Component Description L[i] Element at index i, where 0 ≤ i \u003c size(L) size(L) Number of elements in the list L.empty Indicates whether the list is empty Note: In the context of Abstract Data Types (ADTs), an object component represents an abstract property, not a concrete field.\nsize(L): This is a logical property that is fundamental to many operations. In actual implementations, it may be stored explicitly(명시적으로) as a field (e.g., L.size). L.empty: This abstract property can be represented as a function such as isEmpty(L) in implementation. Operations:\ncreate()\n::= Initializes and returns an empty list.\ninsert(L, i, x)\n::= Inserts element x at index i in list L.\ndelete(L, i)\n::= Deletes the element at index i from list L.\nget(L, i)\n::= Returns the element at index i in list L.\nset(L, i, x)\n::= Replaces the element at index i with x in list L.\ntraverse(L)\n::= Visits and processes all elements in list L from start to end.\nsearch(L, x)\n::= Returns the index of element x in list L, or -1 if not found.\nsize(L)\n::= Returns the total number of elements in list L.\nisEmpty(L)\n::= Returns true if list L contains no elements; otherwise false.\nThese operations define the abstract behavior of a list, regardless of its underlying implementation.\nSummary of operations\nOperation Time Complexity Notes create() O(1) Constant-time initialization insert(i) O(n) Depends on implementation; O(1) for head in linked list delete(i) O(n) May require traversal to index get(i) O(n) or O(1) O(1) for array, O(n) for linked list set(i) O(n) or O(1) Same as above search(x) O(n) Linear search traverse() O(n) Visit all elements Note: These complexities depend on the underlying implementation:\nArray List → Fast access (O(1)) but expensive insert/delete Linked List → Efficient insert/delete (O(1) at head), but slow access (O(n)) Summary\nThe List ADT defines a flexible structure for managing linear data.\nIts abstract operations are common across all implementations, but their efficiency varies by choice of data structure.\n2.1.3. When to Use List ADT The List ADT is useful when:\nYou need a flexible, linear structure to insert/delete at arbitrary positions You don’t know the number of elements in advance The order of elements is important Section 2.2. Array ADT vs List ADT 2.2.1. Conceptual Comparison The Array ADT and the List ADT are both abstract data types used to model linear collections of elements.\nHowever, they differ in flexibility, memory behavior, and supported operations.\nFeature Array ADT List ADT Structure Indexed sequence Ordered collection Size Fixed at creation Dynamic (can grow/shrink) Access Random access by index Sequential access by traversal Indexing Support Required (0-based integer index) Optional; defined by position conceptually Insertion/Deletion Inefficient except at end (due to shifting) Efficient at arbitrary positions Element Type Homogeneous (same type) Typically homogeneous (but not strictly required) Abstraction Level Abstract model, not tied to physical memory Same – logical model, memory-independent Note: Both ADTs define logical models for organizing data.\nTheir differences lie in access patterns, mutability, and structural flexibility—not in implementation.\n2.2.2. Example Operation Differences Operation Array ADT List ADT insert(A, i, x) O(n) – shift required O(1) at head (if Linked List) delete(A, i) O(n) – shift required O(1) at head (if Linked List) get(A, i) O(1) – direct access O(n) – must traverse from front size(A) O(1) O(1) or O(n), depending on implementation 2.2.3. When to Use Each ADT Use Array ADT:\nWhen the number of elements is known in advance When constant-time access by index is required When memory locality matters (e.g., cache-friendly) Use List ADT:\nWhen the number of elements changes frequently When insertions and deletions occur frequently at arbitrary positions When you want to avoid resizing overhead 2.2.4. Summary The Array ADT is a specialized form of the List ADT with additional constraints: Fixed size Contiguous conceptual layout Fast indexed access The List ADT is more general and abstract, supporting a wider variety of implementations such as linked lists, array lists, etc. In short, Array ADT = List ADT + Fixed Size + Homogeneous Index-Based Access Model.\nSection 2.3. What Is an Array List? 2.3.1. Definition An Array List is a concrete implementation of the List ADT using a contiguous block of memory, typically realized as an underlying array.\nIt supports index-based access and provides dynamic resizing when capacity is exceeded.\nInternally, an array list maintains two separate concepts:\nSize (n): the current number of elements stored Capacity (c): the maximum number of elements the current array can hold 2.3.2 Key Points Core Properties\nProperty Description Underlying Structure Array (contiguous memory) Resizable Grows (and sometimes shrinks) as needed Indexed Access Provides fast O(1) access via array indexing Insert/Delete Costly at arbitrary positions due to element shifting Capacity and Size Maintains separate notions of logical size and capacity Key Differences from Related Structures:\nComparison Target Array List vs Target Static Array Array List resizes dynamically; static array does not Linked List Array List provides O(1) indexed access; linked list provides O(1) insertion/deletion (at ends) Array ADT Array ADT is abstract; Array List is a concrete realization with resizing strategy Advantages and Limitations\nAspect Advantage Limitation Access Constant-time indexed access (O(1)) Insertion (end) Amortized O(1) when appending at the end Reallocation may be costly in some scenarios Insertion (middle) Requires shifting elements (O(n)) Memory Efficiency Pre-allocated space reduces frequent copying May use extra space due to reserved capacity 2.3.3. Why Contiguous Memory Is Required for Array Lists Array List implementations are based on arrays and therefore require elements to be stored in contiguous memory. This is an essential property that enables efficient index-based access and memory operations.\nKey Reasons\nReason Explanation Indexed Access in O(1) Given index i, address = base + i × size; works only with contiguous layout Efficient Resizing Data must be copied to a new array during reallocation; contiguous memory is needed CPU Cache Efficiency Sequential layout improves spatial locality and speeds up traversal Language-level Constraints Array-based structures in C/C++/Java are natively contiguous Address Calculation Example\naddress_of(arr[i]) = base_address + i × sizeof(element) This formula only works if all elements are laid out continuously in memory.\nComparison\nStructure Memory Layout Indexed Access Dynamic Resizing Cache Efficiency Array List Contiguous (Required) O(1) Yes (with copy) High Linked List Non-contiguous O(n) Yes (node-based) Low Summary\nContiguous memory layout is non-negotiable for array lists. It directly enables:\nConstant-time random access (get(i), set(i, x)) Fast copy and reallocation for dynamic growth Improved performance due to better cache usage 2.3.4. Abstract View Let A be an array list of size n and capacity c.\nElements: ⟨A[0], A[1], ..., A[n-1]⟩ Capacity: Total allocated space (c ≥ n) Size: Number of actual elements stored (n ≤ c) Resize Strategy (typical):\nWhen size n reaches capacity c (i.e., n == c), the array list automatically resizes by:\nAllocating a larger block of memory (commonly 2× the previous capacity), Copying all existing elements to the new array, Releasing the old memory, Updating the internal reference to the new array. It bridges the gap between fixed-size arrays and flexible lists by resizing the array when necessary.\n2.3.5. When to Use Use an Array List when:\nYou need frequent random access (e.g., get/set by index) The number of elements changes, but not drastically You prefer simpler memory management over fine-grained control Avoid when:\nFrequent insertions/deletions occur at arbitrary positions Predictable memory usage is critical (due to resizing overhead) Summary\nArray List is a hybrid between arrays and lists:\nIt retains fast indexed access while offering dynamic growth, making it ideal for many general-purpose use cases.\n2.3.6. Example of implementation in C Section 2.4. What Is a Linked List? 2.4.1. Basic Concepts A linked list is a concrete implementation of the list ADT, in which elements (called nodes) are connected by reference (like pointers), not stored contiguously in memory like array-based lists. Each node contains two components:\nData: the element’s value (i.e., the value stored in the node). Link: a reference (like pointer) to the next(or previous) node in the list. It defines a collection of elements arranged in a linear sequence.\nBasic node structure:\n⟨data₁, next₁⟩ → ⟨data₂, next₂⟩ → ... → ⟨dataₙ, NULL⟩ Variants of Linked List\nType Description Singly Linked List Each node points to the next only Doubly Linked List Each node points to both next and previous Circular Linked List Last node points back to the first Other implementations of the List ADT include Array List, Vector (in C++), and Dynamic Arrays.\n2.4.2. Key Points Key characteristics:\nFeature Description Dynamic memory allocation Nodes are allocated individually on the heap Non-contiguous storage Nodes may reside anywhere in memory, linked through pointers Variable size The list can grow or shrink during runtime Sequential access only No direct indexing; must traverse from head to access an element Efficient insert/delete Especially at the beginning (head) or middle, compared to arrays Extra memory overhead Each node needs additional space for a pointer field Limitations\nAccessing an element at a given position requires traversal from the head. Extra memory usage due to pointer storage in each node. Complex pointer manipulation is error-prone (e.g., memory leaks or dangling pointers). 2.4.3. Abstract View Objects:\nA sequence of nodes, where each node contains data and a link (reference) to the next node.\nOperations:\ncreate()\n::= Initializes an empty linked list.\ninsert(L, i, x)\n::= Inserts element x at position i in linked list L.\ndelete(L, i)\n::= Deletes the node at position i in linked list L.\nsearch(L, x)\n::= Returns the position of element x in L, if found.\ntraverse(L)\n::= Visits each node in the list from head to tail.\nisEmpty(L)\n::= Returns true if list L has no nodes.\nsize(L)\n::= Returns the number of nodes in L.\nSummary\nOperation Signature Time Complexity Remarks Create create() O(1) Initializes an empty list Insert insert(L, i, x) O(n) Efficient at head (O(1)); needs traversal for middle Delete delete(L, i) O(n) Requires traversal to reach index Search search(L, x) O(n) Linear search; returns position if found Traverse traverse(L) O(n) Visits all nodes in sequence isEmpty isEmpty(L) O(1) Checks if head pointer is NULL Size size(L) O(n) or O(1)* O(n) if counted manually; O(1) if size is tracked *If a size field is maintained during insert/delete, the size() operation becomes O(1). Note: Position-based operations typically assume 0-based indexing unless specified otherwise.\n2.4.4. Comparison to Array List Aspect Linked List Array List Memory layout Non-contiguous Contiguous Access time O(n) (sequential access only) O(1) (random access by index) Insert/delete O(1) at head; O(n) at arbitrary position O(n) due to shifting elements Size Dynamic (no fixed size) Dynamic but involves costly resizing Pointer usage Requires extra pointer per node No extra pointer overhead Use case Frequent insertions/deletions Frequent indexed access Summary\nA linked list is an efficient structure when frequent insertions and deletions are expected, especially when the size of the list is not known in advance.\nHowever, for fast indexed access, array lists are more suitable due to their contiguous memory layout and constant-time indexing.\n2.4.5. When to Use Use a linked list when:\nYou need frequent insertions and deletions You don’t know the number of elements in advance Memory efficiency in terms of resizing is more important than random access Avoid when:\nYou need fast random access Memory overhead from pointers is undesirable 2.4.6. Summary The Linked List is a flexible, dynamic linear data model. It defines a sequence of connected nodes with support for basic list operations. Understanding the ADT is essential before diving into specific implementations like singly, doubly, or circular linked lists. 2.5. Is a Linked List an ADT or an Implementation? The term linked list is often used in two different contexts:\nAs a concrete implementation of the List ADT As a specialized abstract model when its structural properties are considered essential 2.5.1 Interpretation as an Implementation In most cases, a linked list refers to a non-contiguous, pointer-based implementation of the more general List ADT. It supports the same core operations: insert, delete, get, set, size, etc., but with different performance characteristics.\n2.5.2 Interpretation as a Specialized ADT In certain educational or analytical contexts, a Linked List ADT is treated as a specialized abstract data type, with the following defining properties:\nNodes are connected by pointers Sequential access only (no random access) Dynamic size Emphasis on structural behaviors such as node traversal, insertion at head, etc. This viewpoint is helpful when comparing Singly, Doubly, and Circular variants, each of which may have their own formal specification and interface.\nIn this perspectives, the List ADT is further divided into two concrete subtypes depending on the implementation strategy: Array List ADT and Linked List ADT.\n1. Array List ADT The list is implemented using a contiguous block of memory (array-based). Characteristics: Contiguous memory layout O(1) time for random access O(n) time for insertion/deletion at arbitrary positions Usually fixed or dynamically resized capacity 2. Linked List ADT The list is implemented using linked nodes in non-contiguous memory. Characteristics: Non-contiguous memory layout O(n) time for access O(1) time for insertion/deletion at known positions Requires extra memory for storing pointers Summary While both are implementations of the same abstract List ADT, they are sometimes treated as sub-abstract types for practical analysis. This distinction is useful when:\nComparing time/space complexity Understanding implementation trade-offs Selecting an appropriate structure for a given use case Formally, both Array List and Linked List are concrete representations (not distinct ADTs), but this split is pedagogically(교육학적으로) and practically meaningful.\nWhile a linked list is typically considered an implementation of the List ADT, it can also be analyzed as a specialized ADT in its own right when the linked structure becomes an essential part of the abstraction.\nWhether a linked list is treated as an implementation or as an ADT, it is clear that a linked list is closely related to the List ADT and shares its core properties.\n[To the part 02…]\n",
+  "wordCount" : "2561",
+  "inLanguage": "en",
+  "datePublished": "2025-06-02T14:32:06+09:00",
+  "dateModified": "2025-06-02T14:32:06+09:00",
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://Byngjoon.github.io/blog/posts/linked-list-adt/"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Hyungtae",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://Byngjoon.github.io/blog/favicon.ico"
+    }
+  }
+}
+</script>
+</head>
+
+<body class="" id="top">
+<script>
+    if (localStorage.getItem("pref-theme") === "dark") {
+        document.body.classList.add('dark');
+    } else if (localStorage.getItem("pref-theme") === "light") {
+        document.body.classList.remove('dark')
+    } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+        document.body.classList.add('dark');
+    }
+
+</script>
+
+<header class="header">
+    <nav class="nav">
+        <div class="logo">
+            <a href="https://Byngjoon.github.io/blog/" accesskey="h" title="Hyungtae (Alt + H)">Hyungtae</a>
+            <div class="logo-switches">
+                <button id="theme-toggle" accesskey="t" title="(Alt + T)" aria-label="Toggle theme">
+                    <svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                    </svg>
+                    <svg id="sun" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="5"></circle>
+                        <line x1="12" y1="1" x2="12" y2="3"></line>
+                        <line x1="12" y1="21" x2="12" y2="23"></line>
+                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                        <line x1="1" y1="12" x2="3" y2="12"></line>
+                        <line x1="21" y1="12" x2="23" y2="12"></line>
+                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                    </svg>
+                </button>
+            </div>
+        </div>
+        <ul id="menu">
+            <li>
+                <a href="https://Byngjoon.github.io/blog/categories/" title="Categories">
+                    <span>Categories</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://Byngjoon.github.io/blog/tags/" title="Tags">
+                    <span>Tags</span>
+                </a>
+            </li>
+        </ul>
+    </nav>
+</header>
+<main class="main">
+
+<article class="post-single">
+  <header class="post-header">
+    
+    <h1 class="post-title entry-hint-parent">
+      [Data Structures] [02] List ADT and Linked List Implementation Part 01
+    </h1>
+    <div class="post-description">
+      Understanding the List Abstract Data Type in Data Structures and Its Implementation Using Linked Lists in C
+    </div>
+    <div class="post-meta"><span title='2025-06-02 14:32:06 +0900 KST'>June 2, 2025</span>&nbsp;·&nbsp;13 min
+
+</div>
+  </header> <div class="toc">
+    <details >
+        <summary accesskey="c" title="(Alt + C)">
+            <span class="details">Table of Contents</span>
+        </summary>
+
+        <div class="inner"><ul>
+                <li>
+                    <a href="#chapter-02-list-adt-and-linked-list-implementation" aria-label="Chapter 02. List ADT and Linked List Implementation">Chapter 02. List ADT and Linked List Implementation</a><ul>
+                        
+                <li>
+                    <a href="#contents" aria-label="Contents">Contents</a></li>
+                <li>
+                    <a href="#section-21-what-is-the-list-adt" aria-label="Section 2.1. What Is the List ADT?">Section 2.1. What Is the List ADT?</a><ul>
+                        
+                <li>
+                    <a href="#211-definition-of-the-list-adt" aria-label="2.1.1. Definition of the List ADT">2.1.1. Definition of the List ADT</a></li>
+                <li>
+                    <a href="#212-list-adt-specification" aria-label="2.1.2. List ADT Specification">2.1.2. List ADT Specification</a></li>
+                <li>
+                    <a href="#213-when-to-use-list-adt" aria-label="2.1.3. When to Use List ADT">2.1.3. When to Use List ADT</a></li></ul>
+                </li>
+                <li>
+                    <a href="#section-22-array-adt-vs-list-adt" aria-label="Section 2.2. Array ADT vs List ADT">Section 2.2. Array ADT vs List ADT</a><ul>
+                        
+                <li>
+                    <a href="#221-conceptual-comparison" aria-label="2.2.1. Conceptual Comparison">2.2.1. Conceptual Comparison</a></li>
+                <li>
+                    <a href="#222-example-operation-differences" aria-label="2.2.2. Example Operation Differences">2.2.2. Example Operation Differences</a></li>
+                <li>
+                    <a href="#223-when-to-use-each-adt" aria-label="2.2.3. When to Use Each ADT">2.2.3. When to Use Each ADT</a></li>
+                <li>
+                    <a href="#224-summary" aria-label="2.2.4. Summary">2.2.4. Summary</a></li></ul>
+                </li>
+                <li>
+                    <a href="#section-23-what-is-an-array-list" aria-label="Section 2.3. What Is an Array List?">Section 2.3. What Is an Array List?</a><ul>
+                        
+                <li>
+                    <a href="#231-definition" aria-label="2.3.1. Definition">2.3.1. Definition</a></li>
+                <li>
+                    <a href="#232-key-points" aria-label="2.3.2 Key Points">2.3.2 Key Points</a></li>
+                <li>
+                    <a href="#233-why-contiguous-memory-is-required-for-array-lists" aria-label="2.3.3. Why Contiguous Memory Is Required for Array Lists">2.3.3. Why Contiguous Memory Is Required for Array Lists</a></li>
+                <li>
+                    <a href="#234-abstract-view" aria-label="2.3.4. Abstract View">2.3.4. Abstract View</a></li>
+                <li>
+                    <a href="#235-when-to-use" aria-label="2.3.5. When to Use">2.3.5. When to Use</a></li>
+                <li>
+                    <a href="#236-example-of-implementation-in-c" aria-label="2.3.6. Example of implementation in C">2.3.6. Example of implementation in C</a></li></ul>
+                </li>
+                <li>
+                    <a href="#section-24-what-is-a-linked-list" aria-label="Section 2.4. What Is a Linked List?">Section 2.4. What Is a Linked List?</a><ul>
+                        
+                <li>
+                    <a href="#241-basic-concepts" aria-label="2.4.1. Basic Concepts">2.4.1. Basic Concepts</a></li>
+                <li>
+                    <a href="#242-key-points" aria-label="2.4.2. Key Points">2.4.2. Key Points</a></li>
+                <li>
+                    <a href="#243-abstract-view" aria-label="2.4.3. Abstract View">2.4.3. Abstract View</a></li>
+                <li>
+                    <a href="#244-comparison-to-array-list" aria-label="2.4.4. Comparison to Array List">2.4.4. Comparison to Array List</a></li>
+                <li>
+                    <a href="#245-when-to-use" aria-label="2.4.5. When to Use">2.4.5. When to Use</a></li>
+                <li>
+                    <a href="#246-summary" aria-label="2.4.6. Summary">2.4.6. Summary</a></li></ul>
+                </li>
+                <li>
+                    <a href="#25-is-a-linked-list-an-adt-or-an-implementation" aria-label="2.5. Is a Linked List an ADT or an Implementation?">2.5. Is a Linked List an ADT or an Implementation?</a><ul>
+                        
+                <li>
+                    <a href="#251-interpretation-as-an-implementation" aria-label="2.5.1 Interpretation as an Implementation">2.5.1 Interpretation as an Implementation</a></li>
+                <li>
+                    <a href="#252-interpretation-as-a-specialized-adt" aria-label="2.5.2 Interpretation as a Specialized ADT">2.5.2 Interpretation as a Specialized ADT</a><ul>
+                        
+                <li>
+                    <a href="#1-array-list-adt" aria-label="1. Array List ADT">1. Array List ADT</a></li>
+                <li>
+                    <a href="#2-linked-list-adt" aria-label="2. Linked List ADT">2. Linked List ADT</a></li>
+                <li>
+                    <a href="#summary" aria-label="Summary">Summary</a>
+                </li>
+            </ul>
+            </li>
+            </ul>
+            </li>
+            </ul>
+            </li>
+            </ul>
+        </div>
+    </details>
+</div>
+
+  <div class="post-content"><h1 id="chapter-02-list-adt-and-linked-list-implementation">Chapter 02. List ADT and Linked List Implementation<a hidden class="anchor" aria-hidden="true" href="#chapter-02-list-adt-and-linked-list-implementation">#</a></h1>
+<blockquote>
+<p><strong>Outline:</strong> We study the abstract List ADT and its implementation using Linked Lists. This includes singly, doubly, and circular linked lists, their operations, and performance trade-offs compared to array-based lists.</p></blockquote>
+<hr>
+<h2 id="contents">Contents<a hidden class="anchor" aria-hidden="true" href="#contents">#</a></h2>
+<ul>
+<li><a href="#section-21-what-is-the-list-adt">2.1. What Is the List ADT?</a></li>
+<li><a href="#section-22-array-adt-vs-list-adt">2.2. Array ADT vs List ADT</a></li>
+<li><a href="#section-23-what-is-an-array-list">2.3. What Is an Array List?</a></li>
+<li><a href="#section-24-what-is-a-linked-list">2.4. What Is a Linked List?</a></li>
+<li><a href="#section-25-is-a-linked-list-an-adt-or-an-implementation">2.5. Is a Linked List an ADT or an Implementation?</a></li>
+<li><a href="#section-26-why-use-linked-lists">2.6. Why Use Linked Lists?</a></li>
+<li><a href="#section-27-singly-linked-list">2.7. Singly Linked List</a></li>
+<li><a href="#section-28-doubly-linked-list">2.8. Doubly Linked List</a></li>
+<li><a href="#section-29-circular-linked-list">2.9. Circular Linked List</a></li>
+<li><a href="#section-210-linked-list-operations-in-c">2.10. Linked List Operations in C</a></li>
+<li><a href="#section-211-time-and-space-complexity">2.11. Time and Space Complexity</a></li>
+<li><a href="#section-212-array-based-list-vs-linked-list">2.12. Array-based List vs Linked List</a></li>
+<li><a href="#section-213-common-interview-questions-on-linked-lists">2.13. Common Interview Questions on Linked Lists</a></li>
+</ul>
+<hr>
+<h2 id="section-21-what-is-the-list-adt">Section 2.1. What Is the List ADT?<a hidden class="anchor" aria-hidden="true" href="#section-21-what-is-the-list-adt">#</a></h2>
+<h3 id="211-definition-of-the-list-adt">2.1.1. Definition of the List ADT<a hidden class="anchor" aria-hidden="true" href="#211-definition-of-the-list-adt">#</a></h3>
+<p>The <strong>List Abstract Data Type (ADT)</strong> represents a <strong>linear</strong>, <strong>ordered</strong> collection of elements, where the position of each element matters.<br>
+It supports a set of abstract operations such as insertion, deletion, and traversal.</p>
+<blockquote>
+<p>Unlike stacks or queues, a list allows access and modification at <strong>arbitrary positions</strong>, not just the front or rear.</p></blockquote>
+<hr>
+<p><strong>Essential Properties of List ADT</strong></p>
+<table>
+  <thead>
+      <tr>
+          <th>Property</th>
+          <th>Description</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td><strong>Linear Order</strong></td>
+          <td>Elements have a specific order from first to last</td>
+      </tr>
+      <tr>
+          <td><strong>Position-based</strong></td>
+          <td>Operations can refer to specific positions (e.g., index)</td>
+      </tr>
+      <tr>
+          <td><strong>Variable Size</strong></td>
+          <td>Can grow or shrink dynamically</td>
+      </tr>
+  </tbody>
+</table>
+<hr>
+<h3 id="212-list-adt-specification">2.1.2. List ADT Specification<a hidden class="anchor" aria-hidden="true" href="#212-list-adt-specification">#</a></h3>
+<p>A <strong>List ADT</strong> is a linear collection of elements with a <strong>finite, ordered sequence</strong>.<br>
+Each element has a position, and the list supports both <strong>value-based</strong> and <strong>position-based</strong> operations.</p>
+<hr>
+<ul>
+<li><strong>Object:</strong><br>
+Let <code>L</code> be a list of elements <code>⟨e₀, e₁, ..., eₙ₋₁⟩</code>.</li>
+</ul>
+<table>
+  <thead>
+      <tr>
+          <th>Component</th>
+          <th>Description</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td><code>L[i]</code></td>
+          <td>Element at index <code>i</code>, where <code>0 ≤ i &lt; size(L)</code></td>
+      </tr>
+      <tr>
+          <td><code>size(L)</code></td>
+          <td>Number of elements in the list</td>
+      </tr>
+      <tr>
+          <td><code>L.empty</code></td>
+          <td>Indicates whether the list is empty</td>
+      </tr>
+  </tbody>
+</table>
+<blockquote>
+<p><strong>Note:</strong> In the context of Abstract Data Types (ADTs), an object component represents an <em>abstract property</em>, not a <em>concrete field</em>.</p>
+<ul>
+<li><code>size(L)</code>: This is a logical property that is fundamental to many operations. In actual implementations, it may be stored explicitly(명시적으로) as a field (e.g., <code>L.size</code>).</li>
+<li><code>L.empty</code>: This abstract property can be represented as a function such as <code>isEmpty(L)</code> in implementation.</li>
+</ul></blockquote>
+<hr>
+<ul>
+<li>
+<p><strong>Operations:</strong></p>
+<ul>
+<li>
+<p><code>create()</code><br>
+::= Initializes and returns an empty list.</p>
+</li>
+<li>
+<p><code>insert(L, i, x)</code><br>
+::= Inserts element <code>x</code> at index <code>i</code> in list <code>L</code>.</p>
+</li>
+<li>
+<p><code>delete(L, i)</code><br>
+::= Deletes the element at index <code>i</code> from list <code>L</code>.</p>
+</li>
+<li>
+<p><code>get(L, i)</code><br>
+::= Returns the element at index <code>i</code> in list <code>L</code>.</p>
+</li>
+<li>
+<p><code>set(L, i, x)</code><br>
+::= Replaces the element at index <code>i</code> with <code>x</code> in list <code>L</code>.</p>
+</li>
+<li>
+<p><code>traverse(L)</code><br>
+::= Visits and processes all elements in list <code>L</code> from start to end.</p>
+</li>
+<li>
+<p><code>search(L, x)</code><br>
+::= Returns the index of element <code>x</code> in list <code>L</code>, or -1 if not found.</p>
+</li>
+<li>
+<p><code>size(L)</code><br>
+::= Returns the total number of elements in list <code>L</code>.</p>
+</li>
+<li>
+<p><code>isEmpty(L)</code><br>
+::= Returns true if list <code>L</code> contains no elements; otherwise false.</p>
+</li>
+</ul>
+</li>
+</ul>
+<blockquote>
+<p>These operations define the abstract behavior of a list, regardless of its underlying implementation.</p></blockquote>
+<hr>
+<p><strong>Summary of operations</strong></p>
+<table>
+  <thead>
+      <tr>
+          <th>Operation</th>
+          <th>Time Complexity</th>
+          <th>Notes</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td><code>create()</code></td>
+          <td>O(1)</td>
+          <td>Constant-time initialization</td>
+      </tr>
+      <tr>
+          <td><code>insert(i)</code></td>
+          <td>O(n)</td>
+          <td>Depends on implementation; O(1) for head in linked list</td>
+      </tr>
+      <tr>
+          <td><code>delete(i)</code></td>
+          <td>O(n)</td>
+          <td>May require traversal to index</td>
+      </tr>
+      <tr>
+          <td><code>get(i)</code></td>
+          <td>O(n) or O(1)</td>
+          <td>O(1) for array, O(n) for linked list</td>
+      </tr>
+      <tr>
+          <td><code>set(i)</code></td>
+          <td>O(n) or O(1)</td>
+          <td>Same as above</td>
+      </tr>
+      <tr>
+          <td><code>search(x)</code></td>
+          <td>O(n)</td>
+          <td>Linear search</td>
+      </tr>
+      <tr>
+          <td><code>traverse()</code></td>
+          <td>O(n)</td>
+          <td>Visit all elements</td>
+      </tr>
+  </tbody>
+</table>
+<blockquote>
+<p>Note: These complexities depend on the <strong>underlying implementation</strong>:</p>
+<ul>
+<li><strong>Array List</strong> → Fast access (<code>O(1)</code>) but expensive insert/delete</li>
+<li><strong>Linked List</strong> → Efficient insert/delete (<code>O(1)</code> at head), but slow access (<code>O(n)</code>)</li>
+</ul></blockquote>
+<hr>
+<p><strong>Summary</strong><br>
+The List ADT defines a flexible structure for managing linear data.<br>
+Its abstract operations are common across all implementations, but <strong>their efficiency varies</strong> by choice of data structure.</p>
+<hr>
+<h3 id="213-when-to-use-list-adt">2.1.3. When to Use List ADT<a hidden class="anchor" aria-hidden="true" href="#213-when-to-use-list-adt">#</a></h3>
+<p>The List ADT is useful when:</p>
+<ul>
+<li>You need a flexible, linear structure to insert/delete at arbitrary positions</li>
+<li>You don’t know the number of elements in advance</li>
+<li>The order of elements is important</li>
+</ul>
+<hr>
+<h2 id="section-22-array-adt-vs-list-adt">Section 2.2. Array ADT vs List ADT<a hidden class="anchor" aria-hidden="true" href="#section-22-array-adt-vs-list-adt">#</a></h2>
+<h3 id="221-conceptual-comparison">2.2.1. Conceptual Comparison<a hidden class="anchor" aria-hidden="true" href="#221-conceptual-comparison">#</a></h3>
+<p>The <strong>Array ADT</strong> and the <strong>List ADT</strong> are both abstract data types used to model linear collections of elements.<br>
+However, they differ in flexibility, memory behavior, and supported operations.</p>
+<table>
+  <thead>
+      <tr>
+          <th>Feature</th>
+          <th>Array ADT</th>
+          <th>List ADT</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td><strong>Structure</strong></td>
+          <td>Indexed sequence</td>
+          <td>Ordered collection</td>
+      </tr>
+      <tr>
+          <td><strong>Size</strong></td>
+          <td>Fixed at creation</td>
+          <td>Dynamic (can grow/shrink)</td>
+      </tr>
+      <tr>
+          <td><strong>Access</strong></td>
+          <td>Random access by index</td>
+          <td>Sequential access by traversal</td>
+      </tr>
+      <tr>
+          <td><strong>Indexing Support</strong></td>
+          <td>Required (0-based integer index)</td>
+          <td>Optional; defined by position conceptually</td>
+      </tr>
+      <tr>
+          <td><strong>Insertion/Deletion</strong></td>
+          <td>Inefficient except at end (due to shifting)</td>
+          <td>Efficient at arbitrary positions</td>
+      </tr>
+      <tr>
+          <td><strong>Element Type</strong></td>
+          <td>Homogeneous (same type)</td>
+          <td>Typically homogeneous (but not strictly required)</td>
+      </tr>
+      <tr>
+          <td><strong>Abstraction Level</strong></td>
+          <td>Abstract model, not tied to physical memory</td>
+          <td>Same – logical model, memory-independent</td>
+      </tr>
+  </tbody>
+</table>
+<blockquote>
+<p><strong>Note:</strong> Both ADTs define logical models for organizing data.<br>
+Their differences lie in access patterns, mutability, and structural flexibility—not in implementation.</p></blockquote>
+<hr>
+<h3 id="222-example-operation-differences">2.2.2. Example Operation Differences<a hidden class="anchor" aria-hidden="true" href="#222-example-operation-differences">#</a></h3>
+<table>
+  <thead>
+      <tr>
+          <th>Operation</th>
+          <th>Array ADT</th>
+          <th>List ADT</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td><code>insert(A, i, x)</code></td>
+          <td>O(n) – shift required</td>
+          <td>O(1) at head (if Linked List)</td>
+      </tr>
+      <tr>
+          <td><code>delete(A, i)</code></td>
+          <td>O(n) – shift required</td>
+          <td>O(1) at head (if Linked List)</td>
+      </tr>
+      <tr>
+          <td><code>get(A, i)</code></td>
+          <td>O(1) – direct access</td>
+          <td>O(n) – must traverse from front</td>
+      </tr>
+      <tr>
+          <td><code>size(A)</code></td>
+          <td>O(1)</td>
+          <td>O(1) or O(n), depending on implementation</td>
+      </tr>
+  </tbody>
+</table>
+<hr>
+<h3 id="223-when-to-use-each-adt">2.2.3. When to Use Each ADT<a hidden class="anchor" aria-hidden="true" href="#223-when-to-use-each-adt">#</a></h3>
+<ul>
+<li>
+<p><strong>Use Array ADT</strong>:</p>
+<ul>
+<li>When the number of elements is known in advance</li>
+<li>When constant-time access by index is required</li>
+<li>When memory locality matters (e.g., cache-friendly)</li>
+</ul>
+</li>
+<li>
+<p><strong>Use List ADT</strong>:</p>
+<ul>
+<li>When the number of elements changes frequently</li>
+<li>When insertions and deletions occur frequently at arbitrary positions</li>
+<li>When you want to avoid resizing overhead</li>
+</ul>
+</li>
+</ul>
+<hr>
+<h3 id="224-summary">2.2.4. Summary<a hidden class="anchor" aria-hidden="true" href="#224-summary">#</a></h3>
+<ul>
+<li>The <strong>Array ADT</strong> is a specialized form of the List ADT with additional constraints:
+<ul>
+<li>Fixed size</li>
+<li>Contiguous conceptual layout</li>
+<li>Fast indexed access</li>
+</ul>
+</li>
+<li>The <strong>List ADT</strong> is more general and abstract, supporting a wider variety of implementations such as <strong>linked lists</strong>, <strong>array lists</strong>, etc.</li>
+</ul>
+<blockquote>
+<p>In short, <strong>Array ADT = List ADT + Fixed Size + Homogeneous Index-Based Access Model</strong>.</p></blockquote>
+<hr>
+<h2 id="section-23-what-is-an-array-list">Section 2.3. What Is an Array List?<a hidden class="anchor" aria-hidden="true" href="#section-23-what-is-an-array-list">#</a></h2>
+<h3 id="231-definition">2.3.1. Definition<a hidden class="anchor" aria-hidden="true" href="#231-definition">#</a></h3>
+<p>An <strong>Array List</strong> is a <strong>concrete implementation</strong> of the List ADT using a <strong>contiguous block of memory</strong>, typically realized as an underlying array.<br>
+It supports <strong>index-based access</strong> and provides <strong>dynamic resizing</strong> when capacity is exceeded.</p>
+<p>Internally, an array list maintains two separate concepts:</p>
+<ul>
+<li><strong>Size</strong> (<code>n</code>): the current number of elements stored</li>
+<li><strong>Capacity</strong> (<code>c</code>): the maximum number of elements the current array can hold</li>
+</ul>
+<hr>
+<h3 id="232-key-points">2.3.2 Key Points<a hidden class="anchor" aria-hidden="true" href="#232-key-points">#</a></h3>
+<p><strong>Core Properties</strong></p>
+<table>
+  <thead>
+      <tr>
+          <th>Property</th>
+          <th>Description</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td><strong>Underlying Structure</strong></td>
+          <td>Array (contiguous memory)</td>
+      </tr>
+      <tr>
+          <td><strong>Resizable</strong></td>
+          <td>Grows (and sometimes shrinks) as needed</td>
+      </tr>
+      <tr>
+          <td><strong>Indexed Access</strong></td>
+          <td>Provides fast O(1) access via array indexing</td>
+      </tr>
+      <tr>
+          <td><strong>Insert/Delete</strong></td>
+          <td>Costly at arbitrary positions due to element shifting</td>
+      </tr>
+      <tr>
+          <td><strong>Capacity and Size</strong></td>
+          <td>Maintains separate notions of logical size and capacity</td>
+      </tr>
+  </tbody>
+</table>
+<hr>
+<p><strong>Key Differences from Related Structures:</strong></p>
+<table>
+  <thead>
+      <tr>
+          <th>Comparison Target</th>
+          <th>Array List vs Target</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td><strong>Static Array</strong></td>
+          <td>Array List resizes dynamically; static array does not</td>
+      </tr>
+      <tr>
+          <td><strong>Linked List</strong></td>
+          <td>Array List provides O(1) indexed access; linked list provides O(1) insertion/deletion (at ends)</td>
+      </tr>
+      <tr>
+          <td><strong>Array ADT</strong></td>
+          <td>Array ADT is abstract; Array List is a concrete realization with resizing strategy</td>
+      </tr>
+  </tbody>
+</table>
+<hr>
+<p><strong>Advantages and Limitations</strong></p>
+<table>
+  <thead>
+      <tr>
+          <th>Aspect</th>
+          <th>Advantage</th>
+          <th>Limitation</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td><strong>Access</strong></td>
+          <td>Constant-time indexed access (O(1))</td>
+          <td></td>
+      </tr>
+      <tr>
+          <td><strong>Insertion (end)</strong></td>
+          <td>Amortized O(1) when appending at the end</td>
+          <td>Reallocation may be costly in some scenarios</td>
+      </tr>
+      <tr>
+          <td><strong>Insertion (middle)</strong></td>
+          <td>Requires shifting elements (O(n))</td>
+          <td></td>
+      </tr>
+      <tr>
+          <td><strong>Memory Efficiency</strong></td>
+          <td>Pre-allocated space reduces frequent copying</td>
+          <td>May use extra space due to reserved capacity</td>
+      </tr>
+  </tbody>
+</table>
+<hr>
+<h3 id="233-why-contiguous-memory-is-required-for-array-lists">2.3.3. Why Contiguous Memory Is Required for Array Lists<a hidden class="anchor" aria-hidden="true" href="#233-why-contiguous-memory-is-required-for-array-lists">#</a></h3>
+<p>Array List implementations are based on arrays and therefore <strong>require elements to be stored in contiguous memory</strong>. This is an essential property that enables efficient index-based access and memory operations.</p>
+<hr>
+<p><strong>Key Reasons</strong></p>
+<table>
+  <thead>
+      <tr>
+          <th>Reason</th>
+          <th>Explanation</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td><strong>Indexed Access in O(1)</strong></td>
+          <td>Given index <code>i</code>, address = <code>base + i × size</code>; works only with contiguous layout</td>
+      </tr>
+      <tr>
+          <td><strong>Efficient Resizing</strong></td>
+          <td>Data must be copied to a new array during reallocation; contiguous memory is needed</td>
+      </tr>
+      <tr>
+          <td><strong>CPU Cache Efficiency</strong></td>
+          <td>Sequential layout improves spatial locality and speeds up traversal</td>
+      </tr>
+      <tr>
+          <td><strong>Language-level Constraints</strong></td>
+          <td>Array-based structures in C/C++/Java are natively contiguous</td>
+      </tr>
+  </tbody>
+</table>
+<hr>
+<p><strong>Address Calculation Example</strong></p>
+<pre><code>address_of(arr[i]) = base_address + i × sizeof(element)
+</code></pre>
+<p>This formula only works if all elements are laid out continuously in memory.</p>
+<hr>
+<p><strong>Comparison</strong></p>
+<table>
+  <thead>
+      <tr>
+          <th>Structure</th>
+          <th>Memory Layout</th>
+          <th>Indexed Access</th>
+          <th>Dynamic Resizing</th>
+          <th>Cache Efficiency</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td><strong>Array List</strong></td>
+          <td>Contiguous (Required)</td>
+          <td>O(1)</td>
+          <td>Yes (with copy)</td>
+          <td>High</td>
+      </tr>
+      <tr>
+          <td>Linked List</td>
+          <td>Non-contiguous</td>
+          <td>O(n)</td>
+          <td>Yes (node-based)</td>
+          <td>Low</td>
+      </tr>
+  </tbody>
+</table>
+<hr>
+<p><strong>Summary</strong></p>
+<p>Contiguous memory layout is <strong>non-negotiable</strong> for array lists. It directly enables:</p>
+<ul>
+<li>Constant-time random access (<code>get(i)</code>, <code>set(i, x)</code>)</li>
+<li>Fast copy and reallocation for dynamic growth</li>
+<li>Improved performance due to better cache usage</li>
+</ul>
+<hr>
+<h3 id="234-abstract-view">2.3.4. Abstract View<a hidden class="anchor" aria-hidden="true" href="#234-abstract-view">#</a></h3>
+<p>Let <code>A</code> be an array list of size <code>n</code> and capacity <code>c</code>.</p>
+<ul>
+<li>Elements: <code>⟨A[0], A[1], ..., A[n-1]⟩</code></li>
+<li>Capacity: Total allocated space (<code>c ≥ n</code>)</li>
+<li>Size: Number of actual elements stored (<code>n ≤ c</code>)</li>
+</ul>
+<p>Resize Strategy (typical):<br>
+When size <code>n</code> reaches capacity <code>c</code> (i.e., <code>n == c</code>), the array list <strong>automatically resizes</strong> by:</p>
+<ol>
+<li>Allocating a larger block of memory (commonly 2× the previous capacity),</li>
+<li>Copying all existing elements to the new array,</li>
+<li>Releasing the old memory,</li>
+<li>Updating the internal reference to the new array.</li>
+</ol>
+<blockquote>
+<p>It bridges the gap between fixed-size arrays and flexible lists by resizing the array when necessary.</p></blockquote>
+<hr>
+<h3 id="235-when-to-use">2.3.5. When to Use<a hidden class="anchor" aria-hidden="true" href="#235-when-to-use">#</a></h3>
+<p>Use an <strong>Array List</strong> when:</p>
+<ul>
+<li>You need frequent <strong>random access</strong> (e.g., get/set by index)</li>
+<li>The number of elements changes, but not drastically</li>
+<li>You prefer simpler memory management over fine-grained control</li>
+</ul>
+<p>Avoid when:</p>
+<ul>
+<li>Frequent insertions/deletions occur at arbitrary positions</li>
+<li>Predictable memory usage is critical (due to resizing overhead)</li>
+</ul>
+<hr>
+<p><strong>Summary</strong><br>
+Array List is a hybrid between arrays and lists:<br>
+It retains fast indexed access while offering dynamic growth, making it ideal for many general-purpose use cases.</p>
+<hr>
+<h3 id="236-example-of-implementation-in-c">2.3.6. Example of implementation in C<a hidden class="anchor" aria-hidden="true" href="#236-example-of-implementation-in-c">#</a></h3>
+<hr>
+<h2 id="section-24-what-is-a-linked-list">Section 2.4. What Is a Linked List?<a hidden class="anchor" aria-hidden="true" href="#section-24-what-is-a-linked-list">#</a></h2>
+<h3 id="241-basic-concepts">2.4.1. Basic Concepts<a hidden class="anchor" aria-hidden="true" href="#241-basic-concepts">#</a></h3>
+<p>A <strong>linked list</strong> is a concrete implementation of the list ADT, in which elements (called <strong>nodes</strong>) are connected by reference (like <strong>pointers</strong>), not stored contiguously in memory like array-based lists. Each node contains two components:</p>
+<ul>
+<li><strong>Data</strong>: the element’s value (i.e., the value stored in the node).</li>
+<li><strong>Link</strong>: a reference (like pointer) to the next(or previous) node in the list.</li>
+</ul>
+<blockquote>
+<p>It defines a collection of elements arranged in a <strong>linear sequence</strong>.</p></blockquote>
+<hr>
+<p><strong>Basic node structure:</strong></p>
+<pre><code>⟨data₁, next₁⟩ → ⟨data₂, next₂⟩ → ... → ⟨dataₙ, NULL⟩
+</code></pre>
+<hr>
+<p><strong>Variants of Linked List</strong></p>
+<table>
+  <thead>
+      <tr>
+          <th>Type</th>
+          <th>Description</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td><strong>Singly Linked List</strong></td>
+          <td>Each node points to the next only</td>
+      </tr>
+      <tr>
+          <td><strong>Doubly Linked List</strong></td>
+          <td>Each node points to both next and previous</td>
+      </tr>
+      <tr>
+          <td><strong>Circular Linked List</strong></td>
+          <td>Last node points back to the first</td>
+      </tr>
+  </tbody>
+</table>
+<blockquote>
+<p>Other implementations of the List ADT include <strong>Array List</strong>, <strong>Vector (in C++)</strong>, and <strong>Dynamic Arrays</strong>.</p></blockquote>
+<hr>
+<h3 id="242-key-points">2.4.2. Key Points<a hidden class="anchor" aria-hidden="true" href="#242-key-points">#</a></h3>
+<p><strong>Key characteristics:</strong></p>
+<table>
+  <thead>
+      <tr>
+          <th>Feature</th>
+          <th>Description</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>Dynamic memory allocation</td>
+          <td>Nodes are allocated individually on the heap</td>
+      </tr>
+      <tr>
+          <td>Non-contiguous storage</td>
+          <td>Nodes may reside anywhere in memory, linked through pointers</td>
+      </tr>
+      <tr>
+          <td>Variable size</td>
+          <td>The list can grow or shrink during runtime</td>
+      </tr>
+      <tr>
+          <td>Sequential access only</td>
+          <td>No direct indexing; must traverse from head to access an element</td>
+      </tr>
+      <tr>
+          <td>Efficient insert/delete</td>
+          <td>Especially at the beginning (head) or middle, compared to arrays</td>
+      </tr>
+      <tr>
+          <td>Extra memory overhead</td>
+          <td>Each node needs additional space for a pointer field</td>
+      </tr>
+  </tbody>
+</table>
+<hr>
+<p><strong>Limitations</strong></p>
+<ul>
+<li>Accessing an element at a given position requires traversal from the head.</li>
+<li>Extra memory usage due to pointer storage in each node.</li>
+<li>Complex pointer manipulation is error-prone (e.g., memory leaks or dangling pointers).</li>
+</ul>
+<hr>
+<h3 id="243-abstract-view">2.4.3. Abstract View<a hidden class="anchor" aria-hidden="true" href="#243-abstract-view">#</a></h3>
+<ul>
+<li>
+<p><strong>Objects</strong>:<br>
+A sequence of nodes, where each node contains <strong>data</strong> and a <strong>link</strong> (reference) to the next node.</p>
+</li>
+<li>
+<p><strong>Operations</strong>:</p>
+<ul>
+<li>
+<p><code>create()</code><br>
+::= Initializes an empty linked list.</p>
+</li>
+<li>
+<p><code>insert(L, i, x)</code><br>
+::= Inserts element <code>x</code> at position <code>i</code> in linked list <code>L</code>.</p>
+</li>
+<li>
+<p><code>delete(L, i)</code><br>
+::= Deletes the node at position <code>i</code> in linked list <code>L</code>.</p>
+</li>
+<li>
+<p><code>search(L, x)</code><br>
+::= Returns the position of element <code>x</code> in <code>L</code>, if found.</p>
+</li>
+<li>
+<p><code>traverse(L)</code><br>
+::= Visits each node in the list from head to tail.</p>
+</li>
+<li>
+<p><code>isEmpty(L)</code><br>
+::= Returns true if list <code>L</code> has no nodes.</p>
+</li>
+<li>
+<p><code>size(L)</code><br>
+::= Returns the number of nodes in <code>L</code>.</p>
+</li>
+</ul>
+</li>
+</ul>
+<hr>
+<p><strong>Summary</strong></p>
+<table>
+  <thead>
+      <tr>
+          <th>Operation</th>
+          <th>Signature</th>
+          <th>Time Complexity</th>
+          <th>Remarks</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>Create</td>
+          <td><code>create()</code></td>
+          <td>O(1)</td>
+          <td>Initializes an empty list</td>
+      </tr>
+      <tr>
+          <td>Insert</td>
+          <td><code>insert(L, i, x)</code></td>
+          <td>O(n)</td>
+          <td>Efficient at head (O(1)); needs traversal for middle</td>
+      </tr>
+      <tr>
+          <td>Delete</td>
+          <td><code>delete(L, i)</code></td>
+          <td>O(n)</td>
+          <td>Requires traversal to reach index</td>
+      </tr>
+      <tr>
+          <td>Search</td>
+          <td><code>search(L, x)</code></td>
+          <td>O(n)</td>
+          <td>Linear search; returns position if found</td>
+      </tr>
+      <tr>
+          <td>Traverse</td>
+          <td><code>traverse(L)</code></td>
+          <td>O(n)</td>
+          <td>Visits all nodes in sequence</td>
+      </tr>
+      <tr>
+          <td>isEmpty</td>
+          <td><code>isEmpty(L)</code></td>
+          <td>O(1)</td>
+          <td>Checks if head pointer is NULL</td>
+      </tr>
+      <tr>
+          <td>Size</td>
+          <td><code>size(L)</code></td>
+          <td>O(n) or O(1)*</td>
+          <td>O(n) if counted manually; O(1) if size is tracked</td>
+      </tr>
+  </tbody>
+</table>
+<blockquote>
+<p>*If a <code>size</code> field is maintained during insert/delete, the <code>size()</code> operation becomes O(1).
+Note: Position-based operations typically assume <strong>0-based indexing</strong> unless specified otherwise.</p></blockquote>
+<hr>
+<h3 id="244-comparison-to-array-list">2.4.4. Comparison to Array List<a hidden class="anchor" aria-hidden="true" href="#244-comparison-to-array-list">#</a></h3>
+<table>
+  <thead>
+      <tr>
+          <th>Aspect</th>
+          <th>Linked List</th>
+          <th>Array List</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td><strong>Memory layout</strong></td>
+          <td>Non-contiguous</td>
+          <td>Contiguous</td>
+      </tr>
+      <tr>
+          <td><strong>Access time</strong></td>
+          <td>O(n) (sequential access only)</td>
+          <td>O(1) (random access by index)</td>
+      </tr>
+      <tr>
+          <td><strong>Insert/delete</strong></td>
+          <td>O(1) at head; O(n) at arbitrary position</td>
+          <td>O(n) due to shifting elements</td>
+      </tr>
+      <tr>
+          <td><strong>Size</strong></td>
+          <td>Dynamic (no fixed size)</td>
+          <td>Dynamic but involves costly resizing</td>
+      </tr>
+      <tr>
+          <td><strong>Pointer usage</strong></td>
+          <td>Requires extra pointer per node</td>
+          <td>No extra pointer overhead</td>
+      </tr>
+      <tr>
+          <td><strong>Use case</strong></td>
+          <td>Frequent insertions/deletions</td>
+          <td>Frequent indexed access</td>
+      </tr>
+  </tbody>
+</table>
+<hr>
+<p><strong>Summary</strong></p>
+<p>A <strong>linked list</strong> is an efficient structure when frequent <strong>insertions and deletions</strong> are expected, especially when the size of the list is not known in advance.<br>
+However, for fast <strong>indexed access</strong>, array lists are more suitable due to their contiguous memory layout and constant-time indexing.</p>
+<hr>
+<h3 id="245-when-to-use">2.4.5. When to Use<a hidden class="anchor" aria-hidden="true" href="#245-when-to-use">#</a></h3>
+<p>Use a linked list when:</p>
+<ul>
+<li>You need frequent insertions and deletions</li>
+<li>You don’t know the number of elements in advance</li>
+<li>Memory efficiency in terms of resizing is more important than random access</li>
+</ul>
+<p>Avoid when:</p>
+<ul>
+<li>You need fast random access</li>
+<li>Memory overhead from pointers is undesirable</li>
+</ul>
+<hr>
+<h3 id="246-summary">2.4.6. Summary<a hidden class="anchor" aria-hidden="true" href="#246-summary">#</a></h3>
+<ul>
+<li>The Linked List is a flexible, dynamic linear data model.</li>
+<li>It defines a sequence of connected nodes with support for basic list operations.</li>
+<li>Understanding the ADT is essential before diving into specific implementations like singly, doubly, or circular linked lists.</li>
+</ul>
+<hr>
+<h2 id="25-is-a-linked-list-an-adt-or-an-implementation">2.5. Is a Linked List an ADT or an Implementation?<a hidden class="anchor" aria-hidden="true" href="#25-is-a-linked-list-an-adt-or-an-implementation">#</a></h2>
+<p>The term <strong>linked list</strong> is often used in two different contexts:</p>
+<ul>
+<li>As a <strong>concrete implementation</strong> of the <strong>List ADT</strong></li>
+<li>As a <strong>specialized abstract model</strong> when its structural properties are considered essential</li>
+</ul>
+<hr>
+<h3 id="251-interpretation-as-an-implementation">2.5.1 Interpretation as an Implementation<a hidden class="anchor" aria-hidden="true" href="#251-interpretation-as-an-implementation">#</a></h3>
+<p>In most cases, a <strong>linked list</strong> refers to a <strong>non-contiguous, pointer-based implementation</strong> of the more general <strong>List ADT</strong>. It supports the same core operations: <code>insert</code>, <code>delete</code>, <code>get</code>, <code>set</code>, <code>size</code>, etc., but with different performance characteristics.</p>
+<h3 id="252-interpretation-as-a-specialized-adt">2.5.2 Interpretation as a Specialized ADT<a hidden class="anchor" aria-hidden="true" href="#252-interpretation-as-a-specialized-adt">#</a></h3>
+<p>In certain educational or analytical contexts, a <strong>Linked List ADT</strong> is treated as a <strong>specialized abstract data type</strong>, with the following defining properties:</p>
+<ul>
+<li>Nodes are connected by pointers</li>
+<li>Sequential access only (no random access)</li>
+<li>Dynamic size</li>
+<li>Emphasis on structural behaviors such as <strong>node traversal</strong>, <strong>insertion at head</strong>, etc.</li>
+</ul>
+<p>This viewpoint is helpful when comparing <strong>Singly</strong>, <strong>Doubly</strong>, and <strong>Circular</strong> variants, each of which may have their own formal specification and interface.</p>
+<p>In this perspectives, the <strong>List ADT</strong> is further divided into two concrete subtypes depending on the implementation strategy: <strong>Array List ADT</strong> and <strong>Linked List ADT</strong>.</p>
+<hr>
+<h4 id="1-array-list-adt">1. Array List ADT<a hidden class="anchor" aria-hidden="true" href="#1-array-list-adt">#</a></h4>
+<ul>
+<li>The list is implemented using a <strong>contiguous block of memory</strong> (array-based).</li>
+<li>Characteristics:
+<ul>
+<li><strong>Contiguous memory layout</strong></li>
+<li><strong>O(1)</strong> time for random access</li>
+<li><strong>O(n)</strong> time for insertion/deletion at arbitrary positions</li>
+<li>Usually fixed or dynamically resized capacity</li>
+</ul>
+</li>
+</ul>
+<h4 id="2-linked-list-adt">2. Linked List ADT<a hidden class="anchor" aria-hidden="true" href="#2-linked-list-adt">#</a></h4>
+<ul>
+<li>The list is implemented using <strong>linked nodes</strong> in <strong>non-contiguous memory</strong>.</li>
+<li>Characteristics:
+<ul>
+<li><strong>Non-contiguous memory layout</strong></li>
+<li><strong>O(n)</strong> time for access</li>
+<li><strong>O(1)</strong> time for insertion/deletion at known positions</li>
+<li>Requires extra memory for storing pointers</li>
+</ul>
+</li>
+</ul>
+<hr>
+<h4 id="summary">Summary<a hidden class="anchor" aria-hidden="true" href="#summary">#</a></h4>
+<p>While both are implementations of the <strong>same abstract List ADT</strong>, they are sometimes treated as <strong>sub-abstract types</strong> for practical analysis. This distinction is useful when:</p>
+<ul>
+<li>Comparing <strong>time/space complexity</strong></li>
+<li>Understanding <strong>implementation trade-offs</strong></li>
+<li>Selecting an appropriate structure for a given use case</li>
+</ul>
+<p>Formally, both <strong>Array List</strong> and <strong>Linked List</strong> are <strong>concrete representations</strong> (not distinct ADTs), but this split is pedagogically(교육학적으로) and practically meaningful.</p>
+<blockquote>
+<p>While a linked list is typically considered an <em>implementation</em> of the List ADT, it can also be analyzed as a <em>specialized ADT</em> in its own right when the linked structure becomes an essential part of the abstraction.</p></blockquote>
+<blockquote>
+<p>Whether a linked list is treated as an implementation or as an ADT, it is clear that a linked list is closely related to the List ADT and shares its core properties.</p></blockquote>
+<hr>
+<p>[To the part 02&hellip;]</p>
+
+
+  </div>
+
+  <footer class="post-footer">
+    <ul class="post-tags">
+      <li><a href="https://Byngjoon.github.io/blog/tags/data-structures/">Data Structures</a></li>
+    </ul>
+  </footer>
+</article>
+    </main>
+    
+<footer class="footer">
+        <span>&copy; 2025 <a href="https://Byngjoon.github.io/blog/">Hyungtae</a></span> · 
+
+    <span>
+        Powered by
+        <a href="https://gohugo.io/" rel="noopener noreferrer" target="_blank">Hugo</a> &
+        <a href="https://github.com/adityatelange/hugo-PaperMod/" rel="noopener" target="_blank">PaperMod</a>
+    </span>
+</footer>
+<a href="#top" aria-label="go to top" title="Go to Top (Alt + G)" class="top-link" id="top-link" accesskey="g">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 6" fill="currentColor">
+        <path d="M12 6H0l6-6z" />
+    </svg>
+</a>
+
+<script>
+    let menu = document.getElementById('menu')
+    if (menu) {
+        menu.scrollLeft = localStorage.getItem("menu-scroll-position");
+        menu.onscroll = function () {
+            localStorage.setItem("menu-scroll-position", menu.scrollLeft);
+        }
+    }
+
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener("click", function (e) {
+            e.preventDefault();
+            var id = this.getAttribute("href").substr(1);
+            if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView({
+                    behavior: "smooth"
+                });
+            } else {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView();
+            }
+            if (id === "top") {
+                history.replaceState(null, null, " ");
+            } else {
+                history.pushState(null, null, `#${id}`);
+            }
+        });
+    });
+
+</script>
+<script>
+    var mybutton = document.getElementById("top-link");
+    window.onscroll = function () {
+        if (document.body.scrollTop > 800 || document.documentElement.scrollTop > 800) {
+            mybutton.style.visibility = "visible";
+            mybutton.style.opacity = "1";
+        } else {
+            mybutton.style.visibility = "hidden";
+            mybutton.style.opacity = "0";
+        }
+    };
+
+</script>
+<script>
+    document.getElementById("theme-toggle").addEventListener("click", () => {
+        if (document.body.className.includes("dark")) {
+            document.body.classList.remove('dark');
+            localStorage.setItem("pref-theme", 'light');
+        } else {
+            document.body.classList.add('dark');
+            localStorage.setItem("pref-theme", 'dark');
+        }
+    })
+
+</script>
+<script>
+    document.querySelectorAll('pre > code').forEach((codeblock) => {
+        const container = codeblock.parentNode.parentNode;
+
+        const copybutton = document.createElement('button');
+        copybutton.classList.add('copy-code');
+        copybutton.innerHTML = 'copy';
+
+        function copyingDone() {
+            copybutton.innerHTML = 'copied!';
+            setTimeout(() => {
+                copybutton.innerHTML = 'copy';
+            }, 2000);
+        }
+
+        copybutton.addEventListener('click', (cb) => {
+            if ('clipboard' in navigator) {
+                navigator.clipboard.writeText(codeblock.textContent);
+                copyingDone();
+                return;
+            }
+
+            const range = document.createRange();
+            range.selectNodeContents(codeblock);
+            const selection = window.getSelection();
+            selection.removeAllRanges();
+            selection.addRange(range);
+            try {
+                document.execCommand('copy');
+                copyingDone();
+            } catch (e) { };
+            selection.removeRange(range);
+        });
+
+        if (container.classList.contains("highlight")) {
+            container.appendChild(copybutton);
+        } else if (container.parentNode.firstChild == container) {
+            
+        } else if (codeblock.parentNode.parentNode.parentNode.parentNode.parentNode.nodeName == "TABLE") {
+            
+            codeblock.parentNode.parentNode.parentNode.parentNode.parentNode.appendChild(copybutton);
+        } else {
+            
+            codeblock.parentNode.appendChild(copybutton);
+        }
+    });
+</script>
+</body>
+
+</html>
