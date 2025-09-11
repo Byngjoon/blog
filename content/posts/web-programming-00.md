@@ -6,7 +6,7 @@ categories = ["Information Technology/Application Software Development/Web Progr
 tags = ["FrontEnd", "Backend"]
 slug = "introduction-to-web-programming"
 math = true
-draft = false
+draft = true
 +++
 
 # Chapter 00. Introduction to Web Programming

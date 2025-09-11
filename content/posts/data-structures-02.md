@@ -6,7 +6,7 @@ categories = ["Computer Science/Algorithms & Data Structures"]
 tags = ["Data Structures"]
 slug = "linked-list-adt"
 math = true
-draft = false
+draft = true
 +++
 
 # Chapter 02. List ADT and Linked List Implementation

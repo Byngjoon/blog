@@ -6,7 +6,7 @@ categories = ["Information Technology/Application Software Development/Web Progr
 tags = ["Frontend"]
 slug = "html-part-01"
 math = true
-draft = false
+draft = true
 +++
 
 # Chapter 01. Frontend – HTML (Part 01)

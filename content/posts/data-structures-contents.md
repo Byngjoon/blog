@@ -5,7 +5,7 @@ description = ""
 categories = ["Computer Science/Algorithms & Data Structures"]
 tags = ["Data Structures"]
 math = true
-draft = false
+draft = true
 toc = false
 +++
 
@@ -328,10 +328,6 @@ Chapter 10. Practice & Implementation
 - Choosing the right data structure
 - Trade-offs: speed vs memory vs simplicity
 
-## Chapter 12. Practice & Implementation
-- Coding common structures in C
-- Debugging dynamic memory (Valgrind, etc.)
-- LeetCode / 백준 / 프로그래머스 추천 문제
-- Structuring reusable modules in C
+
 
 -->

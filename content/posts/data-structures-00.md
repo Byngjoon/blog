@@ -6,7 +6,7 @@ categories = ["Computer Science/Algorithms & Data Structures"]
 tags = ["Data Structures"]
 slug = "introduction-to-data-structures"
 math = true
-draft = false
+draft = true
 +++
 
 # Chapter 00. Introduction to Data Structures

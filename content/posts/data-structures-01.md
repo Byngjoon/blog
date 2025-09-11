@@ -6,7 +6,7 @@ categories = ["Computer Science/Algorithms & Data Structures"]
 tags = ["Data Structures"]
 slug = "array-adt"
 math = true
-draft = false
+draft = true
 +++
 
 # Chapter 01. Array ADT and Implementation
