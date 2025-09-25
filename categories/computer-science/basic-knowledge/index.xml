@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Computer Science/Basic Knowledge on Hyungtae</title>
+    <link>https://Byngjoon.github.io/blog/categories/computer-science/basic-knowledge/</link>
+    <description>Recent content in Computer Science/Basic Knowledge on Hyungtae</description>
+    <generator>Hugo -- 0.150.0</generator>
+    <language>ko-kr</language>
+    <lastBuildDate>Sun, 21 Sep 2025 14:07:31 +0900</lastBuildDate>
+    <atom:link href="https://Byngjoon.github.io/blog/categories/computer-science/basic-knowledge/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>[Basic Knowledge] [02] Data Representation Part 02</title>
+      <link>https://Byngjoon.github.io/blog/posts/basic-knowledge-02/</link>
+      <pubDate>Sun, 21 Sep 2025 14:07:31 +0900</pubDate>
+      <guid>https://Byngjoon.github.io/blog/posts/basic-knowledge-02/</guid>
+      <description>&lt;h1 id=&#34;chapter-00&#34;&gt;Chapter 00.&lt;/h1&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;Outline:&lt;/strong&gt;&lt;/p&gt;&lt;/blockquote&gt;
+&lt;hr&gt;
+&lt;h2 id=&#34;contents&#34;&gt;Contents&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;&#34;&gt;0.1.&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;h2 id=&#34;topic-03-integers-representation&#34;&gt;Topic 03: Integers Representation&lt;/h2&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;Outline:&lt;/strong&gt; In real world, Human uses decimal system for integer, but computer uses binary system. Therefore, we faces difference between idea and implemetation in computing.&lt;/p&gt;&lt;/blockquote&gt;
+&lt;h3 id=&#34;section-131-unsigned-integer&#34;&gt;Section 1.3.1. Unsigned Integer&lt;/h3&gt;
+&lt;p&gt;Unsigned integer only have greater than and equal to 0 values.&lt;/p&gt;
+&lt;p&gt;Given binary code A. A is w-bit set, $x_i$ is i-th elements of set A. (i = 0, 1, &amp;hellip;) (e.g. if A = {1, 2, 3}, then $x_0 = 3$)&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>[Basic Knowledge] [01] Data Representation Part 01</title>
+      <link>https://Byngjoon.github.io/blog/posts/basic-knowledge-01/</link>
+      <pubDate>Thu, 11 Sep 2025 13:27:31 +0900</pubDate>
+      <guid>https://Byngjoon.github.io/blog/posts/basic-knowledge-01/</guid>
+      <description>&lt;h1 id=&#34;contents&#34;&gt;Contents&lt;/h1&gt;
+&lt;hr&gt;
+&lt;h2 id=&#34;topic-01-bit-binary-digit-and-byte&#34;&gt;Topic 01: Bit (Binary Digit) and Byte&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Definition:&lt;/strong&gt;
+&lt;ul&gt;
+&lt;li&gt;Bit is binary digit. Each bit is &lt;code&gt;0&lt;/code&gt; or &lt;code&gt;1&lt;/code&gt;.&lt;/li&gt;
+&lt;li&gt;Byte is&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;h3 id=&#34;section-111-why-does-computer-use-binary-systems&#34;&gt;Section 1.1.1. Why Does Computer Use Binary Systems?&lt;/h3&gt;
+&lt;p&gt;In computer field, binary systems를 사용하는 가장 큰 이유는 안정적이고 경제적이기 때문이다. 첫번째로 안정성의 측면에서 보자면, computer hardware uses electronic signal for implementation. 이때, electronic signal을 여러 단계로 구분하게 되면 (e.g. 0, 1, 2, and 3) noise에 취약해진다. 반면에 when recognize signal only 두 개 (actually &lt;code&gt;0&lt;/code&gt; or &lt;code&gt;1&lt;/code&gt;), &lt;code&gt;0&lt;/code&gt;은 전압 없음 (0V 근처), &lt;code&gt;1&lt;/code&gt;은 전압 있음 (system에 따라 5V, 3V, etc.)으로 구분하게 되며 noise에 강해진다.
+In the other, binary system 이상의 다진법 체계에서는 회로의 구성이 복잡해지고 noise 안정화가 필요하므로 경제적으로 불리하다. 실제로 binary system은 basic logic gate in boolean algebra (AND, OR, NOT)의 조합으로 많은 회로를 구성할 수 있다.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

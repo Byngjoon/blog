@@ -1,0 +1,852 @@
+<!DOCTYPE html>
+<html lang="en" dir="auto">
+
+<head><meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="robots" content="index, follow">
+<title>[Basic Knowledge] [01] Data Representation Part 01 | Hyungtae</title>
+<meta name="keywords" content="Basic Knowledge">
+<meta name="description" content="Contents
+
+Topic 01: Bit (Binary Digit) and Byte
+
+Definition:
+
+Bit is binary digit. Each bit is 0 or 1.
+Byte is
+
+
+
+
+Section 1.1.1. Why Does Computer Use Binary Systems?
+In computer field, binary systems를 사용하는 가장 큰 이유는 안정적이고 경제적이기 때문이다. 첫번째로 안정성의 측면에서 보자면, computer hardware uses electronic signal for implementation. 이때, electronic signal을 여러 단계로 구분하게 되면 (e.g. 0, 1, 2, and 3) noise에 취약해진다. 반면에 when recognize signal only 두 개 (actually 0 or 1), 0은 전압 없음 (0V 근처), 1은 전압 있음 (system에 따라 5V, 3V, etc.)으로 구분하게 되며 noise에 강해진다.
+In the other, binary system 이상의 다진법 체계에서는 회로의 구성이 복잡해지고 noise 안정화가 필요하므로 경제적으로 불리하다. 실제로 binary system은 basic logic gate in boolean algebra (AND, OR, NOT)의 조합으로 많은 회로를 구성할 수 있다.">
+<meta name="author" content="">
+<link rel="canonical" href="https://Byngjoon.github.io/blog/posts/basic-knowledge-01/">
+<link crossorigin="anonymous" href="/blog/assets/css/stylesheet.f49d66caae9ea0fd43f21f29e71a8d3e284517ed770f2aa86fa012953ad3c9ef.css" integrity="sha256-9J1myq6eoP1D8h8p5xqNPihFF&#43;13Dyqob6ASlTrTye8=" rel="preload stylesheet" as="style">
+<link rel="icon" href="https://Byngjoon.github.io/blog/favicon.ico">
+<link rel="icon" type="image/png" sizes="16x16" href="https://Byngjoon.github.io/blog/favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="https://Byngjoon.github.io/blog/favicon-32x32.png">
+<link rel="apple-touch-icon" href="https://Byngjoon.github.io/blog/apple-touch-icon.png">
+<link rel="mask-icon" href="https://Byngjoon.github.io/blog/safari-pinned-tab.svg">
+<meta name="theme-color" content="#2e2e33">
+<meta name="msapplication-TileColor" content="#2e2e33">
+<link rel="alternate" hreflang="en" href="https://Byngjoon.github.io/blog/posts/basic-knowledge-01/">
+<noscript>
+    <style>
+        #theme-toggle,
+        .top-link {
+            display: none;
+        }
+
+    </style>
+    <style>
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --theme: rgb(29, 30, 32);
+                --entry: rgb(46, 46, 51);
+                --primary: rgb(218, 218, 219);
+                --secondary: rgb(155, 156, 157);
+                --tertiary: rgb(65, 66, 68);
+                --content: rgb(196, 196, 197);
+                --code-block-bg: rgb(46, 46, 51);
+                --code-bg: rgb(55, 56, 62);
+                --border: rgb(51, 51, 51);
+            }
+
+            .list {
+                background: var(--theme);
+            }
+
+            .list:not(.dark)::-webkit-scrollbar-track {
+                background: 0 0;
+            }
+
+            .list:not(.dark)::-webkit-scrollbar-thumb {
+                border-color: var(--theme);
+            }
+        }
+
+    </style>
+</noscript>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"></script>
+<script>
+  window.onload = function () {
+    renderMathInElement(document.body, {
+      delimiters: [
+        { left: "$$", right: "$$", display: true },
+        { left: "$", right: "$", display: false }
+      ]
+    });
+  };
+</script>
+
+<meta property="og:url" content="https://Byngjoon.github.io/blog/posts/basic-knowledge-01/">
+  <meta property="og:site_name" content="Hyungtae">
+  <meta property="og:title" content="[Basic Knowledge] [01] Data Representation Part 01">
+  <meta property="og:description" content="Contents Topic 01: Bit (Binary Digit) and Byte Definition: Bit is binary digit. Each bit is 0 or 1. Byte is Section 1.1.1. Why Does Computer Use Binary Systems? In computer field, binary systems를 사용하는 가장 큰 이유는 안정적이고 경제적이기 때문이다. 첫번째로 안정성의 측면에서 보자면, computer hardware uses electronic signal for implementation. 이때, electronic signal을 여러 단계로 구분하게 되면 (e.g. 0, 1, 2, and 3) noise에 취약해진다. 반면에 when recognize signal only 두 개 (actually 0 or 1), 0은 전압 없음 (0V 근처), 1은 전압 있음 (system에 따라 5V, 3V, etc.)으로 구분하게 되며 noise에 강해진다. In the other, binary system 이상의 다진법 체계에서는 회로의 구성이 복잡해지고 noise 안정화가 필요하므로 경제적으로 불리하다. 실제로 binary system은 basic logic gate in boolean algebra (AND, OR, NOT)의 조합으로 많은 회로를 구성할 수 있다.">
+  <meta property="og:locale" content="ko-kr">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="posts">
+    <meta property="article:published_time" content="2025-09-11T13:27:31+09:00">
+    <meta property="article:modified_time" content="2025-09-11T13:27:31+09:00">
+    <meta property="article:tag" content="Basic Knowledge">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="[Basic Knowledge] [01] Data Representation Part 01">
+<meta name="twitter:description" content="Contents
+
+Topic 01: Bit (Binary Digit) and Byte
+
+Definition:
+
+Bit is binary digit. Each bit is 0 or 1.
+Byte is
+
+
+
+
+Section 1.1.1. Why Does Computer Use Binary Systems?
+In computer field, binary systems를 사용하는 가장 큰 이유는 안정적이고 경제적이기 때문이다. 첫번째로 안정성의 측면에서 보자면, computer hardware uses electronic signal for implementation. 이때, electronic signal을 여러 단계로 구분하게 되면 (e.g. 0, 1, 2, and 3) noise에 취약해진다. 반면에 when recognize signal only 두 개 (actually 0 or 1), 0은 전압 없음 (0V 근처), 1은 전압 있음 (system에 따라 5V, 3V, etc.)으로 구분하게 되며 noise에 강해진다.
+In the other, binary system 이상의 다진법 체계에서는 회로의 구성이 복잡해지고 noise 안정화가 필요하므로 경제적으로 불리하다. 실제로 binary system은 basic logic gate in boolean algebra (AND, OR, NOT)의 조합으로 많은 회로를 구성할 수 있다.">
+
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position":  1 ,
+      "name": "Posts",
+      "item": "https://Byngjoon.github.io/blog/posts/"
+    }, 
+    {
+      "@type": "ListItem",
+      "position":  2 ,
+      "name": "[Basic Knowledge] [01] Data Representation Part 01",
+      "item": "https://Byngjoon.github.io/blog/posts/basic-knowledge-01/"
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "[Basic Knowledge] [01] Data Representation Part 01",
+  "name": "[Basic Knowledge] [01] Data Representation Part 01",
+  "description": "Contents Topic 01: Bit (Binary Digit) and Byte Definition: Bit is binary digit. Each bit is 0 or 1. Byte is Section 1.1.1. Why Does Computer Use Binary Systems? In computer field, binary systems를 사용하는 가장 큰 이유는 안정적이고 경제적이기 때문이다. 첫번째로 안정성의 측면에서 보자면, computer hardware uses electronic signal for implementation. 이때, electronic signal을 여러 단계로 구분하게 되면 (e.g. 0, 1, 2, and 3) noise에 취약해진다. 반면에 when recognize signal only 두 개 (actually 0 or 1), 0은 전압 없음 (0V 근처), 1은 전압 있음 (system에 따라 5V, 3V, etc.)으로 구분하게 되며 noise에 강해진다. In the other, binary system 이상의 다진법 체계에서는 회로의 구성이 복잡해지고 noise 안정화가 필요하므로 경제적으로 불리하다. 실제로 binary system은 basic logic gate in boolean algebra (AND, OR, NOT)의 조합으로 많은 회로를 구성할 수 있다.\n",
+  "keywords": [
+    "Basic Knowledge"
+  ],
+  "articleBody": "Contents Topic 01: Bit (Binary Digit) and Byte Definition: Bit is binary digit. Each bit is 0 or 1. Byte is Section 1.1.1. Why Does Computer Use Binary Systems? In computer field, binary systems를 사용하는 가장 큰 이유는 안정적이고 경제적이기 때문이다. 첫번째로 안정성의 측면에서 보자면, computer hardware uses electronic signal for implementation. 이때, electronic signal을 여러 단계로 구분하게 되면 (e.g. 0, 1, 2, and 3) noise에 취약해진다. 반면에 when recognize signal only 두 개 (actually 0 or 1), 0은 전압 없음 (0V 근처), 1은 전압 있음 (system에 따라 5V, 3V, etc.)으로 구분하게 되며 noise에 강해진다. In the other, binary system 이상의 다진법 체계에서는 회로의 구성이 복잡해지고 noise 안정화가 필요하므로 경제적으로 불리하다. 실제로 binary system은 basic logic gate in boolean algebra (AND, OR, NOT)의 조합으로 많은 회로를 구성할 수 있다.\nSection 1.1.2. What Does Each bit mean? bit hardware Logical 0 off, 0V false 1 on, not 0V true Computer data의 최소 (저장) 단위\nMSB: LSB:\nSection 1.1.3. Bit Manipulations Use Boolean Algebra. True equal to 1 and false equal to 0.\nAND: \u0026 (Ampersand) A \u0026 B = 1 when both A = 1 and B = 1.\n\u0026 0 1 0 0 0 1 0 1 OR: | (Vertical Bar)\nA | B = 1 when at least one of A or B = 1. (when either A = 1 or B = 1)\n| 0 1 0 0 1 1 1 1 NOT: ~ (Tilde)\n~A = 1 when A = 0, and 0 when A = 1. A ~A 0 1 1 0 Exclusive-OR (XOR): ^ (Caret)\nA ^ B = 1 when A not equal to B. (when either A = 1 or B = 1, but not both equal to 1.) ^ 0 1 0 0 1 1 1 0 unsigned char some_function(unsigned char *x, unsigned char *y) { *y = *x ^ *y; *x = *x ^ *y; *y = *x ^ *y; return 0; } temp\nBoolean Algebra Basic Rules\nIdentity Laws (항등법칙) A + 0 = 0 + A = A A · 1 = 1 · A = A Domination Laws (지배법칙) A + 1 = 1 A · 0 = 0 Idempotent Laws (멱등법칙) A + A = A A · A = A Complement Laws (보수법칙) A + A’ = 1 A · A’ = 0 Commutative Laws (교환법칙) A + B = B + A A · B = B · A Associative Laws (결합법칙) (A + B) + C = A + (B + C) (A · B) · C = A · (B · C) Distributive Laws (분배법칙) A · (B + C) = (A · B) + (A · C) A + (B · C) = (A + B) · (A + C) De Morgan’s Laws (드모르간 법칙) (A · B)’ = A’ + B' (A + B)’ = A’ · B' If want more of Boolean Algebra, click here.\nSection 1.1.4. Shift Operations Left Shift: x « y Logical Left Shift and Arithmecit Left Shift Shift bit-vector x left ypositions Throw away extra bits on left Fill with 0’s on right x 11001001 Logical « 2 00100100 Arithmetic « 2 00100100 A « x: $A * 2^x$\nRight Shift: x » y Logical Right Shift Shift bit-vector x right ypositions Throw away extra bits on right Fill with 0’s on left Arithmecit Right Shift Shift bit-vector x right ypositions Throw away extra bits on right Replicate most significant bit on left x 11001001 Logical » 2 00110010 Arithmetic » 2 11110010 A » x: $A * 2^{-x}$\nSection 1.1.5. Bit Vector Section 1.1.6. Hexadecimal Represetation Decimal code: Human-friendly 235, -1, (201)10, etc. Binary code: Computer-friendly 11101011, 11111111, (11001001)2, etc. Hexadecimal code: Intersection 0xED, 0xFF, (C9)16, etc. Hexadecimal Decimal Binary 0 0 0000 1 1 0001 2 2 0010 3 3 0011 4 4 0100 5 5 0101 6 6 0110 7 7 0111 8 8 1000 9 9 1001 A 10 1010 B 11 1011 C 12 1100 D 13 1101 E 14 1110 F 15 1111 Section 1.1.7. What is a Byte? Definition: In mordern processors, Byte is used as 최소 address 단위. 1 Byte is usually 8 bits.\nWord is CPU가 한 번에 처리하기 좋은 단위. For example, Word of 32-bit CPU is 4 Bytes, as known as 32 bits.\nIn early age, the size of Byte는 정해지지 않았다. 그러나 ASCII code를 충분히 담을 수 있음과 동시에 the power of two와 일치하는 8 bits로 크기가 통일되었다. 모호성을 피하기 위해 일부 문서는 octet이라는 표현을 쓰기도 함.\n단위 표기\nPrefix System (접두 체계) Unit Example Definition Common Usage SI (Decimal) 1 KB, 1 MB 1 KB = 1,000 B\n1 MB = 1,000,000 B Networking equipment, storage manufacturers IEC (Binary) 1 KiB, 1 MiB 1 KiB = 1,024 B\n1 MiB = 1,048,576 B Operating systems, programming contexts Recommendation — Use KiB / MiB / GiB for binary units To avoid confusion Topic 02: Character Reprsentation Section 1.2.1. ASCII (American Standard Code for Information Interchange) ",
+  "wordCount" : "831",
+  "inLanguage": "en",
+  "datePublished": "2025-09-11T13:27:31+09:00",
+  "dateModified": "2025-09-11T13:27:31+09:00",
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://Byngjoon.github.io/blog/posts/basic-knowledge-01/"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Hyungtae",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://Byngjoon.github.io/blog/favicon.ico"
+    }
+  }
+}
+</script>
+</head>
+
+<body class="" id="top">
+<script>
+    if (localStorage.getItem("pref-theme") === "dark") {
+        document.body.classList.add('dark');
+    } else if (localStorage.getItem("pref-theme") === "light") {
+        document.body.classList.remove('dark')
+    } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+        document.body.classList.add('dark');
+    }
+
+</script>
+
+<header class="header">
+    <nav class="nav">
+        <div class="logo">
+            <a href="https://Byngjoon.github.io/blog/" accesskey="h" title="Hyungtae (Alt + H)">Hyungtae</a>
+            <div class="logo-switches">
+                <button id="theme-toggle" accesskey="t" title="(Alt + T)" aria-label="Toggle theme">
+                    <svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                    </svg>
+                    <svg id="sun" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="5"></circle>
+                        <line x1="12" y1="1" x2="12" y2="3"></line>
+                        <line x1="12" y1="21" x2="12" y2="23"></line>
+                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                        <line x1="1" y1="12" x2="3" y2="12"></line>
+                        <line x1="21" y1="12" x2="23" y2="12"></line>
+                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                    </svg>
+                </button>
+            </div>
+        </div>
+        <ul id="menu">
+            <li>
+                <a href="https://Byngjoon.github.io/blog/categories/" title="Categories">
+                    <span>Categories</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://Byngjoon.github.io/blog/tags/" title="Tags">
+                    <span>Tags</span>
+                </a>
+            </li>
+        </ul>
+    </nav>
+</header>
+<main class="main">
+
+<article class="post-single">
+  <header class="post-header">
+    
+    <h1 class="post-title entry-hint-parent">
+      [Basic Knowledge] [01] Data Representation Part 01
+      <span class="entry-hint" title="Draft">
+        <svg xmlns="http://www.w3.org/2000/svg" height="35" viewBox="0 -960 960 960" fill="currentColor">
+          <path
+            d="M160-410v-60h300v60H160Zm0-165v-60h470v60H160Zm0-165v-60h470v60H160Zm360 580v-123l221-220q9-9 20-13t22-4q12 0 23 4.5t20 13.5l37 37q9 9 13 20t4 22q0 11-4.5 22.5T862.09-380L643-160H520Zm300-263-37-37 37 37ZM580-220h38l121-122-18-19-19-18-122 121v38Zm141-141-19-18 37 37-18-19Z" />
+        </svg>
+      </span>
+    </h1>
+    <div class="post-meta"><span title='2025-09-11 13:27:31 +0900 KST'>September 11, 2025</span>&nbsp;·&nbsp;4 min
+
+</div>
+  </header> <div class="toc">
+    <details >
+        <summary accesskey="c" title="(Alt + C)">
+            <span class="details">Table of Contents</span>
+        </summary>
+
+        <div class="inner"><ul>
+                <li>
+                    <a href="#contents" aria-label="Contents">Contents</a><ul>
+                        
+                <li>
+                    <a href="#topic-01-bit-binary-digit-and-byte" aria-label="Topic 01: Bit (Binary Digit) and Byte">Topic 01: Bit (Binary Digit) and Byte</a><ul>
+                        
+                <li>
+                    <a href="#section-111-why-does-computer-use-binary-systems" aria-label="Section 1.1.1. Why Does Computer Use Binary Systems?">Section 1.1.1. Why Does Computer Use Binary Systems?</a></li>
+                <li>
+                    <a href="#section-112-what-does-each-bit-mean" aria-label="Section 1.1.2. What Does Each bit mean?">Section 1.1.2. What Does Each bit mean?</a></li>
+                <li>
+                    <a href="#section-113-bit-manipulations" aria-label="Section 1.1.3. Bit Manipulations">Section 1.1.3. Bit Manipulations</a></li>
+                <li>
+                    <a href="#section-114-shift-operations" aria-label="Section 1.1.4. Shift Operations">Section 1.1.4. Shift Operations</a></li>
+                <li>
+                    <a href="#section-115--bit-vector" aria-label="Section 1.1.5.  Bit Vector">Section 1.1.5.  Bit Vector</a></li>
+                <li>
+                    <a href="#section-116-hexadecimal-represetation" aria-label="Section 1.1.6. Hexadecimal Represetation">Section 1.1.6. Hexadecimal Represetation</a></li>
+                <li>
+                    <a href="#section-117-what-is-a-byte" aria-label="Section 1.1.7. What is a Byte?">Section 1.1.7. What is a Byte?</a></li></ul>
+                </li>
+                <li>
+                    <a href="#topic-02-character-reprsentation" aria-label="Topic 02: Character Reprsentation">Topic 02: Character Reprsentation</a><ul>
+                        
+                <li>
+                    <a href="#section-121-ascii-american-standard-code-for-information-interchange" aria-label="Section 1.2.1. ASCII (American Standard Code for Information Interchange)">Section 1.2.1. ASCII (American Standard Code for Information Interchange)</a>
+                </li>
+            </ul>
+            </li>
+            </ul>
+            </li>
+            </ul>
+        </div>
+    </details>
+</div>
+
+  <div class="post-content"><h1 id="contents">Contents<a hidden class="anchor" aria-hidden="true" href="#contents">#</a></h1>
+<hr>
+<h2 id="topic-01-bit-binary-digit-and-byte">Topic 01: Bit (Binary Digit) and Byte<a hidden class="anchor" aria-hidden="true" href="#topic-01-bit-binary-digit-and-byte">#</a></h2>
+<ul>
+<li><strong>Definition:</strong>
+<ul>
+<li>Bit is binary digit. Each bit is <code>0</code> or <code>1</code>.</li>
+<li>Byte is</li>
+</ul>
+</li>
+</ul>
+<hr>
+<h3 id="section-111-why-does-computer-use-binary-systems">Section 1.1.1. Why Does Computer Use Binary Systems?<a hidden class="anchor" aria-hidden="true" href="#section-111-why-does-computer-use-binary-systems">#</a></h3>
+<p>In computer field, binary systems를 사용하는 가장 큰 이유는 안정적이고 경제적이기 때문이다. 첫번째로 안정성의 측면에서 보자면, computer hardware uses electronic signal for implementation. 이때, electronic signal을 여러 단계로 구분하게 되면 (e.g. 0, 1, 2, and 3) noise에 취약해진다. 반면에 when recognize signal only 두 개 (actually <code>0</code> or <code>1</code>), <code>0</code>은 전압 없음 (0V 근처), <code>1</code>은 전압 있음 (system에 따라 5V, 3V, etc.)으로 구분하게 되며 noise에 강해진다.
+In the other, binary system 이상의 다진법 체계에서는 회로의 구성이 복잡해지고 noise 안정화가 필요하므로 경제적으로 불리하다. 실제로 binary system은 basic logic gate in boolean algebra (AND, OR, NOT)의 조합으로 많은 회로를 구성할 수 있다.</p>
+<hr>
+<h3 id="section-112-what-does-each-bit-mean">Section 1.1.2. What Does Each bit mean?<a hidden class="anchor" aria-hidden="true" href="#section-112-what-does-each-bit-mean">#</a></h3>
+<table>
+  <thead>
+      <tr>
+          <th style="text-align: center">bit</th>
+          <th style="text-align: center">hardware</th>
+          <th style="text-align: center">Logical</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td style="text-align: center">0</td>
+          <td style="text-align: center">off, 0V</td>
+          <td style="text-align: center">false</td>
+      </tr>
+      <tr>
+          <td style="text-align: center">1</td>
+          <td style="text-align: center">on, not 0V</td>
+          <td style="text-align: center">true</td>
+      </tr>
+  </tbody>
+</table>
+<p>Computer data의 최소 (저장) 단위</p>
+<blockquote>
+<p>MSB:
+LSB:</p></blockquote>
+<hr>
+<h3 id="section-113-bit-manipulations">Section 1.1.3. Bit Manipulations<a hidden class="anchor" aria-hidden="true" href="#section-113-bit-manipulations">#</a></h3>
+<p>Use Boolean Algebra. True equal to <code>1</code> and false equal to <code>0</code>.</p>
+<ol>
+<li>
+<p>AND: &amp; (Ampersand)
+A &amp; B = 1 when both A = 1 and B = 1.</p>
+<table>
+  <thead>
+      <tr>
+          <th style="text-align: center">&amp;</th>
+          <th style="text-align: center">0</th>
+          <th style="text-align: center">1</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td style="text-align: center">0</td>
+          <td style="text-align: center">0</td>
+          <td style="text-align: center">0</td>
+      </tr>
+      <tr>
+          <td style="text-align: center">1</td>
+          <td style="text-align: center">0</td>
+          <td style="text-align: center">1</td>
+      </tr>
+  </tbody>
+</table>
+</li>
+<li>
+<p>OR: | (Vertical Bar)<br>
+A | B = 1 when at least one of A or B = 1. (when either A = 1 or B = 1)</p>
+</li>
+</ol>
+<table>
+  <thead>
+      <tr>
+          <th style="text-align: center">|</th>
+          <th style="text-align: center">0</th>
+          <th style="text-align: center">1</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td style="text-align: center">0</td>
+          <td style="text-align: center">0</td>
+          <td style="text-align: center">1</td>
+      </tr>
+      <tr>
+          <td style="text-align: center">1</td>
+          <td style="text-align: center">1</td>
+          <td style="text-align: center">1</td>
+      </tr>
+  </tbody>
+</table>
+<ol start="3">
+<li>NOT: ~ (Tilde)<br>
+~A = 1 when A = 0, and 0 when A = 1.</li>
+</ol>
+<table>
+  <thead>
+      <tr>
+          <th style="text-align: center">A</th>
+          <th style="text-align: center">~A</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td style="text-align: center">0</td>
+          <td style="text-align: center">1</td>
+      </tr>
+      <tr>
+          <td style="text-align: center">1</td>
+          <td style="text-align: center">0</td>
+      </tr>
+  </tbody>
+</table>
+<ol start="4">
+<li>Exclusive-OR (XOR): ^ (Caret)<br>
+A ^ B = 1 when A not equal to B. (when either A = 1 or B = 1, but not both equal to 1.)</li>
+</ol>
+<table>
+  <thead>
+      <tr>
+          <th style="text-align: center">^</th>
+          <th style="text-align: center">0</th>
+          <th style="text-align: center">1</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td style="text-align: center">0</td>
+          <td style="text-align: center">0</td>
+          <td style="text-align: center">1</td>
+      </tr>
+      <tr>
+          <td style="text-align: center">1</td>
+          <td style="text-align: center">1</td>
+          <td style="text-align: center">0</td>
+      </tr>
+  </tbody>
+</table>
+<hr>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c" data-lang="c"><span style="display:flex;"><span><span style="color:#66d9ef">unsigned</span> <span style="color:#66d9ef">char</span> <span style="color:#a6e22e">some_function</span>(<span style="color:#66d9ef">unsigned</span> <span style="color:#66d9ef">char</span> <span style="color:#f92672">*</span>x, <span style="color:#66d9ef">unsigned</span> <span style="color:#66d9ef">char</span> <span style="color:#f92672">*</span>y)
+</span></span><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">*</span>y <span style="color:#f92672">=</span> <span style="color:#f92672">*</span>x <span style="color:#f92672">^</span> <span style="color:#f92672">*</span>y;
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">*</span>x <span style="color:#f92672">=</span> <span style="color:#f92672">*</span>x <span style="color:#f92672">^</span> <span style="color:#f92672">*</span>y;
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">*</span>y <span style="color:#f92672">=</span> <span style="color:#f92672">*</span>x <span style="color:#f92672">^</span> <span style="color:#f92672">*</span>y;
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">return</span> <span style="color:#ae81ff">0</span>;
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><blockquote>
+<p>temp</p></blockquote>
+<hr>
+<p><strong>Boolean Algebra Basic Rules</strong></p>
+<ol>
+<li>Identity Laws (항등법칙)</li>
+</ol>
+<ul>
+<li>A + 0 = 0 + A = A</li>
+<li>A · 1 = 1 · A = A</li>
+</ul>
+<ol start="2">
+<li>Domination Laws (지배법칙)</li>
+</ol>
+<ul>
+<li>A + 1 = 1</li>
+<li>A · 0 = 0</li>
+</ul>
+<ol start="3">
+<li>Idempotent Laws (멱등법칙)</li>
+</ol>
+<ul>
+<li>A + A = A</li>
+<li>A · A = A</li>
+</ul>
+<ol start="4">
+<li>Complement Laws (보수법칙)</li>
+</ol>
+<ul>
+<li>A + A&rsquo; = 1</li>
+<li>A · A&rsquo; = 0</li>
+</ul>
+<ol start="5">
+<li>Commutative Laws (교환법칙)</li>
+</ol>
+<ul>
+<li>A + B = B + A</li>
+<li>A · B = B · A</li>
+</ul>
+<ol start="6">
+<li>Associative Laws (결합법칙)</li>
+</ol>
+<ul>
+<li>(A + B) + C = A + (B + C)</li>
+<li>(A · B) · C = A · (B · C)</li>
+</ul>
+<ol start="7">
+<li>Distributive Laws (분배법칙)</li>
+</ol>
+<ul>
+<li>A · (B + C) = (A · B) + (A · C)</li>
+<li>A + (B · C) = (A + B) · (A + C)</li>
+</ul>
+<ol start="8">
+<li>De Morgan’s Laws (드모르간 법칙)</li>
+</ol>
+<ul>
+<li>(A · B)&rsquo; = A&rsquo; + B'</li>
+<li>(A + B)&rsquo; = A&rsquo; · B'</li>
+</ul>
+<blockquote>
+<p>If want more of Boolean Algebra, click here.</p></blockquote>
+<hr>
+<h3 id="section-114-shift-operations">Section 1.1.4. Shift Operations<a hidden class="anchor" aria-hidden="true" href="#section-114-shift-operations">#</a></h3>
+<ol>
+<li>Left Shift: x &laquo; y</li>
+</ol>
+<ul>
+<li>Logical Left Shift and Arithmecit Left Shift
+<ul>
+<li>Shift bit-vector x left ypositions</li>
+<li>Throw away extra bits on left</li>
+<li>Fill with 0’s on right</li>
+</ul>
+</li>
+</ul>
+<table>
+  <thead>
+      <tr>
+          <th style="text-align: center">x</th>
+          <th style="text-align: center">11001001</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td style="text-align: center">Logical &laquo; 2</td>
+          <td style="text-align: center">00100100</td>
+      </tr>
+      <tr>
+          <td style="text-align: center">Arithmetic &laquo; 2</td>
+          <td style="text-align: center">00100100</td>
+      </tr>
+  </tbody>
+</table>
+<blockquote>
+<p>A &laquo; x: $A * 2^x$</p></blockquote>
+<hr>
+<ol start="2">
+<li>Right Shift: x &raquo; y</li>
+</ol>
+<ul>
+<li>Logical Right Shift
+<ul>
+<li>Shift bit-vector x right ypositions</li>
+<li>Throw away extra bits on right</li>
+<li>Fill with 0’s on left</li>
+</ul>
+</li>
+<li>Arithmecit Right Shift
+<ul>
+<li>Shift bit-vector x right ypositions</li>
+<li>Throw away extra bits on right</li>
+<li>Replicate most significant bit on left</li>
+</ul>
+</li>
+</ul>
+<table>
+  <thead>
+      <tr>
+          <th style="text-align: center">x</th>
+          <th style="text-align: center">11001001</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td style="text-align: center">Logical &raquo; 2</td>
+          <td style="text-align: center">00110010</td>
+      </tr>
+      <tr>
+          <td style="text-align: center">Arithmetic &raquo; 2</td>
+          <td style="text-align: center">11110010</td>
+      </tr>
+  </tbody>
+</table>
+<blockquote>
+<p>A &raquo; x: $A * 2^{-x}$</p></blockquote>
+<hr>
+<h3 id="section-115--bit-vector">Section 1.1.5.  Bit Vector<a hidden class="anchor" aria-hidden="true" href="#section-115--bit-vector">#</a></h3>
+<hr>
+<h3 id="section-116-hexadecimal-represetation">Section 1.1.6. Hexadecimal Represetation<a hidden class="anchor" aria-hidden="true" href="#section-116-hexadecimal-represetation">#</a></h3>
+<ul>
+<li>Decimal code: Human-friendly
+<ul>
+<li>235, -1, (201)10, etc.</li>
+</ul>
+</li>
+<li>Binary code: Computer-friendly
+<ul>
+<li>11101011, 11111111, (11001001)2, etc.</li>
+</ul>
+</li>
+<li>Hexadecimal code: Intersection
+<ul>
+<li>0xED, 0xFF, (C9)16, etc.</li>
+</ul>
+</li>
+</ul>
+<table>
+  <thead>
+      <tr>
+          <th style="text-align: center">Hexadecimal</th>
+          <th style="text-align: center">Decimal</th>
+          <th style="text-align: center">Binary</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td style="text-align: center"><code>0</code></td>
+          <td style="text-align: center"><code>0</code></td>
+          <td style="text-align: center"><code>0000</code></td>
+      </tr>
+      <tr>
+          <td style="text-align: center"><code>1</code></td>
+          <td style="text-align: center"><code>1</code></td>
+          <td style="text-align: center"><code>0001</code></td>
+      </tr>
+      <tr>
+          <td style="text-align: center"><code>2</code></td>
+          <td style="text-align: center"><code>2</code></td>
+          <td style="text-align: center"><code>0010</code></td>
+      </tr>
+      <tr>
+          <td style="text-align: center"><code>3</code></td>
+          <td style="text-align: center"><code>3</code></td>
+          <td style="text-align: center"><code>0011</code></td>
+      </tr>
+      <tr>
+          <td style="text-align: center"><code>4</code></td>
+          <td style="text-align: center"><code>4</code></td>
+          <td style="text-align: center"><code>0100</code></td>
+      </tr>
+      <tr>
+          <td style="text-align: center"><code>5</code></td>
+          <td style="text-align: center"><code>5</code></td>
+          <td style="text-align: center"><code>0101</code></td>
+      </tr>
+      <tr>
+          <td style="text-align: center"><code>6</code></td>
+          <td style="text-align: center"><code>6</code></td>
+          <td style="text-align: center"><code>0110</code></td>
+      </tr>
+      <tr>
+          <td style="text-align: center"><code>7</code></td>
+          <td style="text-align: center"><code>7</code></td>
+          <td style="text-align: center"><code>0111</code></td>
+      </tr>
+      <tr>
+          <td style="text-align: center"><code>8</code></td>
+          <td style="text-align: center"><code>8</code></td>
+          <td style="text-align: center"><code>1000</code></td>
+      </tr>
+      <tr>
+          <td style="text-align: center"><code>9</code></td>
+          <td style="text-align: center"><code>9</code></td>
+          <td style="text-align: center"><code>1001</code></td>
+      </tr>
+      <tr>
+          <td style="text-align: center"><code>A</code></td>
+          <td style="text-align: center"><code>10</code></td>
+          <td style="text-align: center"><code>1010</code></td>
+      </tr>
+      <tr>
+          <td style="text-align: center"><code>B</code></td>
+          <td style="text-align: center"><code>11</code></td>
+          <td style="text-align: center"><code>1011</code></td>
+      </tr>
+      <tr>
+          <td style="text-align: center"><code>C</code></td>
+          <td style="text-align: center"><code>12</code></td>
+          <td style="text-align: center"><code>1100</code></td>
+      </tr>
+      <tr>
+          <td style="text-align: center"><code>D</code></td>
+          <td style="text-align: center"><code>13</code></td>
+          <td style="text-align: center"><code>1101</code></td>
+      </tr>
+      <tr>
+          <td style="text-align: center"><code>E</code></td>
+          <td style="text-align: center"><code>14</code></td>
+          <td style="text-align: center"><code>1110</code></td>
+      </tr>
+      <tr>
+          <td style="text-align: center"><code>F</code></td>
+          <td style="text-align: center"><code>15</code></td>
+          <td style="text-align: center"><code>1111</code></td>
+      </tr>
+  </tbody>
+</table>
+<hr>
+<h3 id="section-117-what-is-a-byte">Section 1.1.7. What is a Byte?<a hidden class="anchor" aria-hidden="true" href="#section-117-what-is-a-byte">#</a></h3>
+<p><strong>Definition:</strong> In mordern processors, Byte is used as 최소 address 단위. 1 Byte is usually 8 bits.</p>
+<p>Word is CPU가 한 번에 처리하기 좋은 단위. For example, Word of 32-bit CPU is 4 Bytes, as known as 32 bits.</p>
+<blockquote>
+<p>In early age, the size of Byte는 정해지지 않았다. 그러나 ASCII code를 충분히 담을 수 있음과 동시에 the power of two와 일치하는 8 bits로 크기가 통일되었다.
+모호성을 피하기 위해 일부 문서는 octet이라는 표현을 쓰기도 함.</p></blockquote>
+<hr>
+<p><strong>단위 표기</strong></p>
+<table>
+  <thead>
+      <tr>
+          <th style="text-align: center">Prefix System (접두 체계)</th>
+          <th style="text-align: center">Unit Example</th>
+          <th style="text-align: left">Definition</th>
+          <th style="text-align: left">Common Usage</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td style="text-align: center">SI (Decimal)</td>
+          <td style="text-align: center">1 KB, 1 MB</td>
+          <td style="text-align: left">1 KB = 1,000 B<br>1 MB = 1,000,000 B</td>
+          <td style="text-align: left">Networking equipment, storage manufacturers</td>
+      </tr>
+      <tr>
+          <td style="text-align: center">IEC (Binary)</td>
+          <td style="text-align: center">1 KiB, 1 MiB</td>
+          <td style="text-align: left">1 KiB = 1,024 B<br>1 MiB = 1,048,576 B</td>
+          <td style="text-align: left">Operating systems, programming contexts</td>
+      </tr>
+      <tr>
+          <td style="text-align: center">Recommendation</td>
+          <td style="text-align: center">—</td>
+          <td style="text-align: left">Use KiB / MiB / GiB for binary units</td>
+          <td style="text-align: left">To avoid confusion</td>
+      </tr>
+  </tbody>
+</table>
+<hr>
+<h2 id="topic-02-character-reprsentation">Topic 02: Character Reprsentation<a hidden class="anchor" aria-hidden="true" href="#topic-02-character-reprsentation">#</a></h2>
+<h3 id="section-121-ascii-american-standard-code-for-information-interchange">Section 1.2.1. ASCII (American Standard Code for Information Interchange)<a hidden class="anchor" aria-hidden="true" href="#section-121-ascii-american-standard-code-for-information-interchange">#</a></h3>
+
+
+  </div>
+
+  <footer class="post-footer">
+    <ul class="post-tags">
+      <li><a href="https://Byngjoon.github.io/blog/tags/basic-knowledge/">Basic Knowledge</a></li>
+    </ul>
+  </footer>
+</article>
+    </main>
+    
+<footer class="footer">
+        <span>&copy; 2025 <a href="https://Byngjoon.github.io/blog/">Hyungtae</a></span> · 
+
+    <span>
+        Powered by
+        <a href="https://gohugo.io/" rel="noopener noreferrer" target="_blank">Hugo</a> &
+        <a href="https://github.com/adityatelange/hugo-PaperMod/" rel="noopener" target="_blank">PaperMod</a>
+    </span>
+</footer>
+<a href="#top" aria-label="go to top" title="Go to Top (Alt + G)" class="top-link" id="top-link" accesskey="g">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 6" fill="currentColor">
+        <path d="M12 6H0l6-6z" />
+    </svg>
+</a>
+
+<script>
+    let menu = document.getElementById('menu')
+    if (menu) {
+        menu.scrollLeft = localStorage.getItem("menu-scroll-position");
+        menu.onscroll = function () {
+            localStorage.setItem("menu-scroll-position", menu.scrollLeft);
+        }
+    }
+
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener("click", function (e) {
+            e.preventDefault();
+            var id = this.getAttribute("href").substr(1);
+            if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView({
+                    behavior: "smooth"
+                });
+            } else {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView();
+            }
+            if (id === "top") {
+                history.replaceState(null, null, " ");
+            } else {
+                history.pushState(null, null, `#${id}`);
+            }
+        });
+    });
+
+</script>
+<script>
+    var mybutton = document.getElementById("top-link");
+    window.onscroll = function () {
+        if (document.body.scrollTop > 800 || document.documentElement.scrollTop > 800) {
+            mybutton.style.visibility = "visible";
+            mybutton.style.opacity = "1";
+        } else {
+            mybutton.style.visibility = "hidden";
+            mybutton.style.opacity = "0";
+        }
+    };
+
+</script>
+<script>
+    document.getElementById("theme-toggle").addEventListener("click", () => {
+        if (document.body.className.includes("dark")) {
+            document.body.classList.remove('dark');
+            localStorage.setItem("pref-theme", 'light');
+        } else {
+            document.body.classList.add('dark');
+            localStorage.setItem("pref-theme", 'dark');
+        }
+    })
+
+</script>
+<script>
+    document.querySelectorAll('pre > code').forEach((codeblock) => {
+        const container = codeblock.parentNode.parentNode;
+
+        const copybutton = document.createElement('button');
+        copybutton.classList.add('copy-code');
+        copybutton.innerHTML = 'copy';
+
+        function copyingDone() {
+            copybutton.innerHTML = 'copied!';
+            setTimeout(() => {
+                copybutton.innerHTML = 'copy';
+            }, 2000);
+        }
+
+        copybutton.addEventListener('click', (cb) => {
+            if ('clipboard' in navigator) {
+                navigator.clipboard.writeText(codeblock.textContent);
+                copyingDone();
+                return;
+            }
+
+            const range = document.createRange();
+            range.selectNodeContents(codeblock);
+            const selection = window.getSelection();
+            selection.removeAllRanges();
+            selection.addRange(range);
+            try {
+                document.execCommand('copy');
+                copyingDone();
+            } catch (e) { };
+            selection.removeRange(range);
+        });
+
+        if (container.classList.contains("highlight")) {
+            container.appendChild(copybutton);
+        } else if (container.parentNode.firstChild == container) {
+            
+        } else if (codeblock.parentNode.parentNode.parentNode.parentNode.parentNode.nodeName == "TABLE") {
+            
+            codeblock.parentNode.parentNode.parentNode.parentNode.parentNode.appendChild(copybutton);
+        } else {
+            
+            codeblock.parentNode.appendChild(copybutton);
+        }
+    });
+</script>
+</body>
+
+</html>

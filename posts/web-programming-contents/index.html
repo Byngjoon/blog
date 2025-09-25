@@ -1,0 +1,792 @@
+<!DOCTYPE html>
+<html lang="en" dir="auto">
+
+<head><meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="robots" content="index, follow">
+<title>Web Programming Contents | Hyungtae</title>
+<meta name="keywords" content="">
+<meta name="description" content="Web Programming Study Outline
+
+Chapter 00. Introduction to Web Programming
+Section 0.1. What is the World Wide Web (WWW)?
+
+Internet vs World Wide Web
+
+Section 0.2. A Brief History of the Web (Web 1.0 → Web 3.0)
+Section 0.3. What is the W3C?
+Section 0.4. Core Technologies of the Web
+
+HTML (HyperText Markup Language)
+URL (Uniform Resource Locator)
+HTTP (HyperText Transfer Protocol)
+
+Section 0.5. Web Architecture
+
+Client / Server / Network Structure
+How the Web Works
+Frontend vs Backend
+
+Section 0.6. What is a Web Browser?
+
+Major browsers and rendering engines
+
+Section 0.7. Web Development Workflow
+
+Tools (Git, VS Code), folder structure, browser dev tools
+
+Section 0.8. Domain &amp; Hosting Basics (Optional)
+
+Chapter 01. Frontend - HTML
+Section 1.1. What is HTML?
+Section 1.2. What is a Markup Language?
+Section 1.3. Core Concepts of HTML
+
+Tags, Elements, Attributes
+
+Section 1.4. Basic HTML Document Structure
+
+&lt;!DOCTYPE&gt;, &lt;html&gt;, &lt;head&gt;, &lt;body&gt;
+
+Section 1.5. Common HTML Tags
+
+Text, Lists, Links, Images, Tables, etc.
+
+Section 1.6. Forms and Input Elements
+Section 1.7. Semantic HTML Tags
+
+&lt;header&gt;, &lt;footer&gt;, &lt;nav&gt;, &lt;main&gt;, &lt;section&gt;, &lt;article&gt;
+
+Section 1.8. HTML Entities &amp; Special Characters
+Section 1.9. HTML Accessibility (ARIA Basics)
+Section 1.10. SEO and HTML Structure (Optional)
+
+Chapter 02: Frontend - CSS
+Section 2.01: What is CSS?
+Section 2.02: Why CSS? (Separation of structure and style)
+Section 2.03: CSS Syntax: Selectors, Properties, Values
+Section 2.04: Ways to Apply CSS
+
+Inline, Internal, External
+
+Section 2.05: Common CSS Selectors
+
+Basic, Combinators, Pseudo-classes/elements
+
+Section 2.06: Box Model
+
+margin, border, padding, content
+
+Section 2.07: Layout &amp; Positioning
+
+display, position, float, z-index, etc.
+
+Section 2.08: Flexbox and Grid
+Section 2.09: Responsive Design &amp; Media Queries
+Section 2.10: Colors, Fonts, Units
+Section 2.11: Transitions and Animations
+Section 2.12: CSS Variables
+Section 2.13: CSS Preprocessors (Sass Basics) (Optional)
+Section 2.14: Reset vs Normalize (Optional)
+
+Chapter 03: Frontend - JavaScript
+Section 3.01: What is JavaScript?
+Section 3.02: Connecting JS to HTML (&lt;script&gt;, DOM access)
+Section 3.03: Variables and Data Types (let, const, var)
+Section 3.04: Operators and Control Flow (if, loops, etc.)
+Section 3.05: Functions, Scope, Closures
+Section 3.06: Arrays and Objects
+Section 3.07: DOM Manipulation
+
+Select, Create, Modify, Remove elements
+
+Section 3.08: Event Handling
+
+Event types, bubbling vs capturing
+
+Section 3.09: ES6&#43; Features
+
+Arrow functions, template literals, destructuring, etc.
+
+Section 3.10: Asynchronous JavaScript
+
+Callback → Promise → async/await
+
+Section 3.11: Fetch API &amp; AJAX
+Section 3.12: JavaScript Module System (Optional)
+Section 3.13: Browser Storage (localStorage, sessionStorage) (Optional)
+Section 3.14: Debugging &amp; Browser Dev Tools (Optional)">
+<meta name="author" content="">
+<link rel="canonical" href="https://Byngjoon.github.io/blog/posts/web-programming-contents/">
+<link crossorigin="anonymous" href="/blog/assets/css/stylesheet.f49d66caae9ea0fd43f21f29e71a8d3e284517ed770f2aa86fa012953ad3c9ef.css" integrity="sha256-9J1myq6eoP1D8h8p5xqNPihFF&#43;13Dyqob6ASlTrTye8=" rel="preload stylesheet" as="style">
+<link rel="icon" href="https://Byngjoon.github.io/blog/favicon.ico">
+<link rel="icon" type="image/png" sizes="16x16" href="https://Byngjoon.github.io/blog/favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="https://Byngjoon.github.io/blog/favicon-32x32.png">
+<link rel="apple-touch-icon" href="https://Byngjoon.github.io/blog/apple-touch-icon.png">
+<link rel="mask-icon" href="https://Byngjoon.github.io/blog/safari-pinned-tab.svg">
+<meta name="theme-color" content="#2e2e33">
+<meta name="msapplication-TileColor" content="#2e2e33">
+<link rel="alternate" hreflang="en" href="https://Byngjoon.github.io/blog/posts/web-programming-contents/">
+<noscript>
+    <style>
+        #theme-toggle,
+        .top-link {
+            display: none;
+        }
+
+    </style>
+    <style>
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --theme: rgb(29, 30, 32);
+                --entry: rgb(46, 46, 51);
+                --primary: rgb(218, 218, 219);
+                --secondary: rgb(155, 156, 157);
+                --tertiary: rgb(65, 66, 68);
+                --content: rgb(196, 196, 197);
+                --code-block-bg: rgb(46, 46, 51);
+                --code-bg: rgb(55, 56, 62);
+                --border: rgb(51, 51, 51);
+            }
+
+            .list {
+                background: var(--theme);
+            }
+
+            .list:not(.dark)::-webkit-scrollbar-track {
+                background: 0 0;
+            }
+
+            .list:not(.dark)::-webkit-scrollbar-thumb {
+                border-color: var(--theme);
+            }
+        }
+
+    </style>
+</noscript>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"></script>
+<script>
+  window.onload = function () {
+    renderMathInElement(document.body, {
+      delimiters: [
+        { left: "$$", right: "$$", display: true },
+        { left: "$", right: "$", display: false }
+      ]
+    });
+  };
+</script>
+
+<meta property="og:url" content="https://Byngjoon.github.io/blog/posts/web-programming-contents/">
+  <meta property="og:site_name" content="Hyungtae">
+  <meta property="og:title" content="Web Programming Contents">
+  <meta property="og:description" content="Web Programming Study Outline Chapter 00. Introduction to Web Programming Section 0.1. What is the World Wide Web (WWW)? Internet vs World Wide Web Section 0.2. A Brief History of the Web (Web 1.0 → Web 3.0) Section 0.3. What is the W3C? Section 0.4. Core Technologies of the Web HTML (HyperText Markup Language) URL (Uniform Resource Locator) HTTP (HyperText Transfer Protocol) Section 0.5. Web Architecture Client / Server / Network Structure How the Web Works Frontend vs Backend Section 0.6. What is a Web Browser? Major browsers and rendering engines Section 0.7. Web Development Workflow Tools (Git, VS Code), folder structure, browser dev tools Section 0.8. Domain &amp; Hosting Basics (Optional) Chapter 01. Frontend - HTML Section 1.1. What is HTML? Section 1.2. What is a Markup Language? Section 1.3. Core Concepts of HTML Tags, Elements, Attributes Section 1.4. Basic HTML Document Structure &lt;!DOCTYPE&gt;, &lt;html&gt;, &lt;head&gt;, &lt;body&gt; Section 1.5. Common HTML Tags Text, Lists, Links, Images, Tables, etc. Section 1.6. Forms and Input Elements Section 1.7. Semantic HTML Tags &lt;header&gt;, &lt;footer&gt;, &lt;nav&gt;, &lt;main&gt;, &lt;section&gt;, &lt;article&gt; Section 1.8. HTML Entities &amp; Special Characters Section 1.9. HTML Accessibility (ARIA Basics) Section 1.10. SEO and HTML Structure (Optional) Chapter 02: Frontend - CSS Section 2.01: What is CSS? Section 2.02: Why CSS? (Separation of structure and style) Section 2.03: CSS Syntax: Selectors, Properties, Values Section 2.04: Ways to Apply CSS Inline, Internal, External Section 2.05: Common CSS Selectors Basic, Combinators, Pseudo-classes/elements Section 2.06: Box Model margin, border, padding, content Section 2.07: Layout &amp; Positioning display, position, float, z-index, etc. Section 2.08: Flexbox and Grid Section 2.09: Responsive Design &amp; Media Queries Section 2.10: Colors, Fonts, Units Section 2.11: Transitions and Animations Section 2.12: CSS Variables Section 2.13: CSS Preprocessors (Sass Basics) (Optional) Section 2.14: Reset vs Normalize (Optional) Chapter 03: Frontend - JavaScript Section 3.01: What is JavaScript? Section 3.02: Connecting JS to HTML (&lt;script&gt;, DOM access) Section 3.03: Variables and Data Types (let, const, var) Section 3.04: Operators and Control Flow (if, loops, etc.) Section 3.05: Functions, Scope, Closures Section 3.06: Arrays and Objects Section 3.07: DOM Manipulation Select, Create, Modify, Remove elements Section 3.08: Event Handling Event types, bubbling vs capturing Section 3.09: ES6&#43; Features Arrow functions, template literals, destructuring, etc. Section 3.10: Asynchronous JavaScript Callback → Promise → async/await Section 3.11: Fetch API &amp; AJAX Section 3.12: JavaScript Module System (Optional) Section 3.13: Browser Storage (localStorage, sessionStorage) (Optional) Section 3.14: Debugging &amp; Browser Dev Tools (Optional)">
+  <meta property="og:locale" content="ko-kr">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="posts">
+    <meta property="article:published_time" content="2025-05-21T17:15:07+09:00">
+    <meta property="article:modified_time" content="2025-05-21T17:15:07+09:00">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Web Programming Contents">
+<meta name="twitter:description" content="Web Programming Study Outline
+
+Chapter 00. Introduction to Web Programming
+Section 0.1. What is the World Wide Web (WWW)?
+
+Internet vs World Wide Web
+
+Section 0.2. A Brief History of the Web (Web 1.0 → Web 3.0)
+Section 0.3. What is the W3C?
+Section 0.4. Core Technologies of the Web
+
+HTML (HyperText Markup Language)
+URL (Uniform Resource Locator)
+HTTP (HyperText Transfer Protocol)
+
+Section 0.5. Web Architecture
+
+Client / Server / Network Structure
+How the Web Works
+Frontend vs Backend
+
+Section 0.6. What is a Web Browser?
+
+Major browsers and rendering engines
+
+Section 0.7. Web Development Workflow
+
+Tools (Git, VS Code), folder structure, browser dev tools
+
+Section 0.8. Domain &amp; Hosting Basics (Optional)
+
+Chapter 01. Frontend - HTML
+Section 1.1. What is HTML?
+Section 1.2. What is a Markup Language?
+Section 1.3. Core Concepts of HTML
+
+Tags, Elements, Attributes
+
+Section 1.4. Basic HTML Document Structure
+
+&lt;!DOCTYPE&gt;, &lt;html&gt;, &lt;head&gt;, &lt;body&gt;
+
+Section 1.5. Common HTML Tags
+
+Text, Lists, Links, Images, Tables, etc.
+
+Section 1.6. Forms and Input Elements
+Section 1.7. Semantic HTML Tags
+
+&lt;header&gt;, &lt;footer&gt;, &lt;nav&gt;, &lt;main&gt;, &lt;section&gt;, &lt;article&gt;
+
+Section 1.8. HTML Entities &amp; Special Characters
+Section 1.9. HTML Accessibility (ARIA Basics)
+Section 1.10. SEO and HTML Structure (Optional)
+
+Chapter 02: Frontend - CSS
+Section 2.01: What is CSS?
+Section 2.02: Why CSS? (Separation of structure and style)
+Section 2.03: CSS Syntax: Selectors, Properties, Values
+Section 2.04: Ways to Apply CSS
+
+Inline, Internal, External
+
+Section 2.05: Common CSS Selectors
+
+Basic, Combinators, Pseudo-classes/elements
+
+Section 2.06: Box Model
+
+margin, border, padding, content
+
+Section 2.07: Layout &amp; Positioning
+
+display, position, float, z-index, etc.
+
+Section 2.08: Flexbox and Grid
+Section 2.09: Responsive Design &amp; Media Queries
+Section 2.10: Colors, Fonts, Units
+Section 2.11: Transitions and Animations
+Section 2.12: CSS Variables
+Section 2.13: CSS Preprocessors (Sass Basics) (Optional)
+Section 2.14: Reset vs Normalize (Optional)
+
+Chapter 03: Frontend - JavaScript
+Section 3.01: What is JavaScript?
+Section 3.02: Connecting JS to HTML (&lt;script&gt;, DOM access)
+Section 3.03: Variables and Data Types (let, const, var)
+Section 3.04: Operators and Control Flow (if, loops, etc.)
+Section 3.05: Functions, Scope, Closures
+Section 3.06: Arrays and Objects
+Section 3.07: DOM Manipulation
+
+Select, Create, Modify, Remove elements
+
+Section 3.08: Event Handling
+
+Event types, bubbling vs capturing
+
+Section 3.09: ES6&#43; Features
+
+Arrow functions, template literals, destructuring, etc.
+
+Section 3.10: Asynchronous JavaScript
+
+Callback → Promise → async/await
+
+Section 3.11: Fetch API &amp; AJAX
+Section 3.12: JavaScript Module System (Optional)
+Section 3.13: Browser Storage (localStorage, sessionStorage) (Optional)
+Section 3.14: Debugging &amp; Browser Dev Tools (Optional)">
+
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position":  1 ,
+      "name": "Posts",
+      "item": "https://Byngjoon.github.io/blog/posts/"
+    }, 
+    {
+      "@type": "ListItem",
+      "position":  2 ,
+      "name": "Web Programming Contents",
+      "item": "https://Byngjoon.github.io/blog/posts/web-programming-contents/"
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "Web Programming Contents",
+  "name": "Web Programming Contents",
+  "description": "Web Programming Study Outline Chapter 00. Introduction to Web Programming Section 0.1. What is the World Wide Web (WWW)? Internet vs World Wide Web Section 0.2. A Brief History of the Web (Web 1.0 → Web 3.0) Section 0.3. What is the W3C? Section 0.4. Core Technologies of the Web HTML (HyperText Markup Language) URL (Uniform Resource Locator) HTTP (HyperText Transfer Protocol) Section 0.5. Web Architecture Client / Server / Network Structure How the Web Works Frontend vs Backend Section 0.6. What is a Web Browser? Major browsers and rendering engines Section 0.7. Web Development Workflow Tools (Git, VS Code), folder structure, browser dev tools Section 0.8. Domain \u0026amp; Hosting Basics (Optional) Chapter 01. Frontend - HTML Section 1.1. What is HTML? Section 1.2. What is a Markup Language? Section 1.3. Core Concepts of HTML Tags, Elements, Attributes Section 1.4. Basic HTML Document Structure \u0026lt;!DOCTYPE\u0026gt;, \u0026lt;html\u0026gt;, \u0026lt;head\u0026gt;, \u0026lt;body\u0026gt; Section 1.5. Common HTML Tags Text, Lists, Links, Images, Tables, etc. Section 1.6. Forms and Input Elements Section 1.7. Semantic HTML Tags \u0026lt;header\u0026gt;, \u0026lt;footer\u0026gt;, \u0026lt;nav\u0026gt;, \u0026lt;main\u0026gt;, \u0026lt;section\u0026gt;, \u0026lt;article\u0026gt; Section 1.8. HTML Entities \u0026amp; Special Characters Section 1.9. HTML Accessibility (ARIA Basics) Section 1.10. SEO and HTML Structure (Optional) Chapter 02: Frontend - CSS Section 2.01: What is CSS? Section 2.02: Why CSS? (Separation of structure and style) Section 2.03: CSS Syntax: Selectors, Properties, Values Section 2.04: Ways to Apply CSS Inline, Internal, External Section 2.05: Common CSS Selectors Basic, Combinators, Pseudo-classes/elements Section 2.06: Box Model margin, border, padding, content Section 2.07: Layout \u0026amp; Positioning display, position, float, z-index, etc. Section 2.08: Flexbox and Grid Section 2.09: Responsive Design \u0026amp; Media Queries Section 2.10: Colors, Fonts, Units Section 2.11: Transitions and Animations Section 2.12: CSS Variables Section 2.13: CSS Preprocessors (Sass Basics) (Optional) Section 2.14: Reset vs Normalize (Optional) Chapter 03: Frontend - JavaScript Section 3.01: What is JavaScript? Section 3.02: Connecting JS to HTML (\u0026lt;script\u0026gt;, DOM access) Section 3.03: Variables and Data Types (let, const, var) Section 3.04: Operators and Control Flow (if, loops, etc.) Section 3.05: Functions, Scope, Closures Section 3.06: Arrays and Objects Section 3.07: DOM Manipulation Select, Create, Modify, Remove elements Section 3.08: Event Handling Event types, bubbling vs capturing Section 3.09: ES6+ Features Arrow functions, template literals, destructuring, etc. Section 3.10: Asynchronous JavaScript Callback → Promise → async/await Section 3.11: Fetch API \u0026amp; AJAX Section 3.12: JavaScript Module System (Optional) Section 3.13: Browser Storage (localStorage, sessionStorage) (Optional) Section 3.14: Debugging \u0026amp; Browser Dev Tools (Optional)",
+  "keywords": [
+    ""
+  ],
+  "articleBody": "Web Programming Study Outline Chapter 00. Introduction to Web Programming Section 0.1. What is the World Wide Web (WWW)? Internet vs World Wide Web Section 0.2. A Brief History of the Web (Web 1.0 → Web 3.0) Section 0.3. What is the W3C? Section 0.4. Core Technologies of the Web HTML (HyperText Markup Language) URL (Uniform Resource Locator) HTTP (HyperText Transfer Protocol) Section 0.5. Web Architecture Client / Server / Network Structure How the Web Works Frontend vs Backend Section 0.6. What is a Web Browser? Major browsers and rendering engines Section 0.7. Web Development Workflow Tools (Git, VS Code), folder structure, browser dev tools Section 0.8. Domain \u0026 Hosting Basics (Optional) Chapter 01. Frontend - HTML Section 1.1. What is HTML? Section 1.2. What is a Markup Language? Section 1.3. Core Concepts of HTML Tags, Elements, Attributes Section 1.4. Basic HTML Document Structure \u003c!DOCTYPE\u003e, , , Section 1.5. Common HTML Tags Text, Lists, Links, Images, Tables, etc. Section 1.6. Forms and Input Elements Section 1.7. Semantic HTML Tags , , , , , Section 1.8. HTML Entities \u0026 Special Characters Section 1.9. HTML Accessibility (ARIA Basics) Section 1.10. SEO and HTML Structure (Optional) Chapter 02: Frontend - CSS Section 2.01: What is CSS? Section 2.02: Why CSS? (Separation of structure and style) Section 2.03: CSS Syntax: Selectors, Properties, Values Section 2.04: Ways to Apply CSS Inline, Internal, External Section 2.05: Common CSS Selectors Basic, Combinators, Pseudo-classes/elements Section 2.06: Box Model margin, border, padding, content Section 2.07: Layout \u0026 Positioning display, position, float, z-index, etc. Section 2.08: Flexbox and Grid Section 2.09: Responsive Design \u0026 Media Queries Section 2.10: Colors, Fonts, Units Section 2.11: Transitions and Animations Section 2.12: CSS Variables Section 2.13: CSS Preprocessors (Sass Basics) (Optional) Section 2.14: Reset vs Normalize (Optional) Chapter 03: Frontend - JavaScript Section 3.01: What is JavaScript? Section 3.02: Connecting JS to HTML (",
+  "wordCount" : "407",
+  "inLanguage": "en",
+  "datePublished": "2025-05-21T17:15:07+09:00",
+  "dateModified": "2025-05-21T17:15:07+09:00",
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://Byngjoon.github.io/blog/posts/web-programming-contents/"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Hyungtae",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://Byngjoon.github.io/blog/favicon.ico"
+    }
+  }
+}
+</script>
+</head>
+
+<body class="" id="top">
+<script>
+    if (localStorage.getItem("pref-theme") === "dark") {
+        document.body.classList.add('dark');
+    } else if (localStorage.getItem("pref-theme") === "light") {
+        document.body.classList.remove('dark')
+    } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+        document.body.classList.add('dark');
+    }
+
+</script>
+
+<header class="header">
+    <nav class="nav">
+        <div class="logo">
+            <a href="https://Byngjoon.github.io/blog/" accesskey="h" title="Hyungtae (Alt + H)">Hyungtae</a>
+            <div class="logo-switches">
+                <button id="theme-toggle" accesskey="t" title="(Alt + T)" aria-label="Toggle theme">
+                    <svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                    </svg>
+                    <svg id="sun" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="5"></circle>
+                        <line x1="12" y1="1" x2="12" y2="3"></line>
+                        <line x1="12" y1="21" x2="12" y2="23"></line>
+                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                        <line x1="1" y1="12" x2="3" y2="12"></line>
+                        <line x1="21" y1="12" x2="23" y2="12"></line>
+                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                    </svg>
+                </button>
+            </div>
+        </div>
+        <ul id="menu">
+            <li>
+                <a href="https://Byngjoon.github.io/blog/categories/" title="Categories">
+                    <span>Categories</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://Byngjoon.github.io/blog/tags/" title="Tags">
+                    <span>Tags</span>
+                </a>
+            </li>
+        </ul>
+    </nav>
+</header>
+<main class="main">
+
+<article class="post-single">
+  <header class="post-header">
+    
+    <h1 class="post-title entry-hint-parent">
+      Web Programming Contents
+      <span class="entry-hint" title="Draft">
+        <svg xmlns="http://www.w3.org/2000/svg" height="35" viewBox="0 -960 960 960" fill="currentColor">
+          <path
+            d="M160-410v-60h300v60H160Zm0-165v-60h470v60H160Zm0-165v-60h470v60H160Zm360 580v-123l221-220q9-9 20-13t22-4q12 0 23 4.5t20 13.5l37 37q9 9 13 20t4 22q0 11-4.5 22.5T862.09-380L643-160H520Zm300-263-37-37 37 37ZM580-220h38l121-122-18-19-19-18-122 121v38Zm141-141-19-18 37 37-18-19Z" />
+        </svg>
+      </span>
+    </h1>
+    <div class="post-meta"><span title='2025-05-21 17:15:07 +0900 KST'>May 21, 2025</span>&nbsp;·&nbsp;2 min
+
+</div>
+  </header> <div class="toc">
+    <details >
+        <summary accesskey="c" title="(Alt + C)">
+            <span class="details">Table of Contents</span>
+        </summary>
+
+        <div class="inner"><ul>
+                <li>
+                    <a href="#web-programming-study-outline" aria-label="Web Programming Study Outline">Web Programming Study Outline</a><ul>
+                        
+                <li>
+                    <a href="#chapter-00-introduction-to-web-programming" aria-label="Chapter 00. Introduction to Web Programming">Chapter 00. Introduction to Web Programming</a><ul>
+                        
+                <li>
+                    <a href="#section-01-what-is-the-world-wide-web-www" aria-label="Section 0.1. What is the World Wide Web (WWW)?">Section 0.1. What is the World Wide Web (WWW)?</a></li>
+                <li>
+                    <a href="#section-02-a-brief-history-of-the-web-web-10--web-30" aria-label="Section 0.2. A Brief History of the Web (Web 1.0 → Web 3.0)">Section 0.2. A Brief History of the Web (Web 1.0 → Web 3.0)</a></li>
+                <li>
+                    <a href="#section-03-what-is-the-w3c" aria-label="Section 0.3. What is the W3C?">Section 0.3. What is the W3C?</a></li>
+                <li>
+                    <a href="#section-04-core-technologies-of-the-web" aria-label="Section 0.4. Core Technologies of the Web">Section 0.4. Core Technologies of the Web</a></li>
+                <li>
+                    <a href="#section-05-web-architecture" aria-label="Section 0.5. Web Architecture">Section 0.5. Web Architecture</a></li>
+                <li>
+                    <a href="#section-06-what-is-a-web-browser" aria-label="Section 0.6. What is a Web Browser?">Section 0.6. What is a Web Browser?</a></li>
+                <li>
+                    <a href="#section-07-web-development-workflow" aria-label="Section 0.7. Web Development Workflow">Section 0.7. Web Development Workflow</a></li>
+                <li>
+                    <a href="#section-08-domain--hosting-basics-optional" aria-label="Section 0.8. Domain &amp; Hosting Basics (Optional)">Section 0.8. Domain &amp; Hosting Basics (Optional)</a></li></ul>
+                </li>
+                <li>
+                    <a href="#chapter-01-frontend---html" aria-label="Chapter 01. Frontend - HTML">Chapter 01. Frontend - HTML</a><ul>
+                        
+                <li>
+                    <a href="#section-11-what-is-html" aria-label="Section 1.1. What is HTML?">Section 1.1. What is HTML?</a></li>
+                <li>
+                    <a href="#section-12-what-is-a-markup-language" aria-label="Section 1.2. What is a Markup Language?">Section 1.2. What is a Markup Language?</a></li>
+                <li>
+                    <a href="#section-13-core-concepts-of-html" aria-label="Section 1.3. Core Concepts of HTML">Section 1.3. Core Concepts of HTML</a></li>
+                <li>
+                    <a href="#section-14-basic-html-document-structure" aria-label="Section 1.4. Basic HTML Document Structure">Section 1.4. Basic HTML Document Structure</a></li>
+                <li>
+                    <a href="#section-15-common-html-tags" aria-label="Section 1.5. Common HTML Tags">Section 1.5. Common HTML Tags</a></li>
+                <li>
+                    <a href="#section-16-forms-and-input-elements" aria-label="Section 1.6. Forms and Input Elements">Section 1.6. Forms and Input Elements</a></li>
+                <li>
+                    <a href="#section-17-semantic-html-tags" aria-label="Section 1.7. Semantic HTML Tags">Section 1.7. Semantic HTML Tags</a></li>
+                <li>
+                    <a href="#section-18-html-entities--special-characters" aria-label="Section 1.8. HTML Entities &amp; Special Characters">Section 1.8. HTML Entities &amp; Special Characters</a></li>
+                <li>
+                    <a href="#section-19-html-accessibility-aria-basics" aria-label="Section 1.9. HTML Accessibility (ARIA Basics)">Section 1.9. HTML Accessibility (ARIA Basics)</a></li>
+                <li>
+                    <a href="#section-110-seo-and-html-structure-optional" aria-label="Section 1.10. SEO and HTML Structure (Optional)">Section 1.10. SEO and HTML Structure (Optional)</a></li></ul>
+                </li>
+                <li>
+                    <a href="#chapter-02-frontend---css" aria-label="Chapter 02: Frontend - CSS">Chapter 02: Frontend - CSS</a><ul>
+                        
+                <li>
+                    <a href="#section-201-what-is-css" aria-label="Section 2.01: What is CSS?">Section 2.01: What is CSS?</a></li>
+                <li>
+                    <a href="#section-202-why-css-separation-of-structure-and-style" aria-label="Section 2.02: Why CSS? (Separation of structure and style)">Section 2.02: Why CSS? (Separation of structure and style)</a></li>
+                <li>
+                    <a href="#section-203-css-syntax-selectors-properties-values" aria-label="Section 2.03: CSS Syntax: Selectors, Properties, Values">Section 2.03: CSS Syntax: Selectors, Properties, Values</a></li>
+                <li>
+                    <a href="#section-204-ways-to-apply-css" aria-label="Section 2.04: Ways to Apply CSS">Section 2.04: Ways to Apply CSS</a></li>
+                <li>
+                    <a href="#section-205-common-css-selectors" aria-label="Section 2.05: Common CSS Selectors">Section 2.05: Common CSS Selectors</a></li>
+                <li>
+                    <a href="#section-206-box-model" aria-label="Section 2.06: Box Model">Section 2.06: Box Model</a></li>
+                <li>
+                    <a href="#section-207-layout--positioning" aria-label="Section 2.07: Layout &amp; Positioning">Section 2.07: Layout &amp; Positioning</a></li>
+                <li>
+                    <a href="#section-208-flexbox-and-grid" aria-label="Section 2.08: Flexbox and Grid">Section 2.08: Flexbox and Grid</a></li>
+                <li>
+                    <a href="#section-209-responsive-design--media-queries" aria-label="Section 2.09: Responsive Design &amp; Media Queries">Section 2.09: Responsive Design &amp; Media Queries</a></li>
+                <li>
+                    <a href="#section-210-colors-fonts-units" aria-label="Section 2.10: Colors, Fonts, Units">Section 2.10: Colors, Fonts, Units</a></li>
+                <li>
+                    <a href="#section-211-transitions-and-animations" aria-label="Section 2.11: Transitions and Animations">Section 2.11: Transitions and Animations</a></li>
+                <li>
+                    <a href="#section-212-css-variables" aria-label="Section 2.12: CSS Variables">Section 2.12: CSS Variables</a></li>
+                <li>
+                    <a href="#section-213-css-preprocessors-sass-basics-optional" aria-label="Section 2.13: CSS Preprocessors (Sass Basics) (Optional)">Section 2.13: CSS Preprocessors (Sass Basics) (Optional)</a></li>
+                <li>
+                    <a href="#section-214-reset-vs-normalize-optional" aria-label="Section 2.14: Reset vs Normalize (Optional)">Section 2.14: Reset vs Normalize (Optional)</a></li></ul>
+                </li>
+                <li>
+                    <a href="#chapter-03-frontend---javascript" aria-label="Chapter 03: Frontend - JavaScript">Chapter 03: Frontend - JavaScript</a><ul>
+                        
+                <li>
+                    <a href="#section-301-what-is-javascript" aria-label="Section 3.01: What is JavaScript?">Section 3.01: What is JavaScript?</a></li>
+                <li>
+                    <a href="#section-302-connecting-js-to-html-script-dom-access" aria-label="Section 3.02: Connecting JS to HTML (&lt;script&gt;, DOM access)">Section 3.02: Connecting JS to HTML (&lt;script&gt;, DOM access)</a></li>
+                <li>
+                    <a href="#section-303-variables-and-data-types-let-const-var" aria-label="Section 3.03: Variables and Data Types (let, const, var)">Section 3.03: Variables and Data Types (let, const, var)</a></li>
+                <li>
+                    <a href="#section-304-operators-and-control-flow-if-loops-etc" aria-label="Section 3.04: Operators and Control Flow (if, loops, etc.)">Section 3.04: Operators and Control Flow (if, loops, etc.)</a></li>
+                <li>
+                    <a href="#section-305-functions-scope-closures" aria-label="Section 3.05: Functions, Scope, Closures">Section 3.05: Functions, Scope, Closures</a></li>
+                <li>
+                    <a href="#section-306-arrays-and-objects" aria-label="Section 3.06: Arrays and Objects">Section 3.06: Arrays and Objects</a></li>
+                <li>
+                    <a href="#section-307-dom-manipulation" aria-label="Section 3.07: DOM Manipulation">Section 3.07: DOM Manipulation</a></li>
+                <li>
+                    <a href="#section-308-event-handling" aria-label="Section 3.08: Event Handling">Section 3.08: Event Handling</a></li>
+                <li>
+                    <a href="#section-309-es6-features" aria-label="Section 3.09: ES6&#43; Features">Section 3.09: ES6+ Features</a></li>
+                <li>
+                    <a href="#section-310-asynchronous-javascript" aria-label="Section 3.10: Asynchronous JavaScript">Section 3.10: Asynchronous JavaScript</a></li>
+                <li>
+                    <a href="#section-311-fetch-api--ajax" aria-label="Section 3.11: Fetch API &amp; AJAX">Section 3.11: Fetch API &amp; AJAX</a></li>
+                <li>
+                    <a href="#section-312-javascript-module-system-optional" aria-label="Section 3.12: JavaScript Module System (Optional)">Section 3.12: JavaScript Module System (Optional)</a></li>
+                <li>
+                    <a href="#section-313-browser-storage-localstorage-sessionstorage-optional" aria-label="Section 3.13: Browser Storage (localStorage, sessionStorage) (Optional)">Section 3.13: Browser Storage (localStorage, sessionStorage) (Optional)</a></li>
+                <li>
+                    <a href="#section-314-debugging--browser-dev-tools-optional" aria-label="Section 3.14: Debugging &amp; Browser Dev Tools (Optional)">Section 3.14: Debugging &amp; Browser Dev Tools (Optional)</a>
+                </li>
+            </ul>
+            </li>
+            </ul>
+            </li>
+            </ul>
+        </div>
+    </details>
+</div>
+
+  <div class="post-content"><h1 id="web-programming-study-outline">Web Programming Study Outline<a hidden class="anchor" aria-hidden="true" href="#web-programming-study-outline">#</a></h1>
+<hr>
+<h2 id="chapter-00-introduction-to-web-programming">Chapter 00. <a href="/blog/posts/introduction-to-web-programming/">Introduction to Web Programming</a><a hidden class="anchor" aria-hidden="true" href="#chapter-00-introduction-to-web-programming">#</a></h2>
+<h3 id="section-01-what-is-the-world-wide-web-www">Section 0.1. What is the World Wide Web (WWW)?<a hidden class="anchor" aria-hidden="true" href="#section-01-what-is-the-world-wide-web-www">#</a></h3>
+<ul>
+<li>Internet vs World Wide Web</li>
+</ul>
+<h3 id="section-02-a-brief-history-of-the-web-web-10--web-30">Section 0.2. A Brief History of the Web (Web 1.0 → Web 3.0)<a hidden class="anchor" aria-hidden="true" href="#section-02-a-brief-history-of-the-web-web-10--web-30">#</a></h3>
+<h3 id="section-03-what-is-the-w3c">Section 0.3. What is the W3C?<a hidden class="anchor" aria-hidden="true" href="#section-03-what-is-the-w3c">#</a></h3>
+<h3 id="section-04-core-technologies-of-the-web">Section 0.4. Core Technologies of the Web<a hidden class="anchor" aria-hidden="true" href="#section-04-core-technologies-of-the-web">#</a></h3>
+<ul>
+<li>HTML (HyperText Markup Language)</li>
+<li>URL (Uniform Resource Locator)</li>
+<li>HTTP (HyperText Transfer Protocol)</li>
+</ul>
+<h3 id="section-05-web-architecture">Section 0.5. Web Architecture<a hidden class="anchor" aria-hidden="true" href="#section-05-web-architecture">#</a></h3>
+<ul>
+<li>Client / Server / Network Structure</li>
+<li>How the Web Works</li>
+<li>Frontend vs Backend</li>
+</ul>
+<h3 id="section-06-what-is-a-web-browser">Section 0.6. What is a Web Browser?<a hidden class="anchor" aria-hidden="true" href="#section-06-what-is-a-web-browser">#</a></h3>
+<ul>
+<li>Major browsers and rendering engines</li>
+</ul>
+<h3 id="section-07-web-development-workflow">Section 0.7. Web Development Workflow<a hidden class="anchor" aria-hidden="true" href="#section-07-web-development-workflow">#</a></h3>
+<ul>
+<li>Tools (Git, VS Code), folder structure, browser dev tools</li>
+</ul>
+<h3 id="section-08-domain--hosting-basics-optional">Section 0.8. Domain &amp; Hosting Basics <em>(Optional)</em><a hidden class="anchor" aria-hidden="true" href="#section-08-domain--hosting-basics-optional">#</a></h3>
+<hr>
+<h2 id="chapter-01-frontend---html">Chapter 01. <a href="/blog/posts/html-part-01/">Frontend - HTML</a><a hidden class="anchor" aria-hidden="true" href="#chapter-01-frontend---html">#</a></h2>
+<h3 id="section-11-what-is-html">Section 1.1. What is HTML?<a hidden class="anchor" aria-hidden="true" href="#section-11-what-is-html">#</a></h3>
+<h3 id="section-12-what-is-a-markup-language">Section 1.2. What is a Markup Language?<a hidden class="anchor" aria-hidden="true" href="#section-12-what-is-a-markup-language">#</a></h3>
+<h3 id="section-13-core-concepts-of-html">Section 1.3. Core Concepts of HTML<a hidden class="anchor" aria-hidden="true" href="#section-13-core-concepts-of-html">#</a></h3>
+<ul>
+<li>Tags, Elements, Attributes</li>
+</ul>
+<h3 id="section-14-basic-html-document-structure">Section 1.4. Basic HTML Document Structure<a hidden class="anchor" aria-hidden="true" href="#section-14-basic-html-document-structure">#</a></h3>
+<ul>
+<li><code>&lt;!DOCTYPE&gt;</code>, <code>&lt;html&gt;</code>, <code>&lt;head&gt;</code>, <code>&lt;body&gt;</code></li>
+</ul>
+<h3 id="section-15-common-html-tags">Section 1.5. Common HTML Tags<a hidden class="anchor" aria-hidden="true" href="#section-15-common-html-tags">#</a></h3>
+<ul>
+<li>Text, Lists, Links, Images, Tables, etc.</li>
+</ul>
+<h3 id="section-16-forms-and-input-elements">Section 1.6. Forms and Input Elements<a hidden class="anchor" aria-hidden="true" href="#section-16-forms-and-input-elements">#</a></h3>
+<h3 id="section-17-semantic-html-tags">Section 1.7. Semantic HTML Tags<a hidden class="anchor" aria-hidden="true" href="#section-17-semantic-html-tags">#</a></h3>
+<ul>
+<li><code>&lt;header&gt;</code>, <code>&lt;footer&gt;</code>, <code>&lt;nav&gt;</code>, <code>&lt;main&gt;</code>, <code>&lt;section&gt;</code>, <code>&lt;article&gt;</code></li>
+</ul>
+<h3 id="section-18-html-entities--special-characters">Section 1.8. HTML Entities &amp; Special Characters<a hidden class="anchor" aria-hidden="true" href="#section-18-html-entities--special-characters">#</a></h3>
+<h3 id="section-19-html-accessibility-aria-basics">Section 1.9. HTML Accessibility (ARIA Basics)<a hidden class="anchor" aria-hidden="true" href="#section-19-html-accessibility-aria-basics">#</a></h3>
+<h3 id="section-110-seo-and-html-structure-optional">Section 1.10. SEO and HTML Structure <em>(Optional)</em><a hidden class="anchor" aria-hidden="true" href="#section-110-seo-and-html-structure-optional">#</a></h3>
+<hr>
+<h2 id="chapter-02-frontend---css">Chapter 02: Frontend - CSS<a hidden class="anchor" aria-hidden="true" href="#chapter-02-frontend---css">#</a></h2>
+<h3 id="section-201-what-is-css">Section 2.01: What is CSS?<a hidden class="anchor" aria-hidden="true" href="#section-201-what-is-css">#</a></h3>
+<h3 id="section-202-why-css-separation-of-structure-and-style">Section 2.02: Why CSS? (Separation of structure and style)<a hidden class="anchor" aria-hidden="true" href="#section-202-why-css-separation-of-structure-and-style">#</a></h3>
+<h3 id="section-203-css-syntax-selectors-properties-values">Section 2.03: CSS Syntax: Selectors, Properties, Values<a hidden class="anchor" aria-hidden="true" href="#section-203-css-syntax-selectors-properties-values">#</a></h3>
+<h3 id="section-204-ways-to-apply-css">Section 2.04: Ways to Apply CSS<a hidden class="anchor" aria-hidden="true" href="#section-204-ways-to-apply-css">#</a></h3>
+<ul>
+<li>Inline, Internal, External</li>
+</ul>
+<h3 id="section-205-common-css-selectors">Section 2.05: Common CSS Selectors<a hidden class="anchor" aria-hidden="true" href="#section-205-common-css-selectors">#</a></h3>
+<ul>
+<li>Basic, Combinators, Pseudo-classes/elements</li>
+</ul>
+<h3 id="section-206-box-model">Section 2.06: Box Model<a hidden class="anchor" aria-hidden="true" href="#section-206-box-model">#</a></h3>
+<ul>
+<li>margin, border, padding, content</li>
+</ul>
+<h3 id="section-207-layout--positioning">Section 2.07: Layout &amp; Positioning<a hidden class="anchor" aria-hidden="true" href="#section-207-layout--positioning">#</a></h3>
+<ul>
+<li><code>display</code>, <code>position</code>, <code>float</code>, <code>z-index</code>, etc.</li>
+</ul>
+<h3 id="section-208-flexbox-and-grid">Section 2.08: Flexbox and Grid<a hidden class="anchor" aria-hidden="true" href="#section-208-flexbox-and-grid">#</a></h3>
+<h3 id="section-209-responsive-design--media-queries">Section 2.09: Responsive Design &amp; Media Queries<a hidden class="anchor" aria-hidden="true" href="#section-209-responsive-design--media-queries">#</a></h3>
+<h3 id="section-210-colors-fonts-units">Section 2.10: Colors, Fonts, Units<a hidden class="anchor" aria-hidden="true" href="#section-210-colors-fonts-units">#</a></h3>
+<h3 id="section-211-transitions-and-animations">Section 2.11: Transitions and Animations<a hidden class="anchor" aria-hidden="true" href="#section-211-transitions-and-animations">#</a></h3>
+<h3 id="section-212-css-variables">Section 2.12: CSS Variables<a hidden class="anchor" aria-hidden="true" href="#section-212-css-variables">#</a></h3>
+<h3 id="section-213-css-preprocessors-sass-basics-optional">Section 2.13: CSS Preprocessors (Sass Basics) <em>(Optional)</em><a hidden class="anchor" aria-hidden="true" href="#section-213-css-preprocessors-sass-basics-optional">#</a></h3>
+<h3 id="section-214-reset-vs-normalize-optional">Section 2.14: Reset vs Normalize <em>(Optional)</em><a hidden class="anchor" aria-hidden="true" href="#section-214-reset-vs-normalize-optional">#</a></h3>
+<hr>
+<h2 id="chapter-03-frontend---javascript">Chapter 03: Frontend - JavaScript<a hidden class="anchor" aria-hidden="true" href="#chapter-03-frontend---javascript">#</a></h2>
+<h3 id="section-301-what-is-javascript">Section 3.01: What is JavaScript?<a hidden class="anchor" aria-hidden="true" href="#section-301-what-is-javascript">#</a></h3>
+<h3 id="section-302-connecting-js-to-html-script-dom-access">Section 3.02: Connecting JS to HTML (<code>&lt;script&gt;</code>, DOM access)<a hidden class="anchor" aria-hidden="true" href="#section-302-connecting-js-to-html-script-dom-access">#</a></h3>
+<h3 id="section-303-variables-and-data-types-let-const-var">Section 3.03: Variables and Data Types (<code>let</code>, <code>const</code>, <code>var</code>)<a hidden class="anchor" aria-hidden="true" href="#section-303-variables-and-data-types-let-const-var">#</a></h3>
+<h3 id="section-304-operators-and-control-flow-if-loops-etc">Section 3.04: Operators and Control Flow (if, loops, etc.)<a hidden class="anchor" aria-hidden="true" href="#section-304-operators-and-control-flow-if-loops-etc">#</a></h3>
+<h3 id="section-305-functions-scope-closures">Section 3.05: Functions, Scope, Closures<a hidden class="anchor" aria-hidden="true" href="#section-305-functions-scope-closures">#</a></h3>
+<h3 id="section-306-arrays-and-objects">Section 3.06: Arrays and Objects<a hidden class="anchor" aria-hidden="true" href="#section-306-arrays-and-objects">#</a></h3>
+<h3 id="section-307-dom-manipulation">Section 3.07: DOM Manipulation<a hidden class="anchor" aria-hidden="true" href="#section-307-dom-manipulation">#</a></h3>
+<ul>
+<li>Select, Create, Modify, Remove elements</li>
+</ul>
+<h3 id="section-308-event-handling">Section 3.08: Event Handling<a hidden class="anchor" aria-hidden="true" href="#section-308-event-handling">#</a></h3>
+<ul>
+<li>Event types, bubbling vs capturing</li>
+</ul>
+<h3 id="section-309-es6-features">Section 3.09: ES6+ Features<a hidden class="anchor" aria-hidden="true" href="#section-309-es6-features">#</a></h3>
+<ul>
+<li>Arrow functions, template literals, destructuring, etc.</li>
+</ul>
+<h3 id="section-310-asynchronous-javascript">Section 3.10: Asynchronous JavaScript<a hidden class="anchor" aria-hidden="true" href="#section-310-asynchronous-javascript">#</a></h3>
+<ul>
+<li>Callback → Promise → async/await</li>
+</ul>
+<h3 id="section-311-fetch-api--ajax">Section 3.11: Fetch API &amp; AJAX<a hidden class="anchor" aria-hidden="true" href="#section-311-fetch-api--ajax">#</a></h3>
+<h3 id="section-312-javascript-module-system-optional">Section 3.12: JavaScript Module System <em>(Optional)</em><a hidden class="anchor" aria-hidden="true" href="#section-312-javascript-module-system-optional">#</a></h3>
+<h3 id="section-313-browser-storage-localstorage-sessionstorage-optional">Section 3.13: Browser Storage (localStorage, sessionStorage) <em>(Optional)</em><a hidden class="anchor" aria-hidden="true" href="#section-313-browser-storage-localstorage-sessionstorage-optional">#</a></h3>
+<h3 id="section-314-debugging--browser-dev-tools-optional">Section 3.14: Debugging &amp; Browser Dev Tools <em>(Optional)</em><a hidden class="anchor" aria-hidden="true" href="#section-314-debugging--browser-dev-tools-optional">#</a></h3>
+
+
+  </div>
+
+  <footer class="post-footer">
+    <ul class="post-tags">
+    </ul>
+  </footer>
+</article>
+    </main>
+    
+<footer class="footer">
+        <span>&copy; 2025 <a href="https://Byngjoon.github.io/blog/">Hyungtae</a></span> · 
+
+    <span>
+        Powered by
+        <a href="https://gohugo.io/" rel="noopener noreferrer" target="_blank">Hugo</a> &
+        <a href="https://github.com/adityatelange/hugo-PaperMod/" rel="noopener" target="_blank">PaperMod</a>
+    </span>
+</footer>
+<a href="#top" aria-label="go to top" title="Go to Top (Alt + G)" class="top-link" id="top-link" accesskey="g">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 6" fill="currentColor">
+        <path d="M12 6H0l6-6z" />
+    </svg>
+</a>
+
+<script>
+    let menu = document.getElementById('menu')
+    if (menu) {
+        menu.scrollLeft = localStorage.getItem("menu-scroll-position");
+        menu.onscroll = function () {
+            localStorage.setItem("menu-scroll-position", menu.scrollLeft);
+        }
+    }
+
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener("click", function (e) {
+            e.preventDefault();
+            var id = this.getAttribute("href").substr(1);
+            if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView({
+                    behavior: "smooth"
+                });
+            } else {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView();
+            }
+            if (id === "top") {
+                history.replaceState(null, null, " ");
+            } else {
+                history.pushState(null, null, `#${id}`);
+            }
+        });
+    });
+
+</script>
+<script>
+    var mybutton = document.getElementById("top-link");
+    window.onscroll = function () {
+        if (document.body.scrollTop > 800 || document.documentElement.scrollTop > 800) {
+            mybutton.style.visibility = "visible";
+            mybutton.style.opacity = "1";
+        } else {
+            mybutton.style.visibility = "hidden";
+            mybutton.style.opacity = "0";
+        }
+    };
+
+</script>
+<script>
+    document.getElementById("theme-toggle").addEventListener("click", () => {
+        if (document.body.className.includes("dark")) {
+            document.body.classList.remove('dark');
+            localStorage.setItem("pref-theme", 'light');
+        } else {
+            document.body.classList.add('dark');
+            localStorage.setItem("pref-theme", 'dark');
+        }
+    })
+
+</script>
+<script>
+    document.querySelectorAll('pre > code').forEach((codeblock) => {
+        const container = codeblock.parentNode.parentNode;
+
+        const copybutton = document.createElement('button');
+        copybutton.classList.add('copy-code');
+        copybutton.innerHTML = 'copy';
+
+        function copyingDone() {
+            copybutton.innerHTML = 'copied!';
+            setTimeout(() => {
+                copybutton.innerHTML = 'copy';
+            }, 2000);
+        }
+
+        copybutton.addEventListener('click', (cb) => {
+            if ('clipboard' in navigator) {
+                navigator.clipboard.writeText(codeblock.textContent);
+                copyingDone();
+                return;
+            }
+
+            const range = document.createRange();
+            range.selectNodeContents(codeblock);
+            const selection = window.getSelection();
+            selection.removeAllRanges();
+            selection.addRange(range);
+            try {
+                document.execCommand('copy');
+                copyingDone();
+            } catch (e) { };
+            selection.removeRange(range);
+        });
+
+        if (container.classList.contains("highlight")) {
+            container.appendChild(copybutton);
+        } else if (container.parentNode.firstChild == container) {
+            
+        } else if (codeblock.parentNode.parentNode.parentNode.parentNode.parentNode.nodeName == "TABLE") {
+            
+            codeblock.parentNode.parentNode.parentNode.parentNode.parentNode.appendChild(copybutton);
+        } else {
+            
+            codeblock.parentNode.appendChild(copybutton);
+        }
+    });
+</script>
+</body>
+
+</html>

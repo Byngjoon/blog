@@ -4,10 +4,17 @@
     <title>Computer Science/Algorithms &amp; Data Structures on Hyungtae</title>
     <link>https://Byngjoon.github.io/blog/categories/computer-science/algorithms--data-structures/</link>
     <description>Recent content in Computer Science/Algorithms &amp; Data Structures on Hyungtae</description>
-    <generator>Hugo -- 0.147.3</generator>
+    <generator>Hugo -- 0.150.0</generator>
     <language>ko-kr</language>
-    <lastBuildDate>Mon, 02 Jun 2025 14:32:06 +0900</lastBuildDate>
+    <lastBuildDate>Sat, 06 Sep 2025 07:20:49 +0900</lastBuildDate>
     <atom:link href="https://Byngjoon.github.io/blog/categories/computer-science/algorithms--data-structures/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>[Data Structures] [00] Introduction to Data Structures [KR]</title>
+      <link>https://Byngjoon.github.io/blog/posts/introduction-to-data-structures-kr/</link>
+      <pubDate>Sat, 06 Sep 2025 07:20:49 +0900</pubDate>
+      <guid>https://Byngjoon.github.io/blog/posts/introduction-to-data-structures-kr/</guid>
+      <description>&amp;#39;Data Structures&amp;#39;에 대한 기본 개념과 전반적인 흐름을 정리한다.</description>
+    </item>
     <item>
       <title>[Data Structures] [02] List ADT and Linked List Implementation Part 01</title>
       <link>https://Byngjoon.github.io/blog/posts/linked-list-adt/</link>
@@ -354,11 +361,7 @@ Chapter 10. Practice &amp; Implementation
 - Choosing the right data structure
 - Trade-offs: speed vs memory vs simplicity
 
-## Chapter 12. Practice &amp; Implementation
-- Coding common structures in C
-- Debugging dynamic memory (Valgrind, etc.)
-- LeetCode / 백준 / 프로그래머스 추천 문제
-- Structuring reusable modules in C
+
 
 --&gt;</description>
     </item>

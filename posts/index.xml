@@ -6,15 +6,16 @@
     <description>Recent content in Posts on Hyungtae</description>
     <generator>Hugo -- 0.150.0</generator>
     <language>ko-kr</language>
-    <lastBuildDate>Sat, 17 May 2025 22:37:59 +0900</lastBuildDate>
+    <lastBuildDate>Wed, 24 Sep 2025 18:40:00 +0900</lastBuildDate>
     <atom:link href="https://Byngjoon.github.io/blog/posts/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Guide</title>
       <link>https://Byngjoon.github.io/blog/posts/guide/</link>
       <pubDate>Sat, 17 May 2025 22:37:59 +0900</pubDate>
       <guid>https://Byngjoon.github.io/blog/posts/guide/</guid>
-      <description>&lt;h1 id=&#34;computing-field-overview&#34;&gt;Computing Field Overview&lt;/h1&gt;
+      <description>&lt;h1 id=&#34;educational-classification-of-computing-fields-cs--ce--it&#34;&gt;Educational Classification of Computing Fields (CS / CE / IT)&lt;/h1&gt;
 &lt;h2 id=&#34;-computer-science-cs&#34;&gt;■ Computer Science (CS)&lt;/h2&gt;
+&lt;p&gt;&lt;strong&gt;Focus&lt;/strong&gt;: Theoretical foundations, software, algorithms, intelligent systems.&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;
 &lt;p&gt;&lt;strong&gt;Theoretical Computer Science&lt;/strong&gt;&lt;/p&gt;
@@ -22,6 +23,7 @@
 &lt;li&gt;Computation Theory (Turing Machines, Automata)&lt;/li&gt;
 &lt;li&gt;Complexity Theory (P vs NP, Time/Space Complexity)&lt;/li&gt;
 &lt;li&gt;Formal Languages &amp;amp; Compiler Theory&lt;/li&gt;
+&lt;li&gt;Discrete Mathematics Foundations&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
 &lt;li&gt;
@@ -29,24 +31,585 @@
 &lt;ul&gt;
 &lt;li&gt;Data Structures (Lists, Stacks, Queues, Trees, Graphs, Hash Tables)&lt;/li&gt;
 &lt;li&gt;Algorithms (Sorting, Searching, Shortest Path, Dynamic Programming)&lt;/li&gt;
+&lt;li&gt;Algorithm Design Paradigms (Greedy, Divide &amp;amp; Conquer, DP, Backtracking)&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
 &lt;li&gt;
-&lt;p&gt;&lt;strong&gt;Programming Languages&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Programming Languages&lt;/strong&gt;&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Microprocessors ch01 마이크로프로세서의 프로그램 실행 원리</title>
+      <link>https://Byngjoon.github.io/blog/posts/raw-draft-02/</link>
+      <pubDate>Wed, 24 Sep 2025 18:40:00 +0900</pubDate>
+      <guid>https://Byngjoon.github.io/blog/posts/raw-draft-02/</guid>
+      <description>&lt;h1 id=&#34;chapter-01&#34;&gt;Chapter 01.&lt;/h1&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;Outline:&lt;/strong&gt;&lt;/p&gt;&lt;/blockquote&gt;
+&lt;hr&gt;
+&lt;h2 id=&#34;contents&#34;&gt;Contents&lt;/h2&gt;
 &lt;ul&gt;
-&lt;li&gt;Language Design &amp;amp; Syntax Theory&lt;/li&gt;
-&lt;li&gt;Interpreter, Compiler, Virtual Machine Implementation&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;&#34;&gt;0.1.&lt;/a&gt;
+마이크로프로세서와 어셈블리 언어
+마이크로프로세서의 명령어 실행
+기계어 코드의 표현
+수의 표현
+비트 수 왁장
+캐리와 오버플로
+논리 연산
+문자의 표현&lt;/li&gt;
 &lt;/ul&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;&lt;strong&gt;Artificial Intelligence &amp;amp; Machine Learning (AI / ML)&lt;/strong&gt;&lt;/p&gt;
+&lt;hr&gt;
+&lt;h2 id=&#34;section-11-microprocessoers-and-assembly-language&#34;&gt;Section 1.1. Microprocessoers and Assembly Language&lt;/h2&gt;</description>
+    </item>
+    <item>
+      <title>[Basic Knowledge] [02] Data Representation Part 02</title>
+      <link>https://Byngjoon.github.io/blog/posts/basic-knowledge-02/</link>
+      <pubDate>Sun, 21 Sep 2025 14:07:31 +0900</pubDate>
+      <guid>https://Byngjoon.github.io/blog/posts/basic-knowledge-02/</guid>
+      <description>&lt;h1 id=&#34;chapter-00&#34;&gt;Chapter 00.&lt;/h1&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;Outline:&lt;/strong&gt;&lt;/p&gt;&lt;/blockquote&gt;
+&lt;hr&gt;
+&lt;h2 id=&#34;contents&#34;&gt;Contents&lt;/h2&gt;
 &lt;ul&gt;
-&lt;li&gt;Deep Learning, Reinforcement Learning, Natural Language Processing&lt;/li&gt;
-&lt;li&gt;Computer Vision, Recommendation Systems&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;&#34;&gt;0.1.&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;h2 id=&#34;topic-03-integers-representation&#34;&gt;Topic 03: Integers Representation&lt;/h2&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;Outline:&lt;/strong&gt; In real world, Human uses decimal system for integer, but computer uses binary system. Therefore, we faces difference between idea and implemetation in computing.&lt;/p&gt;&lt;/blockquote&gt;
+&lt;h3 id=&#34;section-131-unsigned-integer&#34;&gt;Section 1.3.1. Unsigned Integer&lt;/h3&gt;
+&lt;p&gt;Unsigned integer only have greater than and equal to 0 values.&lt;/p&gt;
+&lt;p&gt;Given binary code A. A is w-bit set, $x_i$ is i-th elements of set A. (i = 0, 1, &amp;hellip;) (e.g. if A = {1, 2, 3}, then $x_0 = 3$)&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>[Basic Knowledge] [01] Data Representation Part 01</title>
+      <link>https://Byngjoon.github.io/blog/posts/basic-knowledge-01/</link>
+      <pubDate>Thu, 11 Sep 2025 13:27:31 +0900</pubDate>
+      <guid>https://Byngjoon.github.io/blog/posts/basic-knowledge-01/</guid>
+      <description>&lt;h1 id=&#34;contents&#34;&gt;Contents&lt;/h1&gt;
+&lt;hr&gt;
+&lt;h2 id=&#34;topic-01-bit-binary-digit-and-byte&#34;&gt;Topic 01: Bit (Binary Digit) and Byte&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Definition:&lt;/strong&gt;
+&lt;ul&gt;
+&lt;li&gt;Bit is binary digit. Each bit is &lt;code&gt;0&lt;/code&gt; or &lt;code&gt;1&lt;/code&gt;.&lt;/li&gt;
+&lt;li&gt;Byte is&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;&lt;strong&gt;Software Engineering&lt;/strong&gt;&lt;/p&gt;</description>
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;h3 id=&#34;section-111-why-does-computer-use-binary-systems&#34;&gt;Section 1.1.1. Why Does Computer Use Binary Systems?&lt;/h3&gt;
+&lt;p&gt;In computer field, binary systems를 사용하는 가장 큰 이유는 안정적이고 경제적이기 때문이다. 첫번째로 안정성의 측면에서 보자면, computer hardware uses electronic signal for implementation. 이때, electronic signal을 여러 단계로 구분하게 되면 (e.g. 0, 1, 2, and 3) noise에 취약해진다. 반면에 when recognize signal only 두 개 (actually &lt;code&gt;0&lt;/code&gt; or &lt;code&gt;1&lt;/code&gt;), &lt;code&gt;0&lt;/code&gt;은 전압 없음 (0V 근처), &lt;code&gt;1&lt;/code&gt;은 전압 있음 (system에 따라 5V, 3V, etc.)으로 구분하게 되며 noise에 강해진다.
+In the other, binary system 이상의 다진법 체계에서는 회로의 구성이 복잡해지고 noise 안정화가 필요하므로 경제적으로 불리하다. 실제로 binary system은 basic logic gate in boolean algebra (AND, OR, NOT)의 조합으로 많은 회로를 구성할 수 있다.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>[Data Structures] [00] Introduction to Data Structures [KR]</title>
+      <link>https://Byngjoon.github.io/blog/posts/introduction-to-data-structures-kr/</link>
+      <pubDate>Sat, 06 Sep 2025 07:20:49 +0900</pubDate>
+      <guid>https://Byngjoon.github.io/blog/posts/introduction-to-data-structures-kr/</guid>
+      <description>&amp;#39;Data Structures&amp;#39;에 대한 기본 개념과 전반적인 흐름을 정리한다.</description>
+    </item>
+    <item>
+      <title>[Data Structures] [02] List ADT and Linked List Implementation Part 01</title>
+      <link>https://Byngjoon.github.io/blog/posts/linked-list-adt/</link>
+      <pubDate>Mon, 02 Jun 2025 14:32:06 +0900</pubDate>
+      <guid>https://Byngjoon.github.io/blog/posts/linked-list-adt/</guid>
+      <description>Understanding the List Abstract Data Type in Data Structures and Its Implementation Using Linked Lists in C</description>
+    </item>
+    <item>
+      <title>[Web Programming] [02] Frontend - HTML Part 02</title>
+      <link>https://Byngjoon.github.io/blog/posts/html-part-02/</link>
+      <pubDate>Thu, 29 May 2025 14:20:15 +0900</pubDate>
+      <guid>https://Byngjoon.github.io/blog/posts/html-part-02/</guid>
+      <description>Learn about HTML5</description>
+    </item>
+    <item>
+      <title>[Web Programming] [01] Frontend - HTML Part 01</title>
+      <link>https://Byngjoon.github.io/blog/posts/html-part-01/</link>
+      <pubDate>Thu, 22 May 2025 14:19:11 +0900</pubDate>
+      <guid>https://Byngjoon.github.io/blog/posts/html-part-01/</guid>
+      <description>Learn about HTML5</description>
+    </item>
+    <item>
+      <title>[Web Programming] [00] Introduction to Web Programming</title>
+      <link>https://Byngjoon.github.io/blog/posts/introduction-to-web-programming/</link>
+      <pubDate>Wed, 21 May 2025 17:15:36 +0900</pubDate>
+      <guid>https://Byngjoon.github.io/blog/posts/introduction-to-web-programming/</guid>
+      <description>The history of web and core concepts of web programming.</description>
+    </item>
+    <item>
+      <title>Web Programming Contents</title>
+      <link>https://Byngjoon.github.io/blog/posts/web-programming-contents/</link>
+      <pubDate>Wed, 21 May 2025 17:15:07 +0900</pubDate>
+      <guid>https://Byngjoon.github.io/blog/posts/web-programming-contents/</guid>
+      <description>&lt;h1 id=&#34;web-programming-study-outline&#34;&gt;Web Programming Study Outline&lt;/h1&gt;
+&lt;hr&gt;
+&lt;h2 id=&#34;chapter-00-introduction-to-web-programming&#34;&gt;Chapter 00. &lt;a href=&#34;https://Byngjoon.github.io/blog/posts/introduction-to-web-programming/&#34;&gt;Introduction to Web Programming&lt;/a&gt;&lt;/h2&gt;
+&lt;h3 id=&#34;section-01-what-is-the-world-wide-web-www&#34;&gt;Section 0.1. What is the World Wide Web (WWW)?&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;Internet vs World Wide Web&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;section-02-a-brief-history-of-the-web-web-10--web-30&#34;&gt;Section 0.2. A Brief History of the Web (Web 1.0 → Web 3.0)&lt;/h3&gt;
+&lt;h3 id=&#34;section-03-what-is-the-w3c&#34;&gt;Section 0.3. What is the W3C?&lt;/h3&gt;
+&lt;h3 id=&#34;section-04-core-technologies-of-the-web&#34;&gt;Section 0.4. Core Technologies of the Web&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;HTML (HyperText Markup Language)&lt;/li&gt;
+&lt;li&gt;URL (Uniform Resource Locator)&lt;/li&gt;
+&lt;li&gt;HTTP (HyperText Transfer Protocol)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;section-05-web-architecture&#34;&gt;Section 0.5. Web Architecture&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;Client / Server / Network Structure&lt;/li&gt;
+&lt;li&gt;How the Web Works&lt;/li&gt;
+&lt;li&gt;Frontend vs Backend&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;section-06-what-is-a-web-browser&#34;&gt;Section 0.6. What is a Web Browser?&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;Major browsers and rendering engines&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;section-07-web-development-workflow&#34;&gt;Section 0.7. Web Development Workflow&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;Tools (Git, VS Code), folder structure, browser dev tools&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;section-08-domain--hosting-basics-optional&#34;&gt;Section 0.8. Domain &amp;amp; Hosting Basics &lt;em&gt;(Optional)&lt;/em&gt;&lt;/h3&gt;
+&lt;hr&gt;
+&lt;h2 id=&#34;chapter-01-frontend---html&#34;&gt;Chapter 01. &lt;a href=&#34;https://Byngjoon.github.io/blog/posts/html-part-01/&#34;&gt;Frontend - HTML&lt;/a&gt;&lt;/h2&gt;
+&lt;h3 id=&#34;section-11-what-is-html&#34;&gt;Section 1.1. What is HTML?&lt;/h3&gt;
+&lt;h3 id=&#34;section-12-what-is-a-markup-language&#34;&gt;Section 1.2. What is a Markup Language?&lt;/h3&gt;
+&lt;h3 id=&#34;section-13-core-concepts-of-html&#34;&gt;Section 1.3. Core Concepts of HTML&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;Tags, Elements, Attributes&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;section-14-basic-html-document-structure&#34;&gt;Section 1.4. Basic HTML Document Structure&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;&amp;lt;!DOCTYPE&amp;gt;&lt;/code&gt;, &lt;code&gt;&amp;lt;html&amp;gt;&lt;/code&gt;, &lt;code&gt;&amp;lt;head&amp;gt;&lt;/code&gt;, &lt;code&gt;&amp;lt;body&amp;gt;&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;section-15-common-html-tags&#34;&gt;Section 1.5. Common HTML Tags&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;Text, Lists, Links, Images, Tables, etc.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;section-16-forms-and-input-elements&#34;&gt;Section 1.6. Forms and Input Elements&lt;/h3&gt;
+&lt;h3 id=&#34;section-17-semantic-html-tags&#34;&gt;Section 1.7. Semantic HTML Tags&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;&amp;lt;header&amp;gt;&lt;/code&gt;, &lt;code&gt;&amp;lt;footer&amp;gt;&lt;/code&gt;, &lt;code&gt;&amp;lt;nav&amp;gt;&lt;/code&gt;, &lt;code&gt;&amp;lt;main&amp;gt;&lt;/code&gt;, &lt;code&gt;&amp;lt;section&amp;gt;&lt;/code&gt;, &lt;code&gt;&amp;lt;article&amp;gt;&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;section-18-html-entities--special-characters&#34;&gt;Section 1.8. HTML Entities &amp;amp; Special Characters&lt;/h3&gt;
+&lt;h3 id=&#34;section-19-html-accessibility-aria-basics&#34;&gt;Section 1.9. HTML Accessibility (ARIA Basics)&lt;/h3&gt;
+&lt;h3 id=&#34;section-110-seo-and-html-structure-optional&#34;&gt;Section 1.10. SEO and HTML Structure &lt;em&gt;(Optional)&lt;/em&gt;&lt;/h3&gt;
+&lt;hr&gt;
+&lt;h2 id=&#34;chapter-02-frontend---css&#34;&gt;Chapter 02: Frontend - CSS&lt;/h2&gt;
+&lt;h3 id=&#34;section-201-what-is-css&#34;&gt;Section 2.01: What is CSS?&lt;/h3&gt;
+&lt;h3 id=&#34;section-202-why-css-separation-of-structure-and-style&#34;&gt;Section 2.02: Why CSS? (Separation of structure and style)&lt;/h3&gt;
+&lt;h3 id=&#34;section-203-css-syntax-selectors-properties-values&#34;&gt;Section 2.03: CSS Syntax: Selectors, Properties, Values&lt;/h3&gt;
+&lt;h3 id=&#34;section-204-ways-to-apply-css&#34;&gt;Section 2.04: Ways to Apply CSS&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;Inline, Internal, External&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;section-205-common-css-selectors&#34;&gt;Section 2.05: Common CSS Selectors&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;Basic, Combinators, Pseudo-classes/elements&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;section-206-box-model&#34;&gt;Section 2.06: Box Model&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;margin, border, padding, content&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;section-207-layout--positioning&#34;&gt;Section 2.07: Layout &amp;amp; Positioning&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;display&lt;/code&gt;, &lt;code&gt;position&lt;/code&gt;, &lt;code&gt;float&lt;/code&gt;, &lt;code&gt;z-index&lt;/code&gt;, etc.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;section-208-flexbox-and-grid&#34;&gt;Section 2.08: Flexbox and Grid&lt;/h3&gt;
+&lt;h3 id=&#34;section-209-responsive-design--media-queries&#34;&gt;Section 2.09: Responsive Design &amp;amp; Media Queries&lt;/h3&gt;
+&lt;h3 id=&#34;section-210-colors-fonts-units&#34;&gt;Section 2.10: Colors, Fonts, Units&lt;/h3&gt;
+&lt;h3 id=&#34;section-211-transitions-and-animations&#34;&gt;Section 2.11: Transitions and Animations&lt;/h3&gt;
+&lt;h3 id=&#34;section-212-css-variables&#34;&gt;Section 2.12: CSS Variables&lt;/h3&gt;
+&lt;h3 id=&#34;section-213-css-preprocessors-sass-basics-optional&#34;&gt;Section 2.13: CSS Preprocessors (Sass Basics) &lt;em&gt;(Optional)&lt;/em&gt;&lt;/h3&gt;
+&lt;h3 id=&#34;section-214-reset-vs-normalize-optional&#34;&gt;Section 2.14: Reset vs Normalize &lt;em&gt;(Optional)&lt;/em&gt;&lt;/h3&gt;
+&lt;hr&gt;
+&lt;h2 id=&#34;chapter-03-frontend---javascript&#34;&gt;Chapter 03: Frontend - JavaScript&lt;/h2&gt;
+&lt;h3 id=&#34;section-301-what-is-javascript&#34;&gt;Section 3.01: What is JavaScript?&lt;/h3&gt;
+&lt;h3 id=&#34;section-302-connecting-js-to-html-script-dom-access&#34;&gt;Section 3.02: Connecting JS to HTML (&lt;code&gt;&amp;lt;script&amp;gt;&lt;/code&gt;, DOM access)&lt;/h3&gt;
+&lt;h3 id=&#34;section-303-variables-and-data-types-let-const-var&#34;&gt;Section 3.03: Variables and Data Types (&lt;code&gt;let&lt;/code&gt;, &lt;code&gt;const&lt;/code&gt;, &lt;code&gt;var&lt;/code&gt;)&lt;/h3&gt;
+&lt;h3 id=&#34;section-304-operators-and-control-flow-if-loops-etc&#34;&gt;Section 3.04: Operators and Control Flow (if, loops, etc.)&lt;/h3&gt;
+&lt;h3 id=&#34;section-305-functions-scope-closures&#34;&gt;Section 3.05: Functions, Scope, Closures&lt;/h3&gt;
+&lt;h3 id=&#34;section-306-arrays-and-objects&#34;&gt;Section 3.06: Arrays and Objects&lt;/h3&gt;
+&lt;h3 id=&#34;section-307-dom-manipulation&#34;&gt;Section 3.07: DOM Manipulation&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;Select, Create, Modify, Remove elements&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;section-308-event-handling&#34;&gt;Section 3.08: Event Handling&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;Event types, bubbling vs capturing&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;section-309-es6-features&#34;&gt;Section 3.09: ES6+ Features&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;Arrow functions, template literals, destructuring, etc.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;section-310-asynchronous-javascript&#34;&gt;Section 3.10: Asynchronous JavaScript&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;Callback → Promise → async/await&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;section-311-fetch-api--ajax&#34;&gt;Section 3.11: Fetch API &amp;amp; AJAX&lt;/h3&gt;
+&lt;h3 id=&#34;section-312-javascript-module-system-optional&#34;&gt;Section 3.12: JavaScript Module System &lt;em&gt;(Optional)&lt;/em&gt;&lt;/h3&gt;
+&lt;h3 id=&#34;section-313-browser-storage-localstorage-sessionstorage-optional&#34;&gt;Section 3.13: Browser Storage (localStorage, sessionStorage) &lt;em&gt;(Optional)&lt;/em&gt;&lt;/h3&gt;
+&lt;h3 id=&#34;section-314-debugging--browser-dev-tools-optional&#34;&gt;Section 3.14: Debugging &amp;amp; Browser Dev Tools &lt;em&gt;(Optional)&lt;/em&gt;&lt;/h3&gt;</description>
+    </item>
+    <item>
+      <title>Python 00</title>
+      <link>https://Byngjoon.github.io/blog/posts/python-00/</link>
+      <pubDate>Mon, 19 May 2025 03:31:15 +0900</pubDate>
+      <guid>https://Byngjoon.github.io/blog/posts/python-00/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Linear Algebra 00</title>
+      <link>https://Byngjoon.github.io/blog/posts/linear-algebra-00/</link>
+      <pubDate>Mon, 19 May 2025 03:30:50 +0900</pubDate>
+      <guid>https://Byngjoon.github.io/blog/posts/linear-algebra-00/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>[Data Structures] [01] Array ADT and Implementation</title>
+      <link>https://Byngjoon.github.io/blog/posts/array-adt/</link>
+      <pubDate>Sat, 17 May 2025 07:27:31 +0900</pubDate>
+      <guid>https://Byngjoon.github.io/blog/posts/array-adt/</guid>
+      <description>Understanding the Array Abstract Data Type in Data Structures and implement in C</description>
+    </item>
+    <item>
+      <title>[Data Structures] [00] Introduction to Data Structures</title>
+      <link>https://Byngjoon.github.io/blog/posts/introduction-to-data-structures/</link>
+      <pubDate>Sat, 17 May 2025 07:20:49 +0900</pubDate>
+      <guid>https://Byngjoon.github.io/blog/posts/introduction-to-data-structures/</guid>
+      <description>The preface and core concepts of Data Structures series</description>
+    </item>
+    <item>
+      <title>[Data Structures] Contents</title>
+      <link>https://Byngjoon.github.io/blog/posts/data-structures-contents/</link>
+      <pubDate>Sat, 17 May 2025 04:16:57 +0900</pubDate>
+      <guid>https://Byngjoon.github.io/blog/posts/data-structures-contents/</guid>
+      <description>&lt;h1 id=&#34;data-structures-study-outline-with-c-language-implementation&#34;&gt;Data Structures Study Outline with C Language Implementation&lt;/h1&gt;
+&lt;hr&gt;
+&lt;h2 id=&#34;chapter-00-introduction-to-data-structures&#34;&gt;Chapter 00. &lt;a href=&#34;https://Byngjoon.github.io/blog/posts/introduction-to-data-structures/&#34;&gt;Introduction to Data Structures&lt;/a&gt;&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;Section 0.1. What Is the Study of Data Structures?&lt;/li&gt;
+&lt;li&gt;Section 0.2. Data Type vs Data Structure&lt;/li&gt;
+&lt;li&gt;Section 0.3. Learn about Abstract Data Types (ADT)&lt;/li&gt;
+&lt;li&gt;Section 0.4. Classification of Data Structures
+&lt;ul&gt;
+&lt;li&gt;By Structural Form, By Storage Method, By Access Pattern, By Usage Level&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;Section 0.5. C Language Essentials for Data Structures&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;h2 id=&#34;chapter-01-array-adt-and-implementation&#34;&gt;Chapter 01. &lt;a href=&#34;https://Byngjoon.github.io/blog/posts/array-adt/&#34;&gt;Array ADT and Implementation&lt;/a&gt;&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;Section 1.1. Array Abstract Data Type (ADT)&lt;/li&gt;
+&lt;li&gt;Section 1.2. What Is an Array in C?&lt;/li&gt;
+&lt;li&gt;Section 1.3. Implementing Static Arrays in C&lt;/li&gt;
+&lt;li&gt;Section 1.4. Memory Model and Pointer Behavior in Arrays&lt;/li&gt;
+&lt;li&gt;Section 1.5. Multidimensional Arrays&lt;/li&gt;
+&lt;li&gt;Section 1.6. Dynamic (Resizable) Arrays in C&lt;/li&gt;
+&lt;li&gt;Section 1.7. Limitations of Arrays and Why Linked Lists Are Needed&lt;/li&gt;
+&lt;li&gt;Section 1.8. Arrays vs Pointers in C (optional)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;h2 id=&#34;chapter-02-list-adt-and-linked-list-implementation&#34;&gt;Chapter 02. &lt;a href=&#34;https://Byngjoon.github.io/blog/posts/linked-list-adt/&#34;&gt;List ADT and Linked List Implementation&lt;/a&gt;&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;Section 2.1. Linked List Abstract Data Type (ADT)&lt;/li&gt;
+&lt;li&gt;Section 2.2. Singly Linked List&lt;/li&gt;
+&lt;li&gt;Section 2.3. Doubly Linked List&lt;/li&gt;
+&lt;li&gt;Section 2.4. Circular Linked List&lt;/li&gt;
+&lt;li&gt;Section 2.5. Linked List Operations in C&lt;/li&gt;
+&lt;li&gt;Section 2.6. Time and Space Complexity&lt;/li&gt;
+&lt;li&gt;Section 2.7. Array vs Linked List&lt;/li&gt;
+&lt;li&gt;Section 2.8. Common Interview Questions on Linked Lists&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;!--
+
+## Chapter 03. Stack
+- Section 3.1. LIFO Principle
+- Section 3.2. Implementation (Array vs Linked List)
+- Section 3.3. Applications of Stack
+- Section 3.4. Time and Space Complexity
+
+---
+
+## Chapter 04. Queue
+- Section 4.1. FIFO Principle
+- Section 4.2. Linear and Circular Queue
+- Section 4.3. Deque (Double-Ended Queue)
+- Section 4.4. Priority Queue
+- Section 4.5. Applications and Complexity
+
+---
+
+## Chapter 05. Recursion
+- Section 5.1. Concept and Stack Relation
+- Section 5.2. Base Case and Recursive Case
+- Section 5.3. Tail Recursion
+- Section 5.4. Recursion vs Iteration
+
+---
+
+## Chapter 06. Tree
+- Section 6.1. Terminology and Properties
+- Section 6.2. Binary Tree and Traversal
+- Section 6.3. Binary Search Tree
+- Section 6.4. Balanced Trees (AVL, Red-Black)
+- Section 6.5. Heap
+
+---
+
+## Chapter 07. Graph
+- Section 7.1. Representation (Matrix vs List)
+- Section 7.2. Traversal (DFS, BFS)
+- Section 7.3. Shortest Paths (Dijkstra)
+- Section 7.4. Minimum Spanning Tree (Kruskal, Prim)
+
+---
+
+## Chapter 08. Hash Table
+- Section 8.1. Hash Functions
+- Section 8.2. Collision Resolution
+- Section 8.3. Hash Maps vs Sets
+- Section 8.4. Applications
+
+---
+
+## Chapter 09. String Algorithms
+- Section 9.1. Memory Representation
+- Section 9.2. Pattern Matching (KMP, Rabin-Karp, Boyer-Moore)
+- Section 9.3. Practical Applications
+
+---
+
+## Chapter 10. Trie
+- Section 10.1. Prefix Tree Concept
+- Section 10.2. Insertion and Search
+- Section 10.3. Use Cases in Auto-completion and Dictionaries
+
+---
+
+## Chapter 11. Segment Tree
+- Section 11.1. Motivation and Structure
+- Section 11.2. Range Query and Update
+- Section 11.3. Complexity Analysis
+
+---
+
+## Chapter 12. Fenwick Tree (Binary Indexed Tree)
+- Section 12.1. Introduction and Comparison with Segment Tree
+- Section 12.2. Prefix Sums
+- Section 12.3. Update and Query Operations
+
+---
+
+## Chapter 13. Union-Find (Disjoint Set)
+- Section 13.1. Union and Find Operations
+- Section 13.2. Path Compression and Union by Rank
+- Section 13.3. Applications (e.g. Kruskal)
+
+---
+
+## Chapter 14. B-Tree and B+ Tree
+- Section 14.1. Structure and Properties
+- Section 14.2. Use in Databases and File Systems
+
+---
+
+## Chapter 15. Complexity Analysis
+- Section 15.1. Big-O, Big-Ω, Big-Θ Notations
+- Section 15.2. Time and Space Comparison Table
+
+---
+
+## Chapter 16. Data Structure Selection Guide
+- Section 16.1. Choosing the Right Structure Based on Use Case
+- Section 16.2. Memory vs Speed Trade-offs
+
+---
+
+
+&lt;!--
+## Chapter 01. Linear Data Structures
+- Section 1.1. Array
+- Section 1.2. Linked List
+  - Section 1.2.1. Singly Linked List
+  - Section 1.2.2. Doubly Linked List
+  - Section 1.2.3. Circular Linked List
+- Section 1.3. Stack
+- Section 1.4. Queue
+  - Section 1.4.1. Linear Queue
+  - Section 1.4.2. Circular Queue
+  - Section 1.4.3. Deque (Double-Ended Queue)
+  - Section 1.4.4. Priority Queue
+
+## Chapter 02. Recursion and Stack Applications
+- Section 2.1. Understanding Recursion
+- Section 2.2. Relation between Recursion and Stack
+- Section 2.3. Space and Time Complexity in Recursion
+
+## Chapter 03. Tree Structures
+- Section 3.1. Basic Terminology and Concepts
+- Section 3.2. Binary Tree and Traversal Techniques
+  - Section 3.2.1. Preorder, Inorder, Postorder, Level-order
+- Section 3.3. Binary Search Tree (BST)
+- Section 3.4. Balanced Binary Trees
+  - Section 3.4.1. AVL Tree
+  - Section 3.4.2. Red-Black Tree
+- Section 3.5. Heap
+
+## Chapter 04. Graph Structures
+- Section 4.1. Definitions and Representations
+  - Section 4.1.1. Adjacency Matrix
+  - Section 4.1.2. Adjacency List
+- Section 4.2. Graph Traversal Algorithms
+  - Section 4.2.1. Depth-First Search (DFS)
+  - Section 4.2.2. Breadth-First Search (BFS)
+- Section 4.3. Weighted Graphs and Shortest Paths
+  - Section 4.3.1. Dijkstra’s Algorithm
+- Section 4.4. Minimum Spanning Tree (MST)
+  - Section 4.4.1. Kruskal’s Algorithm
+  - Section 4.4.2. Prim’s Algorithm
+
+## Chapter 05. Hashing
+- Section 5.1. Hash Tables and Hash Functions
+- Section 5.2. Collision Resolution Techniques
+  - Section 5.2.1. Chaining
+  - Section 5.2.2. Open Addressing
+- Section 5.3. Hash Maps vs Hash Sets
+
+## Chapter 06. String Data Structures
+- Section 6.1. String Representation in Memory
+- Section 6.2. String Matching Algorithms
+  - Section 6.2.1. KMP Algorithm
+  - Section 6.2.2. Rabin-Karp Algorithm
+  - Section 6.2.3. Boyer-Moore Algorithm
+
+## Chapter 07. Advanced Data Structures
+- Section 7.1. Trie (Prefix Tree)
+- Section 7.2. Segment Tree
+- Section 7.3. Fenwick Tree (Binary Indexed Tree)
+- Section 7.4. Union-Find (Disjoint Set)
+- Section 7.5. B-Tree and B+ Tree
+
+## Chapter 08. Complexity Analysis
+- Section 8.1. Big-O, Big-Ω, Big-Θ Notations
+- Section 8.2. Time and Space Complexity of Major Structures
+
+## Chapter 09. Data Structure Selection Guide
+- Section 9.1. Choosing the Right Data Structure
+- Section 9.2. Trade-offs Between Memory and Speed
+--&gt;
+&lt;!--
+Chapter 02. Linked Lists
+	•	Understand node-based storage using pointers
+	•	Explore singly, doubly, and circular linked lists
+	•	Compare linked lists with arrays in terms of performance and use cases
+
+Chapter 03. Stacks and Queues
+	•	Learn the principles of LIFO (Stack) and FIFO (Queue)
+	•	Implement stack and queue using arrays and linked lists
+	•	Understand real-world applications like Undo, BFS, etc.
+
+Chapter 04. Recursion &amp; Call Stack
+	•	Understand how recursion uses the call stack
+	•	Compare iterative and recursive approaches
+	•	Optimize recursive functions and avoid stack overflow
+
+Chapter 05. Trees
+	•	Learn tree terminology (root, leaf, height, etc.)
+	•	Explore binary trees and traversal methods
+	•	Understand binary search trees (BST) and balanced trees
+	•	Study heaps and priority queue implementation
+
+Chapter 06. Hashing
+	•	Learn how hash tables map keys to values
+	•	Understand hash functions and collision resolution techniques
+	•	Apply hash maps in real-world problems
+
+Chapter 07. Graphs
+	•	Explore graph representations: adjacency matrix and list
+	•	Implement DFS and BFS for traversal
+	•	Understand directed/undirected and weighted/unweighted graphs
+	•	Apply graph algorithms: shortest path, topological sort
+
+Chapter 08. Advanced Structures
+	•	Study trie for prefix-based string search
+	•	Learn disjoint set (union-find) and its use in connectivity problems
+	•	Understand segment trees and Fenwick trees for range queries
+	•	Get a glimpse of B-Trees and skip lists
+
+Chapter 09. Complexity &amp; Trade-Offs
+	•	Analyze time and space complexity of data structures
+	•	Learn how to choose the right data structure for a given problem
+	•	Discuss trade-offs between speed, memory, and implementation complexity
+
+Chapter 10. Practice &amp; Implementation
+	•	Implement core data structures in code (C/Python/Java)
+	•	Solve problems on platforms like LeetCode, Baekjoon, etc.
+	•	Practice debugging and test-driven development
+	•	Learn how to recognize and apply structures in real-world scenarios
+
+
+
+- check complexity -&gt; algorithms
+- recursion -&gt; after stack and with call stack
+
+
+## Chapter 04. Stacks
+- Stack ADT and use cases
+- Array-based stack implementation
+- Linked list-based stack implementation
+- Stack applications (undo, parentheses checker, etc.)
+
+## Chapter 05. Queues
+- Queue ADT and use cases
+- Linear Queue and Circular Queue
+- Array vs Linked List implementations
+- Deque and Priority Queue (basic)
+
+## Chapter 06. Trees
+- Tree terminology and representation
+- Binary Tree and Traversal (Pre/In/Post-order)
+- Binary Search Tree (BST)
+- Tree applications and recursive implementation
+- Brief intro to AVL/Red-Black Trees
+
+## Chapter 07. Heaps &amp; Priority Queues
+- Max Heap / Min Heap
+- Array representation of heaps
+- Heap sort
+- Priority Queue ADT and its applications
+
+## Chapter 08. Hashing
+- Hash functions and collision handling
+- Open Addressing / Separate Chaining
+- Hash Tables in C
+- Applications (lookup, duplicate detection)
+
+## Chapter 09. Graphs
+- Graph representation (adjacency list/matrix)
+- DFS &amp; BFS (recursive &amp; iterative)
+- Directed/undirected, weighted/unweighted graphs
+- Applications: shortest path (intro), topological sort
+
+## Chapter 10. Advanced Structures
+- Trie (Prefix Tree)
+- Disjoint Set (Union-Find)
+- Segment Tree / Fenwick Tree (optional)
+- Skip List / B-Tree (conceptual overview)
+
+## Chapter 11. Complexity &amp; Design Trade-offs
+- Time and Space Complexity of each structure
+- Choosing the right data structure
+- Trade-offs: speed vs memory vs simplicity
+
+
+
+--&gt;</description>
     </item>
   </channel>
 </rss>
