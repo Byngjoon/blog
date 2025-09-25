@@ -8,73 +8,134 @@ math = true
 draft = false
 weight = 1
 +++
-# Computing Field Overview
+
+# Educational Classification of Computing Fields (CS / CE / IT)
 
 ## ■ Computer Science (CS)
+
+**Focus**: Theoretical foundations, software, algorithms, intelligent systems.  
 
 - **Theoretical Computer Science**
   - Computation Theory (Turing Machines, Automata)
   - Complexity Theory (P vs NP, Time/Space Complexity)
   - Formal Languages & Compiler Theory
+  - Discrete Mathematics Foundations
 
 - **Algorithms & Data Structures**
   - Data Structures (Lists, Stacks, Queues, Trees, Graphs, Hash Tables)
   - Algorithms (Sorting, Searching, Shortest Path, Dynamic Programming)
+  - Algorithm Design Paradigms (Greedy, Divide & Conquer, DP, Backtracking)
 
 - **Programming Languages**
   - Language Design & Syntax Theory
   - Interpreter, Compiler, Virtual Machine Implementation
+  - Paradigms (Functional, Object-Oriented, Logic Programming)
 
 - **Artificial Intelligence & Machine Learning (AI / ML)**
-  - Deep Learning, Reinforcement Learning, Natural Language Processing
+  - Machine Learning (Supervised, Unsupervised, Reinforcement Learning)
+  - Deep Learning (CNN, RNN, Transformers)
+  - Natural Language Processing (NLP)
   - Computer Vision, Recommendation Systems
+  - Knowledge Representation, Expert Systems
 
 - **Software Engineering**
   - Software Design & Architecture
-  - Version Control, Testing, DevOps
-  - Software Quality & Maintenance
+  - Development Methodologies (Agile, Scrum, DevOps)
+  - Version Control, Testing, CI/CD
+  - Software Quality, Maintenance, Reuse
 
-- **Databases**
+- **Databases & Information Systems**
   - Data Modeling (ERD, Relational, NoSQL)
-  - Query Optimization, Transactions, Distributed Databases
+  - Query Languages (SQL, NewSQL)
+  - Transactions, Concurrency, Distributed Databases
+  - Data Warehousing, Big Data, Analytics
 
 - **Networking & Security**
-  - OSI 7 Layers, TCP/IP, Routing
-  - Cryptography, Authentication, Penetration Testing
+  - Network Fundamentals (OSI 7 Layers, TCP/IP, Routing)
+  - Protocols (HTTP, DNS, BGP, 5G, SDN)
+  - Cybersecurity (Cryptography, Authentication, Penetration Testing)
+  - Secure Software Development
 
 ---
 
 ## ■ Computer Engineering (CE)
 
+**Focus**: Hardware, architecture, embedded systems, OS, and integration.  
+
 - **Computer Architecture (CA)** _(Core Area)_
   - Logic Circuits (Gates, Flip-Flops, FSM)
   - Instruction Set Architecture (ISA: RISC, CISC)
   - ALU, Registers, Control Unit Design
-  - Pipelining, Cache Memory, Parallel Processing
+  - Pipelining, Cache, Parallel & Distributed Processing
   - Microarchitecture & Performance Optimization
 
-- **Embedded Systems**
+- **Embedded & Cyber-Physical Systems**
   - Microcontrollers (ARM Cortex, AVR, etc.)
-  - RTOS, Hardware Control, Sensor Interfaces
+  - Real-Time Operating Systems (RTOS)
+  - Sensor Interfaces, IoT Devices
+  - Automotive & Robotics Applications
 
 - **Hardware Design**
+  - Digital Logic, Microelectronics
   - VLSI, FPGA, ASIC Design
   - Hardware Description Languages (Verilog, VHDL)
 
-- **Systems Programming & Operating Systems (OS)**
-  - Processes, Memory Management, File Systems
-  - Kernel, Device Drivers, Virtualization Technologies
+- **Systems Programming & Operating Systems**
+  - OS Fundamentals (Processes, Scheduling, Memory Management, File Systems)
+  - Kernel & Device Drivers
+  - Virtualization, Containers, Cloud-native Systems
+  - Systems Programming in C/C++
+
+- **Networking (Engineering Aspect)**
+  - Hardware-level Networking
+  - Network-on-Chip, High-Performance Interconnects
 
 ---
 
 ## ■ Information Technology (IT)
 
-- Application Software Development (Web, Mobile, Cloud)
-- IT Infrastructure (Server, Network Management)
-- IT Services, Technical Support, Security Management
+**Focus**: Practical applications, infrastructure, management, and services.  
 
+- **Application Development**
+  - Web Development (Front-end, Back-end, Full Stack)
+  - Mobile Apps (Android, iOS)
+  - Cloud-Native Applications (Serverless, Microservices)
+
+- **IT Infrastructure & Systems**
+  - Servers, Data Centers, Virtualization
+  - Network & System Administration
+  - Cloud Computing Platforms (AWS, Azure, GCP)
+  - Cybersecurity Operations (SOC, Threat Management)
+
+- **IT Services & Management**
+  - IT Service Management (ITSM, ITIL frameworks)
+  - Technical Support, Helpdesk Systems
+  - Enterprise Systems (ERP, CRM)
+  - DevOps & Continuous Delivery in Production
+
+- **Human & Organizational Aspects**
+  - Human–Computer Interaction (HCI), Usability
+  - Digital Transformation in Business
+  - IT Policy, Governance, Ethics
+  - Computing Education & Workforce Training
 
 ---
+
+## Summary Table
+
+| Domain | Focus | Key Educational Emphasis |
+|--------|-------|---------------------------|
+| **CS** | Theory, software, algorithms, AI | Computation theory, algorithms, software engineering, AI/ML, databases, security |
+| **CE** | Hardware, architecture, OS, embedded | Logic circuits, architecture, embedded systems, OS, hardware–software integration |
+| **IT** | Applications, infrastructure, management | Web/mobile/cloud apps, IT systems, service management, business/education impact |
+
+---
+
+## Notes
+- **CS** → "How do we compute?" (abstract theory + software)  
+- **CE** → "How do we build machines that compute?" (hardware + systems)  
+- **IT** → "How do we apply computing to solve real-world problems?" (applications + management) 
+- 이 세 분류도는 교육과정 설계(전산학부 vs 컴퓨터공학부 vs IT융합학부)에서 흔히 쓰이는 큰 틀임.
 
 # Computer Science (CS) Subfields
 
@@ -142,6 +203,75 @@ The table below organizes each subfield and its representative research topics.
 - **Artificial Intelligence** → Researches intelligent systems and learning algorithms  
 
 ---
+# Computer Engineering (CE) Subfields
+
+## Overview
+Computer Engineering은 **하드웨어 설계**, **시스템 통합**, **임베디드 및 네트워크 장치** 등  
+컴퓨터를 물리적으로 구현하고 최적화하는 데 초점을 둔 학문이다.  
+아래 표는 주요 하위 계층과 그 세부 분야를 정리한 것이다.
+
+---
+
+## 1. Digital Logic & Circuits
+
+| 분야 | 주요 내용 | 대표 연구 주제 / 기술 |
+|------|-----------|------------------------|
+| **Boolean Logic & Digital Circuits** | 논리 게이트와 회로 설계 | AND, OR, NOT, NAND/NOR, Flip-Flops, Multiplexers |
+| **Combinational Logic Design** | 입력에 따라 즉시 출력이 결정되는 회로 | Adders, Decoders, Encoders, ALU Design |
+| **Sequential Logic Design** | 상태를 기억하는 회로 설계 | Registers, Counters, State Machines |
+| **Hardware Description Languages (HDL)** | 하드웨어 모델링 언어 | VHDL, Verilog |
+
+---
+
+## 2. Computer Architecture
+
+| 분야 | 주요 내용 | 대표 연구 주제 / 기술 |
+|------|-----------|------------------------|
+| **Processor Design** | CPU 구조와 성능 최적화 | RISC vs CISC, Pipelining, Superscalar Architecture |
+| **Memory Hierarchy** | 메모리 계층 구조 | Cache, Virtual Memory, DRAM/SRAM |
+| **Parallel & Multicore Architecture** | 다중 프로세서 시스템 | Multicore Processors, GPU Architecture, SIMD/MIMD |
+| **Instruction Set Architecture (ISA)** | 명령어 집합 설계 | x86, ARM, RISC-V |
+
+---
+
+## 3. Embedded & Real-Time Systems
+
+| 분야 | 주요 내용 | 대표 연구 주제 / 기술 |
+|------|-----------|------------------------|
+| **Embedded Systems** | 특정 기능을 수행하는 소형 시스템 | IoT Devices, Automotive Systems, Wearable Devices |
+| **Real-Time Systems** | 시간 제약이 중요한 시스템 | Scheduling, Real-Time OS (RTOS) |
+| **Cyber-Physical Systems (CPS)** | 물리적 세계와 결합된 컴퓨팅 | Robotics, Smart Grids, Medical Devices |
+
+---
+
+## 4. VLSI & Hardware Implementation
+
+| 분야 | 주요 내용 | 대표 연구 주제 / 기술 |
+|------|-----------|------------------------|
+| **VLSI Design** | 초대규모 집적 회로 설계 | CMOS Design, ASIC, FPGA |
+| **Digital IC Design** | 디지털 집적회로 | Gate-level Design, RTL Design |
+| **Testing & Verification** | 하드웨어 검증 및 신뢰성 확보 | Fault Tolerance, Formal Verification |
+| **Emerging Hardware** | 새로운 계산 패러다임 | Quantum Computing, Neuromorphic Chips |
+
+---
+
+## 5. Networking & Communication Hardware
+
+| 분야 | 주요 내용 | 대표 연구 주제 / 기술 |
+|------|-----------|------------------------|
+| **Computer Networks Hardware** | 네트워크 장치 설계 | Routers, Switches, Firewalls |
+| **Wireless Communication Systems** | 무선 네트워크용 하드웨어 | Cellular Base Stations, Wi-Fi Modules |
+| **Signal Processing Hardware** | 통신 신호 처리 | DSP Chips, Modems |
+| **High-Performance Interconnects** | 초고속 통신 기술 | InfiniBand, Optical Networks |
+
+---
+
+## Summary
+- **Digital Logic & Circuits** → CE의 기초: 논리회로와 하드웨어 설계 언어  
+- **Computer Architecture** → 프로세서와 메모리 구조, ISA 중심  
+- **Embedded & Real-Time Systems** → IoT, CPS, 실시간 제어 시스템  
+- **VLSI & Hardware Implementation** → 집적 회로 설계, 차세대 하드웨어 기술  
+- **Networking & Communication Hardware** → 네트워크 및 통신 하드웨어 설계  
 
 
 
@@ -266,8 +396,40 @@ It categorizes computing field into major branches, each with detailed subfields
 
 ---
 
+## 11. General and Reference
+
+| Area | Description | Representative Topics |
+|------|-------------|------------------------|
+| **Survey & Reference Works** | Summarization of existing knowledge | Computing Surveys, Encyclopedias |
+| **Cross-Disciplinary Topics** | Knowledge spanning multiple areas | Standards, Interdisciplinary References |
+| **Document Types** | Forms of scholarly communication | Theses, Tutorials, Textbooks |
+
+---
+
+## 12. Mathematics of Computing
+
+| Area | Description | Representative Topics |
+|------|-------------|------------------------|
+| **Discrete Mathematics** | Mathematical foundations of computing | Logic, Graph Theory, Combinatorics |
+| **Probability & Statistics** | Uncertainty and inference | Random Processes, Statistical Inference |
+| **Numerical Analysis** | Algorithms for continuous mathematics | Approximation, Optimization |
+| **Mathematical Software** | Tools supporting mathematics in computing | Symbolic Computation, Algebra Systems |
+
+---
+
+## 13. Social and Professional Topics
+
+| Area | Description | Representative Topics |
+|------|-------------|------------------------|
+| **Computing Education** | Pedagogy and training | CS Curriculum, Educational Technologies |
+| **Professional Topics** | Workforce, practice, and ethics | Professional Codes, Career Development |
+| **Computing and Society** | Impact of computing on society | Digital Divide, Policy, Law |
+| **History of Computing** | Historical perspectives | Evolution of Hardware, Early Software Systems |
+
+---
+
 ## Summary
-According to **ACM CCS**, Computer Science spans across:  
+According to **ACM CCS**, the **13 top-level categories** of the computing field are:  
 - **Theory of Computation**  
 - **Hardware**  
 - **Software & Its Engineering**  
@@ -276,12 +438,13 @@ According to **ACM CCS**, Computer Science spans across:
 - **Information Systems**  
 - **Security & Privacy**  
 - **Human-Centered Computing**  
-- **Computing Methodologies (AI, ML, etc.)**  
+- **Computing Methodologies**  
 - **Applied Computing**  
+- **General and Reference**  
+- **Mathematics of Computing**  
+- **Social and Professional Topics**  
 
-This classification is widely used in academic research and publication indexing.  
-
----
+This taxonomy is widely used for academic research classification, digital libraries, and indexing.
 
 
 # Mapping: Education-Oriented CS Categories ↔ ACM CCS
@@ -410,73 +573,3 @@ This classification is widely used in academic research and publication indexing
 - **전략**:  
   - ACM CCS 10개 대분류를 뼈대로 삼고, 각 과목이 어디에 속하는지 매핑하면서 정리  
   - 세부 분류는 대학원/연구 단계에서 확장  
-
-# Computer Engineering (CE) Subfields
-
-## Overview
-Computer Engineering은 **하드웨어 설계**, **시스템 통합**, **임베디드 및 네트워크 장치** 등  
-컴퓨터를 물리적으로 구현하고 최적화하는 데 초점을 둔 학문이다.  
-아래 표는 주요 하위 계층과 그 세부 분야를 정리한 것이다.
-
----
-
-## 1. Digital Logic & Circuits
-
-| 분야 | 주요 내용 | 대표 연구 주제 / 기술 |
-|------|-----------|------------------------|
-| **Boolean Logic & Digital Circuits** | 논리 게이트와 회로 설계 | AND, OR, NOT, NAND/NOR, Flip-Flops, Multiplexers |
-| **Combinational Logic Design** | 입력에 따라 즉시 출력이 결정되는 회로 | Adders, Decoders, Encoders, ALU Design |
-| **Sequential Logic Design** | 상태를 기억하는 회로 설계 | Registers, Counters, State Machines |
-| **Hardware Description Languages (HDL)** | 하드웨어 모델링 언어 | VHDL, Verilog |
-
----
-
-## 2. Computer Architecture
-
-| 분야 | 주요 내용 | 대표 연구 주제 / 기술 |
-|------|-----------|------------------------|
-| **Processor Design** | CPU 구조와 성능 최적화 | RISC vs CISC, Pipelining, Superscalar Architecture |
-| **Memory Hierarchy** | 메모리 계층 구조 | Cache, Virtual Memory, DRAM/SRAM |
-| **Parallel & Multicore Architecture** | 다중 프로세서 시스템 | Multicore Processors, GPU Architecture, SIMD/MIMD |
-| **Instruction Set Architecture (ISA)** | 명령어 집합 설계 | x86, ARM, RISC-V |
-
----
-
-## 3. Embedded & Real-Time Systems
-
-| 분야 | 주요 내용 | 대표 연구 주제 / 기술 |
-|------|-----------|------------------------|
-| **Embedded Systems** | 특정 기능을 수행하는 소형 시스템 | IoT Devices, Automotive Systems, Wearable Devices |
-| **Real-Time Systems** | 시간 제약이 중요한 시스템 | Scheduling, Real-Time OS (RTOS) |
-| **Cyber-Physical Systems (CPS)** | 물리적 세계와 결합된 컴퓨팅 | Robotics, Smart Grids, Medical Devices |
-
----
-
-## 4. VLSI & Hardware Implementation
-
-| 분야 | 주요 내용 | 대표 연구 주제 / 기술 |
-|------|-----------|------------------------|
-| **VLSI Design** | 초대규모 집적 회로 설계 | CMOS Design, ASIC, FPGA |
-| **Digital IC Design** | 디지털 집적회로 | Gate-level Design, RTL Design |
-| **Testing & Verification** | 하드웨어 검증 및 신뢰성 확보 | Fault Tolerance, Formal Verification |
-| **Emerging Hardware** | 새로운 계산 패러다임 | Quantum Computing, Neuromorphic Chips |
-
----
-
-## 5. Networking & Communication Hardware
-
-| 분야 | 주요 내용 | 대표 연구 주제 / 기술 |
-|------|-----------|------------------------|
-| **Computer Networks Hardware** | 네트워크 장치 설계 | Routers, Switches, Firewalls |
-| **Wireless Communication Systems** | 무선 네트워크용 하드웨어 | Cellular Base Stations, Wi-Fi Modules |
-| **Signal Processing Hardware** | 통신 신호 처리 | DSP Chips, Modems |
-| **High-Performance Interconnects** | 초고속 통신 기술 | InfiniBand, Optical Networks |
-
----
-
-## Summary
-- **Digital Logic & Circuits** → CE의 기초: 논리회로와 하드웨어 설계 언어  
-- **Computer Architecture** → 프로세서와 메모리 구조, ISA 중심  
-- **Embedded & Real-Time Systems** → IoT, CPS, 실시간 제어 시스템  
-- **VLSI & Hardware Implementation** → 집적 회로 설계, 차세대 하드웨어 기술  
-- **Networking & Communication Hardware** → 네트워크 및 통신 하드웨어 설계  
