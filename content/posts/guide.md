@@ -137,6 +137,8 @@ weight = 1
 - **IT** → "How do we apply computing to solve real-world problems?" (applications + management) 
 - 이 세 분류도는 교육과정 설계(전산학부 vs 컴퓨터공학부 vs IT융합학부)에서 흔히 쓰이는 큰 틀임.
 
+---
+
 # Computer Science (CS) Subfields
 
 ## Overview
