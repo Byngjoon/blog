@@ -1,6 +1,6 @@
 +++
 date = '2025-09-24T18:40:00+09:00'
-title = 'Microprocessors ch01 마이크로프로세서의 프로그램 실행 원리'
+title = 'Understanding Microprocessors - from Programming to Processor Design: ch01 마이크로프로세서의 프로그램 실행 원리'
 description = ""
 categories = [""]
 tags = [""]
@@ -8,7 +8,8 @@ slug = ""
 math = true
 draft = true
 +++
-
+제 1부 Assembly Language and Machine Language
+ch 01 - ch 04
 # Chapter 01. 
 
 > **Outline:**
