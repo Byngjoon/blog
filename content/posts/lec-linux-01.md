@@ -1,6 +1,6 @@
 +++
 date = '2026-03-09T14:07:47+09:00'
-title = 'Lec Linux 01'
+title = 'Linux Programming Lecture 01: OS & Linux Basic'
 description = ""
 categories = [""]
 tags = [""]
