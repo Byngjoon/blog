@@ -15,10 +15,19 @@ draft = true
 
 ---
 
-## Contents
+# Contents
 
 - [0.1.]() 
 
 ---
 
-## Section 0.1.
+# Section 0.1.
+
+
+---
+**References**
+- 
+
+**Acknowledgements**
+- OpenAI ChatGPT
+- Google NotebookLM

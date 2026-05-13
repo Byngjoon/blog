@@ -1,6 +1,6 @@
 baseURL = 'https://Byngjoon.github.io/blog/'
-languageCode = 'ko-kr'
-title = 'Hyungtae'
+locale = 'ko-KR'
+title = 'Learning-Log'
 theme = 'PaperMod'
 [pagination]
   pagerSize = 10
