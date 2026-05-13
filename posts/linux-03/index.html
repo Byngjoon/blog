@@ -1,0 +1,698 @@
+<!DOCTYPE html>
+<html lang="en" dir="auto">
+
+<head><meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="robots" content="index, follow">
+<title>Linux [03]: File | Learning-Log</title>
+<meta name="keywords" content="">
+<meta name="description" content="Chapter 00.
+
+Outline:
+
+
+Contents
+
+0.1.
+
+
+Section 0.1.
+File is &hellip;
+File is 전통적으로는 정보를 저장하는 most basic unit, 이때에는 단순히 data, program 등을 file로 생각한다. 그러나, modern os의 관점에서 file은 abstract object로 read and write라는 unified interface로 단순 data or program을 넘어 hardware device까지 다루기 위한 하나의 system이 되었다. file is stored storage device and 보통의 경우 kernel은 file을 a sequence of bytes로 생각하며 실제 그 file이 무엇인지는 application이 해석하게 된다.">
+<meta name="author" content="map[name:byungjoonkim]">
+<link rel="canonical" href="https://Byngjoon.github.io/blog/posts/linux-03/">
+<link crossorigin="anonymous" href="/blog/assets/css/stylesheet.ed42a47c2de72c05bf93ef053b29fa2dd6f1838928545be0be357c9ab66f8ec6.css" integrity="sha256-7UKkfC3nLAW/k&#43;8FOyn6Ldbxg4koVFvgvjV8mrZvjsY=" rel="preload stylesheet" as="style">
+<link rel="icon" href="https://Byngjoon.github.io/blog/favicon.ico">
+<link rel="icon" type="image/png" sizes="16x16" href="https://Byngjoon.github.io/blog/favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="https://Byngjoon.github.io/blog/favicon-32x32.png">
+<link rel="apple-touch-icon" href="https://Byngjoon.github.io/blog/apple-touch-icon.png">
+<link rel="mask-icon" href="https://Byngjoon.github.io/blog/safari-pinned-tab.svg">
+<meta name="theme-color" content="#2e2e33">
+<meta name="msapplication-TileColor" content="#2e2e33">
+<link rel="alternate" hreflang="en" href="https://Byngjoon.github.io/blog/posts/linux-03/">
+<noscript>
+    <style>
+        #theme-toggle,
+        .top-link {
+            display: none;
+        }
+
+    </style>
+    <style>
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --theme: rgb(29, 30, 32);
+                --entry: rgb(46, 46, 51);
+                --primary: rgb(218, 218, 219);
+                --secondary: rgb(155, 156, 157);
+                --tertiary: rgb(65, 66, 68);
+                --content: rgb(196, 196, 197);
+                --code-block-bg: rgb(46, 46, 51);
+                --code-bg: rgb(55, 56, 62);
+                --border: rgb(51, 51, 51);
+            }
+
+            .list {
+                background: var(--theme);
+            }
+
+            .list:not(.dark)::-webkit-scrollbar-track {
+                background: 0 0;
+            }
+
+            .list:not(.dark)::-webkit-scrollbar-thumb {
+                border-color: var(--theme);
+            }
+        }
+
+    </style>
+</noscript>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"></script>
+<script>
+  window.onload = function () {
+    renderMathInElement(document.body, {
+      delimiters: [
+        { left: "$$", right: "$$", display: true },
+        { left: "$", right: "$", display: false }
+      ]
+    });
+  };
+</script>
+
+<meta property="og:url" content="https://Byngjoon.github.io/blog/posts/linux-03/">
+  <meta property="og:site_name" content="Learning-Log">
+  <meta property="og:title" content="Linux [03]: File">
+  <meta property="og:description" content="Chapter 00. Outline:
+Contents 0.1. Section 0.1. File is … File is 전통적으로는 정보를 저장하는 most basic unit, 이때에는 단순히 data, program 등을 file로 생각한다. 그러나, modern os의 관점에서 file은 abstract object로 read and write라는 unified interface로 단순 data or program을 넘어 hardware device까지 다루기 위한 하나의 system이 되었다. file is stored storage device and 보통의 경우 kernel은 file을 a sequence of bytes로 생각하며 실제 그 file이 무엇인지는 application이 해석하게 된다.">
+  <meta property="og:locale" content="ko-KR">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="posts">
+    <meta property="article:published_time" content="2026-05-13T16:16:50+09:00">
+    <meta property="article:modified_time" content="2026-05-13T16:16:50+09:00">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Linux [03]: File">
+<meta name="twitter:description" content="Chapter 00.
+
+Outline:
+
+
+Contents
+
+0.1.
+
+
+Section 0.1.
+File is &hellip;
+File is 전통적으로는 정보를 저장하는 most basic unit, 이때에는 단순히 data, program 등을 file로 생각한다. 그러나, modern os의 관점에서 file은 abstract object로 read and write라는 unified interface로 단순 data or program을 넘어 hardware device까지 다루기 위한 하나의 system이 되었다. file is stored storage device and 보통의 경우 kernel은 file을 a sequence of bytes로 생각하며 실제 그 file이 무엇인지는 application이 해석하게 된다.">
+
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position":  1 ,
+      "name": "Posts",
+      "item": "https://Byngjoon.github.io/blog/posts/"
+    }, 
+    {
+      "@type": "ListItem",
+      "position":  2 ,
+      "name": "Linux [03]: File",
+      "item": "https://Byngjoon.github.io/blog/posts/linux-03/"
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "Linux [03]: File",
+  "name": "Linux [03]: File",
+  "description": "Chapter 00. Outline:\nContents 0.1. Section 0.1. File is \u0026hellip; File is 전통적으로는 정보를 저장하는 most basic unit, 이때에는 단순히 data, program 등을 file로 생각한다. 그러나, modern os의 관점에서 file은 abstract object로 read and write라는 unified interface로 단순 data or program을 넘어 hardware device까지 다루기 위한 하나의 system이 되었다. file is stored storage device and 보통의 경우 kernel은 file을 a sequence of bytes로 생각하며 실제 그 file이 무엇인지는 application이 해석하게 된다.\n",
+  "keywords": [
+    ""
+  ],
+  "articleBody": "Chapter 00. Outline:\nContents 0.1. Section 0.1. File is … File is 전통적으로는 정보를 저장하는 most basic unit, 이때에는 단순히 data, program 등을 file로 생각한다. 그러나, modern os의 관점에서 file은 abstract object로 read and write라는 unified interface로 단순 data or program을 넘어 hardware device까지 다루기 위한 하나의 system이 되었다. file is stored storage device and 보통의 경우 kernel은 file을 a sequence of bytes로 생각하며 실제 그 file이 무엇인지는 application이 해석하게 된다.\ntraditional definition vs modern OS concepts In tradition, the most basic unit for storing infomation. traditional definition for user. data, programs, and etc. are naturally archived as file. In modern concepts, abstract object to read and write data. for modern OS concepts, especially in Linux/UNIX extansion of concept of file a sequence of m byte no matter what it means for OS, that is only for application unified interface to read and write data. manage manythings as file =\u003e use same system call interface like read/write/open/close to access device and data Uniform View =\u003e no matter where it is stored, what it is contained, what hardware system it is, same action to call (read, write, …) use read function, when read data on disk or take packet on network socket as well. Physical devices also can be represented as file. keyboard input =\u003e stdin =\u003e read like file displaying to monitor =\u003e stdout =\u003e write like file e.g., echo hello \u003e /dev/tty in user’s perspect, just writing at tty in real mechanism, write() → VFS → inode 확인 → character device file 확인 → tty driver 호출 → terminal hardware 출력 =\u003e hello not be stored in tty Typically, stored on storage devices (e.g., SSD, HDD, Even Memory) Type of File\nOrdinary File (== Regular File)\nstore text or binary data. is stored on secondary storage device. kernel do not distinguish what it is, only application do for kernel, it is just a sequence of m bytes. Directory\na set(array) of directory entries. directory entry is mapping of file-name and inode-number. directory [ (“a.txt”, inode 15), (“b.txt”, inode 29), (“dir”, inode 40) ] inode-number (index, refference) =\u003e inode inode is a structure that contains 실체 and metadata about file. not have file-name, have where it is on disk, file-size, … why is not file-name contained in inode =\u003e inode is identity of file. “a.txt” → inode 3512, “b.txt” → inode 3512 =\u003e hard rink for integrity, only kernel can have permission to write to directory. is the pointer-like that contain other file’s name and infomation to find it. finally, it is 특정 format의 binary data를 가진 regular-like file namespace == path 구조?? tree 형태로 된? using directories to hierarchically organize files directory can contain other directories dir_a[ (“dir_aa”, inode nn) ] dir_a: parent directory of dir_aa dir_aa: sub-directory of dir_a Special File (== Device File) “device file은 regular file처럼 디스크 data block에 저장되는 파일이 아니라, filesystem namespace 안에 존재하는 special entry이다. write/read 시 filesystem storage로 가지 않고, kernel은 inode의 device 정보를 통해 적절한 device driver(kernel code)를 호출한다. 따라서 device file의 실질적 동작은disk-backed data가 아니라, kernel memory 내부 subsystem과 연결되어 있다.”\nabstract hardware device as file for unified interface. stored(reside) in memory =\u003e disk에storing 실제 data 하지 않음 regular file =\u003e mapping to storage block pointer =\u003e where space of storage? device file =\u003e mapping to device program major number, minor number =\u003e what driver? character device file vs block device file c =\u003e like data stream, sequential acces, stream I/O b =\u003e fixed size unit data, random access, storage I/O etc.) Symbolic Link, FIFO (Named Pipe), Socket\nSymbolic Link: has other file’s path-name as data FIFO: for IPC(Inter-Process Communication) Socket: for network Text File vs. Binary File\nText file general file with ASCII characters documents, programs, shell scripts etc. human-readable form Binary file non-text file which has data in binary form computer-readable form typically contains data that is meaningful only when processed by a program (e.g., executable file) for example ~ % file ./.zshrc =\u003e ./.zshrc: ASCII text ~ % file /bin/ls =\u003e /bin/ls: Mach-O universal binary with 2 architectures: [x86_64:Mach-O 64-bit executable x86_64] [arm64e:Mach-O 64-bit executable arm64e] /bin/ls (for architecture x86_64):\tMach-O 64-bit executable x86_64 /bin/ls (for architecture arm64e):\tMach-O 64-bit executable arm64e File Mode and File Permission\n#e.g. ~ % ls -l test.c -rwxr-xr-x 1 owner-name staff 73 May 13 12:19 test.c -rwxr-xr-x: file mod representation\nfile mode: [file type][permission bit] =\u003e -: file type =\u003e rwxr-xr-x: permission bit\nfile type: first charcter of file mode\nSymbol File Type Meaning - regular file 일반 파일 d directory 디렉터리 c character device 문자 단위로 입출력하는 장치 파일 b block device 블록 단위로 입출력하는 장치 파일 l symbolic link 다른 파일/디렉터리를 가리키는 링크 p FIFO / pipe 프로세스 간 통신용 파이프 s socket 프로세스 간 네트워크/IPC 통신용 소켓 file permission: Which users or a group of users can access a specific file/directory.\npermission type r: read permission w: write permission x: execution permission -: no permission assigned three user-based permission groups owner(or user)(u): the owner permission apply only the owner of the file/diretory (owner) group(g): the group permission apply only the group that has been assigned to the file/directory others(o): the others permission apply to all other users on the system the first three bits are for owner, the second ones are for group, and the last ones are for others. rwxrwxrwx e.g., rwxr-x-wx =\u003e owner: rwx / group: r-x / others: -wx Octal representations Each permission groups has three permission bits =\u003e Can be represented octal number. e.g., rwxr-x-wx =\u003e 111 101 011 =\u003e 753 Execution permission for regular file: execute a file. for directory: view the contents of a directory. Absolute Path vs. Relative Path\nAbsolute Path /home/${USER}/a/b/c/d Relative Path e.g., working diretory path: /home/${USER}/a/b/c/d parent diretory: c =\u003e .. b =\u003e ../.. current directory: d =\u003e . user’s home directory: /home/${USER} =\u003e ~ ###=====Linux Commands=====\nReferences Kangwon National University Lecture Note (course: 48400009) Advanced Programming in the UNIX Environment [3rd Ed] - W. Richard Stevens, Stephen A. Rago Computer Systems (A Programmer’s Perspective) [3rd Ed] - Randal E. Bryant, David R. O’Hallaron Operating System Concepts [10th Ed] - Abraham Silberschatz, Greg Gagne, Peter B. Galvin Acknowledgements OpenAI ChatGPT Google NotebookLM ",
+  "wordCount" : "1026",
+  "inLanguage": "en",
+  "datePublished": "2026-05-13T16:16:50+09:00",
+  "dateModified": "2026-05-13T16:16:50+09:00",
+  "author":{
+    "@type": "Person",
+    "name": {"name":"byungjoonkim"}
+  },
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://Byngjoon.github.io/blog/posts/linux-03/"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Learning-Log",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://Byngjoon.github.io/blog/favicon.ico"
+    }
+  }
+}
+</script>
+</head>
+
+<body class="" id="top">
+<script>
+    if (localStorage.getItem("pref-theme") === "dark") {
+        document.body.classList.add('dark');
+    } else if (localStorage.getItem("pref-theme") === "light") {
+        document.body.classList.remove('dark')
+    } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+        document.body.classList.add('dark');
+    }
+
+</script>
+
+<header class="header">
+    <nav class="nav">
+        <div class="logo">
+            <a href="https://Byngjoon.github.io/blog/" accesskey="h" title="Learning-Log (Alt + H)">Learning-Log</a>
+            <div class="logo-switches">
+                <button id="theme-toggle" accesskey="t" title="(Alt + T)" aria-label="Toggle theme">
+                    <svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                    </svg>
+                    <svg id="sun" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="5"></circle>
+                        <line x1="12" y1="1" x2="12" y2="3"></line>
+                        <line x1="12" y1="21" x2="12" y2="23"></line>
+                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                        <line x1="1" y1="12" x2="3" y2="12"></line>
+                        <line x1="21" y1="12" x2="23" y2="12"></line>
+                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                    </svg>
+                </button>
+            </div>
+        </div>
+        <ul id="menu">
+            <li>
+                <a href="https://Byngjoon.github.io/blog/categories/" title="Categories">
+                    <span>Categories</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://Byngjoon.github.io/blog/tags/" title="Tags">
+                    <span>Tags</span>
+                </a>
+            </li>
+        </ul>
+    </nav>
+</header>
+<main class="main">
+
+<article class="post-single">
+  <header class="post-header">
+    
+    <h1 class="post-title entry-hint-parent">
+      Linux [03]: File
+    </h1>
+    <div class="post-meta"><span title='2026-05-13 16:16:50 +0900 KST'>5월 13, 2026</span>&nbsp;·&nbsp;5 min&nbsp;·&nbsp;map[name:byungjoonkim]
+
+</div>
+  </header> <div class="toc">
+    <details >
+        <summary accesskey="c" title="(Alt + C)">
+            <span class="details">Table of Contents</span>
+        </summary>
+
+        <div class="inner"><ul>
+                <li>
+                    <a href="#chapter-00" aria-label="Chapter 00.">Chapter 00.</a></li>
+                <li>
+                    <a href="#contents" aria-label="Contents">Contents</a></li>
+                <li>
+                    <a href="#section-01" aria-label="Section 0.1.">Section 0.1.</a><ul>
+                        
+                <li>
+                    <a href="#references" aria-label="References">References</a></li>
+                <li>
+                    <a href="#acknowledgements" aria-label="Acknowledgements">Acknowledgements</a>
+                </li>
+            </ul>
+            </li>
+            </ul>
+        </div>
+    </details>
+</div>
+
+  <div class="post-content"><h1 id="chapter-00">Chapter 00.<a hidden class="anchor" aria-hidden="true" href="#chapter-00">#</a></h1>
+<blockquote>
+<p><strong>Outline:</strong></p>
+</blockquote>
+<hr>
+<h1 id="contents">Contents<a hidden class="anchor" aria-hidden="true" href="#contents">#</a></h1>
+<ul>
+<li><a href="">0.1.</a></li>
+</ul>
+<hr>
+<h1 id="section-01">Section 0.1.<a hidden class="anchor" aria-hidden="true" href="#section-01">#</a></h1>
+<p><strong>File is &hellip;</strong>
+File is 전통적으로는 정보를 저장하는 most basic unit, 이때에는 단순히 data, program 등을 file로 생각한다. 그러나, modern os의 관점에서 file은 abstract object로 read and write라는 unified interface로 단순 data or program을 넘어 hardware device까지 다루기 위한 하나의 system이 되었다. file is stored storage device and 보통의 경우 kernel은 file을 a sequence of bytes로 생각하며 실제 그 file이 무엇인지는 application이 해석하게 된다.</p>
+<ul>
+<li>traditional definition vs modern OS concepts
+<ul>
+<li>In tradition, the most basic unit for storing infomation.
+<ul>
+<li>traditional definition for user.</li>
+<li>data, programs, and etc. are naturally archived as file.</li>
+</ul>
+</li>
+<li>In modern concepts, abstract object to read and write data.
+<ul>
+<li>for modern OS concepts, especially in Linux/UNIX</li>
+<li>extansion of concept of file</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>a sequence of <code>m</code> byte
+<ul>
+<li>no matter what it means for OS, that is only for application</li>
+</ul>
+</li>
+<li>unified interface to read and write data.
+<ul>
+<li>manage manythings as file =&gt; use same system call interface like read/write/open/close to access device and data</li>
+<li>Uniform View =&gt; no matter where it is stored, what it is contained, what hardware system it is, same action to call (read, write, &hellip;)</li>
+<li>use <code>read</code> function, when read data on disk or take packet on network socket as well.</li>
+<li>Physical devices also can be represented as file.
+<ul>
+<li>keyboard input =&gt; stdin =&gt; read like file</li>
+<li>displaying to monitor =&gt; stdout =&gt; write like file</li>
+</ul>
+</li>
+<li>e.g., echo hello &gt; /dev/tty
+<ul>
+<li>in user&rsquo;s perspect, just writing at <code>tty</code></li>
+<li>in real mechanism, write()
+→ VFS
+→ inode 확인
+→ character device file 확인
+→ tty driver 호출
+→ terminal hardware 출력 =&gt; <code>hello</code> not be stored in <code>tty</code></li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Typically, stored on storage devices (e.g., SSD, HDD, Even Memory)</li>
+</ul>
+<p><strong>Type of File</strong></p>
+<ol>
+<li>
+<p>Ordinary File (== Regular File)</p>
+<ul>
+<li>store text or binary data.</li>
+<li>is stored on secondary storage device.</li>
+<li>kernel do not distinguish what it is, only application do</li>
+<li>for kernel, it is just a sequence of m bytes.</li>
+</ul>
+</li>
+<li>
+<p>Directory</p>
+<ul>
+<li>a set(array) of directory entries.</li>
+<li>directory entry is mapping of file-name and inode-number.
+<ul>
+<li>&lt;file-name, inode-number&gt;
+directory
+[
+(&ldquo;a.txt&rdquo;, inode 15),
+(&ldquo;b.txt&rdquo;, inode 29),
+(&ldquo;dir&rdquo;, inode 40)
+]</li>
+</ul>
+</li>
+<li>inode-number (index, refference) =&gt; inode</li>
+<li>inode is a structure that contains 실체 and metadata about file.
+<ul>
+<li>not have file-name, have where it is on disk, file-size, &hellip;</li>
+<li>why is not file-name contained in inode =&gt; inode is identity of file.</li>
+<li>&ldquo;a.txt&rdquo; → inode 3512, &ldquo;b.txt&rdquo; → inode 3512 =&gt; hard rink</li>
+</ul>
+</li>
+<li>for integrity, only kernel can have permission to write to directory.</li>
+<li>is the pointer-like that contain other file&rsquo;s name and infomation to find it.</li>
+<li>finally, it is 특정 format의 binary data를 가진 regular-like file</li>
+<li>namespace == path 구조?? tree 형태로 된?</li>
+<li>using directories to hierarchically organize files</li>
+<li>directory can contain other directories
+<ul>
+<li>dir_a[ (&ldquo;dir_aa&rdquo;, inode nn) ]</li>
+<li>dir_a: parent directory of <code>dir_aa</code></li>
+<li>dir_aa: sub-directory of <code>dir_a</code></li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p>Special File (== Device File)
+&ldquo;device file은 regular file처럼 디스크 data block에 저장되는 파일이 아니라,
+filesystem namespace 안에 존재하는 special entry이다.
+write/read 시 filesystem storage로 가지 않고,
+kernel은 inode의 device 정보를 통해 적절한 device driver(kernel code)를 호출한다.
+따라서 device file의 실질적 동작은disk-backed data가 아니라, kernel memory 내부 subsystem과 연결되어 있다.&rdquo;</p>
+<ul>
+<li>abstract hardware device as file for unified interface.</li>
+<li>stored(reside) in memory =&gt; disk에storing 실제 data 하지 않음
+<ul>
+<li>regular file =&gt; mapping to storage
+<ul>
+<li>block pointer =&gt; where space of storage?</li>
+</ul>
+</li>
+<li>device file =&gt; mapping to device program
+<ul>
+<li>major number, minor number =&gt; what driver?</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>character device file vs block device file
+<ul>
+<li>c =&gt; like data stream, sequential acces, stream I/O</li>
+<li>b =&gt; fixed size unit data, random access, storage I/O</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p>etc.) Symbolic Link, FIFO (Named Pipe), Socket</p>
+<ul>
+<li>Symbolic Link: has other file&rsquo;s path-name as data</li>
+<li>FIFO: for IPC(Inter-Process Communication)</li>
+<li>Socket: for network</li>
+</ul>
+</li>
+</ol>
+<p><strong>Text File vs. Binary File</strong></p>
+<ul>
+<li>Text file
+<ul>
+<li>general file with ASCII characters</li>
+<li>documents, programs, shell scripts etc.</li>
+<li>human-readable form</li>
+</ul>
+</li>
+<li>Binary file
+<ul>
+<li>non-text file which has data in binary form</li>
+<li>computer-readable form</li>
+<li>typically contains data that is meaningful only when processed by a program (e.g., executable file)</li>
+</ul>
+</li>
+<li>for example
+<ul>
+<li>~ % file ./.zshrc =&gt; ./.zshrc: ASCII text</li>
+<li>~ % file /bin/ls
+=&gt; /bin/ls: Mach-O universal binary with 2 architectures: [x86_64:Mach-O 64-bit executable x86_64] [arm64e:Mach-O 64-bit executable arm64e]
+/bin/ls (for architecture x86_64):	Mach-O 64-bit executable x86_64
+/bin/ls (for architecture arm64e):	Mach-O 64-bit executable arm64e</li>
+</ul>
+</li>
+</ul>
+<p><strong>File Mode and File Permission</strong></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e">#e.g.</span>
+</span></span><span style="display:flex;"><span>~ % ls -l test.c
+</span></span><span style="display:flex;"><span>-rwxr-xr-x  <span style="color:#ae81ff">1</span> owner-name  staff  <span style="color:#ae81ff">73</span> May <span style="color:#ae81ff">13</span> 12:19 test.c
+</span></span></code></pre></div><p>-rwxr-xr-x: file mod representation</p>
+<ul>
+<li>
+<p><strong>file mode</strong>: [file type][permission bit]
+=&gt; -: file type
+=&gt; rwxr-xr-x: permission bit</p>
+</li>
+<li>
+<p><strong>file type</strong>: first charcter of file mode</p>
+<table>
+  <thead>
+      <tr>
+          <th>Symbol</th>
+          <th>File Type</th>
+          <th>Meaning</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td><code>-</code></td>
+          <td>regular file</td>
+          <td>일반 파일</td>
+      </tr>
+      <tr>
+          <td><code>d</code></td>
+          <td>directory</td>
+          <td>디렉터리</td>
+      </tr>
+      <tr>
+          <td><code>c</code></td>
+          <td>character device</td>
+          <td>문자 단위로 입출력하는 장치 파일</td>
+      </tr>
+      <tr>
+          <td><code>b</code></td>
+          <td>block device</td>
+          <td>블록 단위로 입출력하는 장치 파일</td>
+      </tr>
+      <tr>
+          <td><code>l</code></td>
+          <td>symbolic link</td>
+          <td>다른 파일/디렉터리를 가리키는 링크</td>
+      </tr>
+      <tr>
+          <td><code>p</code></td>
+          <td>FIFO / pipe</td>
+          <td>프로세스 간 통신용 파이프</td>
+      </tr>
+      <tr>
+          <td><code>s</code></td>
+          <td>socket</td>
+          <td>프로세스 간 네트워크/IPC 통신용 소켓</td>
+      </tr>
+  </tbody>
+</table>
+</li>
+<li>
+<p><strong>file permission</strong>: Which users or a group of users can access a specific file/directory.</p>
+<ul>
+<li>permission type
+<ul>
+<li>r: read permission</li>
+<li>w: write permission</li>
+<li>x: execution permission</li>
+<li>-: no permission assigned</li>
+</ul>
+</li>
+<li>three user-based permission groups
+<ul>
+<li>owner(or user)(u): the owner permission apply only the owner of the file/diretory</li>
+<li>(owner) group(g): the group permission apply only the group that has been assigned to the file/directory</li>
+<li>others(o): the others permission apply to all other users on the system</li>
+</ul>
+</li>
+<li>the first three bits are for owner, the second ones are for group, and the last ones are for others.
+<ul>
+<li>rwxrwxrwx</li>
+<li>e.g., rwxr-x-wx =&gt; owner: rwx / group: r-x / others: -wx</li>
+</ul>
+</li>
+<li>Octal representations
+<ul>
+<li>Each permission groups has three permission bits</li>
+<li>=&gt; Can be represented octal number.</li>
+<li>e.g., rwxr-x-wx =&gt; 111 101 011 =&gt; 753</li>
+</ul>
+</li>
+<li>Execution permission
+<ul>
+<li>for regular file: execute a file.</li>
+<li>for directory: view the contents of a directory.</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p><strong>Absolute Path vs. Relative Path</strong></p>
+<ul>
+<li>Absolute Path
+<ul>
+<li>/home/${USER}/a/b/c/d</li>
+</ul>
+</li>
+<li>Relative Path
+<ul>
+<li>e.g., working diretory path: /home/${USER}/a/b/c/d</li>
+<li>parent diretory: c =&gt; ..
+<ul>
+<li>b =&gt; ../..</li>
+</ul>
+</li>
+<li>current directory: d =&gt; .</li>
+<li>user&rsquo;s home directory: /home/${USER} =&gt; ~</li>
+</ul>
+</li>
+</ul>
+<p>###<strong>=====Linux Commands=====</strong></p>
+<ol>
+<li></li>
+</ol>
+<hr>
+<h2 id="references">References<a hidden class="anchor" aria-hidden="true" href="#references">#</a></h2>
+<ul>
+<li>Kangwon National University Lecture Note (course: 48400009)</li>
+<li>Advanced Programming in the UNIX Environment [3rd Ed] - W. Richard Stevens, Stephen A. Rago</li>
+<li>Computer Systems (A Programmer&rsquo;s Perspective) [3rd Ed] - Randal E. Bryant, David R. O’Hallaron</li>
+<li>Operating System Concepts [10th Ed] - Abraham Silberschatz, Greg Gagne, Peter B. Galvin</li>
+</ul>
+<h2 id="acknowledgements">Acknowledgements<a hidden class="anchor" aria-hidden="true" href="#acknowledgements">#</a></h2>
+<ul>
+<li>OpenAI ChatGPT</li>
+<li>Google NotebookLM</li>
+</ul>
+
+
+  </div>
+
+  <footer class="post-footer">
+    <ul class="post-tags">
+    </ul>
+  </footer>
+</article>
+    </main>
+    
+<footer class="footer">
+        <span>&copy; 2026 <a href="https://Byngjoon.github.io/blog/">Learning-Log</a></span> · 
+
+    <span>
+        Powered by
+        <a href="https://gohugo.io/" rel="noopener noreferrer" target="_blank">Hugo</a> &
+        <a href="https://github.com/adityatelange/hugo-PaperMod/" rel="noopener" target="_blank">PaperMod</a>
+    </span>
+</footer>
+<a href="#top" aria-label="go to top" title="Go to Top (Alt + G)" class="top-link" id="top-link" accesskey="g">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 6" fill="currentColor">
+        <path d="M12 6H0l6-6z" />
+    </svg>
+</a>
+
+<script>
+    let menu = document.getElementById('menu')
+    if (menu) {
+        menu.scrollLeft = localStorage.getItem("menu-scroll-position");
+        menu.onscroll = function () {
+            localStorage.setItem("menu-scroll-position", menu.scrollLeft);
+        }
+    }
+
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener("click", function (e) {
+            e.preventDefault();
+            var id = this.getAttribute("href").substr(1);
+            if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView({
+                    behavior: "smooth"
+                });
+            } else {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView();
+            }
+            if (id === "top") {
+                history.replaceState(null, null, " ");
+            } else {
+                history.pushState(null, null, `#${id}`);
+            }
+        });
+    });
+
+</script>
+<script>
+    var mybutton = document.getElementById("top-link");
+    window.onscroll = function () {
+        if (document.body.scrollTop > 800 || document.documentElement.scrollTop > 800) {
+            mybutton.style.visibility = "visible";
+            mybutton.style.opacity = "1";
+        } else {
+            mybutton.style.visibility = "hidden";
+            mybutton.style.opacity = "0";
+        }
+    };
+
+</script>
+<script>
+    document.getElementById("theme-toggle").addEventListener("click", () => {
+        if (document.body.className.includes("dark")) {
+            document.body.classList.remove('dark');
+            localStorage.setItem("pref-theme", 'light');
+        } else {
+            document.body.classList.add('dark');
+            localStorage.setItem("pref-theme", 'dark');
+        }
+    })
+
+</script>
+<script>
+    document.querySelectorAll('pre > code').forEach((codeblock) => {
+        const container = codeblock.parentNode.parentNode;
+
+        const copybutton = document.createElement('button');
+        copybutton.classList.add('copy-code');
+        copybutton.innerHTML = 'copy';
+
+        function copyingDone() {
+            copybutton.innerHTML = 'copied!';
+            setTimeout(() => {
+                copybutton.innerHTML = 'copy';
+            }, 2000);
+        }
+
+        copybutton.addEventListener('click', (cb) => {
+            if ('clipboard' in navigator) {
+                navigator.clipboard.writeText(codeblock.textContent);
+                copyingDone();
+                return;
+            }
+
+            const range = document.createRange();
+            range.selectNodeContents(codeblock);
+            const selection = window.getSelection();
+            selection.removeAllRanges();
+            selection.addRange(range);
+            try {
+                document.execCommand('copy');
+                copyingDone();
+            } catch (e) { };
+            selection.removeRange(range);
+        });
+
+        if (container.classList.contains("highlight")) {
+            container.appendChild(copybutton);
+        } else if (container.parentNode.firstChild == container) {
+            
+        } else if (codeblock.parentNode.parentNode.parentNode.parentNode.parentNode.nodeName == "TABLE") {
+            
+            codeblock.parentNode.parentNode.parentNode.parentNode.parentNode.appendChild(copybutton);
+        } else {
+            
+            codeblock.parentNode.appendChild(copybutton);
+        }
+    });
+</script>
+</body>
+
+</html>

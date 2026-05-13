@@ -1,0 +1,605 @@
+<!DOCTYPE html>
+<html lang="en" dir="auto">
+
+<head><meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="robots" content="index, follow">
+<title>Linux [01]: OS &amp; Linux Basic | Learning-Log</title>
+<meta name="keywords" content="">
+<meta name="description" content="Chapter 00.
+
+Outline:
+
+
+Contents
+
+0.1.
+
+
+Section 0.1.
+Operating system is &hellip;
+
+One of the most sophiscated(복잡한) software structure
+Resource manager -&gt; manage software component and hardware (like device driver)
+
+flow of running computer (top-down)
+
+User: the person who uses computer
+=====Interface (User Interface)
+Applications (=user program)
+
+User Interfaces (UI): User-Computer interface
+
+Graphical User Interface (GUI): click the mouse, icon, window, &hellip;
+Command Line Interface (CLI): ls, cd, gcc, &hellip;
+Batch Interface: shell script, &hellip; 명령을 한번에 모아서 자동실행
+UI 는 개념, GUI, CLI, Batch 는 구현방식 느낌
+program 중 user와 만나는 부분에 대한 개념
+
+
+(shell, app)
+=====Interface (System Call)=====
+
+
+Operating System (OS)
+
+System Calls: user program-os interface
+-(open(), read(), fork(), &hellip;)
+kernel
+Program execution: program을 memory에 올리고 실행되게 해줌
+I/O Systems: help using Input Output device
+File systems: manage files and directories
+Communication: data moving between each process or computer
+resource allocation: 결정 to give resource like CPU, memory, disk,&hellip; to whom how much
+accounting: notes and manages who use resource how much
+error detextion: finding error in programs and device
+protection and security: protect files and systems from program or other user
+
+
+Hardware
+
+UNIX/Linux key features">
+<meta name="author" content="map[name:byungjoonkim]">
+<link rel="canonical" href="https://Byngjoon.github.io/blog/posts/linux-01/">
+<link crossorigin="anonymous" href="/blog/assets/css/stylesheet.ed42a47c2de72c05bf93ef053b29fa2dd6f1838928545be0be357c9ab66f8ec6.css" integrity="sha256-7UKkfC3nLAW/k&#43;8FOyn6Ldbxg4koVFvgvjV8mrZvjsY=" rel="preload stylesheet" as="style">
+<link rel="icon" href="https://Byngjoon.github.io/blog/favicon.ico">
+<link rel="icon" type="image/png" sizes="16x16" href="https://Byngjoon.github.io/blog/favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="https://Byngjoon.github.io/blog/favicon-32x32.png">
+<link rel="apple-touch-icon" href="https://Byngjoon.github.io/blog/apple-touch-icon.png">
+<link rel="mask-icon" href="https://Byngjoon.github.io/blog/safari-pinned-tab.svg">
+<meta name="theme-color" content="#2e2e33">
+<meta name="msapplication-TileColor" content="#2e2e33">
+<link rel="alternate" hreflang="en" href="https://Byngjoon.github.io/blog/posts/linux-01/">
+<noscript>
+    <style>
+        #theme-toggle,
+        .top-link {
+            display: none;
+        }
+
+    </style>
+    <style>
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --theme: rgb(29, 30, 32);
+                --entry: rgb(46, 46, 51);
+                --primary: rgb(218, 218, 219);
+                --secondary: rgb(155, 156, 157);
+                --tertiary: rgb(65, 66, 68);
+                --content: rgb(196, 196, 197);
+                --code-block-bg: rgb(46, 46, 51);
+                --code-bg: rgb(55, 56, 62);
+                --border: rgb(51, 51, 51);
+            }
+
+            .list {
+                background: var(--theme);
+            }
+
+            .list:not(.dark)::-webkit-scrollbar-track {
+                background: 0 0;
+            }
+
+            .list:not(.dark)::-webkit-scrollbar-thumb {
+                border-color: var(--theme);
+            }
+        }
+
+    </style>
+</noscript>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"></script>
+<script>
+  window.onload = function () {
+    renderMathInElement(document.body, {
+      delimiters: [
+        { left: "$$", right: "$$", display: true },
+        { left: "$", right: "$", display: false }
+      ]
+    });
+  };
+</script>
+
+<meta property="og:url" content="https://Byngjoon.github.io/blog/posts/linux-01/">
+  <meta property="og:site_name" content="Learning-Log">
+  <meta property="og:title" content="Linux [01]: OS & Linux Basic">
+  <meta property="og:description" content="Chapter 00. Outline:
+Contents 0.1. Section 0.1. Operating system is …
+One of the most sophiscated(복잡한) software structure Resource manager -&gt; manage software component and hardware (like device driver) flow of running computer (top-down)
+User: the person who uses computer =====Interface (User Interface) Applications (=user program) User Interfaces (UI): User-Computer interface Graphical User Interface (GUI): click the mouse, icon, window, … Command Line Interface (CLI): ls, cd, gcc, … Batch Interface: shell script, … 명령을 한번에 모아서 자동실행 UI 는 개념, GUI, CLI, Batch 는 구현방식 느낌 program 중 user와 만나는 부분에 대한 개념 (shell, app) =====Interface (System Call)===== Operating System (OS) System Calls: user program-os interface -(open(), read(), fork(), …) kernel Program execution: program을 memory에 올리고 실행되게 해줌 I/O Systems: help using Input Output device File systems: manage files and directories Communication: data moving between each process or computer resource allocation: 결정 to give resource like CPU, memory, disk,… to whom how much accounting: notes and manages who use resource how much error detextion: finding error in programs and device protection and security: protect files and systems from program or other user Hardware UNIX/Linux key features">
+  <meta property="og:locale" content="ko-KR">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="posts">
+    <meta property="article:published_time" content="2026-03-09T14:07:47+09:00">
+    <meta property="article:modified_time" content="2026-03-09T14:07:47+09:00">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Linux [01]: OS &amp; Linux Basic">
+<meta name="twitter:description" content="Chapter 00.
+
+Outline:
+
+
+Contents
+
+0.1.
+
+
+Section 0.1.
+Operating system is &hellip;
+
+One of the most sophiscated(복잡한) software structure
+Resource manager -&gt; manage software component and hardware (like device driver)
+
+flow of running computer (top-down)
+
+User: the person who uses computer
+=====Interface (User Interface)
+Applications (=user program)
+
+User Interfaces (UI): User-Computer interface
+
+Graphical User Interface (GUI): click the mouse, icon, window, &hellip;
+Command Line Interface (CLI): ls, cd, gcc, &hellip;
+Batch Interface: shell script, &hellip; 명령을 한번에 모아서 자동실행
+UI 는 개념, GUI, CLI, Batch 는 구현방식 느낌
+program 중 user와 만나는 부분에 대한 개념
+
+
+(shell, app)
+=====Interface (System Call)=====
+
+
+Operating System (OS)
+
+System Calls: user program-os interface
+-(open(), read(), fork(), &hellip;)
+kernel
+Program execution: program을 memory에 올리고 실행되게 해줌
+I/O Systems: help using Input Output device
+File systems: manage files and directories
+Communication: data moving between each process or computer
+resource allocation: 결정 to give resource like CPU, memory, disk,&hellip; to whom how much
+accounting: notes and manages who use resource how much
+error detextion: finding error in programs and device
+protection and security: protect files and systems from program or other user
+
+
+Hardware
+
+UNIX/Linux key features">
+
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position":  1 ,
+      "name": "Posts",
+      "item": "https://Byngjoon.github.io/blog/posts/"
+    }, 
+    {
+      "@type": "ListItem",
+      "position":  2 ,
+      "name": "Linux [01]: OS \u0026 Linux Basic",
+      "item": "https://Byngjoon.github.io/blog/posts/linux-01/"
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "Linux [01]: OS \u0026 Linux Basic",
+  "name": "Linux [01]: OS \u0026 Linux Basic",
+  "description": "Chapter 00. Outline:\nContents 0.1. Section 0.1. Operating system is \u0026hellip;\nOne of the most sophiscated(복잡한) software structure Resource manager -\u0026gt; manage software component and hardware (like device driver) flow of running computer (top-down)\nUser: the person who uses computer =====Interface (User Interface) Applications (=user program) User Interfaces (UI): User-Computer interface Graphical User Interface (GUI): click the mouse, icon, window, \u0026hellip; Command Line Interface (CLI): ls, cd, gcc, \u0026hellip; Batch Interface: shell script, \u0026hellip; 명령을 한번에 모아서 자동실행 UI 는 개념, GUI, CLI, Batch 는 구현방식 느낌 program 중 user와 만나는 부분에 대한 개념 (shell, app) =====Interface (System Call)===== Operating System (OS) System Calls: user program-os interface -(open(), read(), fork(), \u0026hellip;) kernel Program execution: program을 memory에 올리고 실행되게 해줌 I/O Systems: help using Input Output device File systems: manage files and directories Communication: data moving between each process or computer resource allocation: 결정 to give resource like CPU, memory, disk,\u0026hellip; to whom how much accounting: notes and manages who use resource how much error detextion: finding error in programs and device protection and security: protect files and systems from program or other user Hardware UNIX/Linux key features\n",
+  "keywords": [
+    ""
+  ],
+  "articleBody": "Chapter 00. Outline:\nContents 0.1. Section 0.1. Operating system is …\nOne of the most sophiscated(복잡한) software structure Resource manager -\u003e manage software component and hardware (like device driver) flow of running computer (top-down)\nUser: the person who uses computer =====Interface (User Interface) Applications (=user program) User Interfaces (UI): User-Computer interface Graphical User Interface (GUI): click the mouse, icon, window, … Command Line Interface (CLI): ls, cd, gcc, … Batch Interface: shell script, … 명령을 한번에 모아서 자동실행 UI 는 개념, GUI, CLI, Batch 는 구현방식 느낌 program 중 user와 만나는 부분에 대한 개념 (shell, app) =====Interface (System Call)===== Operating System (OS) System Calls: user program-os interface -(open(), read(), fork(), …) kernel Program execution: program을 memory에 올리고 실행되게 해줌 I/O Systems: help using Input Output device File systems: manage files and directories Communication: data moving between each process or computer resource allocation: 결정 to give resource like CPU, memory, disk,… to whom how much accounting: notes and manages who use resource how much error detextion: finding error in programs and device protection and security: protect files and systems from program or other user Hardware UNIX/Linux key features\nInteractive systems Multi-user systems Multi-tasking systems High portability, scalability(확장성), openness(개방성) Hierarchical file-systems Portable Operating System Interface (POSIX): Unix standardization\nshell and kernel Shell: Command line interpreter(해석기?) - is not component of OS - is just porgram (Application) - allows user to command kernel -\u003e interpreter - the reason why Linux is interactive system(깜빡깜빡) - sh, csh, ksh, zsh, bash - 인터프리터인데 many variation Kernel: A main(core) component of OS - loaded on memory at boot time (is in /boot dirtory) - manege memory, process, divice, file-system, network, … - Linux kernel is composit source written C and Assembly language - /arch -\u003e written Assembly becuase control architecture\nShell: User \u003c-\u003e Program System Call: Program \u003c-\u003e Kernel Kernel: actual running (control hardware) Linux is multi-user system: multiple users can use a system in the same time - users have each account - each account’s files and process are protected\nflow Login: the process of obtaining(획득) permission to use the system -\u003e input user-ID and password -\u003e 인증 -\u003e system 접근 허용 -\u003e execute shell and allocation resource -\u003e move to home directory -\u003e stay for command -\u003e 작업 수행 -\u003e Logout (terminate session)\nlogout: terminate login session / run in login shell exit: terminate 현재 shell / run in all of shell subshell -\u003e parent shell -\u003e … -\u003e login shell -\u003e logout Ctrl + D: input EOF / all of shell / shell 종료 유도 EOf: end of file -\u003e end of input -\u003e terminate shell resource deallocation (reclaim) user permission\nnomal user / super user nomal user permition of os 필 super user (= administrator, root) management and maintenance system higher-level of system permission 뭐든지 할 수 있다. References Kangwon National University Lecture Note (course: 48400009) Advanced Programming in the UNIX Environment [3rd Ed] - W. Richard Stevens, Stephen A. Rago Computer Systems (A Programmer’s Perspective) [3rd Ed] - Randal E. Bryant, David R. O’Hallaron Operating System Concepts [10th Ed] - Abraham Silberschatz, Greg Gagne, Peter B. Galvin Acknowledgements OpenAI ChatGPT Google NotebookLM ",
+  "wordCount" : "521",
+  "inLanguage": "en",
+  "datePublished": "2026-03-09T14:07:47+09:00",
+  "dateModified": "2026-03-09T14:07:47+09:00",
+  "author":{
+    "@type": "Person",
+    "name": {"name":"byungjoonkim"}
+  },
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://Byngjoon.github.io/blog/posts/linux-01/"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Learning-Log",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://Byngjoon.github.io/blog/favicon.ico"
+    }
+  }
+}
+</script>
+</head>
+
+<body class="" id="top">
+<script>
+    if (localStorage.getItem("pref-theme") === "dark") {
+        document.body.classList.add('dark');
+    } else if (localStorage.getItem("pref-theme") === "light") {
+        document.body.classList.remove('dark')
+    } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+        document.body.classList.add('dark');
+    }
+
+</script>
+
+<header class="header">
+    <nav class="nav">
+        <div class="logo">
+            <a href="https://Byngjoon.github.io/blog/" accesskey="h" title="Learning-Log (Alt + H)">Learning-Log</a>
+            <div class="logo-switches">
+                <button id="theme-toggle" accesskey="t" title="(Alt + T)" aria-label="Toggle theme">
+                    <svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                    </svg>
+                    <svg id="sun" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="5"></circle>
+                        <line x1="12" y1="1" x2="12" y2="3"></line>
+                        <line x1="12" y1="21" x2="12" y2="23"></line>
+                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                        <line x1="1" y1="12" x2="3" y2="12"></line>
+                        <line x1="21" y1="12" x2="23" y2="12"></line>
+                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                    </svg>
+                </button>
+            </div>
+        </div>
+        <ul id="menu">
+            <li>
+                <a href="https://Byngjoon.github.io/blog/categories/" title="Categories">
+                    <span>Categories</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://Byngjoon.github.io/blog/tags/" title="Tags">
+                    <span>Tags</span>
+                </a>
+            </li>
+        </ul>
+    </nav>
+</header>
+<main class="main">
+
+<article class="post-single">
+  <header class="post-header">
+    
+    <h1 class="post-title entry-hint-parent">
+      Linux [01]: OS &amp; Linux Basic
+    </h1>
+    <div class="post-meta"><span title='2026-03-09 14:07:47 +0900 KST'>3월 9, 2026</span>&nbsp;·&nbsp;3 min&nbsp;·&nbsp;map[name:byungjoonkim]
+
+</div>
+  </header> <div class="toc">
+    <details >
+        <summary accesskey="c" title="(Alt + C)">
+            <span class="details">Table of Contents</span>
+        </summary>
+
+        <div class="inner"><ul>
+                <li>
+                    <a href="#chapter-00" aria-label="Chapter 00.">Chapter 00.</a><ul>
+                        
+                <li>
+                    <a href="#contents" aria-label="Contents">Contents</a></li>
+                <li>
+                    <a href="#section-01" aria-label="Section 0.1.">Section 0.1.</a></li>
+                <li>
+                    <a href="#references" aria-label="References">References</a></li>
+                <li>
+                    <a href="#acknowledgements" aria-label="Acknowledgements">Acknowledgements</a>
+                </li>
+            </ul>
+            </li>
+            </ul>
+        </div>
+    </details>
+</div>
+
+  <div class="post-content"><h1 id="chapter-00">Chapter 00.<a hidden class="anchor" aria-hidden="true" href="#chapter-00">#</a></h1>
+<blockquote>
+<p><strong>Outline:</strong></p>
+</blockquote>
+<hr>
+<h2 id="contents">Contents<a hidden class="anchor" aria-hidden="true" href="#contents">#</a></h2>
+<ul>
+<li><a href="">0.1.</a></li>
+</ul>
+<hr>
+<h2 id="section-01">Section 0.1.<a hidden class="anchor" aria-hidden="true" href="#section-01">#</a></h2>
+<p>Operating system is &hellip;</p>
+<ol>
+<li>One of the most sophiscated(복잡한) software structure</li>
+<li>Resource manager -&gt; manage software component and hardware (like device driver)</li>
+</ol>
+<p>flow of running computer (top-down)</p>
+<ol>
+<li>User: the person who uses computer
+=====Interface (User Interface)</li>
+<li>Applications (=user program)
+<ul>
+<li>User Interfaces (UI): User-Computer interface
+<ul>
+<li>Graphical User Interface (GUI): click the mouse, icon, window, &hellip;</li>
+<li>Command Line Interface (CLI): ls, cd, gcc, &hellip;</li>
+<li>Batch Interface: shell script, &hellip; 명령을 한번에 모아서 자동실행</li>
+<li>UI 는 개념, GUI, CLI, Batch 는 구현방식 느낌</li>
+<li>program 중 user와 만나는 부분에 대한 개념</li>
+</ul>
+</li>
+<li>(shell, app)
+=====Interface (System Call)=====</li>
+</ul>
+</li>
+<li>Operating System (OS)
+<ul>
+<li>System Calls: user program-os interface
+-(open(), read(), fork(), &hellip;)</li>
+<li>kernel</li>
+<li>Program execution: program을 memory에 올리고 실행되게 해줌</li>
+<li>I/O Systems: help using Input Output device</li>
+<li>File systems: manage files and directories</li>
+<li>Communication: data moving between each process or computer</li>
+<li>resource allocation: 결정 to give resource like CPU, memory, disk,&hellip; to whom how much</li>
+<li>accounting: notes and manages who use resource how much</li>
+<li>error detextion: finding error in programs and device</li>
+<li>protection and security: protect files and systems from program or other user</li>
+</ul>
+</li>
+<li>Hardware</li>
+</ol>
+<p>UNIX/Linux key features</p>
+<ol>
+<li>Interactive systems</li>
+<li>Multi-user systems</li>
+<li>Multi-tasking systems</li>
+<li>High portability, scalability(확장성), openness(개방성)</li>
+<li>Hierarchical file-systems</li>
+</ol>
+<p>Portable Operating System Interface (POSIX): Unix standardization</p>
+<p>shell and kernel
+Shell: Command line interpreter(해석기?)
+- is not component of OS
+- is just porgram (Application)
+- allows user to command kernel -&gt; interpreter
+- the reason why Linux is interactive system(깜빡깜빡)
+- sh, csh, ksh, zsh, bash - 인터프리터인데 many variation
+Kernel: A main(core) component of OS
+- loaded on memory at boot time (is in /boot dirtory)
+- manege memory, process, divice, file-system, network, &hellip;
+- Linux kernel is composit source written C and Assembly language
+- /arch -&gt; written Assembly becuase control architecture</p>
+<ul>
+<li>Shell: User &lt;-&gt; Program</li>
+<li>System Call: Program &lt;-&gt; Kernel</li>
+<li>Kernel: actual running (control hardware)</li>
+</ul>
+<p>Linux is multi-user system: multiple users can use a system in the same time
+- users have each account
+- each account&rsquo;s files and process are protected</p>
+<ul>
+<li>
+<p>flow
+Login: the process of obtaining(획득) permission to use the system
+-&gt; input user-ID and password -&gt; 인증 -&gt; system 접근 허용
+-&gt; execute shell and allocation resource
+-&gt; move to home directory
+-&gt; stay for command -&gt; 작업 수행 -&gt;
+Logout (terminate session)</p>
+<ul>
+<li>logout: terminate login session / run in login shell</li>
+<li>exit: terminate 현재 shell / run in all of shell
+<ul>
+<li>subshell -&gt; parent shell -&gt; &hellip; -&gt; login shell -&gt; logout</li>
+</ul>
+</li>
+<li>Ctrl + D: input EOF / all of shell / shell 종료 유도
+<ul>
+<li>EOf: end of file -&gt; end of input -&gt; terminate shell</li>
+</ul>
+</li>
+<li>resource deallocation (reclaim)</li>
+</ul>
+</li>
+<li>
+<p>user permission</p>
+<ul>
+<li>nomal user / super user</li>
+<li>nomal user
+<ul>
+<li>permition of os 필</li>
+</ul>
+</li>
+<li>super user (= administrator, root)
+<ul>
+<li>management and maintenance system</li>
+<li>higher-level of system permission</li>
+<li>뭐든지 할 수 있다.</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<hr>
+<h2 id="references">References<a hidden class="anchor" aria-hidden="true" href="#references">#</a></h2>
+<ul>
+<li>Kangwon National University Lecture Note (course: 48400009)</li>
+<li>Advanced Programming in the UNIX Environment [3rd Ed] - W. Richard Stevens, Stephen A. Rago</li>
+<li>Computer Systems (A Programmer&rsquo;s Perspective) [3rd Ed] - Randal E. Bryant, David R. O’Hallaron</li>
+<li>Operating System Concepts [10th Ed] - Abraham Silberschatz, Greg Gagne, Peter B. Galvin</li>
+</ul>
+<h2 id="acknowledgements">Acknowledgements<a hidden class="anchor" aria-hidden="true" href="#acknowledgements">#</a></h2>
+<ul>
+<li>OpenAI ChatGPT</li>
+<li>Google NotebookLM</li>
+</ul>
+
+
+  </div>
+
+  <footer class="post-footer">
+    <ul class="post-tags">
+    </ul>
+  </footer>
+</article>
+    </main>
+    
+<footer class="footer">
+        <span>&copy; 2026 <a href="https://Byngjoon.github.io/blog/">Learning-Log</a></span> · 
+
+    <span>
+        Powered by
+        <a href="https://gohugo.io/" rel="noopener noreferrer" target="_blank">Hugo</a> &
+        <a href="https://github.com/adityatelange/hugo-PaperMod/" rel="noopener" target="_blank">PaperMod</a>
+    </span>
+</footer>
+<a href="#top" aria-label="go to top" title="Go to Top (Alt + G)" class="top-link" id="top-link" accesskey="g">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 6" fill="currentColor">
+        <path d="M12 6H0l6-6z" />
+    </svg>
+</a>
+
+<script>
+    let menu = document.getElementById('menu')
+    if (menu) {
+        menu.scrollLeft = localStorage.getItem("menu-scroll-position");
+        menu.onscroll = function () {
+            localStorage.setItem("menu-scroll-position", menu.scrollLeft);
+        }
+    }
+
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener("click", function (e) {
+            e.preventDefault();
+            var id = this.getAttribute("href").substr(1);
+            if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView({
+                    behavior: "smooth"
+                });
+            } else {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView();
+            }
+            if (id === "top") {
+                history.replaceState(null, null, " ");
+            } else {
+                history.pushState(null, null, `#${id}`);
+            }
+        });
+    });
+
+</script>
+<script>
+    var mybutton = document.getElementById("top-link");
+    window.onscroll = function () {
+        if (document.body.scrollTop > 800 || document.documentElement.scrollTop > 800) {
+            mybutton.style.visibility = "visible";
+            mybutton.style.opacity = "1";
+        } else {
+            mybutton.style.visibility = "hidden";
+            mybutton.style.opacity = "0";
+        }
+    };
+
+</script>
+<script>
+    document.getElementById("theme-toggle").addEventListener("click", () => {
+        if (document.body.className.includes("dark")) {
+            document.body.classList.remove('dark');
+            localStorage.setItem("pref-theme", 'light');
+        } else {
+            document.body.classList.add('dark');
+            localStorage.setItem("pref-theme", 'dark');
+        }
+    })
+
+</script>
+<script>
+    document.querySelectorAll('pre > code').forEach((codeblock) => {
+        const container = codeblock.parentNode.parentNode;
+
+        const copybutton = document.createElement('button');
+        copybutton.classList.add('copy-code');
+        copybutton.innerHTML = 'copy';
+
+        function copyingDone() {
+            copybutton.innerHTML = 'copied!';
+            setTimeout(() => {
+                copybutton.innerHTML = 'copy';
+            }, 2000);
+        }
+
+        copybutton.addEventListener('click', (cb) => {
+            if ('clipboard' in navigator) {
+                navigator.clipboard.writeText(codeblock.textContent);
+                copyingDone();
+                return;
+            }
+
+            const range = document.createRange();
+            range.selectNodeContents(codeblock);
+            const selection = window.getSelection();
+            selection.removeAllRanges();
+            selection.addRange(range);
+            try {
+                document.execCommand('copy');
+                copyingDone();
+            } catch (e) { };
+            selection.removeRange(range);
+        });
+
+        if (container.classList.contains("highlight")) {
+            container.appendChild(copybutton);
+        } else if (container.parentNode.firstChild == container) {
+            
+        } else if (codeblock.parentNode.parentNode.parentNode.parentNode.parentNode.nodeName == "TABLE") {
+            
+            codeblock.parentNode.parentNode.parentNode.parentNode.parentNode.appendChild(copybutton);
+        } else {
+            
+            codeblock.parentNode.appendChild(copybutton);
+        }
+    });
+</script>
+</body>
+
+</html>
