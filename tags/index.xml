@@ -6,6 +6,14 @@
     <description>Recent content in Tags on Learning-Log</description>
     <generator>Hugo -- 0.161.1</generator>
     <language>ko-KR</language>
+    <lastBuildDate>Mon, 11 May 2026 16:30:05 +0900</lastBuildDate>
     <atom:link href="https://Byngjoon.github.io/blog/tags/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Vim</title>
+      <link>https://Byngjoon.github.io/blog/tags/vim/</link>
+      <pubDate>Mon, 11 May 2026 16:30:05 +0900</pubDate>
+      <guid>https://Byngjoon.github.io/blog/tags/vim/</guid>
+      <description></description>
+    </item>
   </channel>
 </rss>

@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Etc./ on Learning-Log</title>
+    <link>https://Byngjoon.github.io/blog/categories/etc./</link>
+    <description>Recent content in Etc./ on Learning-Log</description>
+    <generator>Hugo -- 0.161.1</generator>
+    <language>ko-KR</language>
+    <lastBuildDate>Mon, 11 May 2026 16:30:05 +0900</lastBuildDate>
+    <atom:link href="https://Byngjoon.github.io/blog/categories/etc./index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>VIM Basic</title>
+      <link>https://Byngjoon.github.io/blog/posts/vim-editor/</link>
+      <pubDate>Mon, 11 May 2026 16:30:05 +0900</pubDate>
+      <guid>https://Byngjoon.github.io/blog/posts/vim-editor/</guid>
+      <description>&lt;h1 id=&#34;chapter-00-vim-basic-manuals&#34;&gt;Chapter 00. VIM Basic Manuals&lt;/h1&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;Outline:&lt;/strong&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;hr&gt;
+&lt;h1 id=&#34;contents&#34;&gt;Contents&lt;/h1&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;&#34;&gt;0.1.&lt;/a&gt; Moving cursor&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;h1 id=&#34;section-01-what-is-the-vim&#34;&gt;Section 0.1. What is the VIM?&lt;/h1&gt;
+&lt;ul&gt;
+&lt;li&gt;VIM
+&lt;ul&gt;
+&lt;li&gt;VIM = Vi-IMproved: an enhanced version of vi editor&lt;/li&gt;
+&lt;li&gt;is cross-platform&lt;/li&gt;
+&lt;li&gt;vim.org: customize, plugin&lt;/li&gt;
+&lt;li&gt;~/.vimrc: VIM configuration file&lt;/li&gt;
+&lt;li&gt;Visual Mode &amp;lt;-[v, ctrl + v / esc]-&amp;gt; Command Mode &amp;lt;-[esc / i,I,a,A,o,O,s,S]-&amp;gt; Input Mode&lt;/li&gt;
+&lt;li&gt;VIM Start -[vim file-name]-&amp;gt; Command Mode -[:q, :q!, :wq, :wq!,  ZZ]-&amp;gt; VIM End&lt;/li&gt;
+&lt;li&gt;Command Mode
+&lt;ul&gt;
+&lt;li&gt;Everything you type are commands (interpeted by VIM as commands)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;Input Mode
+&lt;ul&gt;
+&lt;li&gt;Everything you type are contents&lt;/li&gt;
+&lt;li&gt;Changing contents are stored in editing butter (in memory, not disk)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;Disk(=file) &amp;lt;-[save command(:w, :wq, :wq!) / open new file or input mode]-&amp;gt; Memory(=editing buffer)&lt;/li&gt;
+&lt;li&gt;When open file, all of contents are  uploaded to editing buffer.&lt;/li&gt;
+&lt;li&gt;When you do save, write back from the file in memory to the file in disk.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;======VIM Basic Command======&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>
