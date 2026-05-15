@@ -13,6 +13,9 @@ theme = 'PaperMod'
   TocOpen = false
   TocSide = "right"
 
+[params.author]
+  name = "byungjoonkim"
+
 [params.assets]
   customCSS = ["css/custom.css"]
 

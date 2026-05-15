@@ -1,49 +1,33 @@
 +++
 date = '2026-05-11T16:30:05+09:00'
-title = 'Linux Programming Lecture 02: Vim Basic Commands'
+title = 'VIM Basic'
 description = ""
-categories = [""]
-tags = [""]
+categories = ["etc./"]
+tags = ["vim"]
 slug = ""
 math = true
 draft = false
 +++
 
-# Chapter 02. Vim Basic Commands
+# Chapter 00. VIM Basic Manuals
 
 > **Outline:**
 
 ---
 
-## Contents
+# Contents
 
-- [2.1.]() Moving cursor
+- [0.1.]() Moving cursor
 
 ---
 
-## Section 0.1.
-
-
-- .bashrc
-    - Bash start-up file (zsh -> .zshrc)
-    - When you log in to the bash shell, `.bashrc` is automatically referenced
-    - You can run it explicitly using the `source` command (source .bashrc)
-
-.bashrc 로그인할때 자동으로 참조
-리눅스에서 . 으로 시작하는 파일 -> 숨김파일
-모든 리눅스에 포함된 스타트업 파일
-그러나 배포판마다 약간 다를 수 있다
-(우분투에서는 .profile이 가장 먼저 실행)
-업데이트하면 재로그인시 업데이트 반영 (바로하고 싶다면 source .bashrc)
-쉘스크립트? linux에서는 #이 주석
-
-
+# Section 0.1. What is the VIM?
 
 - VIM
-    - .vimrc: VIM configuration file
     - VIM = Vi-IMproved: an enhanced version of vi editor
     - is cross-platform
     - vim.org: customize, plugin
+    - ~/.vimrc: VIM configuration file
     - Visual Mode <-[v, ctrl + v / esc]-> Command Mode <-[esc / i,I,a,A,o,O,s,S]-> Input Mode
     - VIM Start -[vim file-name]-> Command Mode -[:q, :q!, :wq, :wq!,  ZZ]-> VIM End
     - Command Mode
