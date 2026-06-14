@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
-    <title>Etc./ on Learning-Log</title>
-    <link>https://Byngjoon.github.io/blog/categories/etc./</link>
-    <description>Recent content in Etc./ on Learning-Log</description>
+    <title>Regexp on Learning-Log</title>
+    <link>https://Byngjoon.github.io/blog/tags/regexp/</link>
+    <description>Recent content in Regexp on Learning-Log</description>
     <generator>Hugo -- 0.162.1</generator>
     <language>ko-KR</language>
     <lastBuildDate>Fri, 15 May 2026 13:30:09 +0900</lastBuildDate>
-    <atom:link href="https://Byngjoon.github.io/blog/categories/etc./index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://Byngjoon.github.io/blog/tags/regexp/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Regular Expressions</title>
       <link>https://Byngjoon.github.io/blog/posts/regexp/</link>
@@ -80,52 +80,6 @@ metacharacter라는 말은 regex에도 있고, shell에도 있고, glob에도 �
 &lt;p&gt;e.g.
 &lt;code&gt;a.c&lt;/code&gt; == match ==&amp;gt; &lt;code&gt;a&lt;/code&gt; + &lt;code&gt;any single character&lt;/code&gt; + &lt;code&gt;c&lt;/code&gt;
 &lt;code&gt;.&lt;/code&gt; means any single character&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title>VIM Basic</title>
-      <link>https://Byngjoon.github.io/blog/posts/vim-editor/</link>
-      <pubDate>Mon, 11 May 2026 16:30:05 +0900</pubDate>
-      <guid>https://Byngjoon.github.io/blog/posts/vim-editor/</guid>
-      <description>&lt;h1 id=&#34;topic-vim-basic-manuals&#34;&gt;Topic. VIM Basic Manuals&lt;/h1&gt;
-&lt;blockquote&gt;
-&lt;p&gt;&lt;strong&gt;Outline:&lt;/strong&gt;&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;hr&gt;
-&lt;h1 id=&#34;contents&#34;&gt;Contents&lt;/h1&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;&#34;&gt;0.1.&lt;/a&gt; Moving cursor&lt;/li&gt;
-&lt;/ul&gt;
-&lt;hr&gt;
-&lt;h1 id=&#34;section-1-what-is-the-vim&#34;&gt;Section 1. What is the VIM?&lt;/h1&gt;
-&lt;ul&gt;
-&lt;li&gt;VIM
-&lt;ul&gt;
-&lt;li&gt;VIM = Vi-IMproved: an enhanced version of vi editor&lt;/li&gt;
-&lt;li&gt;is cross-platform&lt;/li&gt;
-&lt;li&gt;vim.org: customize, plugin&lt;/li&gt;
-&lt;li&gt;~/.vimrc: VIM configuration file&lt;/li&gt;
-&lt;li&gt;Visual Mode &amp;lt;-[v, ctrl + v / esc]-&amp;gt; Command Mode &amp;lt;-[esc / i,I,a,A,o,O,s,S]-&amp;gt; Input Mode&lt;/li&gt;
-&lt;li&gt;VIM Start -[vim file-name]-&amp;gt; Command Mode -[:q, :q!, :wq, :wq!,  ZZ]-&amp;gt; VIM End&lt;/li&gt;
-&lt;li&gt;Command Mode
-&lt;ul&gt;
-&lt;li&gt;Everything you type are commands (interpeted by VIM as commands)&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;li&gt;Input Mode
-&lt;ul&gt;
-&lt;li&gt;Everything you type are contents&lt;/li&gt;
-&lt;li&gt;Changing contents are stored in editing butter (in memory, not disk)&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;li&gt;Disk(=file) &amp;lt;-[save command(:w, :wq, :wq!) / open new file or input mode]-&amp;gt; Memory(=editing buffer)&lt;/li&gt;
-&lt;li&gt;When open file, all of contents are  uploaded to editing buffer.&lt;/li&gt;
-&lt;li&gt;When you do save, write back from the file in memory to the file in disk.&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h1 id=&#34;section-2-vim-basic-command&#34;&gt;Section 2. VIM Basic Command&lt;/h1&gt;
-&lt;h2 id=&#34;move-cursor&#34;&gt;Move Cursor&lt;/h2&gt;
-&lt;p&gt;(in Command Mode and Visual Mode)&lt;/p&gt;</description>
     </item>
   </channel>
 </rss>

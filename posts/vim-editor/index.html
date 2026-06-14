@@ -7,7 +7,7 @@
 <meta name="robots" content="index, follow">
 <title>VIM Basic | Learning-Log</title>
 <meta name="keywords" content="vim">
-<meta name="description" content="Chapter 00. VIM Basic Manuals
+<meta name="description" content="Topic. VIM Basic Manuals
 
 Outline:
 
@@ -17,7 +17,7 @@ Contents
 0.1. Moving cursor
 
 
-Section 0.1. What is the VIM?
+Section 1. What is the VIM?
 
 VIM
 
@@ -44,7 +44,9 @@ When you do save, write back from the file in memory to the file in disk.
 
 
 
-======VIM Basic Command======">
+Section 2. VIM Basic Command
+Move Cursor
+(in Command Mode and Visual Mode)">
 <meta name="author" content="map[name:byungjoonkim]">
 <link rel="canonical" href="https://Byngjoon.github.io/blog/posts/vim-editor/">
 <link crossorigin="anonymous" href="/blog/assets/css/stylesheet.ed42a47c2de72c05bf93ef053b29fa2dd6f1838928545be0be357c9ab66f8ec6.css" integrity="sha256-7UKkfC3nLAW/k&#43;8FOyn6Ldbxg4koVFvgvjV8mrZvjsY=" rel="preload stylesheet" as="style">
@@ -110,8 +112,8 @@ When you do save, write back from the file in memory to the file in disk.
 <meta property="og:url" content="https://Byngjoon.github.io/blog/posts/vim-editor/">
   <meta property="og:site_name" content="Learning-Log">
   <meta property="og:title" content="VIM Basic">
-  <meta property="og:description" content="Chapter 00. VIM Basic Manuals Outline:
-Contents 0.1. Moving cursor Section 0.1. What is the VIM? VIM VIM = Vi-IMproved: an enhanced version of vi editor is cross-platform vim.org: customize, plugin ~/.vimrc: VIM configuration file Visual Mode &lt;-[v, ctrl &#43; v / esc]-&gt; Command Mode &lt;-[esc / i,I,a,A,o,O,s,S]-&gt; Input Mode VIM Start -[vim file-name]-&gt; Command Mode -[:q, :q!, :wq, :wq!, ZZ]-&gt; VIM End Command Mode Everything you type are commands (interpeted by VIM as commands) Input Mode Everything you type are contents Changing contents are stored in editing butter (in memory, not disk) Disk(=file) &lt;-[save command(:w, :wq, :wq!) / open new file or input mode]-&gt; Memory(=editing buffer) When open file, all of contents are uploaded to editing buffer. When you do save, write back from the file in memory to the file in disk. ======VIM Basic Command======">
+  <meta property="og:description" content="Topic. VIM Basic Manuals Outline:
+Contents 0.1. Moving cursor Section 1. What is the VIM? VIM VIM = Vi-IMproved: an enhanced version of vi editor is cross-platform vim.org: customize, plugin ~/.vimrc: VIM configuration file Visual Mode &lt;-[v, ctrl &#43; v / esc]-&gt; Command Mode &lt;-[esc / i,I,a,A,o,O,s,S]-&gt; Input Mode VIM Start -[vim file-name]-&gt; Command Mode -[:q, :q!, :wq, :wq!, ZZ]-&gt; VIM End Command Mode Everything you type are commands (interpeted by VIM as commands) Input Mode Everything you type are contents Changing contents are stored in editing butter (in memory, not disk) Disk(=file) &lt;-[save command(:w, :wq, :wq!) / open new file or input mode]-&gt; Memory(=editing buffer) When open file, all of contents are uploaded to editing buffer. When you do save, write back from the file in memory to the file in disk. Section 2. VIM Basic Command Move Cursor (in Command Mode and Visual Mode)">
   <meta property="og:locale" content="ko-KR">
   <meta property="og:type" content="article">
     <meta property="article:section" content="posts">
@@ -120,7 +122,7 @@ Contents 0.1. Moving cursor Section 0.1. What is the VIM? VIM VIM = Vi-IMproved:
     <meta property="article:tag" content="Vim">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="VIM Basic">
-<meta name="twitter:description" content="Chapter 00. VIM Basic Manuals
+<meta name="twitter:description" content="Topic. VIM Basic Manuals
 
 Outline:
 
@@ -130,7 +132,7 @@ Contents
 0.1. Moving cursor
 
 
-Section 0.1. What is the VIM?
+Section 1. What is the VIM?
 
 VIM
 
@@ -157,7 +159,9 @@ When you do save, write back from the file in memory to the file in disk.
 
 
 
-======VIM Basic Command======">
+Section 2. VIM Basic Command
+Move Cursor
+(in Command Mode and Visual Mode)">
 
 
 <script type="application/ld+json">
@@ -186,12 +190,12 @@ When you do save, write back from the file in memory to the file in disk.
   "@type": "BlogPosting",
   "headline": "VIM Basic",
   "name": "VIM Basic",
-  "description": "Chapter 00. VIM Basic Manuals Outline:\nContents 0.1. Moving cursor Section 0.1. What is the VIM? VIM VIM = Vi-IMproved: an enhanced version of vi editor is cross-platform vim.org: customize, plugin ~/.vimrc: VIM configuration file Visual Mode \u0026lt;-[v, ctrl + v / esc]-\u0026gt; Command Mode \u0026lt;-[esc / i,I,a,A,o,O,s,S]-\u0026gt; Input Mode VIM Start -[vim file-name]-\u0026gt; Command Mode -[:q, :q!, :wq, :wq!, ZZ]-\u0026gt; VIM End Command Mode Everything you type are commands (interpeted by VIM as commands) Input Mode Everything you type are contents Changing contents are stored in editing butter (in memory, not disk) Disk(=file) \u0026lt;-[save command(:w, :wq, :wq!) / open new file or input mode]-\u0026gt; Memory(=editing buffer) When open file, all of contents are uploaded to editing buffer. When you do save, write back from the file in memory to the file in disk. ======VIM Basic Command======\n",
+  "description": "Topic. VIM Basic Manuals Outline:\nContents 0.1. Moving cursor Section 1. What is the VIM? VIM VIM = Vi-IMproved: an enhanced version of vi editor is cross-platform vim.org: customize, plugin ~/.vimrc: VIM configuration file Visual Mode \u0026lt;-[v, ctrl + v / esc]-\u0026gt; Command Mode \u0026lt;-[esc / i,I,a,A,o,O,s,S]-\u0026gt; Input Mode VIM Start -[vim file-name]-\u0026gt; Command Mode -[:q, :q!, :wq, :wq!, ZZ]-\u0026gt; VIM End Command Mode Everything you type are commands (interpeted by VIM as commands) Input Mode Everything you type are contents Changing contents are stored in editing butter (in memory, not disk) Disk(=file) \u0026lt;-[save command(:w, :wq, :wq!) / open new file or input mode]-\u0026gt; Memory(=editing buffer) When open file, all of contents are uploaded to editing buffer. When you do save, write back from the file in memory to the file in disk. Section 2. VIM Basic Command Move Cursor (in Command Mode and Visual Mode)\n",
   "keywords": [
     "vim"
   ],
-  "articleBody": "Chapter 00. VIM Basic Manuals Outline:\nContents 0.1. Moving cursor Section 0.1. What is the VIM? VIM VIM = Vi-IMproved: an enhanced version of vi editor is cross-platform vim.org: customize, plugin ~/.vimrc: VIM configuration file Visual Mode \u003c-[v, ctrl + v / esc]-\u003e Command Mode \u003c-[esc / i,I,a,A,o,O,s,S]-\u003e Input Mode VIM Start -[vim file-name]-\u003e Command Mode -[:q, :q!, :wq, :wq!, ZZ]-\u003e VIM End Command Mode Everything you type are commands (interpeted by VIM as commands) Input Mode Everything you type are contents Changing contents are stored in editing butter (in memory, not disk) Disk(=file) \u003c-[save command(:w, :wq, :wq!) / open new file or input mode]-\u003e Memory(=editing buffer) When open file, all of contents are uploaded to editing buffer. When you do save, write back from the file in memory to the file in disk. ======VIM Basic Command======\n==Move Cursor== (in Command Mode and Visual Mode)\nmove cursor one space to… h: left j: down k: up l: right for example this is example this [i]s example this is example after moving this [i]s example -\u003e k this[]i[s] example -\u003e h, l this [i]s example -\u003e j you can use the arrow keys move cursor to the first character on… (except for white space) -: the previous line ^: the current line +: the next line enter(return) key: next line for example this is example this [i]s example this is example after moving [t]his is example -\u003e - [t]his is example -\u003e ^ [t]his is example -\u003e +, enter move cursor to … (do not except for white space) 0: the first position on the current line $: the end position on the current line for example this [i]s example after moving [] this is example -\u003e 0 this is example []-\u003e $ move cursor to the first character of… (except for white space) w: the next word b: the previous word for example this [i]s example after moving this is [e]xample -\u003e w [t]his is example -\u003e b move cursor to… {: the previous top empty line of paragraph }: the next bottom empty line of paragraph paragraph: contents surrounded by empty line (top empty line) this is a example this is a example this is a example (bottom empty line) empty line: do not contain any contents. (do not except for white space) move cursor to the first chractor of… (: the previous sentence ): the next sentence sentence: [., !, ?] + [‘white space’ or ’new line’] [., !, ?] + [\", ), ], }] + [‘white space’ or ’new line’] combination example d): deletion + next sentence y(: copy + previous sentence c): rewrite + next sentence move cursor to the first chractor of… (except for white space)\nH: the top of the screen M: the middle of the screen L: the bottom of the screen gg: the first line of the editing buffer G: the last line of the editing buffer [number]G: to the n-th line of the editing buffer (e.g., 34G) :[number]: to the n-th line of the editing buffer (e.g., :34) move a screen\nctrl + f: down ctrl + d: half-down ctrl + b: up ctrl + u: half-up f, u: cursor is the first charactor of the first line b, d: cursor is the first charactor of the last line VIM display a part of the editing buffer as appropriate on the screen We move the screen to see other parts of the editing buffer depending on the current size of your screen ==Switch into Input Mode== (in Command Mode)\ni: insert in front of the current cursor position. I: insert in the first position of the current line. a: insert behind the current cursor position. A: insert in the end position of the current line. o: insert below the current line. O: insert above the current line. o, O: make new line and insert. ==Contents Modification== (in Command Mode) this asdfxample. - r: ready to overwrite the current character (staying in the command mode) - R: ready to overwrite the contents from the current cursor position (switch into the input mode like REPLACE mode)\nfor example this [i]s example.\nafter ra this [a]s example.\nafter ‘Rasdf’ this asd[f]xample.\ns: ready to wrtie after removing a character in the current cursor position (switch into the input mode) C: ready to write from the current cursor position after removing the current line from the current cursor position to the end of the line (switch into the input mode) cc: ready to write from the first cursor position after removing the current line (switch into the input mode) cw: ready to write from the current cursor position after removing the current word (switch into the input mode) (in Visual Mode) - r: ready to overwrite the current character (staying in the command mode) - R: ready to overwrite the contents from the current cursor position (switch into the input mode) - s: ready to wrtie after removing a character in the current cursor position (switch into the input mode) - C: ready to write from the current cursor position after removing the current line from the current cursor position to the end of the line (switch into the input mode) - cc: ready to write from the first cursor position after removing the current line (switch into the input mode) - cw: ready to write from the current cursor position after removing the current word (switch into the input mode)\nmon mar 16 linux programming\n폰노이만 아키텍처 -\u003e 인스트럭션을 읽고 처리하다가 데이터가 필요하면 데이터를 읽어서 실행(스토리지와 직접적아님) 그러나 메모리는 한정적 -\u003e 필요시 올리고 노필요시 내림 (버추얼 메모리)\n루트\nmon, mar 23 x X ~~ buffer에 저장됨 :set ts=4 “tab size tabstop = space 4times :set sts=4 \" :set sw=4 “indentation 수정 increase decrease width :set textwidth=80 “한 라인에 몇캐릭터 허용 :set smartindent “auto indentation :source filename “동적으로 :shell “shell로 나감 -\u003e foreground = fg 다시 돌아온다(ctrl z로 나가면? :!명령어 -\u003e :help\n:vne “[w]은 optional / vertical new -\u003e / :o filename vim plug in 사용하기 -\u003e /vim/pulgin/ 에 파일 복붙 확장자 상관 linux는 여러 파일 시스템을 사용가능 특정 운영체제의 파ㅣㅇㄹ 시스템마다 인코딩 방식이 다르다 다르면 힘들다\nMon, mar 30 Linux programming\nFile? -\u003e ?: single char, any character File* -\u003e *: any characters $ cat file2 | grep -i “from” == grep -I “from” file2 파이프라인을 통해서 더 느림 앞에가 프로그램 두개를 실행한것\nDir . == ./ ../ super dir ~/ home / root\nFine -o -\u003e or:\nmemory에만 있는 파일 Ls -\u003e 스토리지에 ㅣㅇㅅ는 파일만 프록 파일? 시스 파일? -\u003e 커널이 메모리에 생성해줌 셧다운 명령어로 끄면 사라짐\nDir -\u003e 파일로써 다뤄짐\nMon, Apr 27 p.20 program counter -\u003e address of the next instruction (text section) stack -\u003e temporal data, local variables (-\u003e non initializing) data section -\u003e global variables (-\u003e initializing to 0) heap -\u003e malloc 할때마다 반환하는 값은 점점 increase (to the max) stack -\u003e 나중에 할당 받은 stack (to the 0) stack and heap -\u003e process terminate시에 사라짐 -\u003e readelf 에서 no find text and data section p.21 memory layout of the process in Linux is elf -\u003e use readelf p.22 os 마다 process states different\nMon, May 4 complier: 아직 영어임 어셈블리 obj file-\u003e cpu는 이해할 수 있지만 아직 실행은 못 –save-temps: 중간 결과물 temporal files를 저장 preprocessor: env var, macro keyword (#…) linker: linking=\u003e .o =\u003e 바로 linking 앞에 거 할 이유가 없 다른 코드들도 시스템이 필요한 거 같이 링킹 내가 작성한거 이외에\nReferences Kangwon National University Lecture Note (course: 48400009) Acknowledgements OpenAI ChatGPT Google NotebookLM ",
-  "wordCount" : "1247",
+  "articleBody": "Topic. VIM Basic Manuals Outline:\nContents 0.1. Moving cursor Section 1. What is the VIM? VIM VIM = Vi-IMproved: an enhanced version of vi editor is cross-platform vim.org: customize, plugin ~/.vimrc: VIM configuration file Visual Mode \u003c-[v, ctrl + v / esc]-\u003e Command Mode \u003c-[esc / i,I,a,A,o,O,s,S]-\u003e Input Mode VIM Start -[vim file-name]-\u003e Command Mode -[:q, :q!, :wq, :wq!, ZZ]-\u003e VIM End Command Mode Everything you type are commands (interpeted by VIM as commands) Input Mode Everything you type are contents Changing contents are stored in editing butter (in memory, not disk) Disk(=file) \u003c-[save command(:w, :wq, :wq!) / open new file or input mode]-\u003e Memory(=editing buffer) When open file, all of contents are uploaded to editing buffer. When you do save, write back from the file in memory to the file in disk. Section 2. VIM Basic Command Move Cursor (in Command Mode and Visual Mode)\nmove cursor one space to… h: left j: down k: up l: right for example this is example this [i]s example this is example after moving this [i]s example -\u003e k this[]i[s] example -\u003e h, l this [i]s example -\u003e j you can use the arrow keys move cursor to the first character on… (except for white space) -: the previous line ^: the current line +: the next line enter(return) key: next line for example this is example this [i]s example this is example after moving [t]his is example -\u003e - [t]his is example -\u003e ^ [t]his is example -\u003e +, enter move cursor to … (do not except for white space) 0: the first position on the current line $: the end position on the current line for example this [i]s example after moving [] this is example -\u003e 0 this is example []-\u003e $ move cursor to the first character of… (except for white space) w: the next word b: the previous word for example this [i]s example after moving this is [e]xample -\u003e w [t]his is example -\u003e b move cursor to… {: the previous top empty line of paragraph }: the next bottom empty line of paragraph paragraph: contents surrounded by empty line (top empty line) this is a example this is a example this is a example (bottom empty line) empty line: do not contain any contents. (do not except for white space) move cursor to the first chractor of… (: the previous sentence ): the next sentence sentence: [., !, ?] + [‘white space’ or ’new line’] [., !, ?] + [\", ), ], }] + [‘white space’ or ’new line’] combination example d): deletion + next sentence y(: copy + previous sentence c): rewrite + next sentence move cursor to the first chractor of… (except for white space)\nH: the top of the screen M: the middle of the screen L: the bottom of the screen gg: the first line of the editing buffer G: the last line of the editing buffer [number]G: to the n-th line of the editing buffer (e.g., 34G) :[number]: to the n-th line of the editing buffer (e.g., :34) move a screen\nctrl + f: down ctrl + d: half-down ctrl + b: up ctrl + u: half-up f, u: cursor is the first charactor of the first line b, d: cursor is the first charactor of the last line VIM display a part of the editing buffer as appropriate on the screen We move the screen to see other parts of the editing buffer depending on the current size of your screen Switch into Input Mode (in Command Mode)\ni: insert in front of the current cursor position. I: insert in the first position of the current line. a: insert behind the current cursor position. A: insert in the end position of the current line. o: insert below the current line. O: insert above the current line. o, O: make new line and insert. Contents Modification (in Command Mode) this asdfxample. - r: ready to overwrite the current character (staying in the command mode) - R: ready to overwrite the contents from the current cursor position (switch into the input mode like REPLACE mode)\nfor example this [i]s example.\nafter ra this [a]s example.\nafter ‘Rasdf’ this asd[f]xample.\ns: ready to wrtie after removing a character in the current cursor position (switch into the input mode) C: ready to write from the current cursor position after removing the current line from the current cursor position to the end of the line (switch into the input mode) cc: ready to write from the first cursor position after removing the current line (switch into the input mode) cw: ready to write from the current cursor position after removing the current word (switch into the input mode) (in Visual Mode) - r: ready to overwrite the current character (staying in the command mode) - R: ready to overwrite the contents from the current cursor position (switch into the input mode) - s: ready to wrtie after removing a character in the current cursor position (switch into the input mode) - C: ready to write from the current cursor position after removing the current line from the current cursor position to the end of the line (switch into the input mode) - cc: ready to write from the first cursor position after removing the current line (switch into the input mode) - cw: ready to write from the current cursor position after removing the current word (switch into the input mode)\nSplit Screen (in command mode)\n:[n]split [file-name] (e.g. :80sp test.c) (or :[n]sp [file-name])\nhorizontal spliting (상, 하 두개로 분리됨) [n]: height size, 없으면 절반으로 split [file-name]: 열고 싶은 파일, 없으면 현재 file ./ 기준 path, 다른 diretory file 은 access by path :[n]vs [file-name]\nvertical spliting (좌, 우 두개로 분리됨) [ctrl + w] + […]: move cursur to … w : next screen W : previous screen h, j, k, l: 해당 방향으로 이동\n[ctrl + w] + […]: resizing\n=: all screen, same size _: present window, maximum height |: present window, maximum width [n] \u003e: present window, + n width [n] \u003c: present window, - n width [n] +: present window, + n height (or :resize +[n]) [n] -: presnet window, - n height (or :wq, :q, … =\u003e present window :qa =\u003e all window [ctrl + W] + o =\u003e all window excluded present one [ctrl + w] + r : 다음 화면과 위치 바꿈\nReferences Kangwon National University Lecture Note (course: 48400009) Acknowledgements OpenAI ChatGPT Google NotebookLM ",
+  "wordCount" : "1078",
   "inLanguage": "en",
   "datePublished": "2026-05-11T16:30:05+09:00",
   "dateModified": "2026-05-11T16:30:05+09:00",
@@ -287,12 +291,22 @@ When you do save, write back from the file in memory to the file in disk.
 
         <div class="inner"><ul>
                 <li>
-                    <a href="#chapter-00-vim-basic-manuals" aria-label="Chapter 00. VIM Basic Manuals">Chapter 00. VIM Basic Manuals</a></li>
+                    <a href="#topic-vim-basic-manuals" aria-label="Topic. VIM Basic Manuals">Topic. VIM Basic Manuals</a></li>
                 <li>
                     <a href="#contents" aria-label="Contents">Contents</a></li>
                 <li>
-                    <a href="#section-01-what-is-the-vim" aria-label="Section 0.1. What is the VIM?">Section 0.1. What is the VIM?</a><ul>
+                    <a href="#section-1-what-is-the-vim" aria-label="Section 1. What is the VIM?">Section 1. What is the VIM?</a></li>
+                <li>
+                    <a href="#section-2-vim-basic-command" aria-label="Section 2. VIM Basic Command">Section 2. VIM Basic Command</a><ul>
                         
+                <li>
+                    <a href="#move-cursor" aria-label="Move Cursor">Move Cursor</a></li>
+                <li>
+                    <a href="#switch-into-input-mode" aria-label="Switch into Input Mode">Switch into Input Mode</a></li>
+                <li>
+                    <a href="#contents-modification" aria-label="Contents Modification">Contents Modification</a></li>
+                <li>
+                    <a href="#split-screen" aria-label="Split Screen">Split Screen</a></li>
                 <li>
                     <a href="#references" aria-label="References">References</a></li>
                 <li>
@@ -305,7 +319,7 @@ When you do save, write back from the file in memory to the file in disk.
     </details>
 </div>
 
-  <div class="post-content"><h1 id="chapter-00-vim-basic-manuals">Chapter 00. VIM Basic Manuals<a hidden class="anchor" aria-hidden="true" href="#chapter-00-vim-basic-manuals">#</a></h1>
+  <div class="post-content"><h1 id="topic-vim-basic-manuals">Topic. VIM Basic Manuals<a hidden class="anchor" aria-hidden="true" href="#topic-vim-basic-manuals">#</a></h1>
 <blockquote>
 <p><strong>Outline:</strong></p>
 </blockquote>
@@ -315,7 +329,7 @@ When you do save, write back from the file in memory to the file in disk.
 <li><a href="">0.1.</a> Moving cursor</li>
 </ul>
 <hr>
-<h1 id="section-01-what-is-the-vim">Section 0.1. What is the VIM?<a hidden class="anchor" aria-hidden="true" href="#section-01-what-is-the-vim">#</a></h1>
+<h1 id="section-1-what-is-the-vim">Section 1. What is the VIM?<a hidden class="anchor" aria-hidden="true" href="#section-1-what-is-the-vim">#</a></h1>
 <ul>
 <li>VIM
 <ul>
@@ -342,9 +356,9 @@ When you do save, write back from the file in memory to the file in disk.
 </ul>
 </li>
 </ul>
-<p>======VIM Basic Command======</p>
-<p>==Move Cursor==
-(in Command Mode and Visual Mode)</p>
+<h1 id="section-2-vim-basic-command">Section 2. VIM Basic Command<a hidden class="anchor" aria-hidden="true" href="#section-2-vim-basic-command">#</a></h1>
+<h2 id="move-cursor">Move Cursor<a hidden class="anchor" aria-hidden="true" href="#move-cursor">#</a></h2>
+<p>(in Command Mode and Visual Mode)</p>
 <ol>
 <li>move cursor one space to&hellip;
 <ul>
@@ -498,8 +512,8 @@ this is a example
 </ul>
 </li>
 </ol>
-<p>==Switch into Input Mode==
-(in Command Mode)</p>
+<h2 id="switch-into-input-mode">Switch into Input Mode<a hidden class="anchor" aria-hidden="true" href="#switch-into-input-mode">#</a></h2>
+<p>(in Command Mode)</p>
 <ul>
 <li>i: insert in front of the current cursor position.</li>
 <li>I: insert in the first position of the current line.</li>
@@ -512,8 +526,8 @@ this is a example
 </ul>
 </li>
 </ul>
-<p>==Contents Modification==
-(in Command Mode)
+<h2 id="contents-modification">Contents Modification<a hidden class="anchor" aria-hidden="true" href="#contents-modification">#</a></h2>
+<p>(in Command Mode)
 this asdfxample.
 - r: ready to overwrite the current character (staying in the command mode)
 - R: ready to overwrite the contents from the current cursor position (switch into the input mode like REPLACE mode)</p>
@@ -544,65 +558,74 @@ this asd[f]xample.</p>
 - C: ready to write from the current cursor position after removing the current line from the current cursor position to the end of the line (switch into the input mode)
 - cc: ready to write from the first cursor position after removing the current line (switch into the input mode)
 - cw: ready to write from the current cursor position after removing the current word (switch into the input mode)</p>
-<p>mon mar 16
-linux programming</p>
-<p>폰노이만 아키텍처 -&gt; 인스트럭션을 읽고 처리하다가 데이터가 필요하면 데이터를  읽어서 실행(스토리지와 직접적아님)
-그러나 메모리는 한정적 -&gt; 필요시 올리고 노필요시 내림 (버추얼 메모리)</p>
-<p>루트</p>
-<p>mon, mar 23
+<h2 id="split-screen">Split Screen<a hidden class="anchor" aria-hidden="true" href="#split-screen">#</a></h2>
+<p>(in command mode)</p>
+<ol>
+<li>
+<p>:[n]split [file-name] (e.g. :80sp test.c) (or :[n]sp [file-name])</p>
+<ul>
+<li>horizontal spliting (상, 하 두개로 분리됨)</li>
+<li>[n]: height size, 없으면 절반으로 split</li>
+<li>[file-name]: 열고 싶은 파일, 없으면 현재 file
+<ul>
+<li>./ 기준 path, 다른 diretory file 은 access by path</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p>:[n]vs [file-name]</p>
+<ul>
+<li>vertical spliting (좌, 우 두개로 분리됨)</li>
+</ul>
+</li>
+<li>
+<p>[ctrl + w] + [&hellip;]: move cursur to &hellip;
+w : next screen
+W : previous screen
+h, j, k, l: 해당 방향으로 이동</p>
+</li>
+<li>
+<p>[ctrl + w] + [&hellip;]: resizing</p>
+<ul>
+<li>=: all screen, same size</li>
+<li><code>_</code>: present window, maximum height</li>
+<li><code>|</code>: present window, maximum width</li>
+<li>[n] &gt;: present window, + n width</li>
+<li>[n] &lt;: present window, - n width</li>
+<li>[n] +: present window, + n height (or :resize +[n])</li>
+<li>[n] -: presnet window, - n height (or</li>
+</ul>
+</li>
+<li>
+<ul>
+<li>:wq, :q, &hellip; =&gt; present window</li>
+<li>:qa =&gt; all window</li>
+<li>[ctrl + W] + o =&gt; all window excluded present one</li>
+</ul>
+</li>
+<li>
+<p>[ctrl + w] + r : 다음 화면과 위치 바꿈</p>
+</li>
+</ol>
+<!--
+mon, mar 23
 x X ~~ buffer에 저장됨
-:set ts=4 &ldquo;tab size tabstop = space 4times
-:set sts=4 &quot;
-:set sw=4 &ldquo;indentation 수정 increase decrease width
-:set textwidth=80 &ldquo;한 라인에 몇캐릭터 허용
-:set smartindent &ldquo;auto indentation
-:source filename &ldquo;동적으로
-:shell &ldquo;shell로 나감 -&gt; foreground = fg 다시 돌아온다(ctrl z로 나가면?
-:!명령어 -&gt;
-:help</p>
-<p>:vne &ldquo;[w]은 optional / vertical new -&gt; / :o filename
-vim plug in 사용하기 -&gt; /vim/pulgin/ 에 파일 복붙 확장자 상관
+:set ts=4 "tab size tabstop = space 4times
+:set sts=4 "
+:set sw=4 "indentation 수정 increase decrease width
+:set textwidth=80 "한 라인에 몇캐릭터 허용
+:set smartindent "auto indentation
+:source filename "동적으로 
+:shell "shell로 나감 -> foreground = fg 다시 돌아온다(ctrl z로 나가면?
+:!명령어 ->
+:help
+
+:vne "[w]은 optional / vertical new -> / :o filename
+vim plug in 사용하기 -> /vim/pulgin/ 에 파일 복붙 확장자 상관 
 linux는 여러 파일 시스템을 사용가능
-특정 운영체제의 파ㅣㅇㄹ 시스템마다 인코딩 방식이 다르다 다르면 힘들다</p>
-<p>Mon, mar 30
-Linux programming</p>
-<p>File? -&gt; ?: single char, any character
-File* -&gt; *: any characters
-$ cat file2 | grep -i “from” == grep -I “from” file2
-파이프라인을 통해서 더 느림 앞에가
-프로그램 두개를 실행한것</p>
-<p>Dir
-. == ./
-../  super dir
-~/ home
-/ root</p>
-<p>Fine -o -&gt; or:</p>
-<p>memory에만 있는 파일
-Ls -&gt; 스토리지에 ㅣㅇㅅ는 파일만
-프록 파일? 시스 파일? -&gt; 커널이 메모리에 생성해줌
-셧다운 명령어로 끄면 사라짐</p>
-<p>Dir -&gt; 파일로써 다뤄짐</p>
-<p>Mon, Apr 27
-p.20
-program counter -&gt; address of the next instruction (text section)
-stack -&gt; temporal data, local variables (-&gt; non initializing)
-data section -&gt; global variables (-&gt; initializing to 0)
-heap -&gt; malloc 할때마다 반환하는 값은 점점 increase (to the max)
-stack -&gt; 나중에 할당 받은 stack (to the 0)
-stack and heap -&gt; process terminate시에 사라짐 -&gt; readelf 에서 no find
-text and data section
-p.21
-memory layout of the process in Linux is elf -&gt; use readelf
-p.22
-os 마다 process states different</p>
-<p>Mon, May 4
-complier: 아직 영어임 어셈블리
-obj file-&gt; cpu는 이해할 수 있지만 아직 실행은 못
-&ndash;save-temps: 중간 결과물 temporal files를 저장
-preprocessor: env var, macro keyword (#&hellip;)
-linker: linking=&gt;
-.o =&gt; 바로 linking 앞에 거 할 이유가 없
-다른 코드들도 시스템이 필요한 거 같이 링킹 내가 작성한거 이외에</p>
+특정 운영체제의 파ㅣㅇㄹ 시스템마다 인코딩 방식이 다르다 다르면 힘들다
+-->
 <hr>
 <h2 id="references">References<a hidden class="anchor" aria-hidden="true" href="#references">#</a></h2>
 <ul>

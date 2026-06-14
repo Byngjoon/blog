@@ -1,42 +1,13 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
-    <title>Posts on Learning-Log</title>
-    <link>https://Byngjoon.github.io/blog/posts/</link>
-    <description>Recent content in Posts on Learning-Log</description>
+    <title>UNIX/Linux on Learning-Log</title>
+    <link>https://Byngjoon.github.io/blog/tags/unix/linux/</link>
+    <description>Recent content in UNIX/Linux on Learning-Log</description>
     <generator>Hugo -- 0.162.1</generator>
     <language>ko-KR</language>
     <lastBuildDate>Fri, 12 Jun 2026 23:40:44 +0900</lastBuildDate>
-    <atom:link href="https://Byngjoon.github.io/blog/posts/index.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>Guide</title>
-      <link>https://Byngjoon.github.io/blog/posts/classfication/</link>
-      <pubDate>Sat, 17 May 2025 22:37:59 +0900</pubDate>
-      <guid>https://Byngjoon.github.io/blog/posts/classfication/</guid>
-      <description>&lt;h1 id=&#34;educational-classification-of-computing-fields-cs--ce--it&#34;&gt;Educational Classification of Computing Fields (CS / CE / IT)&lt;/h1&gt;
-&lt;h2 id=&#34;-computer-science-cs&#34;&gt;■ Computer Science (CS)&lt;/h2&gt;
-&lt;p&gt;&lt;strong&gt;Focus&lt;/strong&gt;: Theoretical foundations, software, algorithms, intelligent systems.&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;
-&lt;p&gt;&lt;strong&gt;Theoretical Computer Science&lt;/strong&gt;&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;Computation Theory (Turing Machines, Automata)&lt;/li&gt;
-&lt;li&gt;Complexity Theory (P vs NP, Time/Space Complexity)&lt;/li&gt;
-&lt;li&gt;Formal Languages &amp;amp; Compiler Theory&lt;/li&gt;
-&lt;li&gt;Discrete Mathematics Foundations&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;&lt;strong&gt;Algorithms &amp;amp; Data Structures&lt;/strong&gt;&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;Data Structures (Lists, Stacks, Queues, Trees, Graphs, Hash Tables)&lt;/li&gt;
-&lt;li&gt;Algorithms (Sorting, Searching, Shortest Path, Dynamic Programming)&lt;/li&gt;
-&lt;li&gt;Algorithm Design Paradigms (Greedy, Divide &amp;amp; Conquer, DP, Backtracking)&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;&lt;strong&gt;Programming Languages&lt;/strong&gt;&lt;/p&gt;</description>
-    </item>
+    <atom:link href="https://Byngjoon.github.io/blog/tags/unix/linux/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>[UNIX/Linux] [02]: Basic Commands</title>
       <link>https://Byngjoon.github.io/blog/posts/linux-02/</link>
@@ -313,125 +284,6 @@ kernel은 inode의 device 정보를 통해 적절한 device driver(kernel code)�
 &lt;/ol&gt;
 &lt;blockquote&gt;
 &lt;p&gt;Portable Operating System Interface (POSIX): Unix standardization&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title>Regular Expressions</title>
-      <link>https://Byngjoon.github.io/blog/posts/regexp/</link>
-      <pubDate>Fri, 15 May 2026 13:30:09 +0900</pubDate>
-      <guid>https://Byngjoon.github.io/blog/posts/regexp/</guid>
-      <description>&lt;h1 id=&#34;topic-regular-expressions&#34;&gt;Topic. Regular Expressions&lt;/h1&gt;
-&lt;blockquote&gt;
-&lt;p&gt;&lt;strong&gt;Outline:&lt;/strong&gt;&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;hr&gt;
-&lt;h1 id=&#34;contents&#34;&gt;Contents&lt;/h1&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;&#34;&gt;0.1.&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;hr&gt;
-&lt;h1 id=&#34;section-1-what-is-the-reular-expressions&#34;&gt;Section 1. What is the Reular Expressions?&lt;/h1&gt;
-&lt;hr&gt;
-&lt;h2 id=&#34;regular-expression-regex-or-regexp-is&#34;&gt;Regular Expression (regex or regexp) is&amp;hellip;&lt;/h2&gt;
-&lt;ul&gt;
-&lt;li&gt;string의 pattern을 표현하는 pattern language&lt;/li&gt;
-&lt;li&gt;해당 pattern에 맞는 string을 모두 match (&lt;strong&gt;pattern matching&lt;/strong&gt;)&lt;/li&gt;
-&lt;li&gt;String set을 표현하는 것 (matching되는 문자열들이 여러개 그것을 표현)&lt;/li&gt;
-&lt;/ul&gt;
-&lt;hr&gt;
-&lt;p&gt;e.g.
-&lt;code&gt;hello&lt;/code&gt; == match =&amp;gt; &lt;code&gt;hello&lt;/code&gt;
-&lt;code&gt;h.llo&lt;/code&gt; == match =&amp;gt; &lt;code&gt;hello&lt;/code&gt;, &lt;code&gt;hallo&lt;/code&gt;, &lt;code&gt;hxllo&lt;/code&gt;, &lt;code&gt;h.llo&lt;/code&gt;, &amp;hellip;&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;code&gt;.&lt;/code&gt; is not just match &lt;code&gt;.&lt;/code&gt;.&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;.&lt;/code&gt; means any single character.&lt;/li&gt;
-&lt;/ul&gt;
-&lt;hr&gt;
-&lt;ul&gt;
-&lt;li&gt;used in searching, replacement, and input 검증.&lt;/li&gt;
-&lt;/ul&gt;
-&lt;hr&gt;
-&lt;h2 id=&#34;standard&#34;&gt;Standard&lt;/h2&gt;
-&lt;ul&gt;
-&lt;li&gt;There are many standards and implementations for regular expressions.&lt;/li&gt;
-&lt;li&gt;There is no only one universial standard, but exist important standards&lt;/li&gt;
-&lt;li&gt;Standard
-&lt;ul&gt;
-&lt;li&gt;POSIX Regular Expression
-&lt;ul&gt;
-&lt;li&gt;POSIX Basic Regular Expression (BRE)&lt;/li&gt;
-&lt;li&gt;POSIX Extended Regular Expression (ERE)&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;li&gt;Shell glob&lt;/li&gt;
-&lt;li&gt;VIM regex&lt;/li&gt;
-&lt;li&gt;Perl Compatible Regular Expression (PCRE)&lt;/li&gt;
-&lt;li&gt;&amp;hellip;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;li&gt;So, 어떤 regex flvor (standard?)를 사용하는 지 먼저 확인&lt;/li&gt;
-&lt;li&gt;그 다음 regex가 잘 표현되었는 지 생각.&lt;/li&gt;
-&lt;/ul&gt;
-&lt;hr&gt;
-&lt;h2 id=&#34;meta-characters&#34;&gt;Meta Characters&lt;/h2&gt;
-&lt;ul&gt;
-&lt;li&gt;have special meaning or matching in some syntax.&lt;/li&gt;
-&lt;li&gt;Some syntax =&amp;gt; Regular expression(POSiX, PCRE, &amp;hellip;), shell syntax, &amp;hellip;&lt;/li&gt;
-&lt;li&gt;어떤 문자가 metacharacter인지는 문맥에 따라 달라진다.
-metacharacter는 특정 언어 하나의 고유 용어가 아니라,
-“그 문법 안에서 일반 문자 이상의 특별한 의미를 갖는 문자”를 가리키는 일반 용어다.
-metacharacter라는 말은 regex에도 있고, shell에도 있고, glob에도 있어
-어떤 문자가 metacharacter인지는 문맥에 따라 달라진다&lt;/li&gt;
-&lt;/ul&gt;
-&lt;hr&gt;
-&lt;p&gt;e.g.
-&lt;code&gt;a.c&lt;/code&gt; == match ==&amp;gt; &lt;code&gt;a&lt;/code&gt; + &lt;code&gt;any single character&lt;/code&gt; + &lt;code&gt;c&lt;/code&gt;
-&lt;code&gt;.&lt;/code&gt; means any single character&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title>VIM Basic</title>
-      <link>https://Byngjoon.github.io/blog/posts/vim-editor/</link>
-      <pubDate>Mon, 11 May 2026 16:30:05 +0900</pubDate>
-      <guid>https://Byngjoon.github.io/blog/posts/vim-editor/</guid>
-      <description>&lt;h1 id=&#34;topic-vim-basic-manuals&#34;&gt;Topic. VIM Basic Manuals&lt;/h1&gt;
-&lt;blockquote&gt;
-&lt;p&gt;&lt;strong&gt;Outline:&lt;/strong&gt;&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;hr&gt;
-&lt;h1 id=&#34;contents&#34;&gt;Contents&lt;/h1&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;&#34;&gt;0.1.&lt;/a&gt; Moving cursor&lt;/li&gt;
-&lt;/ul&gt;
-&lt;hr&gt;
-&lt;h1 id=&#34;section-1-what-is-the-vim&#34;&gt;Section 1. What is the VIM?&lt;/h1&gt;
-&lt;ul&gt;
-&lt;li&gt;VIM
-&lt;ul&gt;
-&lt;li&gt;VIM = Vi-IMproved: an enhanced version of vi editor&lt;/li&gt;
-&lt;li&gt;is cross-platform&lt;/li&gt;
-&lt;li&gt;vim.org: customize, plugin&lt;/li&gt;
-&lt;li&gt;~/.vimrc: VIM configuration file&lt;/li&gt;
-&lt;li&gt;Visual Mode &amp;lt;-[v, ctrl + v / esc]-&amp;gt; Command Mode &amp;lt;-[esc / i,I,a,A,o,O,s,S]-&amp;gt; Input Mode&lt;/li&gt;
-&lt;li&gt;VIM Start -[vim file-name]-&amp;gt; Command Mode -[:q, :q!, :wq, :wq!,  ZZ]-&amp;gt; VIM End&lt;/li&gt;
-&lt;li&gt;Command Mode
-&lt;ul&gt;
-&lt;li&gt;Everything you type are commands (interpeted by VIM as commands)&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;li&gt;Input Mode
-&lt;ul&gt;
-&lt;li&gt;Everything you type are contents&lt;/li&gt;
-&lt;li&gt;Changing contents are stored in editing butter (in memory, not disk)&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;li&gt;Disk(=file) &amp;lt;-[save command(:w, :wq, :wq!) / open new file or input mode]-&amp;gt; Memory(=editing buffer)&lt;/li&gt;
-&lt;li&gt;When open file, all of contents are  uploaded to editing buffer.&lt;/li&gt;
-&lt;li&gt;When you do save, write back from the file in memory to the file in disk.&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h1 id=&#34;section-2-vim-basic-command&#34;&gt;Section 2. VIM Basic Command&lt;/h1&gt;
-&lt;h2 id=&#34;move-cursor&#34;&gt;Move Cursor&lt;/h2&gt;
-&lt;p&gt;(in Command Mode and Visual Mode)&lt;/p&gt;</description>
     </item>
   </channel>
 </rss>

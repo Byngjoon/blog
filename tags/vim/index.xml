@@ -4,7 +4,7 @@
     <title>Vim on Learning-Log</title>
     <link>https://Byngjoon.github.io/blog/tags/vim/</link>
     <description>Recent content in Vim on Learning-Log</description>
-    <generator>Hugo -- 0.161.1</generator>
+    <generator>Hugo -- 0.162.1</generator>
     <language>ko-KR</language>
     <lastBuildDate>Mon, 11 May 2026 16:30:05 +0900</lastBuildDate>
     <atom:link href="https://Byngjoon.github.io/blog/tags/vim/index.xml" rel="self" type="application/rss+xml" />
@@ -13,7 +13,7 @@
       <link>https://Byngjoon.github.io/blog/posts/vim-editor/</link>
       <pubDate>Mon, 11 May 2026 16:30:05 +0900</pubDate>
       <guid>https://Byngjoon.github.io/blog/posts/vim-editor/</guid>
-      <description>&lt;h1 id=&#34;chapter-00-vim-basic-manuals&#34;&gt;Chapter 00. VIM Basic Manuals&lt;/h1&gt;
+      <description>&lt;h1 id=&#34;topic-vim-basic-manuals&#34;&gt;Topic. VIM Basic Manuals&lt;/h1&gt;
 &lt;blockquote&gt;
 &lt;p&gt;&lt;strong&gt;Outline:&lt;/strong&gt;&lt;/p&gt;
 &lt;/blockquote&gt;
@@ -23,7 +23,7 @@
 &lt;li&gt;&lt;a href=&#34;&#34;&gt;0.1.&lt;/a&gt; Moving cursor&lt;/li&gt;
 &lt;/ul&gt;
 &lt;hr&gt;
-&lt;h1 id=&#34;section-01-what-is-the-vim&#34;&gt;Section 0.1. What is the VIM?&lt;/h1&gt;
+&lt;h1 id=&#34;section-1-what-is-the-vim&#34;&gt;Section 1. What is the VIM?&lt;/h1&gt;
 &lt;ul&gt;
 &lt;li&gt;VIM
 &lt;ul&gt;
@@ -50,7 +50,9 @@
 &lt;/ul&gt;
 &lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;======VIM Basic Command======&lt;/p&gt;</description>
+&lt;h1 id=&#34;section-2-vim-basic-command&#34;&gt;Section 2. VIM Basic Command&lt;/h1&gt;
+&lt;h2 id=&#34;move-cursor&#34;&gt;Move Cursor&lt;/h2&gt;
+&lt;p&gt;(in Command Mode and Visual Mode)&lt;/p&gt;</description>
     </item>
   </channel>
 </rss>
