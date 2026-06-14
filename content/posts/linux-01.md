@@ -1,32 +1,35 @@
 +++
-date = '2026-03-09T14:07:47+09:00'
-title = 'Linux [01]: OS & Linux Basic'
+date = '2026-06-09T14:07:47+09:00'
+title = '[UNIX/Linux] [01]: UNIX/Linux Basic'
 description = ""
 categories = [""]
-tags = [""]
+tags = ["UNIX/Linux"]
 slug = ""
 math = true
 draft = false
 +++
 
-# Chapter 00. 
+# Chapter 01.  UNIX/Linux Basic
 
 > **Outline:**
 
 ---
 
-## Contents
+# Contents
 
 - [0.1.]() 
 
 ---
 
-## Section 0.1.
-Operating system is ...
-1) One of the most sophiscated(복잡한) software structure
-2) Resource manager -> manage software component and hardware (like device driver)
+# Section 1.1. Operationg Systems
 
-flow of running computer (top-down)
+## Operating system is ...
+1. One of the most sophiscated(복잡한) software structure
+2. Resource manager -> manage software component and hardware (like device driver)
+
+---
+
+## flow of running computer (top-down)
 1. User: the person who uses computer
 =====Interface (User Interface)
 2. Applications (=user program)
@@ -52,34 +55,43 @@ flow of running computer (top-down)
 	- protection and security: protect files and systems from program or other user
 4. Hardware
 
-UNIX/Linux key features
+---
+
+# Section 1.2. UNIX/Linux key features
 1. Interactive systems
 2. Multi-user systems
 3. Multi-tasking systems
 4. High portability, scalability(확장성), openness(개방성)
 5. Hierarchical file-systems
+> Portable Operating System Interface (POSIX): Unix standardization
 
-Portable Operating System Interface (POSIX): Unix standardization
+---
 
-shell and kernel
-Shell: Command line interpreter(해석기?)
+## shell and kernel
+
+1. Shell: Command line interpreter(해석기?)
 	- is not component of OS
 	- is just porgram (Application)
 	- allows user to command kernel -> interpreter
 	- the reason why Linux is interactive system(깜빡깜빡)
 	- sh, csh, ksh, zsh, bash - 인터프리터인데 many variation
-Kernel: A main(core) component of OS
+
+2. Kernel: A main(core) component of OS
 	- loaded on memory at boot time (is in /boot dirtory)
 	- manege memory, process, divice, file-system, network, ...
 	- Linux kernel is composit source written C and Assembly language
 	- /arch -> written Assembly becuase control architecture
+
 - Shell: User <-> Program
 - System Call: Program <-> Kernel
 - Kernel: actual running (control hardware)
 
-Linux is multi-user system: multiple users can use a system in the same time
-    - users have each account
-    - each account's files and process are protected
+---
+
+## UNIX/Linux is multi-user system
+- multiple users can use a system in the same time
+- users have each account
+- each account's files and process are protected
 - flow
 Login: the process of obtaining(획득) permission to use the system
 -> input user-ID and password -> 인증 -> system 접근 허용

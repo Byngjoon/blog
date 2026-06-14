@@ -9,7 +9,7 @@ math = true
 draft = false
 +++
 
-# Chapter 00. VIM Basic Manuals
+# Topic. VIM Basic Manuals
 
 > **Outline:**
 
@@ -21,7 +21,7 @@ draft = false
 
 ---
 
-# Section 0.1. What is the VIM?
+# Section 1. What is the VIM?
 
 - VIM
     - VIM = Vi-IMproved: an enhanced version of vi editor
@@ -40,10 +40,10 @@ draft = false
     - When you do save, write back from the file in memory to the file in disk.
 
 
-======VIM Basic Command======
+# Section 2. VIM Basic Command
 
 
-==Move Cursor==
+## Move Cursor
 (in Command Mode and Visual Mode)
 
 1. move cursor one space to...
@@ -135,7 +135,7 @@ this is a example
         - depending on the current size of your screen
 
 
-==Switch into Input Mode==
+## Switch into Input Mode
 (in Command Mode)
 
 - i: insert in front of the current cursor position.
@@ -147,7 +147,7 @@ this is a example
     - o, O: make new line and insert.
 
 
-==Contents Modification==
+## Contents Modification
 (in Command Mode)
 this asdfxample. 
     - r: ready to overwrite the current character (staying in the command mode)
@@ -173,20 +173,41 @@ this asd[f]xample.
     - cw: ready to write from the current cursor position after removing the current word (switch into the input mode)
 
 
+## Split Screen
+(in command mode)
 
+1. :[n]split [file-name] (e.g. :80sp test.c) (or :[n]sp [file-name])
+    - horizontal spliting (상, 하 두개로 분리됨)
+    - [n]: height size, 없으면 절반으로 split
+    - [file-name]: 열고 싶은 파일, 없으면 현재 file
+        - ./ 기준 path, 다른 diretory file 은 access by path
+2. :[n]vs [file-name]
+    - vertical spliting (좌, 우 두개로 분리됨)
 
+3. [ctrl + w] + [...]: move cursur to ...
+    w : next screen
+    W : previous screen
+    h, j, k, l: 해당 방향으로 이동
 
+4. [ctrl + w] + [...]: resizing
+    - =: all screen, same size
+    - `_`: present window, maximum height
+    - `|`: present window, maximum width
+    - [n] >: present window, + n width
+    - [n] <: present window, - n width
+    - [n] +: present window, + n height (or :resize +[n])
+    - [n] -: presnet window, - n height (or
 
+5. 
+    - :wq, :q, ... => present window
+    - :qa => all window
+    - [ctrl + W] + o => all window excluded present one
 
-mon mar 16
-linux programming
+6.  [ctrl + w] + r : 다음 화면과 위치 바꿈
 
-폰노이만 아키텍처 -> 인스트럭션을 읽고 처리하다가 데이터가 필요하면 데이터를  읽어서 실행(스토리지와 직접적아님)
-그러나 메모리는 한정적 -> 필요시 올리고 노필요시 내림 (버추얼 메모리)
-
-루트
-
-
+    
+    
+<!--
 mon, mar 23
 x X ~~ buffer에 저장됨
 :set ts=4 "tab size tabstop = space 4times
@@ -203,56 +224,9 @@ x X ~~ buffer에 저장됨
 vim plug in 사용하기 -> /vim/pulgin/ 에 파일 복붙 확장자 상관 
 linux는 여러 파일 시스템을 사용가능
 특정 운영체제의 파ㅣㅇㄹ 시스템마다 인코딩 방식이 다르다 다르면 힘들다
-
-Mon, mar 30 
-Linux programming
-
-File? -> ?: single char, any character
-File* -> *: any characters
-$ cat file2 | grep -i “from” == grep -I “from” file2
-파이프라인을 통해서 더 느림 앞에가
-프로그램 두개를 실행한것
-
-Dir
-. == ./
-../  super dir
-~/ home
-/ root
-
-Fine -o -> or: 
-
-memory에만 있는 파일
-Ls -> 스토리지에 ㅣㅇㅅ는 파일만
-프록 파일? 시스 파일? -> 커널이 메모리에 생성해줌
-셧다운 명령어로 끄면 사라짐
-
-Dir -> 파일로써 다뤄짐
+-->
 
 
-Mon, Apr 27 
-p.20 
-program counter -> address of the next instruction (text section)
-stack -> temporal data, local variables (-> non initializing)
-data section -> global variables (-> initializing to 0)
-heap -> malloc 할때마다 반환하는 값은 점점 increase (to the max)
-stack -> 나중에 할당 받은 stack (to the 0)
-stack and heap -> process terminate시에 사라짐 -> readelf 에서 no find
-text and data section 
-p.21 
-memory layout of the process in Linux is elf -> use readelf
-p.22
-os 마다 process states different
-
-
-
-Mon, May 4
-complier: 아직 영어임 어셈블리
-obj file-> cpu는 이해할 수 있지만 아직 실행은 못
---save-temps: 중간 결과물 temporal files를 저장
-preprocessor: env var, macro keyword (#...)
-linker: linking=> 
-.o => 바로 linking 앞에 거 할 이유가 없
-다른 코드들도 시스템이 필요한 거 같이 링킹 내가 작성한거 이외에
 
 ---
 ## References

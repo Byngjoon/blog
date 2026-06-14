@@ -1,15 +1,15 @@
 +++
-date = '2026-05-13T16:16:50+09:00'
-title = 'Linux [03]: File'
+date = '2026-06-10T16:16:50+09:00'
+title = '[UNIX/Linux] [03]: File'
 description = ""
 categories = [""]
-tags = [""]
+tags = ["UNIX/Linux"]
 slug = ""
 math = true
 draft = false
 +++
 
-# Chapter 00. 
+# Chapter 03. File System of UNIX/Linux
 
 > **Outline:**
 
@@ -21,10 +21,16 @@ draft = false
 
 ---
 
-# Section 0.1.
+# Section 3.1. File is ...
+- File is 전통적으로는 정보를 저장하는 most basic unit, 
+- 이때에는 단순히 data, program 등을 file로 생각한다. 
+- 그러나, modern os의 관점에서 file은 abstract object로 read and write라는 unified interface로
+- 단순 data or program을 넘어 hardware device까지 다루기 위한 하나의 system이 되었다. 
+- file is stored storage device and 보통의 경우 kernel은 file을 a sequence of bytes로 생각하며
+- 실제 그 file이 무엇인지는 application이 해석하게 된다.
 
-**File is ...**
-File is 전통적으로는 정보를 저장하는 most basic unit, 이때에는 단순히 data, program 등을 file로 생각한다. 그러나, modern os의 관점에서 file은 abstract object로 read and write라는 unified interface로 단순 data or program을 넘어 hardware device까지 다루기 위한 하나의 system이 되었다. file is stored storage device and 보통의 경우 kernel은 file을 a sequence of bytes로 생각하며 실제 그 file이 무엇인지는 application이 해석하게 된다.
+---
+
 - traditional definition vs modern OS concepts
     - In tradition, the most basic unit for storing infomation.
         - traditional definition for user.
@@ -36,7 +42,7 @@ File is 전통적으로는 정보를 저장하는 most basic unit, 이때에는 
     - no matter what it means for OS, that is only for application
 - unified interface to read and write data.
     - manage manythings as file => use same system call interface like read/write/open/close to access device and data
-    - Uniform View => no matter where it is stored, what it is contained, what hardware system it is, same action to call (read, write, ...)
+    - Uniform View => no matter where it is stored, what it is contained, what hardware system it is, same action to call (`read`, `write`, ...)
     - use `read` function, when read data on disk or take packet on network socket as well.
     - Physical devices also can be represented as file.
         - keyboard input => stdin => read like file
@@ -51,24 +57,30 @@ File is 전통적으로는 정보를 저장하는 most basic unit, 이때에는 
         → terminal hardware 출력 => `hello` not be stored in `tty`
 - Typically, stored on storage devices (e.g., SSD, HDD, Even Memory)
 
+---
 
-**Type of File**
+# Section 3.2. Type of File
+
 1. Ordinary File (== Regular File)
     - store text or binary data.
     - is stored on secondary storage device.
     - kernel do not distinguish what it is, only application do
     - for kernel, it is just a sequence of m bytes.
 
+---
+
 2. Directory
     - a set(array) of directory entries.
     - directory entry is mapping of file-name and inode-number.
-        - <file-name, inode-number>
-        directory
-        [
-            ("a.txt", inode 15),
-            ("b.txt", inode 29),
-            ("dir", inode 40)
-        ]
+```text
+<file-name, inode-number>
+directory
+[
+    ("a.txt", inode 15),
+    ("b.txt", inode 29),
+    ("dir", inode 40)
+]
+```
     - inode-number (index, refference) => inode
     - inode is a structure that contains 실체 and metadata about file.
         - not have file-name, have where it is on disk, file-size, ...
@@ -80,9 +92,11 @@ File is 전통적으로는 정보를 저장하는 most basic unit, 이때에는 
     - namespace == path 구조?? tree 형태로 된?
     - using directories to hierarchically organize files 
     - directory can contain other directories
-        - dir_a[ ("dir_aa", inode nn) ]
-        - dir_a: parent directory of `dir_aa`
-        - dir_aa: sub-directory of `dir_a`
+        - `dir_a[ ("dir_aa", inode nn) ]`
+        - `dir_a`: parent directory of `dir_aa`
+        - `dir_aa`: sub-directory of `dir_a`
+
+---
 
 3. Special File (== Device File)
 "device file은 regular file처럼 디스크 data block에 저장되는 파일이 아니라,
@@ -100,37 +114,50 @@ kernel은 inode의 device 정보를 통해 적절한 device driver(kernel code)�
         - c => like data stream, sequential acces, stream I/O 
         - b => fixed size unit data, random access, storage I/O
 
+---
+
 4. etc.) Symbolic Link, FIFO (Named Pipe), Socket
     - Symbolic Link: has other file's path-name as data
     - FIFO: for IPC(Inter-Process Communication)
     - Socket: for network
 
-**Text File vs. Binary File**
+---
+
+## Text File vs. Binary File
+
 - Text file
     - general file with ASCII characters 
     - documents, programs, shell scripts etc.
     - human-readable form
+
 - Binary file
     - non-text file which has data in binary form
     - computer-readable form
     - typically contains data that is meaningful only when processed by a program (e.g., executable file)
-- for example
-    - ~ % file ./.zshrc => ./.zshrc: ASCII text
-    -  ~ % file /bin/ls
-    => /bin/ls: Mach-O universal binary with 2 architectures: [x86_64:Mach-O 64-bit executable x86_64] [arm64e:Mach-O 64-bit executable arm64e]
-    /bin/ls (for architecture x86_64):	Mach-O 64-bit executable x86_64
-    /bin/ls (for architecture arm64e):	Mach-O 64-bit executable arm64e
 
-**File Mode and File Permission**
+- e.g.
 ```bash
-#e.g.
-~ % ls -l test.c
--rwxr-xr-x  1 owner-name  staff  73 May 13 12:19 test.c
+~$ file ./.bashrc
+./.bashrc: ASCII text
+~$ file /bin/ls
+/bin/ls: ELF 64-bit LSB pie executable, x86-64, version 1 (SYSV), dynamically linked, interpreter /lib64/ld-linux-x86-64.so.2, BuildID[sha1]=05dad2c279f7651722809fa75adba6bf9ab1c209, for GNU/Linux 3.2.0, stripped
 ```
--rwxr-xr-x: file mod representation
-- **file mode**: [file type][permission bit]
+
+---
+
+## File Mode and File Permission
+
+- e.g.
+```bash
+~$ ls -l test.c
+-rwxr-x-wx 1 owner-name group-name 426 Apr  2 15:25 syscall.c
+```
+
+- -rwxr-xr-x: file mode representation
+- file mode: [file type][permission bit]
     => -: file type
-    => rwxr-xr-x: permission bit
+    => rwxr-x-wx: permission bit
+
 - **file type**: first charcter of file mode
 | Symbol | File Type | Meaning |
 |---|---|---|
@@ -163,9 +190,9 @@ kernel은 inode의 device 정보를 통해 적절한 device driver(kernel code)�
         - for regular file: execute a file.
         - for directory: view the contents of a directory.
 
+---
 
-
-**Absolute Path vs. Relative Path**
+## Absolute Path vs. Relative Path
 - Absolute Path
     - /home/${USER}/a/b/c/d
 - Relative Path
@@ -175,10 +202,16 @@ kernel은 inode의 device 정보를 통해 적절한 device driver(kernel code)�
     - current directory: d => .
     - user's home directory: /home/${USER} => ~
 
-###**=====Linux Commands=====**
+### =====Linux Commands=====
 
-1.
-
+1. chmod
+<!--
+$ chmod mode file_or_directory
+    - mode = three octal digits (e.g., 755, 644, 400)
+    - mode = [u|g|o]+[+|-][r|w|x] (e.g., u+x, g-x, o+r)
+The normal user can modify the permission for files/directories that the user owns
+The root user can modify the permissions on all files/directories regardless of it’s owner
+-->
 
 
 ---

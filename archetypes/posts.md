@@ -25,9 +25,15 @@ draft = true
 
 
 ---
-**References**
+## References
 - 
 
-**Acknowledgements**
+## Environments
+- Ubuntu 24.04.3 LTS
+- Linux Kernel 6.17.0-35-generic
+- x86_64 Architecture
+- GNU bash, version 5.2.21
+
+## Acknowledgements
 - OpenAI ChatGPT
 - Google NotebookLM
