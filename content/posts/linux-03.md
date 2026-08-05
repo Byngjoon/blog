@@ -6,7 +6,7 @@ categories = [""]
 tags = ["UNIX/Linux"]
 slug = ""
 math = true
-draft = false
+draft = true
 +++
 
 # Chapter 03. File System of UNIX/Linux

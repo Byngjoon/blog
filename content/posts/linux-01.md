@@ -6,7 +6,7 @@ categories = [""]
 tags = ["UNIX/Linux"]
 slug = ""
 math = true
-draft = false
+draft = true
 +++
 
 # Chapter 01.  UNIX/Linux Basic

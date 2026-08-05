@@ -6,7 +6,7 @@ categories = ["etc./"]
 tags = ["vim"]
 slug = ""
 math = true
-draft = false
+draft = true
 +++
 
 # Topic. VIM Basic Manuals

@@ -6,7 +6,7 @@ categories = [""]
 tags = ["UNIX/Linux"]
 slug = ""
 math = true
-draft = false
+draft = true
 +++
 
 # Chapter 02. UNIX/Linux Basic Commands

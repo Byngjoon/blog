@@ -279,6 +279,7 @@ world
 > 기존 파일 내용을 덮어쓴다
 > open 할 때 새로 열리고 내용을 작성하기 때문
 
+- `> /dev/null`: 표준 출력(stdout)을 버린다는 뜻 
 ---
 2. `>>`: output redirection append
 - stdout을 파일로 보내지만, 기존 내용을 지우지 않고 뒤에 이어 붙인다.
