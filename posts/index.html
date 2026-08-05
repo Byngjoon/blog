@@ -175,56 +175,6 @@ Data Structures (Lists, Stacks, Queues, Trees, Graphs, Hash Tables) Algorithms (
 
 <article class="post-entry"> 
   <header class="entry-header">
-    <h2 class="entry-hint-parent">[UNIX/Linux] [02]: Basic Commands
-    </h2>
-  </header>
-  <div class="entry-content">
-    <p>Chapter 02. UNIX/Linux Basic Commands Outline:
-Contents 0.1. Section 2.1. Basic Commands
-‘date’ : to check the date and time
-‘who’ : to verify who is currently logged in
-’ls’ : to list directories and files
-‘cat’, ‘more’ : to view file contents
-‘passwd’ : to modify password information
-’last’ : to see login history
-‘man’ : to see the manual for commands
-‘info’ : to see information for commands
-...</p>
-  </div>
-  <footer class="entry-footer"><span title='2026-06-12 23:40:44 +0900 KST'>6월 12, 2026</span>&nbsp;·&nbsp;4 min&nbsp;·&nbsp;map[name:byungjoonkim]</footer>
-  <a class="entry-link" aria-label="post link to [UNIX/Linux] [02]: Basic Commands" href="https://Byngjoon.github.io/blog/posts/linux-02/"></a>
-</article>
-
-<article class="post-entry"> 
-  <header class="entry-header">
-    <h2 class="entry-hint-parent">[UNIX/Linux] [03]: File
-    </h2>
-  </header>
-  <div class="entry-content">
-    <p>Chapter 03. File System of UNIX/Linux Outline:
-Contents 0.1. Section 3.1. File is … File is 전통적으로는 정보를 저장하는 most basic unit, 이때에는 단순히 data, program 등을 file로 생각한다. 그러나, modern os의 관점에서 file은 abstract object로 read and write라는 unified interface로 단순 data or program을 넘어 hardware device까지 다루기 위한 하나의 system이 되었다. file is stored storage device and 보통의 경우 kernel은 file을 a sequence of bytes로 생각하며 실제 그 file이 무엇인지는 application이 해석하게 된다. traditional definition vs modern OS concepts In tradition, the most basic unit for storing infomation. traditional definition for user. data, programs, and etc. are naturally archived as file. In modern concepts, abstract object to read and write data. for modern OS concepts, especially in Linux/UNIX extansion of concept of file a sequence of m byte no matter what it means for OS, that is only for application unified interface to read and write data. manage manythings as file =&gt; use same system call interface like read/write/open/close to access device and data Uniform View =&gt; no matter where it is stored, what it is contained, what hardware system it is, same action to call (read, write, …) use read function, when read data on disk or take packet on network socket as well. Physical devices also can be represented as file. keyboard input =&gt; stdin =&gt; read like file displaying to monitor =&gt; stdout =&gt; write like file e.g., echo hello &gt; /dev/tty in user’s perspect, just writing at tty in real mechanism, write() → VFS → inode 확인 → character device file 확인 → tty driver 호출 → terminal hardware 출력 =&gt; hello not be stored in tty Typically, stored on storage devices (e.g., SSD, HDD, Even Memory) Section 3.2. Type of File Ordinary File (== Regular File) store text or binary data. is stored on secondary storage device. kernel do not distinguish what it is, only application do for kernel, it is just a sequence of m bytes. Directory a set(array) of directory entries. directory entry is mapping of file-name and inode-number. &lt;file-name, inode-number&gt; directory [ (&#34;a.txt&#34;, inode 15), (&#34;b.txt&#34;, inode 29), (&#34;dir&#34;, inode 40) ] - inode-number (index, refference) =&gt; inode - inode is a structure that contains 실체 and metadata about file. - not have file-name, have where it is on disk, file-size, ... - why is not file-name contained in inode =&gt; inode is identity of file. - &#34;a.txt&#34; → inode 3512, &#34;b.txt&#34; → inode 3512 =&gt; hard rink - for integrity, only kernel can have permission to write to directory. - is the pointer-like that contain other file&#39;s name and infomation to find it. - finally, it is 특정 format의 binary data를 가진 regular-like file - namespace == path 구조?? tree 형태로 된? - using directories to hierarchically organize files - directory can contain other directories - `dir_a[ (&#34;dir_aa&#34;, inode nn) ]` - `dir_a`: parent directory of `dir_aa` - `dir_aa`: sub-directory of `dir_a` Special File (== Device File) “device file은 regular file처럼 디스크 data block에 저장되는 파일이 아니라, filesystem namespace 안에 존재하는 special entry이다. write/read 시 filesystem storage로 가지 않고, kernel은 inode의 device 정보를 통해 적절한 device driver(kernel code)를 호출한다. 따라서 device file의 실질적 동작은disk-backed data가 아니라, kernel memory 내부 subsystem과 연결되어 있다.” abstract hardware device as file for unified interface. stored(reside) in memory =&gt; disk에storing 실제 data 하지 않음 regular file =&gt; mapping to storage block pointer =&gt; where space of storage? device file =&gt; mapping to device program major number, minor number =&gt; what driver? character device file vs block device file c =&gt; like data stream, sequential acces, stream I/O b =&gt; fixed size unit data, random access, storage I/O etc.) Symbolic Link, FIFO (Named Pipe), Socket Symbolic Link: has other file’s path-name as data FIFO: for IPC(Inter-Process Communication) Socket: for network Text File vs. Binary File Text file
-...</p>
-  </div>
-  <footer class="entry-footer"><span title='2026-06-10 16:16:50 +0900 KST'>6월 10, 2026</span>&nbsp;·&nbsp;5 min&nbsp;·&nbsp;map[name:byungjoonkim]</footer>
-  <a class="entry-link" aria-label="post link to [UNIX/Linux] [03]: File" href="https://Byngjoon.github.io/blog/posts/linux-03/"></a>
-</article>
-
-<article class="post-entry"> 
-  <header class="entry-header">
-    <h2 class="entry-hint-parent">[UNIX/Linux] [01]: UNIX/Linux Basic
-    </h2>
-  </header>
-  <div class="entry-content">
-    <p>Chapter 01. UNIX/Linux Basic Outline:
-Contents 0.1. Section 1.1. Operationg Systems Operating system is … One of the most sophiscated(복잡한) software structure Resource manager -&gt; manage software component and hardware (like device driver) flow of running computer (top-down) User: the person who uses computer =====Interface (User Interface) Applications (=user program) User Interfaces (UI): User-Computer interface Graphical User Interface (GUI): click the mouse, icon, window, … Command Line Interface (CLI): ls, cd, gcc, … Batch Interface: shell script, … 명령을 한번에 모아서 자동실행 UI 는 개념, GUI, CLI, Batch 는 구현방식 느낌 program 중 user와 만나는 부분에 대한 개념 (shell, app) =====Interface (System Call)===== Operating System (OS) System Calls: user program-os interface -(open(), read(), fork(), …) kernel Program execution: program을 memory에 올리고 실행되게 해줌 I/O Systems: help using Input Output device File systems: manage files and directories Communication: data moving between each process or computer resource allocation: 결정 to give resource like CPU, memory, disk,… to whom how much accounting: notes and manages who use resource how much error detextion: finding error in programs and device protection and security: protect files and systems from program or other user Hardware Section 1.2. UNIX/Linux key features Interactive systems Multi-user systems Multi-tasking systems High portability, scalability(확장성), openness(개방성) Hierarchical file-systems Portable Operating System Interface (POSIX): Unix standardization
-...</p>
-  </div>
-  <footer class="entry-footer"><span title='2026-06-09 14:07:47 +0900 KST'>6월 9, 2026</span>&nbsp;·&nbsp;3 min&nbsp;·&nbsp;map[name:byungjoonkim]</footer>
-  <a class="entry-link" aria-label="post link to [UNIX/Linux] [01]: UNIX/Linux Basic" href="https://Byngjoon.github.io/blog/posts/linux-01/"></a>
-</article>
-
-<article class="post-entry"> 
-  <header class="entry-header">
     <h2 class="entry-hint-parent">Regular Expressions
     </h2>
   </header>
@@ -236,20 +186,6 @@ Contents 0.1. Section 1. What is the Reular Expressions? Regular Expression (reg
   </div>
   <footer class="entry-footer"><span title='2026-05-15 13:30:09 +0900 KST'>5월 15, 2026</span>&nbsp;·&nbsp;5 min&nbsp;·&nbsp;map[name:byungjoonkim]</footer>
   <a class="entry-link" aria-label="post link to Regular Expressions" href="https://Byngjoon.github.io/blog/posts/regexp/"></a>
-</article>
-
-<article class="post-entry"> 
-  <header class="entry-header">
-    <h2 class="entry-hint-parent">VIM Basic
-    </h2>
-  </header>
-  <div class="entry-content">
-    <p>Topic. VIM Basic Manuals Outline:
-Contents 0.1. Moving cursor Section 1. What is the VIM? VIM VIM = Vi-IMproved: an enhanced version of vi editor is cross-platform vim.org: customize, plugin ~/.vimrc: VIM configuration file Visual Mode &lt;-[v, ctrl &#43; v / esc]-&gt; Command Mode &lt;-[esc / i,I,a,A,o,O,s,S]-&gt; Input Mode VIM Start -[vim file-name]-&gt; Command Mode -[:q, :q!, :wq, :wq!, ZZ]-&gt; VIM End Command Mode Everything you type are commands (interpeted by VIM as commands) Input Mode Everything you type are contents Changing contents are stored in editing butter (in memory, not disk) Disk(=file) &lt;-[save command(:w, :wq, :wq!) / open new file or input mode]-&gt; Memory(=editing buffer) When open file, all of contents are uploaded to editing buffer. When you do save, write back from the file in memory to the file in disk. Section 2. VIM Basic Command Move Cursor (in Command Mode and Visual Mode)
-...</p>
-  </div>
-  <footer class="entry-footer"><span title='2026-05-11 16:30:05 +0900 KST'>5월 11, 2026</span>&nbsp;·&nbsp;6 min&nbsp;·&nbsp;map[name:byungjoonkim]</footer>
-  <a class="entry-link" aria-label="post link to VIM Basic" href="https://Byngjoon.github.io/blog/posts/vim-editor/"></a>
 </article>
     </main>
     
